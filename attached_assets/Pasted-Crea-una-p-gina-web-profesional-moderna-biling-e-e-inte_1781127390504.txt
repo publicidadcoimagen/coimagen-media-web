@@ -1,0 +1,249 @@
+Crea una página web profesional, moderna, bilingüe e interactiva para Coimagen Media Agency.
+
+Nombre del sitio: www.coimagenmedia.com
+
+Coimagen Media Agency
+
+basate tambien en la informacion de ese dominio que ya esta activo
+
+Objetivo:
+Crear la página oficial de Coimagen y una landing principal para captar prospectos mediante un Diagnóstico Digital Gratuito.
+
+Estilo visual:
+
+* Premium
+* Moderno
+* Tecnológico
+* Elegante
+* Alto impacto visual
+* Inspirado en agencias de IA, automatización y marketing digital
+* Colores base: azul profundo, naranja, blanco y gris oscuro
+* Diseño responsive para móvil, tablet y desktop
+* Animaciones suaves
+* Secciones interactivas
+* Botones claros
+* Excelente experiencia visual
+
+Logotipo:
+Te dejo el archivo del logotipo adjunto a las instrucciones.
+
+Idioma:
+La página debe ser bilingüe:
+
+* Español
+* English
+
+Agregar botón visible para cambiar idioma ES / EN.
+
+Estructura principal:
+
+1. Hero principal
+   Título en español:
+   ¿Tu negocio está perdiendo clientes y no sabes por qué?
+
+Subtítulo:
+Descubre las oportunidades digitales que están frenando el crecimiento de tu negocio. Solicita un Diagnóstico Digital Gratuito y conoce qué puedes mejorar para atraer más clientes.
+
+CTA principal:
+Solicitar Diagnóstico Gratuito
+
+CTA secundario:
+Ver servicios
+
+2. Sección de dolor
+   Mostrar tarjetas visuales con estos problemas:
+
+* Tu página web no genera contactos
+* Tus redes sociales no convierten
+* Tu negocio no aparece bien en Google
+* Tu competencia recibe más clientes
+* Pierdes tiempo en tareas repetitivas
+* No tienes seguimiento automático de prospectos
+
+3. Sección de solución
+   Título:
+   Coimagen transforma tu presencia digital en un sistema de crecimiento.
+
+Texto:
+No vendemos solo páginas web. Creamos sistemas digitales para captar prospectos, automatizar procesos y ayudar a negocios a crecer con marketing, IA y automatización.
+
+4. Diagnóstico Digital Gratuito
+   Crear una sección interactiva tipo cuestionario con estas preguntas:
+
+Pregunta 1:
+¿Tu negocio tiene sitio web?
+Opciones:
+Sí / No
+
+Pregunta 2:
+¿Tu sitio web genera clientes regularmente?
+Opciones:
+Sí / No / No estoy seguro
+
+Pregunta 3:
+¿Tu negocio aparece en Google Maps o Google Business?
+Opciones:
+Sí / No / No sé
+
+Pregunta 4:
+¿Publicas contenido en redes sociales de forma constante?
+Opciones:
+Sí / No
+
+Pregunta 5:
+¿Cuál es tu mayor desafío?
+Opciones:
+Conseguir más clientes / Mejorar presencia digital / Automatizar procesos / Vender más / Otro
+
+Después de responder, mostrar un resultado preliminar:
+“Tu negocio puede tener oportunidades digitales no aprovechadas. Solicita tu Diagnóstico Digital Gratuito completo.”
+
+Luego mostrar formulario:
+
+* Nombre
+* Nombre del negocio
+* Ciudad
+* Giro del negocio
+* Email
+* WhatsApp
+* Sitio web, si tiene
+* Facebook o Instagram, si tiene
+* Mensaje adicional
+
+Botón:
+Enviar solicitud
+
+5. Servicios principales
+   Crear 3 tarjetas:
+
+Paquete A:
+Presencia Digital Starter
+Incluye:
+
+* Landing Page
+* WhatsApp
+* Formulario
+* Hosting
+* Actualizaciones básicas
+
+Paquete B:
+Growth Digital
+Incluye:
+
+* Todo Starter
+* Google Business
+* SEO Local
+* Blog IA
+* Optimización de conversión
+
+Paquete C:
+Growth Automation
+Incluye:
+
+* Todo Growth
+* Automatización WhatsApp
+* CRM básico
+* Seguimiento de prospectos
+* Reportes
+
+6. High Ticket
+   Sección:
+   Transformación Digital Coimagen
+
+Texto:
+Implementamos sistemas personalizados de IA, automatización, CRM, agentes digitales y procesos inteligentes para negocios que quieren escalar.
+
+7. Sectores que atendemos
+   Crear tarjetas para:
+
+* Médicos
+* Dentistas
+* Abogados
+* Veterinarias
+* Estéticas
+* Restaurantes
+* Inmobiliarias
+* Negocios locales
+
+8. Proceso de trabajo
+   Paso 1:
+   Solicitas el diagnóstico
+
+Paso 2:
+Analizamos tu presencia digital
+
+Paso 3:
+Detectamos oportunidades
+
+Paso 4:
+Te presentamos una solución
+
+Paso 5:
+Implementamos y optimizamos
+
+9. Sección de autoridad
+   Título:
+   Marketing, automatización e inteligencia artificial para negocios reales.
+
+Texto:
+Coimagen Media ayuda a negocios locales y profesionales a simplificar procesos, captar prospectos y convertir su presencia digital en una herramienta de crecimiento.
+
+10. Portafolio / Casos de prueba
+    Agregar tarjetas placeholder para:
+
+* Dr. Segovia Neurocirugía
+* Clínica EMT
+* Chimichimi
+* Conchas Tower
+* Coimagen OS
+
+11. CTA final
+    Título:
+    Descubre qué oportunidades está perdiendo tu negocio.
+
+Botón:
+Solicitar Diagnóstico Digital Gratuito
+
+12. Footer
+    Incluir:
+
+* Coimagen Media Agency
+* Tijuana / San Diego
+* Email placeholder
+* WhatsApp placeholder
+* Redes sociales placeholder
+* Links: Servicios, Diagnóstico, Contacto
+
+Imágenes:
+Usar imágenes profesionales placeholder libres de derechos o gradientes visuales modernos relacionados con:
+
+* Inteligencia artificial
+* Marketing digital
+* Negocios locales
+* Automatización
+* Crecimiento empresarial
+* Tecnología
+* Personas trabajando con dashboards
+* Consultoría digital
+
+Importante:
+Las imágenes deben verse premium, modernas y profesionales.
+Dejar preparada una carpeta /assets/images para reemplazar imágenes después.
+Dejar preparado /assets/logo para subir el logotipo oficial después.
+
+Funcionalidad:
+
+* Página rápida
+* Responsive
+* Interactiva
+* Formulario funcional en frontend
+* Botón WhatsApp flotante
+* Botón para cambiar idioma
+* Animaciones suaves
+* Diseño profesional
+* Código limpio y bien organizado
+
+Tecnología sugerida:
+React + Vite + Tailwind CSS.
+
+Crear todo listo para desplegar en Replit.
