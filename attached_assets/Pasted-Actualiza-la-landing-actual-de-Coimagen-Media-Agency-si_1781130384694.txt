@@ -1,0 +1,276 @@
+Actualiza la landing actual de Coimagen Media Agency sin rehacer todo desde cero.
+
+Objetivo:
+Mejorar conversión, claridad comercial, diagnóstico interactivo, confianza y precios diferenciados por idioma/mercado.
+
+Mantener:
+- Diseño oscuro premium
+- Azul profundo, naranja y blanco
+- Animaciones suaves
+- Diseño responsive
+- Estilo moderno tecnológico
+- Bilingüe ES / EN
+
+IMPORTANTE SOBRE PRECIOS:
+Cuando el usuario esté en español, mostrar precios para México/Tijuana.
+Cuando el usuario cambie a inglés, mostrar precios para USA/San Diego.
+
+PRECIOS EN ESPAÑOL / MÉXICO:
+
+Paquete A:
+Presencia Digital Starter
+Desde $99 USD/mes
+
+Paquete B:
+Growth Digital
+Desde $149 USD/mes
+Marcar como “Más popular”
+
+Paquete C:
+Growth Automation
+Desde $199 USD/mes
+
+PRECIOS EN INGLÉS / USA:
+
+Package A:
+Digital Presence Starter
+Starting at $299 USD/month
+
+Package B:
+Growth Digital
+Starting at $499 USD/month
+Mark as “Most Popular”
+
+Package C:
+Growth Automation
+Starting at $799 USD/month
+
+Agregar nota en español:
+Los precios pueden variar según necesidades, alcance y diagnóstico del negocio.
+
+Agregar nota en inglés:
+Pricing may vary depending on business needs, scope, and diagnosis.
+
+HERO ESPAÑOL:
+
+Título:
+¿Tu negocio está perdiendo clientes y no sabes por qué?
+
+Subtítulo:
+Descubre qué oportunidades digitales están frenando tu crecimiento. Recibe un Diagnóstico Digital Gratuito y conoce cómo atraer más clientes, automatizar seguimientos y convertir tu presencia digital en ventas reales.
+
+CTA principal:
+Solicitar Diagnóstico Gratuito
+
+CTA secundario:
+Ver soluciones
+
+HERO INGLÉS:
+
+Title:
+Is your business losing customers and you don’t know why?
+
+Subtitle:
+Discover the digital opportunities holding your business back. Get a Free Digital Diagnosis and learn how to attract more customers, automate follow-ups, and turn your online presence into real sales.
+
+Primary CTA:
+Request Free Diagnosis
+
+Secondary CTA:
+View Solutions
+
+SECCIÓN SOLUCIÓN ESPAÑOL:
+
+Título:
+Consigue más clientes sin depender solo de recomendaciones, publicaciones improvisadas o seguimiento manual.
+
+Texto:
+En Coimagen diseñamos sistemas digitales que ayudan a captar prospectos, dar seguimiento automático y convertir oportunidades en clientes reales usando marketing, automatización e inteligencia artificial.
+
+SECCIÓN SOLUCIÓN INGLÉS:
+
+Title:
+Get more customers without relying only on referrals, random posts, or manual follow-up.
+
+Text:
+At Coimagen, we design digital systems that help capture leads, automate follow-ups, and turn opportunities into real customers using marketing, automation, and artificial intelligence.
+
+DIAGNÓSTICO DIGITAL EXPRESS:
+
+Debe funcionar con 5 preguntas antes de pedir datos.
+
+Pregunta 1:
+¿Tu negocio tiene sitio web?
+Yes/No en inglés.
+
+Pregunta 2:
+¿Tu sitio web genera clientes regularmente?
+Opciones:
+Sí / No / No estoy seguro
+
+Pregunta 3:
+¿Tu negocio aparece en Google Maps o Google Business?
+Opciones:
+Sí / No / No sé
+
+Pregunta 4:
+¿Tienes seguimiento automático para prospectos?
+Opciones:
+Sí / No
+
+Pregunta 5:
+¿Cuál es tu principal reto actualmente?
+Opciones:
+Conseguir más clientes / Más ventas / Automatizar procesos / Mejorar presencia digital / Otro
+
+Después de responder las 5 preguntas, mostrar resultado preliminar:
+
+Español:
+Tu negocio puede tener oportunidades digitales no aprovechadas.
+
+Con base en tus respuestas, podemos realizar un Diagnóstico Digital Gratuito más completo para detectar áreas de mejora y recomendarte un plan personalizado.
+
+Inglés:
+Your business may have untapped digital opportunities.
+
+Based on your answers, we can complete a Free Digital Diagnosis to identify improvement areas and recommend a personalized growth plan.
+
+Luego mostrar formulario:
+
+- Nombre / Name
+- Nombre del negocio / Business name
+- Ciudad / City
+- Giro del negocio / Business type
+- Email
+- WhatsApp / Phone
+- Sitio web, si tiene / Website, if any
+- Facebook o Instagram, si tiene
+- Mensaje adicional / Additional message
+
+Botón español:
+Solicitar Diagnóstico Completo
+
+Botón inglés:
+Request Full Diagnosis
+
+AGREGAR OFERTA FUNDADORES:
+
+Español:
+Oferta Fundadores:
+Estamos aceptando un número limitado de negocios para nuestra etapa inicial. Los primeros 10 clientes reciben precio preferencial de lanzamiento.
+
+Inglés:
+Founders Offer:
+We are accepting a limited number of businesses during our initial stage. The first 10 clients receive preferred launch pricing.
+
+NO usar frases engañosas de 24 horas falsas.
+Usar escasez real: primeros 10 clientes.
+
+AGREGAR SECCIÓN DE CONFIANZA:
+
+Español:
+No vendemos herramientas. Diseñamos soluciones según lo que tu negocio necesita.
+
+Primero escuchamos. Después diagnosticamos. Luego recomendamos. Y solo entonces implementamos.
+
+Tarjetas:
+- Diagnóstico antes de vender
+- Soluciones personalizadas
+- Seguimiento claro
+- Procesos automatizados
+
+Inglés:
+We don’t sell tools. We design solutions based on what your business actually needs.
+
+First we listen. Then we diagnose. Then we recommend. Only then do we implement.
+
+Cards:
+- Diagnosis before selling
+- Custom solutions
+- Clear follow-up
+- Automated processes
+
+AGREGAR PRUEBA SOCIAL / LABORATORIOS:
+
+Título español:
+Proyectos y laboratorios de crecimiento
+
+Texto:
+Estos proyectos nos permiten probar, optimizar y documentar procesos reales antes de implementarlos con nuevos clientes.
+
+Proyectos:
+- Dr. Segovia Neurocirugía
+- Clínica EMT
+- Chimichimi
+- Conchas Tower
+- Coimagen OS
+
+Inglés:
+Growth Projects and Labs
+
+Text:
+These projects allow us to test, optimize, and document real processes before implementing them with new clients.
+
+IMPORTANTE:
+No usar métricas falsas como “+50 clientes atendidos”.
+Cambiar métricas por:
+
+Español:
+- Proyectos en desarrollo
+- Laboratorios reales
+- Tijuana / San Diego
+- Marketing + IA + Automatización
+
+Inglés:
+- Projects in development
+- Real growth labs
+- Tijuana / San Diego
+- Marketing + AI + Automation
+
+FOOTER:
+
+Español:
+Coimagen Media Agency
+Tijuana / San Diego
+Email: publicidadcoimagen@gmail.com
+WhatsApp: placeholder
+Links:
+Servicios
+Diagnóstico
+Portafolio
+Contacto
+Aviso de Privacidad
+Términos de Servicio
+
+Inglés:
+Coimagen Media Agency
+Tijuana / San Diego
+Email: publicidadcoimagen@gmail.com
+WhatsApp: placeholder
+Links:
+Services
+Diagnosis
+Portfolio
+Contact
+Privacy Notice
+Terms of Service
+
+BOTONES:
+Todos los botones principales deben llevar al Diagnóstico Digital Express.
+
+FORMULARIO:
+Debe verse profesional.
+No pedir datos antes de que el usuario responda las 5 preguntas.
+El resultado preliminar debe aparecer antes del formulario.
+
+IDIOMA:
+Agregar botón claro ES / EN.
+Al cambiar idioma, cambiar todos los textos y también los precios.
+
+OPTIMIZACIÓN:
+- Carga rápida
+- Excelente versión móvil
+- Buena jerarquía visual
+- Secciones claras
+- CTA visibles
+- Código limpio
