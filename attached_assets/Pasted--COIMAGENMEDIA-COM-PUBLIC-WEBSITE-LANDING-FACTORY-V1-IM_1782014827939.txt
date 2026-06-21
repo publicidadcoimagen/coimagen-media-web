@@ -1,0 +1,1017 @@
+# COIMAGENMEDIA.COM — PUBLIC WEBSITE + LANDING FACTORY V1
+
+## IMPORTANT CONTEXT
+
+We are rebuilding the public website for Coimagen Media Agency.
+
+This is NOT Coimagen OS.
+
+Coimagen OS is the private intranet/ERP/CRM.
+
+This project is the public marketing website:
+
+* SEO
+* Sales
+* Landing pages
+* Lead generation
+* Diagnostics
+* Case studies
+* Blog-ready structure
+
+Keep the project public, fast, responsive, bilingual and SEO-first.
+
+Do NOT build the private intranet here.
+
+Do NOT build client portal yet.
+
+Do NOT build admin panel yet.
+
+Admin panel and integrations will be implemented in Prompt #2.
+
+---
+
+## MAIN GOAL
+
+Replace the current prototype website with a premium bilingual public website inspired by the Base44 design reference.
+
+Design style:
+
+* Premium
+* Futuristic
+* Dark
+* AI agency aesthetic
+* Glassmorphism
+* Deep navy / black background
+* Neon cyan
+* Lime green
+* Yellow accent
+* Purple gradients
+* Soft blur effects
+* Large bold typography
+* Smooth section transitions
+* Modern rounded cards
+* Mobile responsive
+* Professional enough for USA clients
+* Accessible enough for Mexico clients
+
+Use the same overall structure and visual feeling of the Base44 improved version.
+
+Camila will upload the official Coimagen logo. Use a placeholder logo until uploaded and make it easy to replace.
+
+---
+
+# BRAND POSITIONING
+
+Coimagen Media is not just a marketing agency.
+
+Position the company as:
+
+COIMAGEN AI SYSTEMS
+
+Marketing + Automation + AI Agents + Business Operating Systems.
+
+Core message:
+
+Spanish:
+De tráfico a conversación.
+De conversación a clientes.
+De clientes a sistemas operados con IA.
+
+English:
+From traffic to conversations.
+From conversations to customers.
+From customers to AI-powered business systems.
+
+---
+
+# LANGUAGE REQUIREMENTS
+
+The entire website must be bilingual:
+
+* Spanish
+* English
+
+Add a visible language switcher:
+
+ES | EN
+
+Default language:
+Spanish.
+
+English must be fully written, not machine-placeholder text.
+
+URLs should support both languages using the same domain:
+
+Spanish:
+/
+or /es
+
+English:
+/en
+
+Landing pages must also support bilingual content:
+
+/medical-os
+/en/medical-os
+
+/dental-os
+/en/dental-os
+
+/law-os
+/en/law-os
+
+/wellness-os
+/en/wellness-os
+
+/restaurant-os
+/en/restaurant-os
+
+/real-estate-os
+/en/real-estate-os
+
+/local-business-os
+/en/local-business-os
+
+---
+
+# COUNTRY / PRICING REQUIREMENTS
+
+The website must support two markets:
+
+* Mexico
+* United States
+
+Add country selector:
+
+🇲🇽 México
+🇺🇸 USA
+
+Changing country must change pricing and currency.
+
+Do not automatically force the user. Allow manual selection.
+
+Default:
+Mexico for Spanish.
+USA for English.
+
+Mexico pricing:
+
+Presencia Digital
+$790 MXN / mes
+
+Crecimiento Digital
+$1,490 MXN / mes
+
+Negocio Digital
+$2,490 MXN / mes
+
+AI Business
+$4,990 MXN / mes
+
+USA pricing:
+
+Starter
+$197 USD / month
+
+Growth
+$297 USD / month
+
+Automation
+$497 USD / month
+
+AI Business
+$997 USD / month
++ $1,500 USD setup
+
+Founder offer:
+First 20 clients receive launch pricing.
+
+Spanish:
+Oferta Fundadores — primeros 20 clientes reciben precio preferencial de lanzamiento.
+
+English:
+Founder Offer — first 20 clients receive preferred launch pricing.
+
+---
+
+# GLOBAL NAVIGATION
+
+Desktop navigation:
+
+Inicio / Home
+Soluciones / Solutions
+Industrias / Industries
+Casos / Case Studies
+Precios / Pricing
+Blog
+Diagnóstico / Diagnostic
+Contacto / Contact
+
+Right side:
+ES | EN
+México | USA
+CTA button: Diagnóstico Gratuito / Free Diagnostic
+
+Mobile:
+Hamburger menu.
+Same links.
+Sticky CTA.
+
+Footer:
+Company info.
+Contact placeholders.
+Social placeholders.
+Landing page links.
+Legal links.
+Language selector.
+Country selector.
+
+---
+
+# MAIN HOME PAGE STRUCTURE
+
+## 1. HERO SECTION
+
+Visual style:
+Same spirit as Base44 improved hero.
+Dark futuristic background.
+Large typography.
+Neon gradient accent words.
+Tijuana / San Diego badge.
+Glassmorphism CTA buttons.
+
+Spanish hero:
+
+Badge:
+TIJUANA / SAN DIEGO
+
+Headline:
+De tráfico a conversación.
+De conversación a clientes.
+De clientes a sistemas operados con IA.
+
+Subheadline:
+Diseñamos sistemas digitales que captan prospectos, automatizan seguimientos y convierten oportunidades en clientes reales usando marketing, automatización e inteligencia artificial.
+
+CTA buttons:
+Solicitar Diagnóstico Gratuito
+Ver Soluciones
+Agendar llamada
+
+English hero:
+
+Badge:
+TIJUANA / SAN DIEGO
+
+Headline:
+From traffic to conversations.
+From conversations to customers.
+From customers to AI-powered business systems.
+
+Subheadline:
+We design digital systems that generate leads, automate follow-up, and turn opportunities into real customers using marketing, automation, and artificial intelligence.
+
+CTA buttons:
+Get Free Diagnostic
+View Solutions
+Book a Call
+
+---
+
+## 2. PAIN SECTION
+
+Spanish title:
+¿Te identificas con alguno de estos problemas?
+
+Cards:
+Tu página web no genera contactos.
+Tus redes sociales no convierten.
+No apareces bien en Google.
+Tu competencia gana más clientes.
+Pierdes tiempo en tareas repetitivas.
+Los prospectos se enfrían por falta de seguimiento.
+Todo depende de WhatsApp y procesos manuales.
+No tienes un sistema para medir resultados.
+
+English title:
+Do any of these problems sound familiar?
+
+Cards:
+Your website does not generate leads.
+Your social media does not convert.
+You are not showing up on Google.
+Your competitors are getting more customers.
+You waste time on repetitive tasks.
+Leads go cold because there is no follow-up.
+Everything depends on WhatsApp and manual work.
+You do not have a system to measure results.
+
+SEO keywords naturally included:
+website not generating leads
+Google Maps SEO
+local SEO
+AI automation for business
+CRM for small business
+WhatsApp follow-up automation
+
+---
+
+## 3. SOLUTION LADDER
+
+Spanish title:
+Una escalera clara: empiezas simple, escalas a IA.
+
+Steps:
+Adquisición — Landing Pages + SEO + Google Maps
+Conversión — WhatsApp + formularios + agenda
+Seguimiento — CRM + reportes + tareas
+Automatización — flujos que trabajan 24/7
+IA / SaaS — sistemas operativos por industria
+
+English title:
+A clear path: start simple, scale into AI.
+
+Steps:
+Acquisition — Landing Pages + SEO + Google Maps
+Conversion — WhatsApp + forms + booking
+Follow-up — CRM + reports + tasks
+Automation — workflows that work 24/7
+AI / SaaS — business operating systems by industry
+
+---
+
+## 4. SERVICES SECTION
+
+Spanish:
+Marketing Digital
+Landing Pages
+SEO Local
+Google Business Profile
+CRM & Prospectos
+WhatsApp / Formularios
+Automatización
+Agentes IA
+Coimagen OS / Business OS
+
+English:
+Digital Marketing
+Landing Pages
+Local SEO
+Google Business Profile
+CRM & Leads
+WhatsApp / Forms
+Automation
+AI Agents
+Coimagen OS / Business OS
+
+Each card must include a short benefit-focused description.
+
+---
+
+## 5. INDUSTRIES SECTION
+
+Title ES:
+Sectores que atendemos
+
+Title EN:
+Industries we serve
+
+Cards:
+Medical OS — Médicos / Doctors
+Dental OS — Dentistas / Dentists
+Law OS — Abogados / Law Firms
+Wellness OS — Estéticas, coaches y bienestar / Wellness & Beauty
+Restaurant OS — Restaurantes / Restaurants
+Real Estate OS — Inmobiliarias / Realtors
+Local Business OS — Negocios locales / Local Businesses
+
+Each card links to its landing page.
+
+---
+
+## 6. PRICING SECTION
+
+Title ES:
+Nuestros paquetes
+
+Subtitle ES:
+Soluciones diseñadas para cada etapa de tu negocio. Los precios pueden variar según alcance y diagnóstico.
+
+Title EN:
+Our packages
+
+Subtitle EN:
+Solutions designed for each stage of your business. Pricing may vary depending on scope and diagnostic results.
+
+Add country selector inside pricing area:
+
+México / USA
+
+When Mexico is selected, show:
+
+Plan 1:
+Presencia Digital
+$790 MXN / mes
+Landing profesional
+Hosting incluido
+WhatsApp
+Formulario de contacto
+SEO básico
+Actualizaciones básicas
+
+Plan 2:
+Crecimiento Digital
+$1,490 MXN / mes
+Todo lo anterior
+Google Business Profile
+SEO Local
+Blog con IA
+Optimización de conversión
+Redes sociales básicas
+
+Plan 3:
+Negocio Digital
+$2,490 MXN / mes
+Todo lo anterior
+CRM básico
+Seguimiento de prospectos
+Automatización WhatsApp
+Reportes mensuales
+Embudo de conversión
+
+Plan 4:
+AI Business
+$4,990 MXN / mes
+Dashboard
+Agentes IA básicos
+Automatización avanzada
+Procesos internos
+Recomendado después del diagnóstico
+
+When USA is selected, show:
+
+Plan 1:
+Starter
+$197 USD / month
+Professional landing page
+Hosting included
+WhatsApp / contact form
+Basic SEO
+Basic updates
+
+Plan 2:
+Growth
+$297 USD / month
+Everything in Starter
+Google Business Profile
+Local SEO
+AI-assisted blog
+Conversion optimization
+
+Plan 3:
+Automation
+$497 USD / month
+Everything in Growth
+Basic CRM
+Lead follow-up
+WhatsApp automation
+Monthly reports
+Conversion funnel
+
+Plan 4:
+AI Business
+$997 USD / month
++ $1,500 USD setup
+AI agents
+Advanced automation
+Dashboard
+Internal workflows
+Custom business system
+
+Founder offer block:
+First 20 clients get preferred launch pricing.
+
+---
+
+## 7. PREMIUM SOLUTION SECTION
+
+Spanish:
+Transformación Digital Coimagen
+
+Subtitle:
+Implementamos sistemas personalizados de IA, automatización, CRM, agentes digitales y procesos inteligentes para negocios que quieren escalar.
+
+Bullets:
+IA personalizada
+Automatización total
+CRM avanzado
+Agentes digitales
+Dashboards
+Procesos internos
+
+CTA:
+Agendar consulta
+Quiero ser fundador
+
+English:
+Coimagen Digital Transformation
+
+Subtitle:
+We implement custom AI, automation, CRM, digital agents and intelligent workflows for businesses ready to scale.
+
+Bullets:
+Custom AI
+Full automation
+Advanced CRM
+Digital agents
+Dashboards
+Internal workflows
+
+CTA:
+Book Consultation
+Become a Founder Client
+
+---
+
+## 8. CASE STUDIES SECTION
+
+Title ES:
+Proyectos y laboratorios de crecimiento
+
+Subtitle ES:
+Prueba real, no promesas. Estos proyectos nos permiten probar, optimizar y documentar procesos reales antes de implementarlos con nuevos clientes.
+
+Title EN:
+Growth projects and real-world labs
+
+Subtitle EN:
+Real proof, not promises. These projects help us test, optimize and document real processes before implementing them for new clients.
+
+Cases:
+Dr. José Manuel Segovia Neurocirugía
+Intranet + flujos con IA para expedientes médicos. Caso real en producción.
+Category: Salud / Health
+
+Clínica EMT
+Sistema de gestión de pacientes con automatización de seguimiento digital.
+Category: Salud / Health
+
+Chimichimi
+Presencia digital con contenido, marca y estrategia de captación.
+Category: Food / Restaurant
+
+Conchas Tower
+Landing de captación, filtrado de leads, inventario y operación escalable.
+Category: Real Estate
+
+Coimagen OS
+Plataforma interna de operación con IA, CRM, facturación, clientes y flujos automatizados.
+Category: Tecnología / Technology
+
+Use elegant cards with placeholders for screenshots.
+
+---
+
+## 9. COIMAGEN OS / BUSINESS OS SECTION
+
+Title ES:
+Sistemas operativos por industria
+
+Subtitle ES:
+Plataformas digitales completas con landing, funnel, blog SEO, formularios, CRM, automatización y demo personalizada.
+
+Title EN:
+Business operating systems by industry
+
+Subtitle EN:
+Complete digital platforms with landing pages, funnels, SEO blog, forms, CRM, automation and personalized demo.
+
+Show:
+Medical OS
+Dental OS
+Law OS
+Wellness OS
+Restaurant OS
+Real Estate OS
+Local Business OS
+
+CTA:
+Ver demos / View demos
+Solicitar diagnóstico / Request diagnostic
+
+---
+
+## 10. CAMILA SEGOVIA SECTION
+
+Spanish:
+Camila Segovia
+CEO de Coimagen Media
+
+Texto:
+Emprendedora y estratega en marketing digital, automatización e inteligencia artificial aplicada a negocios. Coimagen nace para ayudar a pequeños y medianos negocios a operar con sistemas, no solo con esfuerzo manual.
+
+English:
+Camila Segovia
+CEO of Coimagen Media
+
+Text:
+Entrepreneur and strategist in digital marketing, automation and AI for business. Coimagen was created to help small and medium businesses operate with systems, not only manual effort.
+
+Use a placeholder photo area.
+
+---
+
+## 11. DIAGNOSTIC SECTION
+
+Title ES:
+Diagnóstico Digital Express
+
+Subtitle ES:
+Responde unas preguntas y descubre qué oportunidades está perdiendo tu negocio.
+
+Title EN:
+Digital Diagnostic Express
+
+Subtitle EN:
+Answer a few questions and discover what opportunities your business is missing.
+
+For now create a polished diagnostic section with CTA buttons:
+In Prompt #2, this will connect to Jotform.
+
+Buttons:
+Iniciar diagnóstico
+Enviar WhatsApp
+
+English:
+Start diagnostic
+Send WhatsApp
+
+---
+
+## 12. BLOG PREVIEW SECTION
+
+Create blog-ready structure with 6 placeholder posts.
+
+Spanish SEO blog examples:
+CRM para médicos: cómo organizar pacientes y seguimiento.
+Automatización para abogados: cómo no perder prospectos.
+SEO local para dentistas: cómo aparecer en Google.
+Google Business Profile para negocios locales.
+WhatsApp para ventas: cómo dar seguimiento automático.
+IA para pequeñas empresas: por dónde empezar.
+
+English SEO blog examples:
+AI for doctors: how to automate patient follow-up.
+CRM for law firms: how to stop losing leads.
+Local SEO for dentists: how to appear on Google.
+Google Business Profile for small businesses.
+WhatsApp automation for sales follow-up.
+AI for small businesses: where to start.
+
+Each post card must be SEO-friendly and link to future blog post routes.
+
+---
+
+## 13. FINAL CTA
+
+Spanish:
+¿Listo para convertir tu presencia digital en un sistema de crecimiento?
+
+Subtitle:
+Solicita un diagnóstico gratuito y descubre qué solución necesita tu negocio.
+
+Buttons:
+Solicitar Diagnóstico Gratuito
+Hablar por WhatsApp
+
+English:
+Ready to turn your digital presence into a growth system?
+
+Subtitle:
+Request a free diagnostic and discover what solution your business needs.
+
+Buttons:
+Get Free Diagnostic
+Message on WhatsApp
+
+---
+
+# LANDING PAGE FACTORY
+
+Create individual bilingual landing pages for:
+
+1. Medical OS
+2. Dental OS
+3. Law OS
+4. Wellness OS
+5. Restaurant OS
+6. Real Estate OS
+7. Local Business OS
+
+Each landing page must include:
+
+* SEO title
+* Meta description
+* Hero
+* Pain points
+* Solution
+* Modules
+* Benefits
+* How it works
+* Pricing CTA
+* Diagnostic CTA
+* FAQ
+* Final CTA
+
+Each landing page must have Spanish and English versions.
+
+---
+
+## MEDICAL OS PAGE
+
+Spanish SEO title:
+Medical OS | CRM y automatización para médicos y clínicas
+
+Meta:
+Sistema digital para médicos, clínicas y especialistas: landing, agenda, CRM, seguimiento de pacientes, contenido, reportes y automatización.
+
+Pain points:
+Pacientes se pierden por falta de seguimiento.
+WhatsApp está saturado.
+No hay agenda centralizada.
+No hay reportes.
+La clínica depende de procesos manuales.
+No hay sistema para contenido, SEO y reputación.
+
+Solution:
+Medical OS ayuda a médicos y clínicas a captar pacientes, organizar seguimientos y operar con más control.
+
+Modules:
+Landing médica
+Google Maps / SEO local
+Formulario de pacientes
+Agenda
+CRM de pacientes
+Seguimiento WhatsApp
+Reportes
+Contenido médico
+Automatización futura
+
+CTA:
+Solicitar diagnóstico médico gratuito
+
+English SEO title:
+Medical OS | CRM and automation for doctors and clinics
+
+Meta:
+Digital system for doctors, clinics and specialists: landing page, booking, CRM, patient follow-up, content, reports and automation.
+
+---
+
+## DENTAL OS PAGE
+
+Spanish SEO title:
+Dental OS | Marketing, CRM y automatización para dentistas
+
+Pain:
+Pacientes no agendan.
+No aparecen en Google.
+No hay seguimiento post consulta.
+Redes no generan citas.
+Competencia gana más pacientes.
+
+Solution:
+Dental OS convierte presencia digital en citas y seguimiento.
+
+English:
+Dental OS | Marketing, CRM and automation for dentists
+
+---
+
+## LAW OS PAGE
+
+Spanish SEO title:
+Law OS | Captación y seguimiento de clientes para abogados
+
+Pain:
+Prospectos preguntan y no regresan.
+Casos no se califican.
+No hay seguimiento.
+No hay sistema para convertir consultas en clientes.
+
+Solution:
+Law OS ayuda a despachos y abogados a captar, calificar y dar seguimiento a prospectos.
+
+English:
+Law OS | Lead generation and client follow-up for law firms
+
+---
+
+## WELLNESS OS PAGE
+
+Spanish SEO title:
+Wellness OS | Marketing y automatización para estéticas y bienestar
+
+Pain:
+Clientes preguntan precios y desaparecen.
+Agenda desorganizada.
+Redes no convierten.
+Promociones sin seguimiento.
+
+English:
+Wellness OS | Marketing and automation for wellness and beauty businesses
+
+---
+
+## RESTAURANT OS PAGE
+
+Spanish SEO title:
+Restaurant OS | Marketing, reservas y automatización para restaurantes
+
+Pain:
+No hay reservas.
+No hay base de clientes.
+Promociones no convierten.
+No hay seguimiento por WhatsApp.
+Menú digital no vende.
+
+English:
+Restaurant OS | Marketing, reservations and automation for restaurants
+
+---
+
+## REAL ESTATE OS PAGE
+
+Spanish SEO title:
+Real Estate OS | Landing, CRM y automatización para inmobiliarias
+
+Pain:
+Leads fríos.
+Prospectos sin seguimiento.
+Inventario desorganizado.
+Landing no convierte.
+No hay calificación automática.
+
+English:
+Real Estate OS | Landing pages, CRM and automation for real estate businesses
+
+---
+
+## LOCAL BUSINESS OS PAGE
+
+Spanish SEO title:
+Local Business OS | Marketing y automatización para negocios locales
+
+Pain:
+No aparecen en Google.
+Dependen solo de recomendaciones.
+No tienen sistema.
+No hay seguimiento.
+No saben qué canal funciona.
+
+English:
+Local Business OS | Marketing and automation for local businesses
+
+---
+
+# SEO REQUIREMENTS
+
+Implement:
+
+* Unique title tag per page
+* Unique meta description per page
+* Open Graph tags
+* Twitter card tags
+* Canonical URLs
+* JSON-LD LocalBusiness schema
+* JSON-LD Organization schema
+* JSON-LD Service schema for landing pages
+* Semantic HTML
+* H1 only once per page
+* Proper H2/H3 structure
+* Alt text for all images
+* Internal linking between all landing pages
+* Footer links to all pages
+* Clean URL slugs
+* Fast loading
+* Mobile-first
+
+Create:
+
+/sitemap.xml
+/robots.txt
+
+robots.txt should allow indexing and point to sitemap.
+
+Sitemap must include:
+/
+/en
+/medical-os
+/en/medical-os
+/dental-os
+/en/dental-os
+/law-os
+/en/law-os
+/wellness-os
+/en/wellness-os
+/restaurant-os
+/en/restaurant-os
+/real-estate-os
+/en/real-estate-os
+/local-business-os
+/en/local-business-os
+/blog
+/en/blog
+/casos-de-exito
+/en/case-studies
+/diagnostico
+/en/diagnostic
+/contacto
+/en/contact
+
+---
+
+# CTA AND CONTACT PLACEHOLDERS
+
+Use temporary WhatsApp link:
+https://wa.me/526644769223
+
+Display:
++52 664 476 9223
+
+Facebook:
+https://www.facebook.com/coimagenpublicidad/
+Handle:
+@coimagenpublicidad
+
+Instagram:
+@coimagenmedia
+
+Other placeholders:
+LinkedIn URL placeholder
+YouTube URL placeholder
+TikTok URL placeholder
+
+Do not hardcode too deeply. Prepare these values in a central config file because Prompt #2 will create Admin Settings Panel.
+
+---
+
+# TECHNICAL REQUIREMENTS
+
+Use current Replit project stack.
+
+Do not rebuild from scratch if unnecessary.
+
+Create clean reusable components:
+
+* LanguageProvider
+* CountryPricingProvider
+* Header
+* Footer
+* CTAButton
+* PricingCards
+* IndustryCard
+* CaseStudyCard
+* SEOHead
+* LandingPageTemplate
+* BlogPreview
+* DiagnosticCTA
+* SectionTitle
+* GlassCard
+
+Keep code maintainable.
+
+Make all content editable from centralized content objects.
+
+Prepare for Prompt #2 admin settings.
+
+No database required in Prompt #1 unless current project already has one.
+
+No authentication.
+
+No admin panel yet.
+
+No Jotform embed yet.
+
+No analytics yet.
+
+No pixel yet.
+
+No client portal yet.
+
+---
+
+# FINAL VALIDATION
+
+After implementation:
+
+* Verify all pages render.
+* Verify ES/EN switch works.
+* Verify México/USA pricing switch works.
+* Verify mobile menu works.
+* Verify every CTA points to temporary WhatsApp or diagnostic route.
+* Verify sitemap.xml works.
+* Verify robots.txt works.
+* Verify no broken links.
+* Verify build passes.
+* Verify production-ready deployment.
