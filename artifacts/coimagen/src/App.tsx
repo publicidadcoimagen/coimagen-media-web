@@ -9,6 +9,8 @@ import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
+import Diagnostico from "@/pages/Diagnostico";
+import Portal from "@/pages/Portal";
 import MedicalOS from "@/pages/industries/MedicalOS";
 import DentalOS from "@/pages/industries/DentalOS";
 import LawOS from "@/pages/industries/LawOS";
@@ -26,6 +28,8 @@ function AppLayout() {
       <main>
         <Switch>
           <Route path="/" component={Home} />
+          <Route path="/diagnostico" component={Diagnostico} />
+          <Route path="/portal" component={Portal} />
           <Route path="/medical-os" component={MedicalOS} />
           <Route path="/dental-os" component={DentalOS} />
           <Route path="/law-os" component={LawOS} />

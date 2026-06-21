@@ -36,7 +36,7 @@ export function Header() {
           <img
             src="/logo-coimagen.png"
             alt="Coimagen Media Agency"
-            className="h-9 w-auto object-contain"
+            className="h-12 w-auto object-contain"
             onError={(e) => {
               const t = e.currentTarget;
               t.style.display = "none";

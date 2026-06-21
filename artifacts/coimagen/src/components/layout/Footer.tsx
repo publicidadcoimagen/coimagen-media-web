@@ -17,7 +17,7 @@ export function Footer() {
               <img
                 src="/logo-coimagen.png"
                 alt="Coimagen Media Agency"
-                className="h-10 w-auto object-contain"
+                className="h-14 w-auto object-contain"
                 onError={(e) => {
                   const el = e.currentTarget;
                   el.style.display = "none";

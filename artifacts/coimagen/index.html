@@ -1,24 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Coimagen Media Agency</title>
-    <meta name="description" content="Coimagen Media Agency — built on Replit. Update this description to reflect the app." />
+
+    <!-- Primary SEO -->
+    <title>Coimagen Media Agency — Marketing Digital + IA para Negocios | Tijuana / San Diego</title>
+    <meta name="description" content="Agencia de marketing digital en Tijuana y San Diego. Automatización para negocios, CRM, chatbot WhatsApp, agentes IA, landing pages y SEO local. Solicita tu diagnóstico gratuito." />
+    <meta name="keywords" content="agencia de marketing digital en Tijuana, automatización para negocios, CRM para pequeñas empresas, SEO local para negocios, chatbot para WhatsApp, agentes IA para empresas, digital marketing agency San Diego, AI automation for business" />
     <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Coimagen Media Agency" />
-    <meta property="og:description" content="Coimagen Media Agency — built on Replit. Update this description to reflect the app." />
+    <meta name="author" content="Coimagen Media Agency" />
+    <link rel="canonical" href="https://www.coimagenmedia.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Coimagen Media Agency — Marketing Digital + IA para Negocios" />
+    <meta property="og:description" content="Agencia de marketing digital en Tijuana. Automatización, CRM, agentes IA, landing pages y SEO local para negocios locales." />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.coimagenmedia.com/" />
+    <meta property="og:image" content="/logo-coimagen.png" />
+    <meta property="og:site_name" content="Coimagen Media Agency" />
+    <meta property="og:locale" content="es_MX" />
+
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Coimagen Media Agency" />
-    <meta name="twitter:description" content="Coimagen Media Agency — built on Replit. Update this description to reflect the app." />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="twitter:title" content="Coimagen Media Agency — Marketing Digital + IA para Negocios" />
+    <meta name="twitter:description" content="Agencia de marketing digital en Tijuana. Automatización, CRM, agentes IA y SEO local para negocios." />
+    <meta name="twitter:image" content="/logo-coimagen.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/logo-coimagen.png" />
+    <link rel="apple-touch-icon" href="/logo-coimagen.png" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!--
+      Jotform AI Agent embed — loaded AFTER root so React mounts first.
+      The MutationObserver below watches for the Jotform floating widget and
+      snaps it to bottom-LEFT so it doesn't overlap WhatsApp (bottom-right).
+    -->
+    <script>
+      (function () {
+        var JOTFORM_KEYWORDS = ['jotform', 'jf-agent', 'jf_agent', 'jfagent', 'JFChatBot'];
+
+        function isJotformEl(el) {
+          var id = (el.id || '').toLowerCase();
+          var cls = (el.className && typeof el.className === 'string' ? el.className : '').toLowerCase();
+          var src = (el.src || '').toLowerCase();
+          return JOTFORM_KEYWORDS.some(function (k) {
+            return id.indexOf(k.toLowerCase()) !== -1 ||
+              cls.indexOf(k.toLowerCase()) !== -1 ||
+              src.indexOf(k.toLowerCase()) !== -1;
+          });
+        }
+
+        function snapToLeft(el) {
+          var computed = window.getComputedStyle(el);
+          if (computed.position !== 'fixed') {
+            // Check parent
+            if (el.parentElement) snapToLeft(el.parentElement);
+            return;
+          }
+          el.style.setProperty('right', 'auto', 'important');
+          el.style.setProperty('left', '24px', 'important');
+          el.style.setProperty('bottom', '24px', 'important');
+          el.style.setProperty('top', 'auto', 'important');
+        }
+
+        function scanAndReposition() {
+          // Scan all body descendants for Jotform elements
+          document.querySelectorAll('body *').forEach(function (el) {
+            if (isJotformEl(el)) {
+              snapToLeft(el);
+            }
+          });
+
+          // Also scan direct body children that are fixed-positioned and
+          // NOT the React root — these are likely widget injections
+          var root = document.getElementById('root');
+          Array.from(document.body.children).forEach(function (el) {
+            if (el === root || el.tagName === 'SCRIPT' || el.tagName === 'STYLE') return;
+            var pos = window.getComputedStyle(el).position;
+            if (pos === 'fixed') {
+              snapToLeft(el);
+            }
+          });
+        }
+
+        // Watch DOM for Jotform injection
+        var observer = new MutationObserver(function (mutations) {
+          var needsScan = mutations.some(function (m) {
+            return m.addedNodes.length > 0;
+          });
+          if (needsScan) scanAndReposition();
+        });
+
+        // Start observing once body is ready
+        function startObserver() {
+          observer.observe(document.body, { childList: true, subtree: true });
+        }
+
+        if (document.body) {
+          startObserver();
+        } else {
+          document.addEventListener('DOMContentLoaded', startObserver);
+        }
+
+        // Retry a few times after load in case embed delays injection
+        window.addEventListener('load', function () {
+          scanAndReposition();
+          setTimeout(scanAndReposition, 1000);
+          setTimeout(scanAndReposition, 2500);
+          setTimeout(scanAndReposition, 5000);
+        });
+      })();
+    </script>
+
+    <!-- Jotform AI Agent embed script (loads after React so it doesn't block render) -->
+    <script src='https://cdn.jotfor.ms/agent/embedjs/0199f974e9097a9badd918a3a92c617fc5b7/embed.js'></script>
   </body>
 </html>

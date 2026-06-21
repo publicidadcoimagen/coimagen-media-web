@@ -1,0 +1,415 @@
+# COIMAGENMEDIA.COM — PROMPT #3
+
+# ADMIN PANEL + JOTFORM AI AGENT + ANALYTICS + FUTURE AUTOMATION ARCHITECTURE
+
+IMPORTANT
+
+Do NOT rebuild the website.
+
+Preserve:
+
+* Current design
+* Current pages
+* Current bilingual system
+* Current SEO
+* Current landing pages
+* Current pricing
+* Current Founder Offer
+
+This prompt only adds configuration, integrations and future scalability.
+
+---
+
+# 1. BRAND IMPROVEMENTS
+
+Increase logo size by 30-40%.
+
+Desktop header:
+larger logo.
+
+Footer:
+larger logo.
+
+Mobile:
+keep proportional.
+
+Maintain premium appearance.
+
+---
+
+# 2. FAVICON
+
+Use uploaded logo as:
+
+favicon.ico
+
+apple-touch-icon
+
+manifest icon
+
+Open Graph image
+
+Twitter image
+
+Browser tab icon
+
+Generate all sizes automatically.
+
+Verify in:
+
+Chrome
+Safari
+Edge
+Firefox
+Mobile browsers
+
+---
+
+# 3. ADMIN SETTINGS PANEL
+
+Create:
+
+/admin-coimagen
+
+Hidden route.
+
+Do NOT show in navigation.
+
+Password protected.
+
+Temporary password:
+
+CHANGE_ME_COIMAGEN_ADMIN
+
+Purpose:
+
+Allow Camila to update settings without editing code.
+
+Store settings centrally.
+
+Sections:
+
+CONTACT
+
+WhatsApp
+
+Email
+
+Address
+
+Phone
+
+SOCIAL MEDIA
+
+Facebook
+
+Instagram
+
+LinkedIn
+
+TikTok
+
+YouTube
+
+BLOG SETTINGS
+
+POSTING SETTINGS
+
+SEO SETTINGS
+
+JOTFORM SETTINGS
+
+GOOGLE SETTINGS
+
+PIXEL SETTINGS
+
+CLIENT PORTAL URL
+
+COIMAGEN OS URL
+
+PRICING SETTINGS
+
+FOUNDER OFFER SETTINGS
+
+TESTIMONIALS
+
+CASE STUDIES
+
+Future integrations.
+
+---
+
+# 4. GOOGLE ANALYTICS PREPARATION
+
+Prepare:
+
+Google Analytics 4
+
+Google Search Console
+
+Google Tag Manager
+
+Meta Pixel
+
+LinkedIn Pixel
+
+TikTok Pixel
+
+Do not hardcode IDs.
+
+Use placeholders in config.
+
+---
+
+# 5. DYNAMIC SITEMAP
+
+Generate automatically:
+
+sitemap.xml
+
+robots.txt
+
+Include:
+
+all pages
+
+all landing pages
+
+future blog posts
+
+future case studies
+
+future categories
+
+Support automatic indexing.
+
+---
+
+# 6. BLOG ENGINE PREPARATION
+
+Create architecture for:
+
+Blog articles
+
+Categories
+
+Tags
+
+Featured posts
+
+Author
+
+Date
+
+SEO metadata
+
+Related posts
+
+Pagination
+
+Search
+
+Do NOT automate yet.
+
+---
+
+# 7. CONTENT FACTORY PREPARATION
+
+Future flow:
+
+Blog Article
+
+↓
+
+Google Business Profile
+
+↓
+
+Facebook
+
+↓
+
+Instagram
+
+↓
+
+LinkedIn
+
+↓
+
+TikTok
+
+↓
+
+YouTube Shorts
+
+Prepare content model only.
+
+No automation yet.
+
+Automation will be managed by Coimagen OS agents.
+
+---
+
+# 8. CLIENT PORTAL PREPARATION
+
+Create placeholder:
+
+Client Access
+
+/portal
+
+Coming Soon page.
+
+Future integration with Coimagen OS.
+
+Do not implement authentication yet.
+
+---
+
+# 9. JOTFORM AI AGENT
+
+Create page:
+
+/diagnostico
+
+and
+
+/contacto
+
+Embed:
+
+Camila: Help Desk Representative
+
+Use iframe:
+
+<iframe id="JotFormIFrame-0199f974e9097a9badd918a3a92c617fc5b7"
+title="Camila: Help Desk Representative"
+allowtransparency="true"
+allow="geolocation; microphone; camera; fullscreen"
+src="https://agent.jotform.com/0199f974e9097a9badd918a3a92c617fc5b7?embedMode=iframe&autofocus=0&background=1&shadow=1"
+frameborder="0"
+style="
+max-width:100%;
+height:688px;
+border:none;
+width:100%;
+"
+scrolling="no">
+</iframe>
+
+Load:
+
+https://cdn.jotfor.ms/s/umd/51a055b01e0/for-form-embed-handler.js
+
+Initialize:
+
+window.jotformEmbedHandler()
+
+Center it inside elegant glass container.
+
+Desktop:
+
+full width card.
+
+Mobile:
+
+responsive.
+
+---
+
+# 10. FLOATING AI ASSISTANT
+
+Create floating AI button.
+
+Bottom right.
+
+Modern style.
+
+Do NOT cover WhatsApp.
+
+Opens modal with Jotform AI Agent.
+
+Responsive.
+
+---
+
+# 11. CONTACT SETTINGS
+
+WhatsApp:
+
++52 664 476 9223
+
+Facebook:
+
+https://www.facebook.com/coimagenmediaagency/
+
+Instagram:
+
+https://www.instagram.com/coimagenmediaagency/
+
+Email:
+
+[contacto@coimagenmedia.com](mailto:contacto@coimagenmedia.com)
+
+Keep editable from Admin Panel.
+
+---
+
+# 12. PREPARE DOMAIN STRUCTURE
+
+Future domain:
+
+coimagenmedia.com
+
+Keep all pages inside same domain.
+
+Never use subdomains.
+
+Examples:
+
+coimagenmedia.com/medical-os
+
+coimagenmedia.com/law-os
+
+coimagenmedia.com/blog
+
+coimagenmedia.com/contacto
+
+coimagenmedia.com/diagnostico
+
+Single SEO authority.
+
+---
+
+# 13. VALIDATION
+
+Verify:
+
+Build passes.
+
+No TypeScript errors.
+
+No broken imports.
+
+Mobile works.
+
+Desktop works.
+
+Jotform iframe loads.
+
+Admin panel hidden.
+
+Logo larger.
+
+Favicon visible.
+
+Sitemap working.
+
+robots.txt working.
+
+Ready for domain migration from IONOS to Replit.
+
+DO NOT DEPLOY automatically.
+
+Wait for Camila review first.
