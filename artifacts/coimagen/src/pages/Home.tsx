@@ -4,6 +4,8 @@ import { SolutionLadder } from "@/components/sections/SolutionLadder";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { IndustriesSection } from "@/components/sections/IndustriesSection";
 import { PricingSection } from "@/components/sections/PricingSection";
+import { FounderOfferSection } from "@/components/sections/FounderOfferSection";
+import { ReferralSection } from "@/components/sections/ReferralSection";
 import { PremiumSection } from "@/components/sections/PremiumSection";
 import { CaseStudies } from "@/components/sections/CaseStudies";
 import { BusinessOSSection } from "@/components/sections/BusinessOSSection";
@@ -21,6 +23,8 @@ export default function Home() {
       <ServicesSection />
       <IndustriesSection />
       <PricingSection />
+      <FounderOfferSection />
+      <ReferralSection />
       <PremiumSection />
       <CaseStudies />
       <BusinessOSSection />

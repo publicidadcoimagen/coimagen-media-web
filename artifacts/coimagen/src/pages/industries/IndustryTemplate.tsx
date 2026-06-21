@@ -24,6 +24,7 @@ interface IndustryContent {
 export function IndustryTemplate({ content }: { content: IndustryContent }) {
   const { lang } = useLang();
   const L = (v: { es: string; en: string }) => v[lang];
+  const LA = (v: { es: string[]; en: string[] }) => v[lang];
 
   return (
     <div className="min-h-screen" style={{ background: "#06060f" }}>
@@ -76,7 +77,7 @@ export function IndustryTemplate({ content }: { content: IndustryContent }) {
             {lang === "es" ? "¿Te identificas?" : "Sound familiar?"}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {L(content.pain).map((item, i) => (
+            {LA(content.pain).map((item, i) => (
               <div key={i} className="glass glass-hover p-5 flex items-start gap-3">
                 <span className="text-red-400 mt-0.5 flex-shrink-0">✗</span>
                 <p className="text-white/80 text-sm">{item}</p>

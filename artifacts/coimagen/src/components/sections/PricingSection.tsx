@@ -1,50 +1,29 @@
-import { useState } from "react";
 import { useLang } from "@/context/LanguageContext";
-import { useCountry } from "@/context/CountryContext";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { siteConfig } from "@/config/site";
 
 export function PricingSection() {
   const { lang, t } = useLang();
-  const { country, setCountry } = useCountry();
   const p = t.pricing;
 
-  const plans = country === "mx" ? p.mxPlans : p.usaPlans;
+  const plans = lang === "es" ? p.mxPlans : p.usaPlans;
+  const marketLabel = lang === "es" ? "🇲🇽 Precios en México (MXN)" : "🇺🇸 USA Pricing (USD)";
 
   return (
     <section className="py-24 bg-[#06060f]" id="precios">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <SectionTitle tag="Pricing" title={p.title} subtitle={p.subtitle} accent="purple" />
 
-        {/* Country toggle */}
+        {/* Market indicator (read-only, no toggle) */}
         <div className="flex justify-center mb-12">
-          <div className="flex items-center gap-1 glass rounded-xl p-1.5">
-            <button
-              onClick={() => setCountry("mx")}
-              className={`px-6 py-2.5 rounded-lg text-sm font-bold transition-all ${
-                country === "mx"
-                  ? "bg-[var(--c-lime)] text-[#06060f] shadow-[0_0_16px_rgba(163,230,53,0.3)]"
-                  : "text-[var(--c-muted)] hover:text-white"
-              }`}
-            >
-              🇲🇽 México
-            </button>
-            <button
-              onClick={() => setCountry("usa")}
-              className={`px-6 py-2.5 rounded-lg text-sm font-bold transition-all ${
-                country === "usa"
-                  ? "bg-[var(--c-cyan)] text-[#06060f] shadow-[0_0_16px_rgba(0,207,255,0.3)]"
-                  : "text-[var(--c-muted)] hover:text-white"
-              }`}
-            >
-              🇺🇸 USA
-            </button>
+          <div className="badge-neon text-[var(--c-muted)] border-white/10">
+            {marketLabel}
           </div>
         </div>
 
         {/* Plans */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {plans.map((plan, i) => (
+          {plans.map((plan) => (
             <div
               key={plan.name}
               className={`glass flex flex-col ${
@@ -66,8 +45,8 @@ export function PricingSection() {
                   <span className="text-3xl font-black grad-text">{plan.price}</span>
                 </div>
                 <p className="text-[var(--c-muted2)] text-sm mb-1">{plan.period}</p>
-                {"setup" in plan && plan.setup && (
-                  <p className="text-[var(--c-yellow)] text-xs font-semibold mb-3">{plan.setup}</p>
+                {"setup" in plan && (plan as { setup?: string }).setup && (
+                  <p className="text-[var(--c-yellow)] text-xs font-semibold mb-3">{(plan as { setup?: string }).setup}</p>
                 )}
 
                 <div className="my-5 border-t border-white/[0.06]" />
@@ -100,14 +79,7 @@ export function PricingSection() {
           ))}
         </div>
 
-        {/* Founder offer */}
-        <div className="mt-10 glass border border-[var(--c-yellow)]/20 p-6 max-w-2xl mx-auto text-center">
-          <div className="text-3xl mb-2">🔥</div>
-          <h4 className="font-bold text-[var(--c-yellow)] text-lg mb-1">{p.founderTitle}</h4>
-          <p className="text-[var(--c-muted)] text-sm">{p.founderDesc}</p>
-        </div>
-
-        <p className="text-center text-[var(--c-muted2)] text-xs mt-6">{p.note}</p>
+        <p className="text-center text-[var(--c-muted2)] text-xs mt-8">{p.note}</p>
       </div>
     </section>
   );

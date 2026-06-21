@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 import { useLang } from "@/context/LanguageContext";
-import { useCountry } from "@/context/CountryContext";
 import { siteConfig } from "@/config/site";
 
 export function Header() {
   const { lang, setLang, t } = useLang();
-  const { country, setCountry } = useCountry();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -35,11 +33,22 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <a href="#inicio" className="flex items-center gap-3 flex-shrink-0">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--c-cyan)] to-[var(--c-purple)] flex items-center justify-center text-white font-black text-sm">
-            C
-          </div>
-          <span className="font-bold text-white text-sm tracking-wide hidden sm:block">
-            COIMAGEN<span className="text-[var(--c-cyan)]"> AI</span>
+          <img
+            src="/logo-coimagen.png"
+            alt="Coimagen Media Agency"
+            className="h-9 w-auto object-contain"
+            onError={(e) => {
+              const t = e.currentTarget;
+              t.style.display = "none";
+              const fallback = t.nextElementSibling as HTMLElement;
+              if (fallback) fallback.style.display = "flex";
+            }}
+          />
+          <span
+            className="hidden items-center gap-2 font-bold text-white text-sm tracking-wide"
+            aria-hidden="true"
+          >
+            COIMAGEN<span className="text-[var(--c-cyan)]"> AI SYSTEMS</span>
           </span>
         </a>
 
@@ -75,26 +84,6 @@ export function Header() {
               }`}
             >
               EN
-            </button>
-          </div>
-
-          {/* Country toggle */}
-          <div className="hidden sm:flex items-center gap-0.5 glass rounded-lg px-1 py-1">
-            <button
-              onClick={() => setCountry("mx")}
-              className={`px-2 py-1 rounded-md text-xs font-semibold transition-all ${
-                country === "mx" ? "bg-[var(--c-lime)] text-[#06060f]" : "text-[var(--c-muted)] hover:text-white"
-              }`}
-            >
-              🇲🇽
-            </button>
-            <button
-              onClick={() => setCountry("usa")}
-              className={`px-2 py-1 rounded-md text-xs font-semibold transition-all ${
-                country === "usa" ? "bg-[var(--c-lime)] text-[#06060f]" : "text-[var(--c-muted)] hover:text-white"
-              }`}
-            >
-              🇺🇸
             </button>
           </div>
 
@@ -143,7 +132,7 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Mobile lang + country */}
+          {/* Mobile lang toggle */}
           <div className="flex gap-2 mb-4">
             <div className="flex items-center gap-0.5 glass rounded-lg px-1 py-1">
               <button
@@ -157,20 +146,6 @@ export function Header() {
                 className={`px-3 py-1.5 rounded-md text-xs font-bold transition-all ${lang === "en" ? "bg-[var(--c-cyan)] text-[#06060f]" : "text-white"}`}
               >
                 EN
-              </button>
-            </div>
-            <div className="flex items-center gap-0.5 glass rounded-lg px-1 py-1">
-              <button
-                onClick={() => setCountry("mx")}
-                className={`px-3 py-1.5 rounded-md text-xs font-bold transition-all ${country === "mx" ? "bg-[var(--c-lime)] text-[#06060f]" : "text-white"}`}
-              >
-                🇲🇽 MX
-              </button>
-              <button
-                onClick={() => setCountry("usa")}
-                className={`px-3 py-1.5 rounded-md text-xs font-bold transition-all ${country === "usa" ? "bg-[var(--c-lime)] text-[#06060f]" : "text-white"}`}
-              >
-                🇺🇸 USA
               </button>
             </div>
           </div>

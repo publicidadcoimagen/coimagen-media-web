@@ -13,23 +13,46 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[var(--c-cyan)] to-[var(--c-purple)] flex items-center justify-center text-white font-black">
-                C
-              </div>
-              <span className="font-bold text-white">
-                COIMAGEN<span className="text-[var(--c-cyan)]"> AI</span>
+            <a href="#inicio" className="flex items-center gap-3 mb-4">
+              <img
+                src="/logo-coimagen.png"
+                alt="Coimagen Media Agency"
+                className="h-10 w-auto object-contain"
+                onError={(e) => {
+                  const el = e.currentTarget;
+                  el.style.display = "none";
+                  const fb = el.nextElementSibling as HTMLElement;
+                  if (fb) fb.style.display = "flex";
+                }}
+              />
+              <span
+                className="hidden items-center font-bold text-white text-sm"
+                aria-hidden="true"
+              >
+                COIMAGEN<span className="text-[var(--c-cyan)]"> AI SYSTEMS</span>
               </span>
-            </div>
+            </a>
             <p className="text-[var(--c-muted)] text-sm leading-relaxed mb-5">{f.tagline}</p>
             {/* Social */}
             <div className="flex gap-3">
-              <a href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" className="glass p-2.5 rounded-lg glass-hover">
+              <a
+                href={siteConfig.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={siteConfig.social.facebookHandle}
+                className="glass p-2.5 rounded-lg glass-hover"
+              >
                 <svg className="w-4 h-4 text-[var(--c-muted)]" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                 </svg>
               </a>
-              <a href={`https://instagram.com/coimagenmedia`} target="_blank" rel="noopener noreferrer" className="glass p-2.5 rounded-lg glass-hover">
+              <a
+                href={siteConfig.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={siteConfig.social.instagramHandle}
+                className="glass p-2.5 rounded-lg glass-hover"
+              >
                 <svg className="w-4 h-4 text-[var(--c-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.8}>
                   <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
@@ -90,7 +113,12 @@ export function Footer() {
               <a href={`mailto:${siteConfig.email}`} className="block text-[var(--c-muted)] hover:text-white text-xs transition-colors">
                 {siteConfig.email}
               </a>
-              <a href={siteConfig.whatsapp.url} target="_blank" rel="noopener noreferrer" className="block text-[var(--c-muted)] hover:text-white text-xs transition-colors">
+              <a
+                href={siteConfig.whatsapp.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-[var(--c-muted)] hover:text-white text-xs transition-colors"
+              >
                 {siteConfig.whatsapp.display}
               </a>
               <p className="text-[var(--c-muted2)] text-xs">{siteConfig.location}</p>

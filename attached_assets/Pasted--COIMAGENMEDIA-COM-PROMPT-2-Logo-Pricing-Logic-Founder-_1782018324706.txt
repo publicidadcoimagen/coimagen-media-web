@@ -1,0 +1,303 @@
+# COIMAGENMEDIA.COM — PROMPT #2
+
+# Logo + Pricing Logic + Founder Offer + Contact Integrations Prep
+
+IMPORTANT:
+Do not rebuild the website from scratch.
+Preserve the current design, layout, dark premium style, animations, landing pages, SEO structure and bilingual system.
+Only improve the items listed below.
+
+---
+
+## 1. LOGO REPLACEMENT PREP
+
+Camila will upload the official Coimagen logo.
+
+Replace the temporary “C / COIMAGEN AI” logo with the uploaded official logo.
+
+Rules:
+
+* Use the official logo in header, footer and mobile menu.
+* Keep sizing clean and premium.
+* Do not distort the logo.
+* If the uploaded logo is square, use it as icon + wordmark if available.
+* If only one image is uploaded, use it consistently.
+* Keep fallback text “COIMAGEN AI SYSTEMS” only if logo fails to load.
+
+---
+
+## 2. REMOVE COUNTRY PRICING SWITCH FROM PUBLIC VIEW
+
+Current issue:
+The pricing section shows a México / USA switch even when the language is already selected.
+
+Change behavior:
+
+* If language = Spanish:
+  Show Mexico pricing automatically.
+  Currency: MXN.
+  Do NOT show México / USA pricing switch.
+
+* If language = English:
+  Show USA pricing automatically.
+  Currency: USD.
+  Do NOT show México / USA pricing switch.
+
+Pricing must follow language:
+
+Spanish = Mexico market.
+English = USA market.
+
+Keep this logic centralized so it can be changed later in Admin Settings Panel.
+
+---
+
+## 3. PRICING CTA LANGUAGE FIX
+
+When Spanish is active, all pricing buttons must say:
+
+Solicitar información
+
+When English is active, all pricing buttons must say:
+
+Request info
+
+No mixed language inside pricing cards.
+
+---
+
+## 4. FOUNDER OFFER — STRONGER CONVERSION SECTION
+
+Replace the simple Founder Offer block with a more persuasive scarcity-based section.
+
+Spanish version:
+
+Title:
+Oferta Fundadores — Solo 20 espacios disponibles
+
+Subtitle:
+Estamos abriendo Coimagen AI Systems a los primeros 20 negocios fundadores con precio preferencial, beneficios exclusivos y prioridad de implementación.
+
+Benefits:
+
+* Precio fundador congelado mientras mantengas tu plan activo.
+* Prioridad en implementación y soporte.
+* Diagnóstico estratégico incluido.
+* Acceso anticipado a nuevas funciones de automatización e IA.
+* Revisión mensual de oportunidades de crecimiento.
+* Beneficio de referidos: recibe 1 mes con 50% de descuento por cada cliente referido que contrate.
+* Promociones especiales para upgrades futuros.
+* Oportunidad de aparecer como caso de éxito de Coimagen.
+
+Scarcity text:
+Los primeros 20 lugares tendrán precio fundador. Después de completar los espacios, los precios subirán a tarifa regular.
+
+Urgency text:
+Promoción activa por tiempo limitado. Solicita tu diagnóstico en las próximas 48 horas para apartar tu lugar fundador.
+
+CTA buttons:
+Quiero ser cliente fundador
+Solicitar diagnóstico gratuito
+
+English version:
+
+Title:
+Founder Offer — Only 20 spots available
+
+Subtitle:
+We are opening Coimagen AI Systems to the first 20 founder businesses with preferred launch pricing, exclusive benefits and priority implementation.
+
+Benefits:
+
+* Founder price locked while your plan remains active.
+* Priority implementation and support.
+* Strategic diagnostic included.
+* Early access to new automation and AI features.
+* Monthly growth opportunity review.
+* Referral benefit: get 50% off one month for every referred client who signs up.
+* Special promotions for future upgrades.
+* Opportunity to be featured as a Coimagen case study.
+
+Scarcity text:
+The first 20 spots receive founder pricing. Once spots are filled, pricing moves to regular rates.
+
+Urgency text:
+Limited-time promotion. Request your diagnostic within the next 48 hours to reserve your founder spot.
+
+CTA buttons:
+Become a Founder Client
+Get Free Diagnostic
+
+Design:
+
+* Make this section visually premium.
+* Use glass card, neon border, countdown-style “48 hours” visual badge.
+* Show “20 Founder Spots” badge.
+* Do not create a real countdown timer yet unless simple and safe.
+* Add trust-building copy without overpromising results.
+
+---
+
+## 5. REFERRAL PROGRAM PREVIEW
+
+Add a small section or card after Founder Offer:
+
+Spanish:
+Programa de Referidos Coimagen
+
+Texto:
+Si eres cliente fundador y nos recomiendas con otro negocio que contrate, recibes 50% de descuento en una mensualidad. Más referidos pueden desbloquear beneficios adicionales.
+
+English:
+Coimagen Referral Program
+
+Text:
+If you are a founder client and refer another business that signs up, you receive 50% off one monthly payment. Additional referrals may unlock extra benefits.
+
+CTA:
+Quiero referir un negocio / I want to refer a business
+
+---
+
+## 6. CONTACT DATA UPDATE
+
+Use these current temporary official contact settings:
+
+WhatsApp public business:
+Display: +52 664 476 9223
+Link: https://wa.me/526644769223
+
+Facebook:
+https://www.facebook.com/coimagenmediaagency/
+
+Facebook label:
+Coimagen Media Agency
+
+Instagram:
+@coimagenmedia
+
+Instagram URL placeholder:
+https://www.instagram.com/coimagenmediaagency/
+
+LinkedIn:
+Placeholder
+
+YouTube:
+Placeholder
+
+TikTok:
+Placeholder
+
+Email:
+[contacto@coimagenmedia.com](mailto:contacto@coimagenmedia.com)
+
+Keep all contact data in a central config file because Admin Settings Panel will be created later.
+
+---
+
+## 7. JOTFORM AGENT PREP ONLY
+
+Do not fully implement Admin Panel yet.
+
+Prepare placeholders for future Jotform integrations:
+
+* Jotform agent WhatsApp link:
+  https://wa.me/+15559318378
+
+* Jotform script placeholder:
+
+Important:
+Do not break the site.
+If embedding the script is safe, add it in a controlled component called JotformAgentEmbed.
+If it causes layout or build issues, keep it commented and ready for Prompt #3.
+
+Create:
+src/components/integrations/JotformAgentEmbed.tsx
+
+Rules:
+
+* The Jotform widget must not cover important CTA buttons.
+* On mobile it must be smaller or hidden behind a floating button.
+* WhatsApp floating button must remain visible.
+* Avoid duplicate chat buttons if Jotform already creates one.
+
+---
+
+## 8. SEO COPY IMPROVEMENT
+
+Add natural Google search keywords throughout the site without keyword stuffing.
+
+Spanish keywords:
+agencia de marketing digital en Tijuana
+automatización para negocios
+CRM para pequeñas empresas
+SEO local para negocios
+Google Maps para negocios
+chatbot para WhatsApp
+agentes IA para empresas
+landing pages para médicos
+marketing para abogados
+marketing para dentistas
+automatización para restaurantes
+CRM para inmobiliarias
+
+English keywords:
+digital marketing agency San Diego
+AI automation for business
+CRM for small business
+local SEO for businesses
+Google Maps SEO
+WhatsApp chatbot
+AI agents for companies
+landing pages for doctors
+marketing for law firms
+marketing for dentists
+restaurant automation
+real estate CRM
+
+Make copy natural, professional and conversion-focused.
+
+---
+
+## 9. CTA CONSISTENCY
+
+All CTAs should route to one of:
+
+* Diagnostic section
+* WhatsApp link
+* Contact section
+* Founder Offer section
+
+Spanish CTA examples:
+Solicitar diagnóstico gratuito
+Hablar por WhatsApp
+Quiero ser cliente fundador
+Ver soluciones
+Agendar llamada
+
+English CTA examples:
+Get free diagnostic
+Message on WhatsApp
+Become a founder client
+View solutions
+Book a call
+
+---
+
+## 10. VALIDATION
+
+After changes:
+
+* Verify Spanish page shows only MXN pricing.
+* Verify English page shows only USD pricing.
+* Verify no country pricing switch appears in public view.
+* Verify no mixed English/Spanish in pricing.
+* Verify Founder Offer appears in both languages.
+* Verify referral program appears in both languages.
+* Verify Facebook URL is updated.
+* Verify Instagram handle is correct.
+* Verify WhatsApp button works.
+* Verify site compiles.
+* Verify mobile layout.
+* Verify no broken imports.
+* Do not deploy until Camila reviews.
