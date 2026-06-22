@@ -1,6 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /admin
 Disallow: /admin-coimagen
 Disallow: /portal
+Disallow: /secure
 
 Sitemap: https://www.coimagenmedia.com/sitemap.xml

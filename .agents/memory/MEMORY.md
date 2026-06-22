@@ -1,0 +1,2 @@
+- [Admin auth pattern](admin-auth.md) — simple sessionStorage auth for /secure + /admin, no backend needed for static React SPA.
+- [AdminContext design](admin-context.md) — all editable settings (founder pricing, project cards, calendar URL, benefits) live in localStorage via AdminContext; AdminProvider wraps app at root.

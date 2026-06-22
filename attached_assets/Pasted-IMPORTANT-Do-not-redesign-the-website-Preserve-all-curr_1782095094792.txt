@@ -1,0 +1,423 @@
+IMPORTANT
+
+Do not redesign the website.
+
+Preserve all current design and layout.
+
+Implement only the following improvements.
+
+---
+
+1. CREATE /agendar PAGE
+
+Replace Calendly links.
+
+Create:
+
+/agendar
+
+Include:
+
+• Title:
+Book Your Strategy Session
+
+• Description
+
+• Embedded Google Calendar:
+
+<iframe src="https://calendar.google.com/calendar/embed?src=publicidadcoimagen%40gmail.com&ctz=America%2FLos_Angeles"
+style="border:0"
+width="100%"
+height="700"
+frameborder="0"
+scrolling="no"></iframe>
+
+Add:
+
+WhatsApp button
+
+Back to Home
+
+Diagnostic CTA
+
+Glassmorphism style
+
+Responsive
+
+---
+
+2. FOUNDER OFFER IMPROVEMENTS
+
+Replace current section.
+
+Show:
+
+Regular price (strikethrough)
+
+Founder price
+
+Exact savings amount
+
+Exact savings percentage
+
+Mexico and USA must have identical percentages.
+
+Add:
+
+Launch Window
+
+14 days remaining
+
+Only 20 founder spots available
+
+Lifetime founder pricing
+
+Priority support
+
+Early access
+
+Referral rewards
+
+Beta access
+
+Future AI agents access
+
+Do not use fake countdown.
+
+Make days editable from admin settings.
+
+---
+
+3. FOUNDER SETTINGS IN ADMIN
+
+Allow editing:
+
+Founder image
+
+Image position
+
+Benefits
+
+Days remaining
+
+Founder spots
+
+Prices
+
+Discount percentages
+
+Texts
+
+---
+
+4. PROJECT CARDS
+
+Allow each project card on homepage to contain:
+
+Image
+
+Title
+
+Description
+
+External URL
+
+Case study URL
+
+Editable from admin settings
+
+---
+
+5. CASE STUDIES
+
+Create:
+
+/case-studies
+
+And:
+
+/case-studies/dr-segovia
+
+/case-studies/chimichimi
+
+/case-studies/coimagen-os
+
+/conchas-tower
+
+Placeholder content.
+
+Premium design.
+
+SEO ready.
+
+---
+
+6. CREATE ABOUT PAGE
+
+/about
+
+Include:
+
+Camila Segovia
+
+Coimagen Media story
+
+Mission
+
+Vision
+
+Values
+
+Timeline
+
+Tijuana / San Diego
+
+Call to action
+
+Bilingual
+
+Premium design
+
+---
+
+7. CREATE FAQ PAGE
+
+/faqs
+
+15 SEO questions
+
+Bilingual
+
+Accordion style
+
+---
+
+8. CREATE RESOURCES PAGE
+
+/resources
+
+For future:
+
+ebooks
+
+guides
+
+checklists
+
+templates
+
+Premium cards
+
+---
+
+9. DIAGNOSTIC PAGE REDESIGN
+
+Do NOT immediately open Jotform.
+
+Step 1:
+
+Choose industry
+
+Medical
+
+Dental
+
+Law
+
+Real Estate
+
+Restaurant
+
+Local Business
+
+Step 2:
+
+Interactive questions
+
+Website?
+
+Google Business Profile?
+
+CRM?
+
+Automation?
+
+Lead capture?
+
+Step 3:
+
+Digital score
+
+Level 1-5
+
+Step 4:
+
+Options:
+
+Talk with Camila AI
+
+WhatsApp
+
+Book a meeting
+
+Only then show Jotform assistant.
+
+---
+
+10. CONTACT PAGE
+
+/contacto
+
+/contact
+
+Include:
+
+WhatsApp
+
+Email
+
+Google Calendar booking
+
+Social networks
+
+Map
+
+Glass cards
+
+---
+
+11. PRIVACY POLICY
+
+/privacy-policy
+
+Spanish and English.
+
+Professional legal structure.
+
+Premium layout.
+
+Images.
+
+---
+
+12. TERMS OF SERVICE
+
+/terms-of-service
+
+Spanish and English.
+
+Professional structure.
+
+Premium design.
+
+---
+
+13. FOOTER LINKS
+
+Make real links:
+
+About
+
+Case Studies
+
+Blog
+
+Diagnosis
+
+Contact
+
+Privacy Policy
+
+Terms of Service
+
+No anchor links.
+
+---
+
+14. BLOG
+
+Create structure only.
+
+Do not add articles yet.
+
+Categories
+
+Search
+
+Tags
+
+Featured posts
+
+Pagination
+
+SEO ready
+
+---
+
+15. SECURE ACCESS
+
+Create:
+
+/secure
+
+Password protected
+
+Noindex
+
+Not linked publicly
+
+Small footer text:
+
+Authorized Access
+
+After login allow access to:
+
+Admin Settings
+
+Coimagen OS
+
+Future Client Portal
+
+Future internal tools
+
+---
+
+16. ADMIN SETTINGS
+
+Add sections:
+
+Project links
+
+Founder image
+
+Case study links
+
+Footer links
+
+Social media
+
+Calendar URL
+
+Blog settings
+
+Legal pages
+
+SEO settings
+
+---
+
+17. VERIFY
+
+No TypeScript errors.
+
+Responsive.
+
+Mobile friendly.
+
+No broken links.
+
+Build clean.
+
+Do not deploy automatically.
+
+Wait for Camila approval.
