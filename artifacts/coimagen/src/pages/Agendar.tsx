@@ -47,7 +47,7 @@ export default function Agendar() {
               src={settings.calendarUrl}
               style={{ border: 0 }}
               width="100%"
-              height="600"
+              height="800"
               frameBorder={0}
               title={isEs ? "Calendario de citas" : "Booking calendar"}
               className="rounded-xl"
