@@ -33,56 +33,25 @@ export default function Agendar() {
           </p>
         </div>
 
-        {/* Calendar CTA card */}
+        {/* Calendar embed */}
         <div className="glass border border-[var(--c-cyan)]/20 rounded-2xl overflow-hidden shadow-[0_0_60px_rgba(0,207,255,0.08)] mb-8">
-          {/* Card header bar */}
           <div className="bg-gradient-to-r from-[var(--c-cyan)]/10 to-[var(--c-purple)]/10 border-b border-white/[0.06] px-6 py-4 flex items-center gap-3">
             <div className="w-3 h-3 rounded-full bg-[var(--c-lime)] animate-pulse" />
             <span className="text-white font-semibold text-sm">
-              {isEs ? "Calendario de Citas — Google Calendar" : "Appointment Calendar — Google Calendar"}
+              {isEs ? "Calendario de Citas — Elige tu horario" : "Appointment Calendar — Pick your time"}
             </span>
             <span className="ml-auto text-[var(--c-muted)] text-xs">Coimagen Media Agency</span>
           </div>
-
-          {/* Card body */}
-          <div className="p-10 flex flex-col items-center text-center gap-6">
-            {/* Calendar icon */}
-            <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[var(--c-cyan)]/20 to-[var(--c-purple)]/20 border border-[var(--c-cyan)]/20 flex items-center justify-center text-4xl shadow-[0_0_30px_rgba(0,207,255,0.12)]">
-              📅
-            </div>
-
-            <div>
-              <h2 className="text-white font-bold text-xl mb-2">
-                {isEs ? "Elige tu horario disponible" : "Pick your available time slot"}
-              </h2>
-              <p className="text-[var(--c-muted)] text-sm max-w-sm mx-auto">
-                {isEs
-                  ? "Haz clic para abrir el calendario y reservar tu lugar. Sin compromiso — primera sesión gratuita."
-                  : "Click to open the calendar and reserve your spot. No commitment — first session is free."}
-              </p>
-            </div>
-
-            {/* Main CTA button */}
-            <a
-              href={settings.calendarUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-[var(--c-cyan)] to-[var(--c-purple)] text-black font-bold px-8 py-4 rounded-xl text-base hover:opacity-90 hover:scale-105 transition-all shadow-[0_0_30px_rgba(0,207,255,0.3)]"
-            >
-              <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zm-7-9H7v5h5v-5z"/>
-              </svg>
-              {isEs ? "Abrir Calendario y Agendar" : "Open Calendar & Book Now"}
-              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 opacity-70">
-                <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
-              </svg>
-            </a>
-
-            <p className="text-[var(--c-muted)] text-xs">
-              {isEs
-                ? "Se abrirá Google Calendar en una nueva pestaña"
-                : "Google Calendar will open in a new tab"}
-            </p>
+          <div className="p-4">
+            <iframe
+              src={settings.calendarUrl}
+              style={{ border: 0 }}
+              width="100%"
+              height="600"
+              frameBorder={0}
+              title={isEs ? "Calendario de citas" : "Booking calendar"}
+              className="rounded-xl"
+            />
           </div>
         </div>
 

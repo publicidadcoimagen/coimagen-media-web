@@ -70,7 +70,7 @@ const DEFAULTS: AdminSettings = {
   founderBenefitsEs: DEFAULT_BENEFITS_ES,
   founderBenefitsEn: DEFAULT_BENEFITS_EN,
   projectCards: DEFAULT_PROJECT_CARDS,
-  calendarUrl: "https://calendar.app.google/sCkN6mJVgK3fUBNw7",
+  calendarUrl: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1tFYTxaqG70W8BLfvdIaKTQBN54Q1C4lTxVkvKGgCbddfTtX4B4JsNCFToDl_J1To-aZL1Nn1_?gv=true",
 };
 
 const STORAGE_KEY = "coimagen_admin_v1";
