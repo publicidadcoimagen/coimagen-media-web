@@ -20,7 +20,7 @@ export function Header() {
     { label: t.nav.cases, href: "#casos" },
     { label: t.nav.pricing, href: "#precios" },
     { label: t.nav.blog, href: "#blog" },
-    { label: t.nav.diagnostic, href: "#diagnostico" },
+    { label: t.nav.diagnostic, href: "/diagnostico" },
     { label: t.nav.contact, href: "#contacto" },
   ];
 

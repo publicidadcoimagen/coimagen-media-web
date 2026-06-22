@@ -7,6 +7,7 @@ import { CountryProvider } from "@/context/CountryContext";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { CanonicalUrl } from "@/components/ui/CanonicalUrl";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Diagnostico from "@/pages/Diagnostico";
@@ -24,6 +25,7 @@ const queryClient = new QueryClient();
 function AppLayout() {
   return (
     <div className="min-h-screen" style={{ background: "#06060f" }}>
+      <CanonicalUrl />
       <Header />
       <main>
         <Switch>

@@ -1,27 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.coimagenmedia.com/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/en</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/medical-os</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/en/medical-os</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/dental-os</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/en/dental-os</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/law-os</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/en/law-os</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/wellness-os</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/en/wellness-os</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/restaurant-os</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/en/restaurant-os</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/real-estate-os</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/en/real-estate-os</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/local-business-os</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/en/local-business-os</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/blog</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/en/blog</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/casos-de-exito</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/en/case-studies</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.coimagenmedia.com/diagnostico</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/en/diagnostic</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/contacto</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/en/contact</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/medical-os</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/dental-os</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/law-os</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/wellness-os</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/restaurant-os</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/real-estate-os</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/local-business-os</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
 </urlset>
