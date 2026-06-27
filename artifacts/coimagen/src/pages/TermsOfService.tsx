@@ -6,9 +6,18 @@ export default function TermsOfService() {
   const isEs = lang === "es";
 
   useEffect(() => {
-    document.title = isEs
-      ? "Términos de Servicio — Coimagen Media Agency"
-      : "Terms of Service — Coimagen Media Agency";
+    const title = isEs ? "Términos de Servicio — Coimagen Media Agency" : "Terms of Service — Coimagen Media Agency";
+    const desc = isEs
+      ? "Términos y condiciones de uso de los servicios de Coimagen Media Agency. Condiciones de contratación, responsabilidades y derechos."
+      : "Terms and conditions for using Coimagen Media Agency services. Contracting conditions, responsibilities and rights.";
+    const url = "https://www.coimagenmedia.com/terms-of-service";
+    document.title = title;
+    document.querySelector('meta[name="description"]')?.setAttribute("content", desc);
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", desc);
+    document.querySelector('meta[property="og:url"]')?.setAttribute("content", url);
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", title);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", desc);
     window.scrollTo(0, 0);
   }, [isEs]);
 

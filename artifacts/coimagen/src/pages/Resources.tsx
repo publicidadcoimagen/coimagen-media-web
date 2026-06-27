@@ -50,9 +50,18 @@ export default function Resources() {
   const isEs = lang === "es";
 
   useEffect(() => {
-    document.title = isEs
-      ? "Recursos — Coimagen Media Agency"
-      : "Resources — Coimagen Media Agency";
+    const title = isEs ? "Recursos — Coimagen Media Agency" : "Resources — Coimagen Media Agency";
+    const desc = isEs
+      ? "Recursos gratuitos de marketing digital: ebooks, guías, checklists y templates para negocios en Tijuana y San Diego. Próximamente."
+      : "Free digital marketing resources: ebooks, guides, checklists and templates for businesses in Tijuana and San Diego. Coming soon.";
+    const url = "https://www.coimagenmedia.com/resources";
+    document.title = title;
+    document.querySelector('meta[name="description"]')?.setAttribute("content", desc);
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", desc);
+    document.querySelector('meta[property="og:url"]')?.setAttribute("content", url);
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", title);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", desc);
   }, [isEs]);
 
   return (

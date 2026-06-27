@@ -10,7 +10,6 @@
     <meta name="keywords" content="agencia de marketing digital en Tijuana, automatización para negocios, CRM para pequeñas empresas, SEO local para negocios, chatbot para WhatsApp, agentes IA para empresas, digital marketing agency San Diego, AI automation for business" />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Coimagen Media Agency" />
-    <!-- Canonical is managed dynamically per route by CanonicalUrl component -->
     <link rel="canonical" href="https://www.coimagenmedia.com/" />
 
     <!-- Open Graph -->
@@ -30,9 +29,11 @@
     <meta name="twitter:description" content="Agencia de marketing digital en Tijuana. Automatización, CRM, agentes IA y SEO local para negocios." />
     <meta name="twitter:image" content="https://www.coimagenmedia.com/opengraph.jpg" />
 
-    <!-- Favicon -->
+    <!-- Favicon & Manifest -->
     <link rel="icon" type="image/png" href="/logo-coimagen.png" />
     <link rel="apple-touch-icon" href="/logo-coimagen.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#00cfff" />
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQB1CB72QQ"></script>
@@ -44,9 +45,92 @@
     </script>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Structured Data — Organization + LocalBusiness + WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.coimagenmedia.com/#organization",
+          "name": "Coimagen Media Agency",
+          "url": "https://www.coimagenmedia.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.coimagenmedia.com/logo-coimagen.png"
+          },
+          "sameAs": [
+            "https://www.instagram.com/coimagenmedia",
+            "https://www.facebook.com/coimagenmedia",
+            "https://www.linkedin.com/company/coimagenmedia"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+52-664-476-9223",
+            "contactType": "customer service",
+            "availableLanguage": ["Spanish", "English"]
+          }
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://www.coimagenmedia.com/#localbusiness",
+          "name": "Coimagen Media Agency",
+          "description": "Agencia de marketing digital en Tijuana y San Diego. Automatización, CRM, agentes IA y SEO local para negocios.",
+          "url": "https://www.coimagenmedia.com/",
+          "telephone": "+52-664-476-9223",
+          "email": "publicidadcoimagen@gmail.com",
+          "image": "https://www.coimagenmedia.com/opengraph.jpg",
+          "priceRange": "$$",
+          "currenciesAccepted": "MXN, USD",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Tijuana",
+            "addressRegion": "Baja California",
+            "addressCountry": "MX"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "32.5027",
+            "longitude": "-117.0039"
+          },
+          "areaServed": [
+            { "@type": "City", "name": "Tijuana" },
+            { "@type": "City", "name": "San Diego" }
+          ],
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.coimagenmedia.com/#website",
+          "url": "https://www.coimagenmedia.com/",
+          "name": "Coimagen Media Agency",
+          "description": "Marketing Digital + IA para negocios reales en Tijuana / San Diego",
+          "inLanguage": ["es-MX", "en-US"],
+          "publisher": {
+            "@id": "https://www.coimagenmedia.com/#organization"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://www.coimagenmedia.com/blog?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

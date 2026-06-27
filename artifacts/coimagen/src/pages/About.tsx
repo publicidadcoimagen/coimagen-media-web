@@ -25,9 +25,18 @@ export default function About() {
   const isEs = lang === "es";
 
   useEffect(() => {
-    document.title = isEs
-      ? "Nosotros — Coimagen Media Agency"
-      : "About Us — Coimagen Media Agency";
+    const title = isEs ? "Nosotros — Coimagen Media Agency" : "About Us — Coimagen Media Agency";
+    const desc = isEs
+      ? "Conoce la historia de Coimagen Media Agency, agencia de marketing digital e IA fundada en Tijuana con misión de transformar negocios locales."
+      : "Learn about Coimagen Media Agency, a digital marketing and AI agency founded in Tijuana helping local businesses grow with smart systems.";
+    const url = "https://www.coimagenmedia.com/about";
+    document.title = title;
+    document.querySelector('meta[name="description"]')?.setAttribute("content", desc);
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", desc);
+    document.querySelector('meta[property="og:url"]')?.setAttribute("content", url);
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", title);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", desc);
   }, [isEs]);
 
   return (

@@ -9,9 +9,18 @@ export default function Contact() {
   const isEs = lang === "es";
 
   useEffect(() => {
-    document.title = isEs
-      ? "Contacto — Coimagen Media Agency"
-      : "Contact — Coimagen Media Agency";
+    const title = isEs ? "Contacto — Coimagen Media Agency" : "Contact — Coimagen Media Agency";
+    const desc = isEs
+      ? "Contáctanos por WhatsApp, email o agenda una llamada. Atendemos negocios en Tijuana, Baja California y San Diego, California."
+      : "Contact us via WhatsApp, email or book a call. We serve businesses in Tijuana, Baja California and San Diego, California.";
+    const url = "https://www.coimagenmedia.com/contacto";
+    document.title = title;
+    document.querySelector('meta[name="description"]')?.setAttribute("content", desc);
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", desc);
+    document.querySelector('meta[property="og:url"]')?.setAttribute("content", url);
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", title);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", desc);
   }, [isEs]);
 
   const contacts = [

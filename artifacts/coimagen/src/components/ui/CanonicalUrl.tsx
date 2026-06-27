@@ -9,7 +9,7 @@ export function CanonicalUrl() {
   useEffect(() => {
     const tag = document.querySelector('link[rel="canonical"]');
     if (tag) {
-      tag.setAttribute("href", `${BASE_DOMAIN}${location === "/" ? "" : location}`);
+      tag.setAttribute("href", `${BASE_DOMAIN}${location}`);
     }
   }, [location]);
 

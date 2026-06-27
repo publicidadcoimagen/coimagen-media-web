@@ -6,9 +6,18 @@ export default function PrivacyPolicy() {
   const isEs = lang === "es";
 
   useEffect(() => {
-    document.title = isEs
-      ? "Aviso de Privacidad — Coimagen Media Agency"
-      : "Privacy Policy — Coimagen Media Agency";
+    const title = isEs ? "Aviso de Privacidad — Coimagen Media Agency" : "Privacy Policy — Coimagen Media Agency";
+    const desc = isEs
+      ? "Aviso de privacidad de Coimagen Media Agency. Información sobre el tratamiento de datos personales conforme a la LFPDPPP de México."
+      : "Privacy Policy of Coimagen Media Agency. Information on personal data processing in accordance with Mexican privacy law.";
+    const url = "https://www.coimagenmedia.com/privacy-policy";
+    document.title = title;
+    document.querySelector('meta[name="description"]')?.setAttribute("content", desc);
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", desc);
+    document.querySelector('meta[property="og:url"]')?.setAttribute("content", url);
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", title);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", desc);
     window.scrollTo(0, 0);
   }, [isEs]);
 

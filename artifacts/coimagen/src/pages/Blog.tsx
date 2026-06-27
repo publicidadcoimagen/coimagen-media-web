@@ -22,9 +22,18 @@ export default function Blog() {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    document.title = isEs
-      ? "Blog — Marketing Digital & IA | Coimagen Media Agency"
-      : "Blog — Digital Marketing & AI | Coimagen Media Agency";
+    const title = isEs ? "Blog — Marketing Digital & IA | Coimagen Media Agency" : "Blog — Digital Marketing & AI | Coimagen Media Agency";
+    const desc = isEs
+      ? "Artículos sobre marketing digital, automatización con IA, SEO local y estrategias de crecimiento para negocios en Tijuana y San Diego."
+      : "Articles on digital marketing, AI automation, local SEO and growth strategies for businesses in Tijuana and San Diego.";
+    const url = "https://www.coimagenmedia.com/blog";
+    document.title = title;
+    document.querySelector('meta[name="description"]')?.setAttribute("content", desc);
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", desc);
+    document.querySelector('meta[property="og:url"]')?.setAttribute("content", url);
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", title);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", desc);
   }, [isEs]);
 
   const cats = isEs ? categories.es : categories.en;

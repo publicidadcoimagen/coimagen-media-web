@@ -9,9 +9,18 @@ export default function Agendar() {
   const isEs = lang === "es";
 
   useEffect(() => {
-    document.title = isEs
-      ? "Agendar Sesión Estratégica — Coimagen Media Agency"
-      : "Book Strategy Session — Coimagen Media Agency";
+    const title = isEs ? "Agendar Sesión Estratégica — Coimagen Media Agency" : "Book Strategy Session — Coimagen Media Agency";
+    const desc = isEs
+      ? "Agenda tu sesión estratégica gratuita de 30 minutos. Analizamos tu negocio y diseñamos un plan de acción real. Sin compromiso."
+      : "Book your free 30-minute strategy session. We analyze your business and design a real action plan. No commitment.";
+    const url = "https://www.coimagenmedia.com/agendar";
+    document.title = title;
+    document.querySelector('meta[name="description"]')?.setAttribute("content", desc);
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", desc);
+    document.querySelector('meta[property="og:url"]')?.setAttribute("content", url);
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", title);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", desc);
   }, [isEs]);
 
   return (

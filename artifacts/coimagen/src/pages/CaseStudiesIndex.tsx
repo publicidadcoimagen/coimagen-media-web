@@ -8,9 +8,18 @@ export default function CaseStudiesIndex() {
   const isEs = lang === "es";
 
   useEffect(() => {
-    document.title = isEs
-      ? "Casos de Éxito — Coimagen Media Agency"
-      : "Case Studies — Coimagen Media Agency";
+    const title = isEs ? "Casos de Éxito — Coimagen Media Agency" : "Case Studies — Coimagen Media Agency";
+    const desc = isEs
+      ? "Proyectos reales con resultados medibles. Casos de éxito de Coimagen en salud, restaurantes, bienes raíces y más industrias."
+      : "Real projects with measurable results. Success cases from Coimagen in healthcare, restaurants, real estate and more industries.";
+    const url = "https://www.coimagenmedia.com/case-studies";
+    document.title = title;
+    document.querySelector('meta[name="description"]')?.setAttribute("content", desc);
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", desc);
+    document.querySelector('meta[property="og:url"]')?.setAttribute("content", url);
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", title);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", desc);
   }, [isEs]);
 
   const caseStudies = [
@@ -81,7 +90,7 @@ export default function CaseStudiesIndex() {
             {projectCards.map((card) => (
               <div key={card.id} className="glass border border-white/[0.06] rounded-xl p-5 hover:border-white/20 transition-all">
                 {card.image ? (
-                  <img src={card.image} alt={card.title} className="w-full h-28 object-cover rounded-lg mb-4" />
+                  <img src={card.image} alt={card.title} loading="lazy" className="w-full h-28 object-cover rounded-lg mb-4" />
                 ) : (
                   <div className={`w-full h-28 rounded-lg mb-4 bg-gradient-to-br ${card.color} flex items-center justify-center text-3xl`}>
                     🚀

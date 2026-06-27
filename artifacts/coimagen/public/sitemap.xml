@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Core -->
-  <url><loc>https://www.coimagenmedia.com/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/diagnostico</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/agendar</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/about</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/contacto</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/blog</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/faqs</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/resources</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
-  <!-- Industry OS -->
-  <url><loc>https://www.coimagenmedia.com/medical-os</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/dental-os</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/law-os</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/wellness-os</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/restaurant-os</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/real-estate-os</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/local-business-os</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <!-- Core pages -->
+  <url><loc>https://www.coimagenmedia.com/</loc><lastmod>2026-06-22</lastmod><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/diagnostico</loc><lastmod>2026-06-22</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/agendar</loc><lastmod>2026-06-22</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/about</loc><lastmod>2026-06-22</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/contacto</loc><lastmod>2026-06-22</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/blog</loc><lastmod>2026-06-22</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/faqs</loc><lastmod>2026-06-22</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/resources</loc><lastmod>2026-06-22</lastmod><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <!-- Industry OS pages -->
+  <url><loc>https://www.coimagenmedia.com/medical-os</loc><lastmod>2026-06-22</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/dental-os</loc><lastmod>2026-06-22</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/law-os</loc><lastmod>2026-06-22</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/wellness-os</loc><lastmod>2026-06-22</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/restaurant-os</loc><lastmod>2026-06-22</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/real-estate-os</loc><lastmod>2026-06-22</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/local-business-os</loc><lastmod>2026-06-22</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
   <!-- Case Studies -->
-  <url><loc>https://www.coimagenmedia.com/case-studies</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/case-studies/dr-segovia</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/case-studies/chimichimi</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/case-studies/coimagen-os</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/case-studies/conchas-tower</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/case-studies</loc><lastmod>2026-06-22</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/case-studies/dr-segovia</loc><lastmod>2026-06-22</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/case-studies/chimichimi</loc><lastmod>2026-06-22</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/case-studies/coimagen-os</loc><lastmod>2026-06-22</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/case-studies/conchas-tower</loc><lastmod>2026-06-22</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <!-- Legal -->
-  <url><loc>https://www.coimagenmedia.com/privacy-policy</loc><priority>0.4</priority><changefreq>yearly</changefreq></url>
-  <url><loc>https://www.coimagenmedia.com/terms-of-service</loc><priority>0.4</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/privacy-policy</loc><lastmod>2026-06-22</lastmod><priority>0.4</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://www.coimagenmedia.com/terms-of-service</loc><lastmod>2026-06-22</lastmod><priority>0.4</priority><changefreq>yearly</changefreq></url>
 </urlset>

@@ -1,0 +1,22 @@
+{
+  "name": "Coimagen Media Agency",
+  "short_name": "Coimagen",
+  "description": "Marketing Digital + IA para negocios reales en Tijuana / San Diego",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#06060f",
+  "theme_color": "#00cfff",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "/logo-coimagen.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo-coimagen.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+Quiero que realices una auditoría SEO técnica completa del sitio publicado en producción y apliques todas las correcciones necesarias en una sola iteración, minimizando cambios futuros.
+
+## 1. Google Analytics
+
+* Verifica que el código GA4 (G-MQB1CB72QQ) esté cargando correctamente en TODAS las páginas públicas.
+* Asegúrate de que no exista código duplicado.
+* Verifica que el script esté dentro del `<head>`.
+
+## 2. Sitemap
+
+* Genera automáticamente un sitemap.xml con TODAS las páginas públicas existentes.
+* No incluyas páginas privadas, de administración, pruebas o desarrollo.
+* Excluye:
+
+  * /admin
+  * /secure
+  * /portal
+  * /preview
+  * cualquier ruta 404
+* El sitemap debe quedar disponible en:
+  https://www.coimagenmedia.com/sitemap.xml
+
+## 3. robots.txt
+
+* Crear o actualizar robots.txt.
+* Permitir la indexación de todas las páginas públicas.
+* Bloquear:
+  /admin
+  /secure
+  /portal
+  /preview
+* Agregar:
+  Sitemap: https://www.coimagenmedia.com/sitemap.xml
+
+## 4. Canonical
+
+* Verificar que todas las páginas utilicen canonical correcto.
+* Usar únicamente:
+  https://www.coimagenmedia.com
+  como dominio principal.
+
+## 5. Open Graph
+
+Agregar automáticamente en todas las páginas:
+
+* og:title
+* og:description
+* og:image
+* og:url
+* twitter:card
+* twitter:title
+* twitter:description
+* twitter:image
+
+## 6. Structured Data
+
+Agregar JSON-LD para:
+
+* Organization
+* LocalBusiness
+* WebSite
+
+Usar el dominio oficial.
+
+## 7. SEO General
+
+Revisar:
+
+* title únicos
+* meta description únicas
+* H1 por página
+* jerarquía H2-H3
+* alt en imágenes
+* favicon
+* manifest
+* idioma html correcto
+* canonical
+* meta viewport
+
+## 8. Rendimiento
+
+Verificar:
+
+* imágenes optimizadas
+* lazy loading
+* preload de fuentes
+* compresión
+* caché
+
+## 9. Producción
+
+Comprobar que:
+
+* no existan rutas rotas
+* no existan assets faltantes
+* no existan errores de consola críticos
+
+## 10. Reporte
+
+Al finalizar entrega un resumen indicando:
+
+* qué se modificó
+* qué quedó pendiente
+* qué no fue posible automatizar
+
+No cambies el diseño visual del sitio. Solo realiza mejoras técnicas relacionadas con SEO, rendimiento y preparación para indexación.

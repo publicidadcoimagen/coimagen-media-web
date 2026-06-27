@@ -71,9 +71,18 @@ export default function Faqs() {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   useEffect(() => {
-    document.title = isEs
-      ? "Preguntas Frecuentes — Coimagen Media Agency"
-      : "FAQ — Coimagen Media Agency";
+    const title = isEs ? "Preguntas Frecuentes — Coimagen Media Agency" : "FAQ — Coimagen Media Agency";
+    const desc = isEs
+      ? "Resolvemos tus dudas sobre marketing digital, automatización con IA, precios y procesos. 15 preguntas frecuentes sobre los servicios de Coimagen."
+      : "Answers to the most common questions about digital marketing, AI automation, pricing and processes at Coimagen Media Agency.";
+    const url = "https://www.coimagenmedia.com/faqs";
+    document.title = title;
+    document.querySelector('meta[name="description"]')?.setAttribute("content", desc);
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", desc);
+    document.querySelector('meta[property="og:url"]')?.setAttribute("content", url);
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", title);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", desc);
   }, [isEs]);
 
   return (

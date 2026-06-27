@@ -62,9 +62,18 @@ export default function Diagnostico() {
   const [showJotform, setShowJotform] = useState(false);
 
   useEffect(() => {
-    document.title = isEs
-      ? "Diagnóstico Digital Gratuito — Coimagen Media Agency"
-      : "Free Digital Diagnostic — Coimagen Media Agency";
+    const title = isEs ? "Diagnóstico Digital Gratuito — Coimagen Media Agency" : "Free Digital Diagnostic — Coimagen Media Agency";
+    const desc = isEs
+      ? "Descubre el nivel digital de tu negocio en 5 preguntas. Diagnóstico gratuito con recomendaciones personalizadas por industria y plan de acción real."
+      : "Discover your business digital score in 5 questions. Free diagnostic with personalized recommendations by industry and a real action plan.";
+    const url = "https://www.coimagenmedia.com/diagnostico";
+    document.title = title;
+    document.querySelector('meta[name="description"]')?.setAttribute("content", desc);
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", desc);
+    document.querySelector('meta[property="og:url"]')?.setAttribute("content", url);
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", title);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", desc);
   }, [isEs]);
 
   const score = answers.filter((a) => a === true).length;
