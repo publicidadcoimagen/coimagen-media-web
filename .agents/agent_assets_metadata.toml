@@ -96,6 +96,12 @@ uri = "file://artifacts/coimagen/public/images/camila-founder-v2.png"
 type = "image"
 title = "camila founder professional portrait"
 
+[[generated]]
+id = "oWT7rZV5xNjpi7s54kMJ0"
+uri = "file://artifacts/coimagen/public/images/camila-founder-v3.png"
+type = "image"
+title = "camila founder dark brown hair portrait"
+
 [[outputs]]
 id = "m4xbBiweEWZZjIvxxGacd"
 uri = "file://artifacts/coimagen/public/images/camila-founder-v2.png"
@@ -107,3 +113,9 @@ id = "5F4KIAe_sInixtyhz3otV"
 uri = "file://artifacts/coimagen/public/images/camila-founder.png"
 type = "image"
 title = "Tu foto real — rostro original preservado"
+
+[[outputs]]
+id = "xQMO_s_TiDfbeTc4C6cox"
+uri = "file://artifacts/coimagen/public/images/camila-founder-v3.png"
+type = "image"
+title = "Camila Segovia — Cabello castaño oscuro (igual que asistente Jotform)"
