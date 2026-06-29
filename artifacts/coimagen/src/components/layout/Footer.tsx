@@ -9,6 +9,7 @@ const companyLinksEs = [
   { label: "Contacto", href: "/contacto" },
   { label: "Recursos", href: "/resources" },
   { label: "FAQs", href: "/faqs" },
+  { label: "Portal de Clientes", href: "/portal" },
 ];
 
 const companyLinksEn = [
@@ -19,6 +20,7 @@ const companyLinksEn = [
   { label: "Contact", href: "/contact" },
   { label: "Resources", href: "/resources" },
   { label: "FAQs", href: "/faqs" },
+  { label: "Client Portal", href: "/portal" },
 ];
 
 const legalLinksEs = [

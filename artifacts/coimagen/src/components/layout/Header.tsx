@@ -152,6 +152,17 @@ export function Header() {
             {t.nav.cta}
           </a>
 
+          <a
+            href="/portal"
+            className="hidden sm:inline-flex items-center gap-1.5 glass border border-white/[0.08] text-[var(--c-muted)] hover:text-white text-xs font-semibold px-3 py-2 rounded-lg hover:border-white/20 transition-all"
+            title={isEs ? "Portal de Clientes" : "Client Portal"}
+          >
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13 12H3"/>
+            </svg>
+            Portal
+          </a>
+
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="xl:hidden glass p-2 rounded-lg"

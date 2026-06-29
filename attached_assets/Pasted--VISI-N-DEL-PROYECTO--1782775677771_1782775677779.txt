@@ -1,0 +1,366 @@
+=====================================================
+VISIÓN DEL PROYECTO
+=====================================================
+
+COIMAGENMEDIA.COM no es únicamente un sitio web.
+
+Es el principal activo comercial de Coimagen Media Agency.
+
+Su función es generar clientes.
+
+Construir autoridad.
+
+Educar.
+
+Inspirar confianza.
+
+Y alimentar continuamente a COIMAGEN OS con nuevos prospectos.
+
+Toda decisión futura deberá proteger esta visión.
+
+=====================================================
+FILOSOFÍA DE DESARROLLO
+=====================================================
+
+Este proyecto deberá evolucionar mediante versiones.
+
+Nunca mediante reconstrucciones.
+
+Cada versión deberá mejorar la anterior.
+
+Nunca reemplazarla completamente.
+
+Cada actualización deberá respetar:
+
+Compatibilidad.
+
+SEO.
+
+Contenido.
+
+Diseño.
+
+Experiencia del usuario.
+
+Arquitectura existente.
+
+=====================================================
+REGLAS PARA FUTURAS VERSIONES
+=====================================================
+
+Antes de comenzar cualquier Sprint.
+
+Analizar completamente la versión actual.
+
+Identificar componentes existentes.
+
+Reutilizar componentes.
+
+Actualizar únicamente lo necesario.
+
+Nunca reconstruir componentes funcionales.
+
+Nunca modificar rutas indexadas.
+
+Nunca romper compatibilidad.
+
+=====================================================
+ROADMAP
+
+VERSIÓN 1.3
+
+Actualizar el sitio comercial.
+
+Landing Pages.
+
+SEO.
+
+Blog.
+
+Casos de éxito.
+
+Recursos.
+
+Jotform AI.
+
+Embudos.
+
+Conversión.
+
+=====================================================
+
+VERSIÓN 1.4
+
+Centro de Recursos Premium.
+
+Calculadoras.
+
+Lead Magnets.
+
+Whitepapers.
+
+Biblioteca descargable.
+
+Mayor autoridad SEO.
+
+=====================================================
+
+VERSIÓN 1.5
+
+Integración parcial con COIMAGEN OS.
+
+Portal Cliente.
+
+Estado del proyecto.
+
+Aprobaciones.
+
+Seguimiento.
+
+Acceso seguro.
+
+=====================================================
+
+VERSIÓN 2.0
+
+Marketplace de Productos.
+
+Contratación completamente digital.
+
+Pago.
+
+Contrato.
+
+Portal.
+
+Producción.
+
+Todo automatizado.
+
+=====================================================
+INTEGRACIÓN CON COIMAGEN OS
+=====================================================
+
+COIMAGENMEDIA.COM
+
+Genera clientes.
+
+COIMAGEN OS
+
+Opera la empresa.
+
+Ambos proyectos deberán permanecer separados.
+
+Nunca mezclar código.
+
+Nunca mezclar responsabilidades.
+
+COIMAGENMEDIA.COM
+
+Marketing.
+
+Ventas.
+
+SEO.
+
+Autoridad.
+
+Conversión.
+
+COIMAGEN OS
+
+CRM.
+
+ERP.
+
+Producción.
+
+Agentes IA.
+
+Automatización.
+
+Clientes.
+
+Facturación.
+
+Portal Cliente.
+
+=====================================================
+PORTAL DEL CLIENTE
+=====================================================
+
+El Portal del Cliente no pertenece al sitio.
+
+Únicamente deberá existir un botón.
+
+Portal del Cliente.
+
+Posteriormente apuntará hacia:
+
+app.coimagenos.com
+
+=====================================================
+CASOS DE ÉXITO
+=====================================================
+
+Todos los proyectos reales desarrollados por Coimagen deberán documentarse.
+
+Cada caso incluirá.
+
+Problema.
+
+Proceso.
+
+Resultados.
+
+Tecnologías.
+
+Galería.
+
+Testimonio.
+
+Botón.
+
+VER PROYECTO EN VIVO.
+
+Cuando exista un sitio público.
+
+Abrir el proyecto real.
+
+Esto fortalecerá:
+
+SEO.
+
+Confianza.
+
+Conversión.
+
+=====================================================
+BLOG
+=====================================================
+
+El Blog deberá crecer continuamente.
+
+No eliminar artículos antiguos.
+
+Actualizar.
+
+Mejorar.
+
+Relacionar.
+
+Cada artículo deberá convertirse en una puerta de entrada para nuevos clientes.
+
+=====================================================
+RECURSOS
+=====================================================
+
+La Biblioteca de Recursos deberá convertirse en una de las principales herramientas de captación de Leads.
+
+Todo recurso deberá tener:
+
+Landing propia.
+
+SEO.
+
+CTA.
+
+Camila AI.
+
+=====================================================
+AGENTES IA
+=====================================================
+
+COIMAGENMEDIA.COM mostrará los Agentes IA como productos comerciales.
+
+La operación de dichos agentes vivirá dentro de COIMAGEN OS.
+
+=====================================================
+JOTFORM AI
+=====================================================
+
+Camila AI continuará siendo el principal mecanismo de conversión del sitio.
+
+En futuras versiones podrá integrarse directamente con COIMAGEN OS para:
+
+Crear Prospectos.
+
+Programar reuniones.
+
+Iniciar procesos comerciales.
+
+=====================================================
+CALIDAD
+=====================================================
+
+Cada nueva versión deberá entregar.
+
+Reporte SEO.
+
+Reporte QA.
+
+Reporte Lighthouse.
+
+Reporte de Accesibilidad.
+
+Reporte de enlaces.
+
+Reporte de rendimiento.
+
+Reporte de mejoras.
+
+=====================================================
+DOCUMENTACIÓN
+=====================================================
+
+Cada Sprint deberá dejar documentado.
+
+Objetivo.
+
+Cambios realizados.
+
+Archivos modificados.
+
+Problemas encontrados.
+
+Problemas corregidos.
+
+Pendientes.
+
+Versión.
+
+Fecha.
+
+=====================================================
+PRINCIPIOS DE COIMAGEN
+=====================================================
+
+Construir.
+
+No improvisar.
+
+Actualizar.
+
+No reconstruir.
+
+Automatizar.
+
+No complicar.
+
+Escalar.
+
+No duplicar.
+
+Documentar.
+
+No depender de memoria.
+
+=====================================================
+OBJETIVO FINAL
+=====================================================
+
+COIMAGENMEDIA.COM deberá convertirse en uno de los mejores sitios especializados en Inteligencia Artificial, Automatización y Sistemas Empresariales para México y Estados Unidos.
+
+El sitio deberá ser capaz de generar clientes todos los días, posicionar la marca, demostrar autoridad y alimentar continuamente a COIMAGEN OS con nuevos prospectos.
+
+Toda decisión futura deberá respetar esta visión.

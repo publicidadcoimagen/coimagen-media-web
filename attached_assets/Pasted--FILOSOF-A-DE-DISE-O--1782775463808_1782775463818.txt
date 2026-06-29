@@ -1,0 +1,349 @@
+=====================================================
+FILOSOFÍA DE DISEÑO
+=====================================================
+
+COIMAGEN no es una agencia tradicional.
+
+Debe sentirse como una empresa tecnológica internacional especializada en Inteligencia Artificial, Automatización y Sistemas Empresariales.
+
+Todo el diseño deberá transmitir:
+
+Confianza.
+
+Tecnología.
+
+Innovación.
+
+Elegancia.
+
+Profesionalismo.
+
+Orden.
+
+Rapidez.
+
+Escalabilidad.
+
+No utilizar efectos exagerados.
+
+No utilizar animaciones innecesarias.
+
+Menos es más.
+
+=====================================================
+IDENTIDAD VISUAL
+=====================================================
+
+Mantener completamente la identidad gráfica existente.
+
+No cambiar:
+
+Logotipo.
+
+Paleta principal.
+
+Tipografía.
+
+Estilo de iconografía.
+
+Estilo visual.
+
+La evolución deberá sentirse natural.
+
+Nunca como un rediseño completo.
+
+=====================================================
+PALETA DE COLOR
+=====================================================
+
+Mantener la identidad existente.
+
+Utilizar los colores corporativos como base.
+
+Los colores secundarios únicamente deberán servir para:
+
+Jerarquía.
+
+Estados.
+
+Alertas.
+
+Botones.
+
+Nunca deberán competir con la marca.
+
+=====================================================
+TIPOGRAFÍA
+=====================================================
+
+Mantener la fuente principal existente.
+
+Toda la jerarquía deberá ser consistente.
+
+H1
+
+H2
+
+H3
+
+Body
+
+Botones
+
+Cards
+
+No utilizar tamaños diferentes entre Landing Pages.
+
+=====================================================
+IMÁGENES
+=====================================================
+
+Las imágenes son uno de los activos más importantes del sitio.
+
+Cada Landing deberá tener imágenes originales.
+
+No utilizar bancos de imágenes repetitivos.
+
+No utilizar fotografías poco realistas.
+
+Las imágenes deberán parecer producidas exclusivamente para Coimagen.
+
+Mantener un estilo consistente.
+
+Tecnológico.
+
+Premium.
+
+Internacional.
+
+=====================================================
+MERCADO MÉXICO
+=====================================================
+
+Las Landing en español deberán reflejar empresas y escenarios relacionados con México.
+
+Utilizar referencias culturales discretas.
+
+Sin estereotipos.
+
+Mostrar negocios modernos.
+
+=====================================================
+MERCADO ESTADOS UNIDOS
+=====================================================
+
+Las Landing en inglés deberán sentirse desarrolladas específicamente para empresas estadounidenses.
+
+No traducir simplemente el contenido.
+
+Adaptar lenguaje.
+
+Adaptar imágenes.
+
+Adaptar ejemplos.
+
+=====================================================
+ILUSTRACIONES
+=====================================================
+
+Cuando se utilicen ilustraciones.
+
+Mantener un estilo uniforme.
+
+No mezclar estilos.
+
+No combinar caricaturas con fotografías.
+
+=====================================================
+ICONOGRAFÍA
+=====================================================
+
+Todos los iconos deberán pertenecer a la misma familia visual.
+
+Mantener consistencia.
+
+No utilizar múltiples estilos diferentes.
+
+=====================================================
+BOTONES
+=====================================================
+
+Todos los botones deberán mantener la misma identidad.
+
+Botón Primario
+
+Botón Secundario
+
+Botón Outline
+
+Botón Ghost
+
+Los estados deberán ser consistentes.
+
+Hover.
+
+Focus.
+
+Disabled.
+
+Loading.
+
+=====================================================
+TARJETAS
+=====================================================
+
+Todas las Cards deberán compartir:
+
+Espaciado.
+
+Sombras.
+
+Bordes.
+
+Tipografía.
+
+Iconografía.
+
+No crear estilos diferentes para cada Landing.
+
+=====================================================
+FORMULARIOS
+=====================================================
+
+Mantener el mismo diseño.
+
+No crear formularios distintos en cada página.
+
+Priorizar siempre Camila AI.
+
+Los formularios serán secundarios.
+
+=====================================================
+CAMILA AI
+=====================================================
+
+El Asistente IA deberá sentirse parte natural del sitio.
+
+Nunca parecer un widget externo.
+
+Visualmente deberá integrarse con la identidad de Coimagen.
+
+=====================================================
+ANIMACIONES
+=====================================================
+
+Utilizar únicamente animaciones que aporten valor.
+
+Transiciones suaves.
+
+Fade.
+
+Slide.
+
+Microinteracciones.
+
+Evitar animaciones excesivas.
+
+=====================================================
+RESPONSIVE
+=====================================================
+
+Todo deberá diseñarse Mobile First.
+
+Desktop.
+
+Laptop.
+
+Tablet.
+
+Teléfono.
+
+No deberán existir diferencias funcionales.
+
+Solo adaptaciones visuales.
+
+=====================================================
+CONSISTENCIA
+=====================================================
+
+Todas las Landing deberán sentirse desarrolladas por el mismo equipo.
+
+No deberá parecer que cada página fue creada en momentos diferentes.
+
+=====================================================
+CASOS DE ÉXITO
+=====================================================
+
+Los casos de éxito deberán tener una identidad propia.
+
+Pero deberán conservar completamente la imagen corporativa de Coimagen.
+
+=====================================================
+BLOG
+=====================================================
+
+El Blog deberá sentirse editorial.
+
+No como una colección de artículos.
+
+Mantener la identidad visual.
+
+=====================================================
+RECURSOS
+=====================================================
+
+Todos los recursos descargables deberán compartir la misma línea gráfica.
+
+Ebooks.
+
+PDF.
+
+Plantillas.
+
+Checklists.
+
+Whitepapers.
+
+=====================================================
+ACCESIBILIDAD
+=====================================================
+
+Toda decisión visual deberá respetar principios de accesibilidad.
+
+Contraste.
+
+Legibilidad.
+
+Jerarquía.
+
+Espaciado.
+
+Navegación.
+
+=====================================================
+EXPERIENCIA DEL USUARIO
+=====================================================
+
+El visitante nunca deberá sentirse perdido.
+
+Siempre deberá saber:
+
+Dónde está.
+
+Qué hace esa página.
+
+Qué problema resuelve.
+
+Cuál es el siguiente paso.
+
+=====================================================
+OBJETIVO FINAL
+=====================================================
+
+El sitio deberá transmitir la imagen de una empresa consolidada, internacional y altamente especializada.
+
+La percepción del visitante deberá ser:
+
+"Esta empresa puede convertirse en mi departamento de Inteligencia Artificial, Marketing Digital y Automatización."
+
+Toda la experiencia deberá generar confianza suficiente para que el usuario quiera iniciar una conversación con Camila AI y comenzar el proceso comercial.

@@ -2,6 +2,7 @@ export const siteConfig = {
   name: "Coimagen Media Agency",
   tagline: "Marketing + Automation + AI Agents + Business Operating Systems",
   domain: "www.coimagenmedia.com",
+  portalUrl: "https://coimagenmediaos.replit.app/",
   whatsapp: {
     number: "526644769223",
     display: "+52 664 476 9223",
@@ -48,7 +49,7 @@ export const siteConfig = {
       labelEn: "COIMAGEN OS",
       industryEs: "SaaS / Tecnología",
       industryEn: "SaaS / Technology",
-      liveUrl: "",
+      liveUrl: "https://coimagenmediaos.replit.app/",
     },
     {
       slug: "conchas-tower",

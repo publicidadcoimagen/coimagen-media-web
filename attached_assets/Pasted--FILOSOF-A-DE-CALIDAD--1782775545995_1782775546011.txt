@@ -1,0 +1,476 @@
+=====================================================
+FILOSOFÍA DE CALIDAD
+=====================================================
+
+Ninguna versión podrá publicarse sin completar
+el proceso de Quality Assurance.
+
+La actualización NO se considerará terminada
+hasta cumplir todos los criterios de aceptación.
+
+La prioridad será:
+
+Calidad antes que velocidad.
+
+=====================================================
+CONTROL DE VERSIONES
+=====================================================
+
+Antes de cualquier modificación:
+
+Crear Snapshot.
+
+Crear punto de restauración.
+
+Conservar versión anterior.
+
+Documentar cambios.
+
+Nunca modificar producción sin respaldo.
+
+=====================================================
+DESARROLLO
+=====================================================
+
+Toda actualización deberá realizarse mediante
+cambios incrementales.
+
+No reconstruir componentes funcionales.
+
+No eliminar código estable.
+
+No modificar rutas indexadas.
+
+No romper compatibilidad.
+
+=====================================================
+REVISIÓN DE COMPONENTES
+=====================================================
+
+Verificar todos los componentes existentes.
+
+Header
+
+Footer
+
+Cards
+
+Hero
+
+Landing Pages
+
+Casos de éxito
+
+Blog
+
+Recursos
+
+FAQs
+
+Diagnóstico
+
+Agenda
+
+Contacto
+
+Jotform AI
+
+Google Analytics
+
+Search Console
+
+Sitemap
+
+robots.txt
+
+=====================================================
+REVISIÓN DE RUTAS
+=====================================================
+
+Comprobar absolutamente todas las rutas.
+
+No deberá existir:
+
+404
+
+500
+
+Página vacía
+
+Página huérfana
+
+Redirecciones incorrectas
+
+Links internos rotos
+
+Links externos rotos
+
+=====================================================
+REVISIÓN RESPONSIVE
+=====================================================
+
+Comprobar:
+
+Desktop
+
+Laptop
+
+Tablet
+
+Mobile
+
+No deberá perderse funcionalidad.
+
+=====================================================
+VERIFICACIÓN DE IMÁGENES
+=====================================================
+
+Todas las imágenes deberán:
+
+Cargar correctamente.
+
+Tener ALT.
+
+Tener TITLE.
+
+No romper el diseño.
+
+Mantener resolución profesional.
+
+No aparecer pixeladas.
+
+=====================================================
+VERIFICACIÓN SEO
+=====================================================
+
+Todas las páginas deberán verificar:
+
+Meta Title
+
+Meta Description
+
+Canonical
+
+Open Graph
+
+Twitter Cards
+
+Schema
+
+Breadcrumbs
+
+FAQ Schema
+
+Service Schema
+
+Organization Schema
+
+LocalBusiness Schema
+
+=====================================================
+GOOGLE
+=====================================================
+
+Verificar funcionamiento correcto de:
+
+Google Analytics
+
+Google Search Console
+
+Google Business
+
+Sitemap
+
+robots.txt
+
+=====================================================
+JOTFORM AI
+=====================================================
+
+Comprobar.
+
+Carga.
+
+Disponibilidad.
+
+Responsive.
+
+No interferencia con botones.
+
+No bloqueo de navegación.
+
+Disponibilidad en:
+
+Homepage
+
+Landing Pages
+
+Blog
+
+Recursos
+
+Casos de éxito
+
+Contacto
+
+=====================================================
+BLOG
+=====================================================
+
+Verificar.
+
+Artículos.
+
+Categorías.
+
+Slug.
+
+SEO.
+
+Internal Linking.
+
+CTA.
+
+Imágenes.
+
+=====================================================
+CASOS DE ÉXITO
+=====================================================
+
+Comprobar.
+
+Contenido.
+
+Botón.
+
+Ver Proyecto en Vivo.
+
+Funcionamiento de enlaces.
+
+Resultados.
+
+Galería.
+
+=====================================================
+LANDING PAGES
+=====================================================
+
+Todas deberán verificar.
+
+Carga.
+
+Responsive.
+
+SEO.
+
+CTA.
+
+Conversión.
+
+Caso relacionado.
+
+FAQ.
+
+Jotform.
+
+=====================================================
+RECURSOS
+=====================================================
+
+Todos los recursos deberán:
+
+Descargar correctamente.
+
+Abrir correctamente.
+
+No contener enlaces rotos.
+
+=====================================================
+PERFORMANCE
+=====================================================
+
+Objetivos mínimos.
+
+Lighthouse
+
+Performance
+
+90+
+
+Accessibility
+
+95+
+
+Best Practices
+
+95+
+
+SEO
+
+100
+
+=====================================================
+CORE WEB VITALS
+=====================================================
+
+Optimizar.
+
+LCP
+
+CLS
+
+INP
+
+TTFB
+
+Lazy Loading
+
+Code Splitting
+
+Cache
+
+Compresión
+
+=====================================================
+ACCESIBILIDAD
+=====================================================
+
+Cumplir buenas prácticas.
+
+ARIA.
+
+Contraste.
+
+Teclado.
+
+Screen Readers.
+
+=====================================================
+SEGURIDAD
+=====================================================
+
+No exponer.
+
+Archivos privados.
+
+Claves.
+
+Configuraciones.
+
+Rutas internas.
+
+=====================================================
+DOCUMENTACIÓN
+=====================================================
+
+Al finalizar la versión.
+
+Entregar.
+
+Resumen Ejecutivo.
+
+Cambios realizados.
+
+Archivos modificados.
+
+Archivos nuevos.
+
+Componentes nuevos.
+
+Landing Pages nuevas.
+
+Artículos nuevos.
+
+Recursos nuevos.
+
+Casos de éxito nuevos.
+
+SEO implementado.
+
+Problemas encontrados.
+
+Problemas corregidos.
+
+Recomendaciones para V1.4.
+
+=====================================================
+CRITERIOS DE ACEPTACIÓN
+=====================================================
+
+La versión V1.3 solamente será aceptada si:
+
+Todas las Landing funcionan.
+
+No existen errores 404.
+
+No existen enlaces rotos.
+
+No existen errores JavaScript.
+
+No existen errores TypeScript.
+
+Todo el sitio es responsive.
+
+El Jotform AI funciona correctamente.
+
+Google Analytics funciona.
+
+Search Console funciona.
+
+Sitemap actualizado.
+
+robots.txt actualizado.
+
+Todos los casos de éxito funcionan.
+
+Todos los recursos funcionan.
+
+Todos los artículos funcionan.
+
+Las versiones en Español e Inglés funcionan.
+
+No existen errores críticos.
+
+=====================================================
+ENTREGA FINAL
+=====================================================
+
+La actualización deberá entregarse completamente publicada.
+
+No entregar trabajo parcialmente terminado.
+
+La versión deberá quedar lista para comenzar campañas de:
+
+Google Ads.
+
+Meta Ads.
+
+SEO.
+
+Google Business.
+
+Email Marketing.
+
+Sin requerir desarrollos adicionales.
+
+=====================================================
+VISIÓN
+=====================================================
+
+El objetivo final de COIMAGENMEDIA.COM V1.3 es convertirse en el principal activo comercial de la empresa.
+
+El sitio deberá generar confianza inmediata.
+
+Responder preguntas.
+
+Mostrar autoridad.
+
+Educar al visitante.
+
+Presentar evidencia.
+
+Convertir prospectos.
+
+Preparar el crecimiento futuro.
+
+Toda actualización deberá respetar esta visión.
