@@ -87,8 +87,18 @@ export default function About() {
         <div className="glass border border-white/[0.08] rounded-3xl overflow-hidden mb-16">
           <div className="p-8 lg:p-12">
             <div className="flex flex-col md:flex-row gap-8 items-center">
-              <div className="flex-shrink-0 w-36 h-36 rounded-2xl bg-gradient-to-br from-[var(--c-cyan)]/20 to-[var(--c-purple)]/20 border border-white/[0.08] flex items-center justify-center text-6xl">
-                👩‍💼
+              <div
+                className="flex-shrink-0 w-36 h-40 rounded-2xl overflow-hidden"
+                style={{
+                  background: "linear-gradient(160deg, #FF8C00 0%, #F97316 55%, #EA580C 100%)",
+                  boxShadow: "0 0 40px rgba(249,115,22,0.35)",
+                }}
+              >
+                <img
+                  src="/images/camila-real.png"
+                  alt="Camila Segovia — Founder & CEO"
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
               <div>
                 <div className="badge-neon text-[var(--c-cyan)] border border-[var(--c-cyan)]/25 bg-[var(--c-cyan)]/10 mb-3 w-fit">
