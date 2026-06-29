@@ -119,3 +119,9 @@ id = "xQMO_s_TiDfbeTc4C6cox"
 uri = "file://artifacts/coimagen/public/images/camila-founder-v3.png"
 type = "image"
 title = "Camila Segovia — Cabello castaño oscuro (igual que asistente Jotform)"
+
+[[outputs]]
+id = "rn88RSnk5gpBIS3UVM8Yj"
+uri = "file://artifacts/coimagen/public/images/camila-real.png"
+type = "image"
+title = "Camila Segovia — Foto real (del asistente Jotform)"

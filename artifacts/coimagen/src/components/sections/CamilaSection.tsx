@@ -13,10 +13,13 @@ export function CamilaSection() {
           <div className="flex-shrink-0">
             <div
               className="relative w-56 lg:w-64 rounded-2xl overflow-hidden"
-              style={{ boxShadow: "0 0 60px rgba(249,115,22,0.35)" }}
+              style={{
+                background: "linear-gradient(160deg, #FF8C00 0%, #F97316 55%, #EA580C 100%)",
+                boxShadow: "0 0 60px rgba(249,115,22,0.40)",
+              }}
             >
               <img
-                src="/images/camila-founder-v3.png"
+                src="/images/camila-real.png"
                 alt="Camila Segovia — Founder & CEO, Coimagen Media Agency"
                 className="w-full h-auto block"
                 loading="lazy"
