@@ -9,16 +9,27 @@ export function CamilaSection() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <div className="glass border border-white/[0.06] rounded-3xl p-8 sm:p-12 flex flex-col lg:flex-row gap-10 items-center">
 
-          {/* Founder photo */}
+          {/* Founder photo — cropped to show face + upper body only */}
           <div className="flex-shrink-0">
             <div
-              className="relative w-56 lg:w-72 rounded-2xl overflow-hidden"
-              style={{ boxShadow: "0 0 60px rgba(249,115,22,0.30)" }}
+              className="relative w-56 lg:w-64 rounded-2xl overflow-hidden"
+              style={{
+                height: "320px",
+                background: "linear-gradient(160deg, #FF8C00 0%, #F97316 55%, #EA580C 100%)",
+                boxShadow: "0 0 60px rgba(249,115,22,0.35)",
+              }}
             >
               <img
-                src="/images/camila-founder-v2.png"
+                src="/images/camila-founder.png"
                 alt="Camila Segovia — Founder & CEO, Coimagen Media Agency"
-                className="w-full h-auto object-cover block"
+                className="w-full"
+                style={{
+                  display: "block",
+                  objectFit: "cover",
+                  objectPosition: "top center",
+                  height: "620px",
+                  marginTop: "-10px",
+                }}
                 loading="lazy"
               />
             </div>

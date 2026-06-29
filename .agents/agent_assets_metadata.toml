@@ -101,3 +101,9 @@ id = "m4xbBiweEWZZjIvxxGacd"
 uri = "file://artifacts/coimagen/public/images/camila-founder-v2.png"
 type = "image"
 title = "Camila Segovia — Foto de fundadora actualizada"
+
+[[outputs]]
+id = "5F4KIAe_sInixtyhz3otV"
+uri = "file://artifacts/coimagen/public/images/camila-founder.png"
+type = "image"
+title = "Tu foto real — rostro original preservado"
