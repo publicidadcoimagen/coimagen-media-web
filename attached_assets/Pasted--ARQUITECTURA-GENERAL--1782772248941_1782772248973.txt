@@ -1,0 +1,387 @@
+=====================================================
+ARQUITECTURA GENERAL
+=====================================================
+
+COIMAGENMEDIA.COM ya se encuentra publicado.
+
+Esta actualización corresponde a una EVOLUCIÓN DE VERSIÓN.
+
+NO corresponde a un rediseño.
+
+Todo el desarrollo deberá respetar la arquitectura actual.
+
+El objetivo es evolucionar V1.2 hacia V1.3.
+
+=====================================================
+REGLA PRINCIPAL
+=====================================================
+
+NO eliminar componentes existentes.
+
+NO eliminar páginas existentes.
+
+NO eliminar rutas existentes.
+
+NO eliminar funcionalidades existentes.
+
+NO cambiar nombres de rutas ya indexadas por Google.
+
+NO modificar la estructura SEO ya implementada.
+
+NO cambiar la identidad gráfica.
+
+NO sustituir componentes funcionales solamente por preferencia técnica.
+
+Si un componente funciona correctamente deberá conservarse.
+
+=====================================================
+ARQUITECTURA DEL SITIO
+=====================================================
+
+El sitio deberá dividirse en cinco grandes áreas.
+
+1. Conversión Comercial
+
+Landing Pages
+
+Servicios
+
+Diagnóstico
+
+Agenda
+
+Contacto
+
+CTA
+
+Casos de éxito
+
+2. Autoridad
+
+Blog
+
+Recursos
+
+FAQs
+
+Nosotros
+
+Metodología
+
+3. SEO
+
+URLs limpias
+
+Schema
+
+Open Graph
+
+Canonical
+
+Breadcrumbs
+
+Internal Linking
+
+Sitemap
+
+Robots
+
+4. Integración
+
+Google Analytics
+
+Google Search Console
+
+Jotform AI Assistant
+
+Google Business
+
+Calendario
+
+5. Preparación futura
+
+Portal del Cliente
+
+Integración con COIMAGEN OS
+
+Integración CRM
+
+Integración Automatizaciones
+
+=====================================================
+ESTRUCTURA DE NAVEGACIÓN
+=====================================================
+
+El menú principal deberá mantenerse limpio.
+
+HOME
+
+SERVICIOS
+
+INDUSTRIAS
+
+CASOS DE ÉXITO
+
+RECURSOS
+
+BLOG
+
+NOSOTROS
+
+DIAGNÓSTICO GRATUITO
+
+AGENDA
+
+CONTACTO
+
+El botón de Diagnóstico deberá mantenerse visible.
+
+=====================================================
+SERVICIOS
+=====================================================
+
+SERVICIOS será un menú desplegable.
+
+Cada servicio tendrá su propia Landing Page.
+
+AI Powered Websites
+
+SEO Growth
+
+Google Business Optimization
+
+AI Automation
+
+AI Agents
+
+Camila AI
+
+COIMAGEN OS
+
+Cloud Systems
+
+=====================================================
+INDUSTRIAS
+=====================================================
+
+Medical OS
+
+Dental OS
+
+Law Firm OS
+
+Restaurant OS
+
+Real Estate OS
+
+Local Business OS
+
+Wellness OS
+
+Cada industria tendrá contenido específico.
+
+NO utilizar la misma plantilla con diferente título.
+
+Cada industria deberá sentirse desarrollada específicamente para ese mercado.
+
+=====================================================
+RUTAS
+=====================================================
+
+Todas las rutas actuales deberán conservarse.
+
+Las nuevas rutas deberán seguir una estructura consistente.
+
+Ejemplos:
+
+/ai-powered-websites
+
+/seo-growth
+
+/google-business-optimization
+
+/ai-automation
+
+/camila-ai
+
+/coimagen-os
+
+/cloud-systems
+
+/ai-agents
+
+=====================================================
+ENLACES
+=====================================================
+
+Eliminar definitivamente los enlaces tipo # cuando provoquen errores de navegación.
+
+Si una sección pertenece al Home podrá utilizar scroll solamente desde Home.
+
+Desde cualquier otra página deberá navegar correctamente hacia la página correspondiente.
+
+No deben existir enlaces muertos.
+
+No deben existir rutas inexistentes.
+
+No deben existir errores 404.
+
+=====================================================
+CASOS DE ÉXITO
+=====================================================
+
+Los casos de éxito dejarán de ser únicamente páginas informativas.
+
+Cada caso incluirá:
+
+Problema del cliente.
+
+Solución implementada.
+
+Tecnologías utilizadas.
+
+Resultados.
+
+Galería.
+
+Testimonio.
+
+Botón:
+
+VER PROYECTO EN VIVO
+
+Cuando exista un proyecto público deberá abrir el sitio real.
+
+Ejemplo:
+
+Dr Segovia
+
+Chimichimi
+
+Conchas Tower
+
+COIMAGEN OS Demo
+
+=====================================================
+BLOG
+=====================================================
+
+El Blog deja de ser una sección decorativa.
+
+Cada artículo deberá tener:
+
+Ruta individual.
+
+/blog/nombre-del-articulo
+
+Imagen destacada.
+
+Autor.
+
+Fecha.
+
+Tiempo estimado de lectura.
+
+Tabla de contenido.
+
+Contenido optimizado SEO.
+
+Artículos relacionados.
+
+CTA.
+
+=====================================================
+RECURSOS
+=====================================================
+
+La sección Recursos deberá convertirse en una biblioteca.
+
+Ebooks
+
+Checklists
+
+Plantillas
+
+Calculadoras
+
+Whitepapers
+
+Guías
+
+Cada recurso deberá tener su propia página optimizada para SEO.
+
+=====================================================
+JOTFORM AI
+=====================================================
+
+El asistente de IA de Jotform será el CTA principal.
+
+Debe mantenerse disponible durante toda la navegación.
+
+No deberá ocultar botones importantes.
+
+No deberá interferir con la experiencia móvil.
+
+=====================================================
+IMÁGENES
+=====================================================
+
+NO reutilizar fotografías genéricas repetidas.
+
+Generar imágenes originales mediante IA.
+
+Mantener identidad visual consistente.
+
+Todas las imágenes deberán parecer parte de una misma marca.
+
+Las Landing Pages en inglés utilizarán imágenes adaptadas al mercado estadounidense.
+
+Las Landing Pages en español utilizarán imágenes adaptadas al mercado mexicano.
+
+Mantener la misma identidad visual.
+
+No copiar exactamente las imágenes de referencia.
+
+Las imágenes proporcionadas por el cliente únicamente sirven como inspiración para comprender el estilo esperado.
+
+=====================================================
+IDIOMAS
+=====================================================
+
+El contenido en inglés no será traducción automática.
+
+Cada Landing deberá sentirse escrita originalmente para el mercado estadounidense.
+
+El contenido en español deberá enfocarse en México.
+
+=====================================================
+PREPARACIÓN FUTURA
+=====================================================
+
+Toda la arquitectura deberá prepararse para integrarse posteriormente con COIMAGEN OS.
+
+Los botones de:
+
+Portal Cliente
+
+Aprobaciones
+
+Dashboard
+
+CRM
+
+deberán diseñarse pensando en futuras integraciones.
+
+Por el momento no implementar dichas funcionalidades.
+
+Solo preparar la arquitectura.
+
+=====================================================
+RESULTADO ESPERADO
+=====================================================
+
+La versión V1.3 deberá percibirse como el sitio web de una empresa internacional especializada en Inteligencia Artificial, Automatización y Sistemas Empresariales.
+
+El visitante debe comprender inmediatamente que Coimagen puede construir, automatizar y operar digitalmente todo su negocio.
+
+El sitio deberá inspirar confianza, profesionalismo y tecnología de alto nivel.

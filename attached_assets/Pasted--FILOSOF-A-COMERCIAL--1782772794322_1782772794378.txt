@@ -1,0 +1,435 @@
+=====================================================
+FILOSOFÍA COMERCIAL
+=====================================================
+
+Cada Landing Page deberá vender UN SOLO PRODUCTO.
+
+Nunca intentar vender toda la empresa en una sola página.
+
+Cada Landing tendrá un objetivo específico.
+
+Cada Landing tendrá un CTA principal.
+
+Cada Landing tendrá su propio SEO.
+
+Cada Landing podrá posicionarse de forma independiente.
+
+Cada Landing deberá poder utilizarse para campañas de Google Ads, Meta Ads y SEO.
+
+=====================================================
+ESTRUCTURA OBLIGATORIA DE TODAS LAS LANDING PAGES
+=====================================================
+
+Todas las Landing deberán seguir exactamente la misma estructura.
+
+1. Hero Section
+
+Título poderoso.
+
+Subtítulo.
+
+Beneficio principal.
+
+Botón:
+
+Habla con Camila AI
+
+Botón secundario:
+
+Agenda una reunión
+
+Imagen profesional original generada mediante IA.
+
+-----------------------------------------------------
+
+2. Problema
+
+Explicar el problema actual del cliente.
+
+Utilizar lenguaje sencillo.
+
+Mostrar estadísticas cuando sea posible.
+
+Hacer que el visitante se identifique.
+
+-----------------------------------------------------
+
+3. Solución
+
+Explicar cómo Coimagen resuelve ese problema.
+
+Mostrar el proceso.
+
+Mostrar beneficios.
+
+No hablar únicamente de tecnología.
+
+Hablar de resultados.
+
+-----------------------------------------------------
+
+4. Beneficios
+
+Utilizar tarjetas visuales.
+
+Beneficios claros.
+
+Ejemplos:
+
+Más clientes.
+
+Más ventas.
+
+Menos trabajo manual.
+
+Automatización.
+
+Disponibilidad 24/7.
+
+Mayor posicionamiento.
+
+Mayor productividad.
+
+-----------------------------------------------------
+
+5. Cómo trabajamos
+
+Mostrar el proceso completo.
+
+Diagnóstico gratuito
+
+↓
+
+Evaluación
+
+↓
+
+Propuesta
+
+↓
+
+Contrato Digital
+
+↓
+
+Primer Pago
+
+↓
+
+Producción
+
+↓
+
+Portal del Cliente
+
+↓
+
+Entrega
+
+↓
+
+Mensualidad
+
+El cliente debe entender perfectamente el flujo.
+
+-----------------------------------------------------
+
+6. Caso de éxito relacionado
+
+Cada Landing deberá mostrar un caso de éxito relacionado.
+
+Ejemplo:
+
+Medical OS
+
+↓
+
+Dr. José Manuel Segovia
+
+Restaurant OS
+
+↓
+
+Chimichimi
+
+Real Estate OS
+
+↓
+
+Conchas Tower
+
+COIMAGEN OS
+
+↓
+
+Proyecto interno
+
+Mostrar:
+
+Resumen
+
+Resultados
+
+Botón:
+
+Ver Proyecto en Vivo
+
+Cuando exista un sitio público deberá abrir el proyecto entregado al cliente.
+
+-----------------------------------------------------
+
+7. Preguntas Frecuentes
+
+Cada Landing deberá tener FAQ propio.
+
+No reutilizar las mismas preguntas.
+
+Cada producto tiene dudas distintas.
+
+Implementar FAQ Schema.
+
+-----------------------------------------------------
+
+8. CTA Final
+
+Botón principal:
+
+Habla con Camila AI
+
+Botón secundario:
+
+Agenda una reunión
+
+No terminar ninguna Landing sin CTA.
+
+=====================================================
+CATÁLOGO DE PRODUCTOS
+=====================================================
+
+Cada Landing representa un producto comercial independiente.
+
+No vender servicios.
+
+Vender soluciones.
+
+Los productos iniciales serán:
+
+AI Powered Websites
+
+SEO Growth System
+
+Google Business Optimization
+
+AI Automation System
+
+AI Agents
+
+Camila AI Assistant
+
+COIMAGEN OS
+
+Cloud Systems
+
+Medical OS
+
+Restaurant OS
+
+Law Firm OS
+
+Real Estate OS
+
+Dental OS
+
+Wellness OS
+
+Local Business OS
+
+Cada producto deberá tener identidad propia.
+
+=====================================================
+CTA PRINCIPAL
+=====================================================
+
+El CTA principal del sitio será:
+
+Camila AI
+
+Implementado mediante Jotform AI Assistant.
+
+El visitante deberá poder conversar con la IA desde cualquier página.
+
+La IA deberá ayudar a:
+
+Resolver dudas.
+
+Explicar productos.
+
+Recomendar soluciones.
+
+Calificar prospectos.
+
+Agendar reuniones.
+
+Generar confianza.
+
+=====================================================
+CTA SECUNDARIOS
+=====================================================
+
+Diagnóstico Gratuito
+
+Agenda una reunión
+
+Descargar recurso
+
+Ver caso de éxito
+
+Solicitar propuesta
+
+=====================================================
+EMBUDO COMERCIAL
+=====================================================
+
+Todo el sitio deberá dirigir al visitante hacia el siguiente flujo.
+
+Landing
+
+↓
+
+Camila AI
+
+↓
+
+Diagnóstico Gratuito
+
+↓
+
+Agenda
+
+↓
+
+Propuesta Comercial
+
+↓
+
+Contrato Digital
+
+↓
+
+Primer Pago
+
+↓
+
+Portal del Cliente
+
+↓
+
+Producción
+
+↓
+
+Entrega
+
+↓
+
+Soporte
+
+↓
+
+Mensualidad
+
+Este flujo deberá mantenerse consistente en todas las Landing Pages.
+
+=====================================================
+PRODUCTOS LOW TICKET
+=====================================================
+
+El sitio deberá mostrar claramente productos de entrada.
+
+Ejemplos:
+
+Sitios Web IA
+
+SEO
+
+Google Business
+
+Automatización
+
+Asistente IA
+
+Estos productos sirven para generar confianza y facilitar la primera venta.
+
+=====================================================
+PRODUCTOS HIGH TICKET
+=====================================================
+
+También deberá posicionar productos de alto valor.
+
+COIMAGEN OS
+
+Medical OS
+
+Restaurant OS
+
+Law Firm OS
+
+Real Estate OS
+
+Cloud Systems
+
+Automatización Empresarial
+
+Business Operating Systems
+
+Estos productos deberán mostrarse como soluciones premium.
+
+=====================================================
+IMÁGENES
+=====================================================
+
+Todas las Landing deberán tener imágenes originales.
+
+No utilizar fotografías genéricas repetidas.
+
+No copiar exactamente las imágenes proporcionadas por el cliente.
+
+Las imágenes entregadas únicamente sirven como inspiración para comprender la identidad visual esperada.
+
+Cada Landing deberá contar una historia mediante sus imágenes.
+
+El mercado en español deberá sentirse dirigido a México.
+
+El mercado en inglés deberá sentirse dirigido a Estados Unidos.
+
+Mantener siempre la misma identidad de marca.
+
+=====================================================
+CONVERSIÓN
+=====================================================
+
+Cada Landing deberá responder inmediatamente:
+
+¿Qué problema resuelve?
+
+¿Por qué elegir Coimagen?
+
+¿Cómo funciona?
+
+¿Cuánto tarda?
+
+¿Cómo empiezo?
+
+¿Qué debo hacer ahora?
+
+El visitante nunca deberá quedarse sin saber cuál es el siguiente paso.
+
+=====================================================
+OBJETIVO FINAL
+=====================================================
+
+Al terminar la versión V1.3, cada Landing deberá ser capaz de funcionar como una página de ventas independiente.
+
+Cada Landing deberá poder recibir tráfico desde Google Ads, Meta Ads, SEO o campañas de email marketing sin depender del resto del sitio.
+
+Cada Landing deberá ser capaz de convertir visitantes en prospectos utilizando como eje principal el Asistente Camila AI y el proceso comercial definido por Coimagen.

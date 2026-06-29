@@ -1,0 +1,363 @@
+=====================================================
+FILOSOFÍA DE VENTAS
+=====================================================
+
+COIMAGEN no vende horas de trabajo.
+
+COIMAGEN vende resultados.
+
+Nunca presentar los servicios como "hacemos páginas web".
+
+Presentarlos como sistemas completos que generan resultados.
+
+El visitante debe percibir que está comprando una solución empresarial y no un servicio aislado.
+
+=====================================================
+ESTRUCTURA DE LOS PRODUCTOS
+=====================================================
+
+Cada producto deberá mantener la misma estructura.
+
+Nombre
+
+Problema que resuelve
+
+Beneficios
+
+Qué incluye
+
+Proceso de implementación
+
+Tiempo estimado
+
+Casos de éxito
+
+Preguntas frecuentes
+
+CTA
+
+=====================================================
+¿QUÉ INCLUYE?
+=====================================================
+
+Cada Landing deberá mostrar claramente qué recibe el cliente.
+
+Ejemplo:
+
+AI Powered Websites
+
+✔ Diseño profesional
+
+✔ Dominio (opcional)
+
+✔ Hosting
+
+✔ SSL
+
+✔ Optimización móvil
+
+✔ SEO inicial
+
+✔ Google Analytics
+
+✔ Search Console
+
+✔ Sitemap
+
+✔ Formularios
+
+✔ Integración con Jotform AI
+
+✔ Capacitación
+
+✔ Soporte
+
+Cada producto tendrá su propia lista.
+
+=====================================================
+PLANES
+=====================================================
+
+Todos los productos deberán poder venderse mediante planes.
+
+No mostrar precios fijos dentro del código.
+
+Preparar la arquitectura para que los planes puedan modificarse fácilmente desde un archivo de configuración.
+
+Ejemplo:
+
+Starter
+
+Professional
+
+Business
+
+Enterprise
+
+Cada plan deberá indicar claramente:
+
+Qué incluye.
+
+Qué no incluye.
+
+Qué puede agregarse posteriormente.
+
+=====================================================
+UPSELL
+=====================================================
+
+Después de cada producto deberá recomendar productos relacionados.
+
+Ejemplo:
+
+Cliente compra AI Website.
+
+El sitio recomendará:
+
+SEO Growth
+
+Google Business
+
+Camila AI
+
+Automatización
+
+Después de contratar SEO.
+
+Recomendar:
+
+Google Business
+
+Blog
+
+AI Agents
+
+Cloud Systems
+
+=====================================================
+DOWNSELL
+=====================================================
+
+Si un cliente no necesita un sistema grande.
+
+Mostrar opciones más económicas.
+
+Ejemplo.
+
+En lugar de COIMAGEN OS.
+
+Mostrar:
+
+Sitio Web IA
+
+SEO
+
+Google Business
+
+Asistente IA
+
+La idea es que ningún visitante abandone el sitio sin encontrar una solución adecuada.
+
+=====================================================
+CASOS DE ÉXITO
+=====================================================
+
+Todos los productos deberán mostrar evidencia real.
+
+Cada caso incluirá.
+
+Cliente
+
+Industria
+
+Problema
+
+Solución
+
+Resultado
+
+Galería
+
+Tecnologías utilizadas
+
+Botón
+
+VER PROYECTO EN VIVO
+
+Cuando exista un proyecto publicado.
+
+Abrir el sitio entregado al cliente.
+
+No utilizar capturas de pantalla cuando pueda mostrarse el proyecto real.
+
+=====================================================
+SOCIAL PROOF
+=====================================================
+
+Agregar elementos que generen confianza.
+
+Logotipos de clientes.
+
+Testimonios.
+
+Calificaciones.
+
+Reseñas.
+
+Métricas.
+
+Años de experiencia.
+
+Número de proyectos.
+
+Tecnologías utilizadas.
+
+=====================================================
+RECURSOS GRATUITOS
+=====================================================
+
+Todos los productos deberán ofrecer un recurso gratuito relacionado.
+
+Ejemplos.
+
+Checklist.
+
+PDF.
+
+Guía.
+
+Plantilla.
+
+Calculadora.
+
+Whitepaper.
+
+Ebook.
+
+Cada recurso deberá ayudar al visitante antes de venderle.
+
+=====================================================
+LEAD MAGNET
+=====================================================
+
+Todas las Landing deberán capturar prospectos.
+
+Preferentemente mediante conversación con Camila AI.
+
+Como alternativa.
+
+Formulario.
+
+Agenda.
+
+Descarga.
+
+=====================================================
+CAMILA AI
+=====================================================
+
+Camila AI será el asesor digital oficial de Coimagen.
+
+Nunca deberá sentirse como un chatbot genérico.
+
+Su personalidad deberá ser:
+
+Profesional.
+
+Amigable.
+
+Consultiva.
+
+Experta.
+
+Su objetivo será comprender el negocio del prospecto y recomendar la mejor solución.
+
+Nunca vender agresivamente.
+
+Siempre asesorar primero.
+
+=====================================================
+PROCESO DE CONTRATACIÓN
+=====================================================
+
+El sitio deberá explicar claramente el proceso.
+
+1 Diagnóstico.
+
+2 Reunión.
+
+3 Propuesta.
+
+4 Contrato Digital.
+
+5 Primer Pago.
+
+6 Inicio del Proyecto.
+
+7 Portal del Cliente.
+
+8 Producción.
+
+9 Revisión.
+
+10 Entrega.
+
+11 Soporte.
+
+12 Mensualidad.
+
+El visitante deberá entender exactamente qué ocurrirá después de contratar.
+
+=====================================================
+PORTAL DEL CLIENTE
+=====================================================
+
+El Portal del Cliente NO pertenece a este proyecto.
+
+Pertenece a COIMAGEN OS.
+
+En el sitio únicamente deberá mostrarse un botón.
+
+Portal del Cliente
+
+El cual posteriormente enlazará con COIMAGEN OS.
+
+=====================================================
+OBJETIVO COMERCIAL
+=====================================================
+
+Todo visitante deberá comprender inmediatamente:
+
+Qué hace Coimagen.
+
+Qué problema resuelve.
+
+Qué soluciones ofrece.
+
+Cómo trabaja.
+
+Cómo contratar.
+
+Qué sucede después de contratar.
+
+=====================================================
+RESULTADO FINAL
+=====================================================
+
+El sitio deberá comportarse como un vendedor profesional disponible las 24 horas.
+
+No deberá limitarse a mostrar información.
+
+Deberá generar confianza.
+
+Educar al visitante.
+
+Responder preguntas.
+
+Mostrar evidencia.
+
+Presentar soluciones.
+
+Guiar al prospecto hasta convertirse en cliente.
+
+Toda la experiencia deberá sentirse como una consultoría digital de alto nivel y posicionar a Coimagen Media Agency como una empresa líder en Inteligencia Artificial, Automatización y Sistemas Empresariales para México y Estados Unidos.

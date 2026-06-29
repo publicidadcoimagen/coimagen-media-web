@@ -1,0 +1,267 @@
+COIMAGENMEDIA.COM
+
+MASTER SPECIFICATION
+
+VERSION 1.3
+
+=====================================================
+
+IMPORTANTE
+
+Este proyecto YA SE ENCUENTRA EN PRODUCCIÓN.
+
+NO debes reconstruir el proyecto.
+
+NO debes iniciar un proyecto nuevo.
+
+NO debes modificar la arquitectura existente.
+
+NO debes eliminar componentes que actualmente funcionen.
+
+NO debes romper compatibilidad.
+
+NO debes cambiar rutas existentes.
+
+NO debes cambiar el diseño general aprobado.
+
+Debes trabajar como un arquitecto senior de software.
+
+Primero analizar.
+
+Después planear.
+
+Después actualizar.
+
+Nunca reconstruir.
+
+=====================================================
+
+OBJETIVO PRINCIPAL
+
+COIMAGENMEDIA.COM NO es un CRM.
+
+NO es un ERP.
+
+NO es COIMAGEN OS.
+
+NO es una intranet.
+
+Es el sitio web corporativo oficial de Coimagen Media Agency.
+
+Su única misión es:
+
+GENERAR CLIENTES.
+
+Todo el sitio debe optimizarse para aumentar la conversión de visitantes en clientes.
+
+Todas las decisiones de diseño deberán responder a esta pregunta:
+
+¿Esto ayuda a generar más clientes?
+
+Si la respuesta es NO...
+
+No debe implementarse.
+
+=====================================================
+
+POSICIONAMIENTO
+
+Coimagen Media Agency es una empresa especializada en:
+
+• Inteligencia Artificial
+
+• Automatización
+
+• Marketing Digital
+
+• SEO
+
+• Google Business
+
+• Desarrollo Web
+
+• Sistemas SaaS
+
+• Agentes IA
+
+• Automatización Empresarial
+
+• Business Operating Systems
+
+La percepción del visitante debe ser:
+
+"Esta empresa puede digitalizar completamente mi negocio."
+
+=====================================================
+
+PÚBLICO OBJETIVO
+
+México
+
+Estados Unidos
+
+Empresas pequeñas
+
+Empresas medianas
+
+Clínicas
+
+Restaurantes
+
+Despachos legales
+
+Inmobiliarias
+
+Profesionales independientes
+
+Empresas de servicios
+
+=====================================================
+
+IDIOMAS
+
+Todo el sitio deberá existir completamente en:
+
+Español
+
+Inglés
+
+No utilizar traducción automática.
+
+Cada idioma debe sentirse natural.
+
+=====================================================
+
+REGLA DE ORO
+
+Conservar todo lo que ya funciona.
+
+Agregar únicamente mejoras.
+
+Actualizar sin destruir.
+
+=====================================================
+
+BACKUP
+
+Antes de modificar cualquier archivo:
+
+Crear Snapshot.
+
+Crear punto de restauración.
+
+Crear rama de seguridad.
+
+Si algún cambio genera problemas deberá poder revertirse completamente.
+
+=====================================================
+
+ANÁLISIS PREVIO
+
+Antes de escribir una sola línea de código:
+
+Analizar completamente:
+
+estructura
+
+componentes
+
+rutas
+
+SEO
+
+blog
+
+landing pages
+
+casos de éxito
+
+recursos
+
+administración
+
+integraciones
+
+Jotform
+
+Google Analytics
+
+Search Console
+
+Sitemap
+
+robots
+
+Schema
+
+Open Graph
+
+Canonical
+
+Meta Tags
+
+No comenzar el desarrollo hasta terminar completamente el análisis.
+
+=====================================================
+
+NO MODIFICAR
+
+Las siguientes funcionalidades deberán conservarse:
+
+Google Analytics
+
+Google Search Console
+
+Sitemap
+
+robots.txt
+
+Schema.org
+
+Diagnóstico
+
+Agenda
+
+Casos de éxito existentes
+
+Google Business
+
+SEO implementado
+
+Jotform Assistant
+
+Responsive Design
+
+Header
+
+Footer
+
+Arquitectura React
+
+Arquitectura Vite
+
+Todas las rutas existentes
+
+=====================================================
+
+OBJETIVO FINAL
+
+Transformar la versión actual V1.2 en una V1.3 mucho más sólida comercialmente, conservando la estabilidad actual y aumentando significativamente la capacidad de generar clientes.
+
+No se evaluará el proyecto por la cantidad de código escrito.
+
+Se evaluará por:
+
+Mayor conversión.
+
+Mayor SEO.
+
+Mayor autoridad.
+
+Mayor confianza.
+
+Mayor velocidad.
+
+Mayor profesionalismo.
+
+Mayor facilidad para vender los servicios de Coimagen.
