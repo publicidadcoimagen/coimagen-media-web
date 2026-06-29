@@ -1,5 +1,4 @@
 uploads = []
-outputs = []
 
 [[generated]]
 id = "cd56Mz6q-X-n3n1Ox0nLn"
@@ -90,3 +89,15 @@ id = "wT2eTrywYcTkrjk5HT68D"
 uri = "file://artifacts/coimagen/public/images/landing/ai-agents.png"
 type = "image"
 title = "ai agents hero"
+
+[[generated]]
+id = "WSednxrz7s8pbstg6wHcw"
+uri = "file://artifacts/coimagen/public/images/camila-founder-v2.png"
+type = "image"
+title = "camila founder professional portrait"
+
+[[outputs]]
+id = "m4xbBiweEWZZjIvxxGacd"
+uri = "file://artifacts/coimagen/public/images/camila-founder-v2.png"
+type = "image"
+title = "Camila Segovia — Foto de fundadora actualizada"
