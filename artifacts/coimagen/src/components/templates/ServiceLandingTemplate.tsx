@@ -10,6 +10,7 @@ export interface ServiceFAQ {
 
 export interface ServiceContent {
   slug: string;
+  heroImage?: string;
   accentColor: string;
   accentHex: string;
   icon: string;
@@ -195,6 +196,20 @@ export function ServiceLandingTemplate({ content }: { content: ServiceContent })
               {isEs ? "Agenda una reunión" : "Schedule a meeting"}
             </a>
           </div>
+          {content.heroImage && (
+            <div
+              className="mt-14 relative rounded-2xl overflow-hidden mx-auto max-w-4xl"
+              style={{ border: `1px solid ${content.accentHex}20`, boxShadow: `0 0 80px ${content.accentHex}12` }}
+            >
+              <img
+                src={content.heroImage}
+                alt=""
+                className="w-full h-auto object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#06060f]/40 via-transparent to-transparent pointer-events-none" />
+            </div>
+          )}
         </div>
       </section>
 

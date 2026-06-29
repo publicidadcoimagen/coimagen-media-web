@@ -2,6 +2,7 @@ import { ServiceLandingTemplate, ServiceContent } from "@/components/templates/S
 
 const content: ServiceContent = {
   slug: "seo-growth",
+  heroImage: "/images/landing/seo-growth.png",
   accentColor: "lime",
   accentHex: "#A8FF3E",
   icon: "🚀",

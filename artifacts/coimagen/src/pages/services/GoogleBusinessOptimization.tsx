@@ -2,6 +2,7 @@ import { ServiceLandingTemplate, ServiceContent } from "@/components/templates/S
 
 const content: ServiceContent = {
   slug: "google-business-optimization",
+  heroImage: "/images/landing/google-business-optimization.png",
   accentColor: "yellow",
   accentHex: "#F5C518",
   icon: "🗺️",

@@ -2,6 +2,7 @@ import { IndustryTemplate } from "./IndustryTemplate";
 
 const content = {
   slug: "medical-os",
+  heroImage: "/images/landing/medical-os.png",
   icon: "🏥",
   color: "#3b82f6",
   seoTitle: {

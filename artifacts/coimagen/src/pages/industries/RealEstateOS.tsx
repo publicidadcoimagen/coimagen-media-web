@@ -2,6 +2,7 @@ import { IndustryTemplate } from "./IndustryTemplate";
 
 const content = {
   slug: "real-estate-os",
+  heroImage: "/images/landing/real-estate-os.png",
   icon: "🏠",
   color: "#10b981",
   seoTitle: {

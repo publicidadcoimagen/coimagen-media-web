@@ -2,6 +2,7 @@ import { ServiceLandingTemplate, ServiceContent } from "@/components/templates/S
 
 const content: ServiceContent = {
   slug: "ai-agents",
+  heroImage: "/images/landing/ai-agents.png",
   accentColor: "cyan",
   accentHex: "#00CFFF",
   icon: "🤖",

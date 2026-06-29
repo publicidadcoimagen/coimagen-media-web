@@ -1,0 +1,92 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "cd56Mz6q-X-n3n1Ox0nLn"
+uri = "file://artifacts/coimagen/public/images/landing/ai-powered-websites.png"
+type = "image"
+title = "ai powered websites hero"
+
+[[generated]]
+id = "y0zfLOUP44P9Mf4EKDhYu"
+uri = "file://artifacts/coimagen/public/images/landing/seo-growth.png"
+type = "image"
+title = "seo google growth hero"
+
+[[generated]]
+id = "LHcJG5fECPd4GStV8-vaX"
+uri = "file://artifacts/coimagen/public/images/landing/google-business-optimization.png"
+type = "image"
+title = "google business optimization hero"
+
+[[generated]]
+id = "BMMCz6ocHdFDreOG_576L"
+uri = "file://artifacts/coimagen/public/images/landing/ai-automation.png"
+type = "image"
+title = "ai automation hero"
+
+[[generated]]
+id = "B1Dem3Mggdi7eMSGbs-ap"
+uri = "file://artifacts/coimagen/public/images/landing/camila-ai.png"
+type = "image"
+title = "camila ai assistant hero"
+
+[[generated]]
+id = "aO-PGRySE1fkm19OH17U3"
+uri = "file://artifacts/coimagen/public/images/landing/coimagen-os.png"
+type = "image"
+title = "coimagen os dashboard hero"
+
+[[generated]]
+id = "ykhYg5W6_-dmGwFpYOTQE"
+uri = "file://artifacts/coimagen/public/images/landing/medical-os.png"
+type = "image"
+title = "medical os hero"
+
+[[generated]]
+id = "UybpnKUBPdIOEJX6C9tG0"
+uri = "file://artifacts/coimagen/public/images/landing/restaurant-os.png"
+type = "image"
+title = "restaurant os hero"
+
+[[generated]]
+id = "2fMECSWywilzrXp15N10h"
+uri = "file://artifacts/coimagen/public/images/landing/law-os.png"
+type = "image"
+title = "law os hero"
+
+[[generated]]
+id = "8i7cO6THmDh1RbtRo7o86"
+uri = "file://artifacts/coimagen/public/images/landing/dental-os.png"
+type = "image"
+title = "dental os hero"
+
+[[generated]]
+id = "OCR2qsnT2VHdv1UD-6Jya"
+uri = "file://artifacts/coimagen/public/images/landing/wellness-os.png"
+type = "image"
+title = "wellness os hero"
+
+[[generated]]
+id = "0U57IhcstLURAJ_jWmoF9"
+uri = "file://artifacts/coimagen/public/images/landing/real-estate-os.png"
+type = "image"
+title = "real estate os hero"
+
+[[generated]]
+id = "avP_lu-V8BTa094Xyu9CU"
+uri = "file://artifacts/coimagen/public/images/landing/local-business-os.png"
+type = "image"
+title = "local business os hero"
+
+[[generated]]
+id = "xBirSmY31w1ZOKgcBChJj"
+uri = "file://artifacts/coimagen/public/images/landing/cloud-systems.png"
+type = "image"
+title = "cloud systems hero"
+
+[[generated]]
+id = "wT2eTrywYcTkrjk5HT68D"
+uri = "file://artifacts/coimagen/public/images/landing/ai-agents.png"
+type = "image"
+title = "ai agents hero"

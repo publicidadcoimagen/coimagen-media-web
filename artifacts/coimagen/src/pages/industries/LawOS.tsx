@@ -2,6 +2,7 @@ import { IndustryTemplate } from "./IndustryTemplate";
 
 const content = {
   slug: "law-os",
+  heroImage: "/images/landing/law-os.png",
   icon: "⚖️",
   color: "#8b5cf6",
   seoTitle: {
