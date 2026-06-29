@@ -1,0 +1,529 @@
+=====================================================
+FILOSOFÍA SEO
+=====================================================
+
+El SEO no será una tarea adicional.
+
+El SEO deberá formar parte de absolutamente todas las páginas.
+
+Cada Landing Page.
+
+Cada artículo.
+
+Cada recurso.
+
+Cada caso de éxito.
+
+Cada imagen.
+
+Cada URL.
+
+Todo deberá construirse pensando primero en Google y posteriormente en el usuario.
+
+Nunca crear contenido únicamente para buscadores.
+
+Siempre escribir primero para personas.
+
+=====================================================
+SEO TÉCNICO
+=====================================================
+
+Conservar toda la optimización existente.
+
+Mejorarla únicamente cuando represente un beneficio.
+
+Mantener correctamente:
+
+Google Analytics
+
+Google Search Console
+
+Open Graph
+
+Twitter Cards
+
+Canonical URLs
+
+Schema.org
+
+Organization Schema
+
+LocalBusiness Schema
+
+FAQ Schema
+
+Service Schema
+
+Breadcrumb Schema
+
+BlogPosting Schema
+
+No eliminar ninguna implementación existente.
+
+=====================================================
+SITEMAP
+=====================================================
+
+Al finalizar completamente la actualización V1.3.
+
+Regenerar automáticamente:
+
+sitemap.xml
+
+El Sitemap deberá incluir:
+
+Home
+
+Landing Pages
+
+Industries
+
+Blog
+
+Recursos
+
+Casos de éxito
+
+FAQs
+
+Contacto
+
+Nosotros
+
+Páginas legales
+
+No deberá contener:
+
+404
+
+Preview
+
+Admin
+
+Portal privado
+
+URLs eliminadas
+
+Entregar un reporte final indicando:
+
+Total de URLs
+
+Total indexables
+
+Total excluidas
+
+=====================================================
+ROBOTS.TXT
+=====================================================
+
+Actualizar robots.txt.
+
+Permitir indexación únicamente del contenido público.
+
+Bloquear:
+
+preview
+
+admin
+
+portal privado
+
+rutas temporales
+
+URLs de pruebas
+
+=====================================================
+CONTROL DE ENLACES
+=====================================================
+
+Antes de finalizar.
+
+Ejecutar una auditoría completa.
+
+Verificar:
+
+Todos los botones.
+
+Todos los enlaces internos.
+
+Todos los enlaces externos.
+
+Footer.
+
+Header.
+
+Landing Pages.
+
+Blog.
+
+Recursos.
+
+Casos de éxito.
+
+No deberá existir:
+
+404
+
+500
+
+Enlaces rotos
+
+Imágenes inexistentes
+
+Rutas huérfanas
+
+=====================================================
+BLOG
+=====================================================
+
+El Blog deja de ser decorativo.
+
+Se convierte en un activo SEO.
+
+Cada artículo deberá incluir.
+
+Título SEO.
+
+Slug limpio.
+
+Imagen original.
+
+Autor.
+
+Fecha.
+
+Tiempo de lectura.
+
+Tabla de contenido.
+
+Índice automático.
+
+Contenido entre 1200 y 2500 palabras.
+
+Artículos relacionados.
+
+CTA.
+
+Schema BlogPosting.
+
+Open Graph.
+
+Twitter Cards.
+
+=====================================================
+ESTRATEGIA DE CONTENIDO
+=====================================================
+
+Todo el contenido deberá organizarse por categorías.
+
+Inteligencia Artificial
+
+Marketing Digital
+
+SEO
+
+Google Business
+
+Automatización
+
+Sitios Web
+
+Business OS
+
+Agentes IA
+
+Casos de Éxito
+
+Tecnología
+
+Cada categoría deberá poder posicionarse individualmente.
+
+=====================================================
+CONTENIDO BILINGÜE
+=====================================================
+
+Todo artículo deberá existir en:
+
+Español
+
+Inglés
+
+No utilizar traducción automática.
+
+Cada idioma deberá escribirse pensando en su mercado.
+
+=====================================================
+CASOS DE ÉXITO
+=====================================================
+
+Los Casos de Éxito serán una herramienta comercial y SEO.
+
+Cada caso deberá incluir.
+
+Historia.
+
+Problema.
+
+Proceso.
+
+Solución.
+
+Resultados.
+
+Galería.
+
+Tecnologías.
+
+Preguntas frecuentes.
+
+CTA.
+
+Botón.
+
+VER PROYECTO EN VIVO.
+
+Cuando exista un proyecto público.
+
+Abrir el sitio real desarrollado por Coimagen.
+
+=====================================================
+RECURSOS
+=====================================================
+
+La Biblioteca de Recursos deberá convertirse en un centro de generación de Leads.
+
+Ejemplos.
+
+Checklists.
+
+Plantillas.
+
+Calculadoras.
+
+Ebooks.
+
+Whitepapers.
+
+Guías.
+
+Documentos PDF.
+
+Todos deberán contar con:
+
+Página propia.
+
+SEO.
+
+Imagen destacada.
+
+Descripción.
+
+CTA.
+
+=====================================================
+INTERNAL LINKING
+=====================================================
+
+Todo el contenido deberá enlazarse entre sí.
+
+Blog
+
+↓
+
+Landing
+
+↓
+
+Caso de éxito
+
+↓
+
+Recurso
+
+↓
+
+Diagnóstico
+
+↓
+
+Camila AI
+
+↓
+
+Agenda
+
+No deberán existir páginas aisladas.
+
+=====================================================
+IMÁGENES
+=====================================================
+
+Todas las imágenes deberán tener.
+
+ALT.
+
+TITLE.
+
+Nombre descriptivo.
+
+Optimización.
+
+Lazy Loading.
+
+No utilizar nombres genéricos.
+
+=====================================================
+RENDIMIENTO
+=====================================================
+
+Optimizar.
+
+Core Web Vitals.
+
+LCP.
+
+CLS.
+
+INP.
+
+Tiempo de carga.
+
+Carga diferida.
+
+Code Splitting.
+
+Compresión.
+
+Cache.
+
+Optimización de imágenes.
+
+=====================================================
+ACCESIBILIDAD
+=====================================================
+
+Cumplir buenas prácticas.
+
+ARIA.
+
+Contraste.
+
+Navegación con teclado.
+
+Responsive.
+
+Modo móvil.
+
+=====================================================
+GOOGLE BUSINESS
+=====================================================
+
+Mantener integración con Google Business.
+
+Facilitar el acceso desde todas las Landing.
+
+Generar contenido relacionado.
+
+Favorecer SEO Local.
+
+=====================================================
+QA SEO
+=====================================================
+
+Antes de finalizar.
+
+Ejecutar una auditoría completa.
+
+Verificar.
+
+Meta Title.
+
+Meta Description.
+
+Open Graph.
+
+Twitter.
+
+Canonical.
+
+Schema.
+
+Alt.
+
+Breadcrumbs.
+
+Enlaces.
+
+Robots.
+
+Sitemap.
+
+404.
+
+Google Search Console.
+
+Google Analytics.
+
+=====================================================
+ENTREGABLE FINAL
+=====================================================
+
+Antes de considerar terminada la versión V1.3.
+
+Entregar un reporte indicando.
+
+Número de páginas.
+
+Número de Landing Pages.
+
+Número de artículos.
+
+Número de Recursos.
+
+Número de Casos de Éxito.
+
+Número de imágenes.
+
+Resultado SEO.
+
+Resultado Lighthouse.
+
+Estado del Sitemap.
+
+Estado de robots.txt.
+
+Errores encontrados.
+
+Errores corregidos.
+
+URLs indexables.
+
+URLs excluidas.
+
+Recomendaciones futuras.
+
+=====================================================
+OBJETIVO FINAL
+=====================================================
+
+COIMAGENMEDIA.COM deberá convertirse en el principal activo comercial de la empresa.
+
+Cada página deberá contribuir a:
+
+Posicionar la marca.
+
+Generar confianza.
+
+Capturar prospectos.
+
+Mostrar autoridad.
+
+Educar al visitante.
+
+Demostrar resultados.
+
+Guiar al usuario hacia Camila AI.
+
+Convertir visitantes en clientes.
+
+El sitio deberá estar preparado para crecer durante los próximos años sin necesidad de rediseños completos, únicamente mediante nuevas versiones incrementales.

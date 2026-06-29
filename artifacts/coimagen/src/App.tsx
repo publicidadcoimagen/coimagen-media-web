@@ -1,8 +1,9 @@
 import { Switch, Route, Router as WouterRouter } from "wouter";
+import { useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { LanguageProvider } from "@/context/LanguageContext";
+import { LanguageProvider, useLang } from "@/context/LanguageContext";
 import { CountryProvider } from "@/context/CountryContext";
 import { AdminProvider } from "@/context/AdminContext";
 import { Header } from "@/components/layout/Header";
@@ -35,13 +36,30 @@ import WellnessOS from "@/pages/industries/WellnessOS";
 import RestaurantOS from "@/pages/industries/RestaurantOS";
 import RealEstateOS from "@/pages/industries/RealEstateOS";
 import LocalBusinessOS from "@/pages/industries/LocalBusinessOS";
+import AIPoweredWebsites from "@/pages/services/AIPoweredWebsites";
+import SEOGrowth from "@/pages/services/SEOGrowth";
+import GoogleBusinessOptimization from "@/pages/services/GoogleBusinessOptimization";
+import AIAutomation from "@/pages/services/AIAutomation";
+import AIAgents from "@/pages/services/AIAgents";
+import CamilaAIPage from "@/pages/services/CamilaAIPage";
+import CoimagenOSPage from "@/pages/services/CoimagenOSPage";
+import CloudSystems from "@/pages/services/CloudSystems";
 
 const queryClient = new QueryClient();
+
+function LangEffect() {
+  const { lang } = useLang();
+  useEffect(() => {
+    document.documentElement.setAttribute("lang", lang === "es" ? "es" : "en");
+  }, [lang]);
+  return null;
+}
 
 function AppLayout() {
   return (
     <div className="min-h-screen" style={{ background: "#06060f" }}>
       <CanonicalUrl />
+      <LangEffect />
       <Header />
       <main>
         <Switch>
@@ -81,6 +99,16 @@ function AppLayout() {
           <Route path="/restaurant-os" component={RestaurantOS} />
           <Route path="/real-estate-os" component={RealEstateOS} />
           <Route path="/local-business-os" component={LocalBusinessOS} />
+
+          {/* Service landing pages */}
+          <Route path="/ai-powered-websites" component={AIPoweredWebsites} />
+          <Route path="/seo-growth" component={SEOGrowth} />
+          <Route path="/google-business-optimization" component={GoogleBusinessOptimization} />
+          <Route path="/ai-automation" component={AIAutomation} />
+          <Route path="/ai-agents" component={AIAgents} />
+          <Route path="/camila-ai" component={CamilaAIPage} />
+          <Route path="/coimagen-os" component={CoimagenOSPage} />
+          <Route path="/cloud-systems" component={CloudSystems} />
 
           <Route component={NotFound} />
         </Switch>
