@@ -44,6 +44,18 @@ import AIAgents from "@/pages/services/AIAgents";
 import CamilaAIPage from "@/pages/services/CamilaAIPage";
 import CoimagenOSPage from "@/pages/services/CoimagenOSPage";
 import CloudSystems from "@/pages/services/CloudSystems";
+import CrmParaMedicos from "@/pages/blog/CrmParaMedicos";
+import AutomatizacionAbogados from "@/pages/blog/AutomatizacionAbogados";
+import SeoLocalDentistas from "@/pages/blog/SeoLocalDentistas";
+import GoogleBusinessProfile from "@/pages/blog/GoogleBusinessProfile";
+import WhatsappVentas from "@/pages/blog/WhatsappVentas";
+import IaPequenasEmpresas from "@/pages/blog/IaPequenasEmpresas";
+import SitioWebRestaurantes from "@/pages/blog/SitioWebRestaurantes";
+import CamilaAiAsistente from "@/pages/blog/CamilaAiAsistente";
+import GoogleAdsVsSeo from "@/pages/blog/GoogleAdsVsSeo";
+import AutomatizacionInmobiliaria from "@/pages/blog/AutomatizacionInmobiliaria";
+import SistemaOperativoEmpresarial from "@/pages/blog/SistemaOperativoEmpresarial";
+import MarketingClinicasEstetica from "@/pages/blog/MarketingClinicasEstetica";
 
 const queryClient = new QueryClient();
 
@@ -109,6 +121,20 @@ function AppLayout() {
           <Route path="/camila-ai" component={CamilaAIPage} />
           <Route path="/coimagen-os" component={CoimagenOSPage} />
           <Route path="/cloud-systems" component={CloudSystems} />
+
+          {/* Blog articles */}
+          <Route path="/blog/crm-para-medicos" component={CrmParaMedicos} />
+          <Route path="/blog/automatizacion-abogados" component={AutomatizacionAbogados} />
+          <Route path="/blog/seo-local-dentistas" component={SeoLocalDentistas} />
+          <Route path="/blog/google-business-profile" component={GoogleBusinessProfile} />
+          <Route path="/blog/whatsapp-ventas" component={WhatsappVentas} />
+          <Route path="/blog/ia-pequenas-empresas" component={IaPequenasEmpresas} />
+          <Route path="/blog/sitio-web-restaurantes" component={SitioWebRestaurantes} />
+          <Route path="/blog/camila-ai-asistente" component={CamilaAiAsistente} />
+          <Route path="/blog/google-ads-vs-seo" component={GoogleAdsVsSeo} />
+          <Route path="/blog/automatizacion-inmobiliaria" component={AutomatizacionInmobiliaria} />
+          <Route path="/blog/sistema-operativo-empresarial" component={SistemaOperativoEmpresarial} />
+          <Route path="/blog/marketing-clinicas-estetica" component={MarketingClinicasEstetica} />
 
           <Route component={NotFound} />
         </Switch>
