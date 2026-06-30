@@ -204,16 +204,31 @@ export function IndustryTemplate({ content }: { content: IndustryContent }) {
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">{L(content.ctaLabel)}</h2>
           <p className="text-[var(--c-muted)] mb-8">
             {lang === "es"
-              ? "Solicita tu diagnóstico gratuito hoy."
-              : "Request your free diagnostic today."}
+              ? "Habla con Camila AI ahora — diagnóstico gratuito en minutos."
+              : "Talk to Camila AI now — free diagnostic in minutes."}
           </p>
-          <a
-            href={siteConfig.whatsapp.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[var(--c-cyan)] text-[#06060f] font-black px-10 py-4 rounded-xl text-base hover:brightness-110 hover:shadow-[0_0_28px_rgba(0,207,255,0.4)] transition-all active:scale-95"
-          >
-            WhatsApp → {siteConfig.whatsapp.display}
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
+            <button
+              onClick={() => {
+                const jf = document.querySelector<HTMLElement>('button[class*="Jotform"], button[class*="jotform"], [id*="JotformAI"] button, iframe[src*="jotform"]');
+                if (jf) { jf.click(); return; }
+                window.open(siteConfig.whatsapp.url, "_blank");
+              }}
+              className="inline-flex items-center gap-2 bg-[var(--c-cyan)] text-[#06060f] font-black px-10 py-4 rounded-xl text-base hover:brightness-110 hover:shadow-[0_0_28px_rgba(0,207,255,0.4)] transition-all active:scale-95"
+            >
+              💬 {lang === "es" ? "Hablar con Camila AI" : "Talk to Camila AI"}
+            </button>
+            <a
+              href={siteConfig.whatsapp.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border border-white/10 text-white font-bold px-10 py-4 rounded-xl text-base hover:border-white/25 transition-all active:scale-95"
+            >
+              WhatsApp
+            </a>
+          </div>
+          <a href="/diagnostico" className="text-[var(--c-muted)] text-sm hover:text-white transition-colors underline underline-offset-2">
+            {lang === "es" ? "o solicita tu diagnóstico gratuito →" : "or request your free diagnostic →"}
           </a>
         </div>
       </section>

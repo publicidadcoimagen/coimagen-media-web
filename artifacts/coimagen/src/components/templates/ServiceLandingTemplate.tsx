@@ -387,23 +387,33 @@ export function ServiceLandingTemplate({ content }: { content: ServiceContent })
               ? "Respuesta en menos de 24 horas · Sin compromiso · 100% gratuito"
               : "Response within 24 hours · No commitment · 100% free"}
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+            <button
+              onClick={() => {
+                const jf = document.querySelector<HTMLElement>('button[class*="Jotform"], button[class*="jotform"], [id*="JotformAI"] button, iframe[src*="jotform"]');
+                if (jf) { jf.click(); return; }
+                window.open(siteConfig.whatsapp.url, "_blank");
+              }}
+              className="inline-flex items-center gap-2 font-bold text-lg px-10 py-4 rounded-xl hover:brightness-110 transition-all active:scale-95"
+              style={{ background: content.accentHex, color: "#06060f" }}
+            >
+              💬 {isEs ? "Hablar con Camila AI" : "Talk to Camila AI"}
+            </button>
             <a
               href={siteConfig.whatsapp.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-bold text-lg px-10 py-4 rounded-xl hover:brightness-110 transition-all"
-              style={{ background: content.accentHex, color: "#06060f" }}
-            >
-              {isEs ? "Habla con Camila AI" : "Talk to Camila AI"}
-            </a>
-            <a
-              href="/agendar"
               className="inline-flex items-center gap-2 glass border border-white/10 text-white font-bold text-lg px-10 py-4 rounded-xl hover:border-white/30 transition-all"
             >
-              {isEs ? "Agenda una reunión" : "Schedule a meeting"}
+              WhatsApp
             </a>
           </div>
+          <a
+            href="/agendar"
+            className="text-[var(--c-muted)] text-sm hover:text-white transition-colors underline underline-offset-2"
+          >
+            {isEs ? "o agenda una reunión →" : "or book a meeting →"}
+          </a>
         </div>
       </section>
     </div>

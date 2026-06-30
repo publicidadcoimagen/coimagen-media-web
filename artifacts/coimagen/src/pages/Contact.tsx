@@ -162,6 +162,32 @@ export default function Contact() {
           </div>
         </div>
 
+        {/* Camila AI CTA */}
+        <div className="glass border border-[var(--c-cyan)]/20 rounded-2xl p-8 mb-6">
+          <div className="flex flex-col sm:flex-row items-center gap-5">
+            <div className="text-4xl flex-shrink-0">🤖</div>
+            <div className="flex-1 text-center sm:text-left">
+              <h2 className="text-white font-black text-lg mb-1">
+                {isEs ? "Respuesta instantánea con Camila AI" : "Instant response with Camila AI"}
+              </h2>
+              <p className="text-[var(--c-muted)] text-sm">
+                {isEs
+                  ? "Nuestro asistente de IA responde tus preguntas en tiempo real, 24/7, sin esperar."
+                  : "Our AI assistant answers your questions in real time, 24/7, without waiting."}
+              </p>
+            </div>
+            <button
+              onClick={() => {
+                const jf = document.querySelector<HTMLElement>('button[class*="Jotform"], button[class*="jotform"], [id*="JotformAI"] button');
+                if (jf) { jf.click(); return; }
+                window.open("https://wa.me/526644769223", "_blank");
+              }}
+              className="flex-shrink-0 inline-flex items-center gap-2 bg-[var(--c-cyan)] text-[#06060f] font-black px-6 py-3 rounded-xl text-sm hover:brightness-110 transition-all whitespace-nowrap"
+            >
+              💬 {isEs ? "Hablar ahora" : "Chat now"}
+            </button>
+          </div>
+        </div>
         <div className="text-center glass border border-white/[0.06] rounded-2xl p-8">
           <p className="text-[var(--c-muted)] text-sm mb-4">
             {isEs

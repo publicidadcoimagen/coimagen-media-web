@@ -113,6 +113,37 @@ export default function CaseStudiesIndex() {
         </div>
 
       </div>
+
+      {/* Jotform AI CTA */}
+      <div className="mt-16 glass border border-[var(--c-cyan)]/20 rounded-2xl p-8 text-center">
+        <div className="text-3xl mb-4">🤖</div>
+        <h2 className="text-2xl font-black text-white mb-3">
+          {isEs ? "¿Quieres resultados como estos?" : "Want results like these?"}
+        </h2>
+        <p className="text-[var(--c-muted)] text-sm mb-6 max-w-md mx-auto">
+          {isEs
+            ? "Habla con Camila AI y en minutos analizamos tu negocio y te mostramos qué sistema necesitas."
+            : "Talk to Camila AI and in minutes we analyze your business and show you what system you need."}
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <button
+            onClick={() => {
+              const jf = document.querySelector<HTMLElement>('button[class*="Jotform"], button[class*="jotform"], [id*="JotformAI"] button');
+              if (jf) { jf.click(); return; }
+              window.open("https://wa.me/526644769223", "_blank");
+            }}
+            className="inline-flex items-center gap-2 bg-[var(--c-cyan)] text-[#06060f] font-black px-8 py-3 rounded-xl text-sm hover:brightness-110 transition-all"
+          >
+            💬 {isEs ? "Hablar con Camila AI" : "Talk to Camila AI"}
+          </button>
+          <a
+            href="/diagnostico"
+            className="inline-flex items-center gap-2 border border-white/20 text-white font-bold px-8 py-3 rounded-xl text-sm hover:bg-white/5 transition-all"
+          >
+            🔍 {isEs ? "Diagnóstico gratuito" : "Free diagnostic"}
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

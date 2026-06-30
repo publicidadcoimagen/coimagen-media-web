@@ -56,6 +56,12 @@ import GoogleAdsVsSeo from "@/pages/blog/GoogleAdsVsSeo";
 import AutomatizacionInmobiliaria from "@/pages/blog/AutomatizacionInmobiliaria";
 import SistemaOperativoEmpresarial from "@/pages/blog/SistemaOperativoEmpresarial";
 import MarketingClinicasEstetica from "@/pages/blog/MarketingClinicasEstetica";
+import WhatsappBusinessIa from "@/pages/blog/WhatsappBusinessIa";
+import GoogleAdsNegociosLocales from "@/pages/blog/GoogleAdsNegociosLocales";
+import AgentesIaEmpresas from "@/pages/blog/AgentesIaEmpresas";
+import MarketingWellnessSpas from "@/pages/blog/MarketingWellnessSpas";
+import AiAgentsLocalBusiness from "@/pages/blog/AiAgentsLocalBusiness";
+import RedesSocialesRestaurantes from "@/pages/blog/RedesSocialesRestaurantes";
 
 const queryClient = new QueryClient();
 
@@ -135,6 +141,12 @@ function AppLayout() {
           <Route path="/blog/automatizacion-inmobiliaria" component={AutomatizacionInmobiliaria} />
           <Route path="/blog/sistema-operativo-empresarial" component={SistemaOperativoEmpresarial} />
           <Route path="/blog/marketing-clinicas-estetica" component={MarketingClinicasEstetica} />
+          <Route path="/blog/whatsapp-business-ia" component={WhatsappBusinessIa} />
+          <Route path="/blog/google-ads-negocios-locales" component={GoogleAdsNegociosLocales} />
+          <Route path="/blog/agentes-ia-empresas" component={AgentesIaEmpresas} />
+          <Route path="/blog/marketing-wellness-spas" component={MarketingWellnessSpas} />
+          <Route path="/blog/ai-agents-local-business" component={AiAgentsLocalBusiness} />
+          <Route path="/blog/redes-sociales-restaurantes" component={RedesSocialesRestaurantes} />
 
           <Route component={NotFound} />
         </Switch>
