@@ -9,7 +9,19 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [industriesOpen, setIndustriesOpen] = useState(false);
   const servicesRef = useRef<HTMLDivElement>(null);
+  const industriesRef = useRef<HTMLDivElement>(null);
+
+  const industryIcons: Record<string, string> = {
+    "medical-os": "🏥",
+    "dental-os": "🦷",
+    "law-os": "⚖️",
+    "wellness-os": "💆",
+    "restaurant-os": "🍽️",
+    "real-estate-os": "🏠",
+    "local-business-os": "🏪",
+  };
   const isHome = location === "/" || location === "";
   const isEs = lang === "es";
 
@@ -24,6 +36,9 @@ export function Header() {
       if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
         setServicesOpen(false);
       }
+      if (industriesRef.current && !industriesRef.current.contains(e.target as Node)) {
+        setIndustriesOpen(false);
+      }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
@@ -35,7 +50,7 @@ export function Header() {
   const navItems = [
     { label: isEs ? "Inicio" : "Home", href: "/" },
     { label: isEs ? "Servicios" : "Services", href: null, isDropdown: true },
-    { label: isEs ? "Industrias" : "Industries", href: smartHref("industrias") },
+    { label: isEs ? "Industrias" : "Industries", href: null, isIndustriesDropdown: true },
     { label: isEs ? "Casos" : "Cases", href: "/case-studies" },
     { label: isEs ? "Recursos" : "Resources", href: "/resources" },
     { label: "Blog", href: "/blog" },
@@ -95,7 +110,6 @@ export function Header() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
-
                   {servicesOpen && (
                     <div
                       onMouseLeave={() => setServicesOpen(false)}
@@ -115,6 +129,49 @@ export function Header() {
                             </div>
                             <div className={`text-xs mt-0.5 ${colorClass[svc.color] ?? "text-[var(--c-muted)]"}`}>
                               {isEs ? svc.descEs : svc.descEn}
+                            </div>
+                          </div>
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            }
+            if ((item as { isIndustriesDropdown?: boolean }).isIndustriesDropdown) {
+              return (
+                <div key="industries-dd" className="relative" ref={industriesRef}>
+                  <button
+                    onClick={() => setIndustriesOpen(!industriesOpen)}
+                    onMouseEnter={() => setIndustriesOpen(true)}
+                    className="flex items-center gap-1 text-[var(--c-muted)] hover:text-white text-sm font-medium transition-colors duration-150"
+                    aria-haspopup="true"
+                    aria-expanded={industriesOpen}
+                  >
+                    {item.label}
+                    <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${industriesOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {industriesOpen && (
+                    <div
+                      onMouseLeave={() => setIndustriesOpen(false)}
+                      className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[420px] bg-[#0c0c1a] border border-white/[0.08] rounded-2xl shadow-2xl shadow-black/60 p-4 grid grid-cols-2 gap-1 z-50"
+                    >
+                      {siteConfig.industryPages.map((ind) => (
+                        <a
+                          key={ind.slug}
+                          href={`/${ind.slug}`}
+                          onClick={() => setIndustriesOpen(false)}
+                          className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/[0.05] transition-all group"
+                        >
+                          <span className="text-xl mt-0.5 flex-shrink-0">{industryIcons[ind.slug] ?? "🏢"}</span>
+                          <div>
+                            <div className="text-white text-sm font-semibold group-hover:text-[var(--c-lime)] transition-colors">
+                              {isEs ? ind.labelEs : ind.labelEn}
+                            </div>
+                            <div className="text-[var(--c-lime)] text-xs mt-0.5">
+                              {isEs ? ind.tagEs : ind.tagEn}
                             </div>
                           </div>
                         </a>
@@ -197,6 +254,26 @@ export function Header() {
                       >
                         <span className="text-base">{svc.icon}</span>
                         {isEs ? svc.labelEs : svc.labelEn}
+                      </a>
+                    ))}
+                  </div>
+                );
+              }
+              if ((item as { isIndustriesDropdown?: boolean }).isIndustriesDropdown) {
+                return (
+                  <div key="mobile-industries">
+                    <div className="text-[var(--c-muted2)] text-xs font-bold uppercase tracking-widest px-1 pt-4 pb-2">
+                      {isEs ? "Industrias" : "Industries"}
+                    </div>
+                    {siteConfig.industryPages.map((ind) => (
+                      <a
+                        key={ind.slug}
+                        href={`/${ind.slug}`}
+                        onClick={() => setMenuOpen(false)}
+                        className="flex items-center gap-3 py-2.5 px-2 text-sm text-[var(--c-muted)] hover:text-white border-b border-white/[0.04] transition-colors"
+                      >
+                        <span className="text-base">{industryIcons[ind.slug] ?? "🏢"}</span>
+                        {isEs ? ind.labelEs : ind.labelEn}
                       </a>
                     ))}
                   </div>

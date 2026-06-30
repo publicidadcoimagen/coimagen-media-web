@@ -109,9 +109,15 @@ export function ServiceLandingTemplate({ content }: { content: ServiceContent })
     document.querySelector('meta[property="og:title"]')?.setAttribute("content", title);
     document.querySelector('meta[property="og:description"]')?.setAttribute("content", desc);
     document.querySelector('meta[property="og:url"]')?.setAttribute("content", url);
+    const ogImage = content.heroImage
+      ? `https://www.coimagenmedia.com${content.heroImage}`
+      : "https://www.coimagenmedia.com/opengraph.jpg";
+    document.querySelector('meta[property="og:image"]')?.setAttribute("content", ogImage);
+    document.querySelector('meta[name="twitter:image"]')?.setAttribute("content", ogImage);
     document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", title);
     document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", desc);
     document.querySelector('link[rel="canonical"]')?.setAttribute("href", url);
+    document.documentElement.setAttribute("lang", isEs ? "es" : "en");
     window.scrollTo(0, 0);
 
     const faqSchema = {

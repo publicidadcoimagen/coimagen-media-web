@@ -1,5 +1,7 @@
+import { useEffect } from "react";
 import { useLang } from "@/context/LanguageContext";
 import { siteConfig } from "@/config/site";
+import { Breadcrumb } from "@/components/ui/SiteBreadcrumb";
 
 interface Module {
   icon: string;
@@ -27,6 +29,52 @@ export function IndustryTemplate({ content }: { content: IndustryContent }) {
   const L = (v: { es: string; en: string }) => v[lang];
   const LA = (v: { es: string[]; en: string[] }) => v[lang];
 
+  useEffect(() => {
+    const isEs = lang === "es";
+    const title = L(content.seoTitle);
+    const desc = L(content.metaDesc);
+    const url = `https://www.coimagenmedia.com/${content.slug}`;
+    const ogImage = content.heroImage
+      ? `https://www.coimagenmedia.com${content.heroImage}`
+      : "https://www.coimagenmedia.com/opengraph.jpg";
+    document.title = title;
+    document.querySelector('meta[name="description"]')?.setAttribute("content", desc);
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", desc);
+    document.querySelector('meta[property="og:url"]')?.setAttribute("content", url);
+    document.querySelector('meta[property="og:image"]')?.setAttribute("content", ogImage);
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", title);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", desc);
+    document.querySelector('meta[name="twitter:image"]')?.setAttribute("content", ogImage);
+    document.querySelector('link[rel="canonical"]')?.setAttribute("href", url);
+    document.documentElement.setAttribute("lang", isEs ? "es" : "en");
+    window.scrollTo(0, 0);
+
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: content.faq.map((f) => ({
+        "@type": "Question",
+        name: L(f.q),
+        acceptedAnswer: { "@type": "Answer", text: L(f.a) },
+      })),
+    };
+    const injectSchema = (id: string, data: object) => {
+      let el = document.getElementById(id);
+      if (!el) {
+        el = document.createElement("script");
+        el.id = id;
+        (el as HTMLScriptElement).type = "application/ld+json";
+        document.head.appendChild(el);
+      }
+      el.textContent = JSON.stringify(data);
+    };
+    injectSchema(`faq-schema-industry-${content.slug}`, faqSchema);
+    return () => {
+      document.getElementById(`faq-schema-industry-${content.slug}`)?.remove();
+    };
+  }, [lang]);
+
   return (
     <div className="min-h-screen" style={{ background: "#06060f" }}>
       {/* Hero */}
@@ -40,6 +88,12 @@ export function IndustryTemplate({ content }: { content: IndustryContent }) {
           style={{ background: content.color }} />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+          <Breadcrumb
+            items={[
+              { labelEs: "Industrias", labelEn: "Industries" },
+              { labelEs: L(content.seoTitle), labelEn: L(content.seoTitle) },
+            ]}
+          />
           <div className="text-6xl mb-6">{content.icon}</div>
           <div className="badge-neon mb-4 mx-auto w-fit" style={{ color: content.color, borderColor: `${content.color}30` }}>
             <span className="w-1.5 h-1.5 rounded-full inline-block animate-pulse" style={{ background: content.color }} />
@@ -75,7 +129,7 @@ export function IndustryTemplate({ content }: { content: IndustryContent }) {
             >
               <img
                 src={content.heroImage}
-                alt=""
+                alt={L(content.title)}
                 className="w-full h-auto object-cover"
                 loading="lazy"
               />
