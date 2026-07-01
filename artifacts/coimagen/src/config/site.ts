@@ -4,9 +4,9 @@ export const siteConfig = {
   domain: "www.coimagenmedia.com",
   portalUrl: "https://coimagenmediaos.replit.app/",
   whatsapp: {
-    number: "526644769223",
-    display: "+52 664 476 9223",
-    url: "https://wa.me/526644769223",
+    number: "15559318378",
+    display: "+1 555 931 8378",
+    url: "https://wa.me/+15559318378",
   },
   email: "contacto@coimagenmedia.com",
   location: "Tijuana / San Diego",

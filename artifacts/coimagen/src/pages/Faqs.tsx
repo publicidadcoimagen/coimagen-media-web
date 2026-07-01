@@ -52,8 +52,8 @@ const faqs = [
     en: { q: "What results can I expect?", a: "It depends on your industry and starting point. On average, our clients see a 40–80% increase in lead capture within the first 90 days with the system active." },
   },
   {
-    es: { q: "¿Cómo puedo contactarlos?", a: "Por WhatsApp al +52 664 476 9223, por correo a contacto@coimagenmedia.com, o agendando una sesión estratégica gratuita desde nuestra página." },
-    en: { q: "How can I contact you?", a: "Via WhatsApp at +52 664 476 9223, by email at contacto@coimagenmedia.com, or by booking a free strategy session from our website." },
+    es: { q: "¿Cómo puedo contactarlos?", a: "Por WhatsApp al +1 555 931 8378, por correo a contacto@coimagenmedia.com, o agendando una sesión estratégica gratuita desde nuestra página." },
+    en: { q: "How can I contact you?", a: "Via WhatsApp at +1 555 931 8378, by email at contacto@coimagenmedia.com, or by booking a free strategy session from our website." },
   },
   {
     es: { q: "¿Tienen programa de referidos?", a: "Sí. Clientes fundadores y activos reciben 1 mes al 50% de descuento por cada cliente referido que contrate. Sin límite de referidos." },

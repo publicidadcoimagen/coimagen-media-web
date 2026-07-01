@@ -130,7 +130,7 @@ export default function CaseStudiesIndex() {
             onClick={() => {
               const jf = document.querySelector<HTMLElement>('button[class*="Jotform"], button[class*="jotform"], [id*="JotformAI"] button');
               if (jf) { jf.click(); return; }
-              window.open("https://wa.me/526644769223", "_blank");
+              window.open("https://wa.me/+15559318378", "_blank");
             }}
             className="inline-flex items-center gap-2 bg-[var(--c-cyan)] text-[#06060f] font-black px-8 py-3 rounded-xl text-sm hover:brightness-110 transition-all"
           >
