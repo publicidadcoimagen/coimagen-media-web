@@ -56,7 +56,7 @@ export default function PrivacyPolicy() {
     },
     {
       title: "9. Contacto",
-      content: "Para cualquier duda o aclaración sobre el tratamiento de sus datos, contáctenos en: contacto@coimagenmedia.com | WhatsApp: +1 555 931 8378"
+      content: "Para cualquier duda o aclaración sobre el tratamiento de sus datos, contáctenos en: contacto@coimagenmedia.com | WhatsApp: +1 555 934 1706"
     },
   ] : [
     {
@@ -93,7 +93,7 @@ export default function PrivacyPolicy() {
     },
     {
       title: "9. Contact",
-      content: "For any questions about the processing of your data, contact us at: contacto@coimagenmedia.com | WhatsApp: +1 555 931 8378"
+      content: "For any questions about the processing of your data, contact us at: contacto@coimagenmedia.com | WhatsApp: +1 555 934 1706"
     },
   ];
 

@@ -180,7 +180,7 @@ export default function Contact() {
               onClick={() => {
                 const jf = document.querySelector<HTMLElement>('button[class*="Jotform"], button[class*="jotform"], [id*="JotformAI"] button');
                 if (jf) { jf.click(); return; }
-                window.open("https://wa.me/+15559318378", "_blank");
+                window.open("https://wa.me/+15559341706", "_blank");
               }}
               className="flex-shrink-0 inline-flex items-center gap-2 bg-[var(--c-cyan)] text-[#06060f] font-black px-6 py-3 rounded-xl text-sm hover:brightness-110 transition-all whitespace-nowrap"
             >
