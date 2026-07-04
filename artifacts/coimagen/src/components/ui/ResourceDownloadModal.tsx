@@ -121,8 +121,8 @@ export default function ResourceDownloadModal({
                 </h2>
                 <p className="text-[var(--c-muted)] text-sm mt-2 leading-relaxed">
                   {isEs
-                    ? "Déjanos tu correo y te enviamos el recurso de inmediato."
-                    : "Leave us your email and we'll send the resource right away."}
+                    ? "Déjanos tu correo para acceder a este recurso gratuito. La descarga comenzará de inmediato."
+                    : "Leave your email to access this free resource. The download will start right away."}
                 </p>
               </div>
 
@@ -173,15 +173,15 @@ export default function ResourceDownloadModal({
                     </>
                   ) : (
                     <>
-                      📩 {isEs ? "Enviarme el recurso" : "Send me the resource"}
+                      ⬇️ {isEs ? "Descargar recurso" : "Download resource"}
                     </>
                   )}
                 </button>
 
                 <p className="text-[var(--c-muted)] text-xs text-center mt-3">
                   {isEs
-                    ? "Sin spam. Solo recibirás el recurso que solicitaste."
-                    : "No spam. You'll only receive the resource you requested."}
+                    ? "Tu correo se usará para enviarte contenido relevante de Coimagen. Sin spam."
+                    : "Your email will be used to send you relevant content from Coimagen. No spam."}
                 </p>
               </form>
             </>
@@ -193,17 +193,17 @@ export default function ResourceDownloadModal({
               </h2>
               <p className="text-[var(--c-muted)] text-sm leading-relaxed mb-2">
                 {isEs
-                  ? "Tu recurso ya está descargando. Si tienes problemas para encontrarlo, revisa tu carpeta de "
-                  : "Your resource is now downloading. If you have trouble finding it, check your "}
+                  ? "Tu archivo ya se está descargando. Encuéntralo en tu carpeta de "
+                  : "Your file is downloading now. Find it in your "}
                 <span className="text-white font-bold">
-                  {isEs ? "spam o correo no deseado" : "spam or junk mail folder"}
+                  {isEs ? "Descargas" : "Downloads folder"}
                 </span>
                 {isEs ? "." : "."}
               </p>
               <p className="text-[var(--c-muted)] text-xs mb-6">
                 {isEs
-                  ? "¿Necesitas ayuda personalizada? Nuestro equipo está listo."
-                  : "Need personalized help? Our team is ready."}
+                  ? "Pronto nuestro equipo te contactará con más recursos relevantes para tu negocio."
+                  : "Our team will soon reach out with more relevant resources for your business."}
               </p>
               <button
                 onClick={onClose}
