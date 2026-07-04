@@ -1,139 +1,128 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLang } from "@/context/LanguageContext";
 import { siteConfig } from "@/config/site";
+import ResourceDownloadModal from "@/components/ui/ResourceDownloadModal";
 
 interface Resource {
   icon: string;
   color: string;
   borderColor: string;
-  tagEs: string;
-  tagEn: string;
+  type: string;
   titleEs: string;
   titleEn: string;
   descEs: string;
   descEn: string;
-  type: "PDF" | "XLSX" | "Checklist" | "Guía" | "eBook" | "Template";
-  cta: "whatsapp" | "download";
-  downloadUrl?: string;
+  pdfEs: string;
+  pdfEn: string;
 }
+
+const BASE = "/resources/";
 
 const resources: Resource[] = [
   {
     icon: "✅",
     color: "#00CFFF",
     borderColor: "border-[var(--c-cyan)]/25",
-    tagEs: "Checklist",
-    tagEn: "Checklist",
+    type: "Checklist",
     titleEs: "Auditoría Digital de tu Negocio",
     titleEn: "Digital Business Audit",
     descEs: "Revisa los 30 puntos clave de tu presencia digital: web, SEO, Google Business, redes sociales y automatización.",
     descEn: "Review the 30 key points of your digital presence: website, SEO, Google Business, social media, and automation.",
-    type: "Checklist",
-    cta: "whatsapp",
+    pdfEs: `${BASE}auditoria-digital-negocio-es.pdf`,
+    pdfEn: `${BASE}digital-business-audit-en.pdf`,
   },
   {
     icon: "📘",
     color: "#A8FF3E",
     borderColor: "border-[var(--c-lime)]/25",
-    tagEs: "eBook",
-    tagEn: "eBook",
+    type: "eBook",
     titleEs: "10 formas de usar IA en tu negocio local",
     titleEn: "10 Ways to Use AI in Your Local Business",
     descEs: "Guía práctica con casos reales: chatbots, automatización de citas, respuestas automáticas en WhatsApp y más.",
     descEn: "Practical guide with real cases: chatbots, appointment automation, WhatsApp auto-replies, and more.",
-    type: "eBook",
-    cta: "whatsapp",
+    pdfEs: `${BASE}10-formas-ia-negocio-es.pdf`,
+    pdfEn: `${BASE}10-ways-ai-business-en.pdf`,
   },
   {
     icon: "🗺️",
     color: "#A855F7",
     borderColor: "border-[var(--c-purple)]/25",
-    tagEs: "Guía PDF",
-    tagEn: "PDF Guide",
+    type: "Guía PDF",
     titleEs: "Google Business Profile en 30 minutos",
     titleEn: "Google Business Profile in 30 Minutes",
     descEs: "Configura y optimiza tu perfil de Google desde cero. Paso a paso con capturas y ejemplos reales.",
     descEn: "Set up and optimize your Google profile from scratch. Step by step with screenshots and real examples.",
-    type: "Guía",
-    cta: "whatsapp",
+    pdfEs: `${BASE}google-business-profile-es.pdf`,
+    pdfEn: `${BASE}google-business-profile-en.pdf`,
   },
   {
     icon: "📋",
     color: "#f59e0b",
     borderColor: "border-yellow-400/25",
-    tagEs: "Template",
-    tagEn: "Template",
+    type: "Template",
     titleEs: "CRM Básico para Médicos — Excel/Notion",
     titleEn: "Basic CRM for Doctors — Excel/Notion",
     descEs: "Plantilla lista para gestionar pacientes, citas y seguimiento. Compatible con Excel, Google Sheets y Notion.",
     descEn: "Ready-to-use template to manage patients, appointments, and follow-up. Compatible with Excel, Google Sheets, and Notion.",
-    type: "Template",
-    cta: "whatsapp",
+    pdfEs: `${BASE}crm-medicos-es.pdf`,
+    pdfEn: `${BASE}crm-doctors-en.pdf`,
   },
   {
     icon: "💬",
     color: "#00CFFF",
     borderColor: "border-[var(--c-cyan)]/25",
-    tagEs: "Guía PDF",
-    tagEn: "PDF Guide",
+    type: "Guía PDF",
     titleEs: "WhatsApp Business para negocios (2026)",
     titleEn: "WhatsApp Business for Companies (2026)",
     descEs: "Configura mensajes automáticos, catálogo de productos, etiquetas y métricas en WhatsApp Business.",
     descEn: "Set up automatic messages, product catalog, labels, and metrics in WhatsApp Business.",
-    type: "Guía",
-    cta: "whatsapp",
+    pdfEs: `${BASE}whatsapp-business-negocios-es.pdf`,
+    pdfEn: `${BASE}whatsapp-business-guide-en.pdf`,
   },
   {
     icon: "🚀",
     color: "#A8FF3E",
     borderColor: "border-[var(--c-lime)]/25",
-    tagEs: "Checklist",
-    tagEn: "Checklist",
+    type: "Checklist",
     titleEs: "Checklist: Lanzamiento de Landing Page",
     titleEn: "Checklist: Landing Page Launch",
     descEs: "Los 25 puntos que debes revisar antes de publicar cualquier landing page: SEO, velocidad, CTA, mobile y más.",
     descEn: "The 25 points to check before publishing any landing page: SEO, speed, CTA, mobile, and more.",
-    type: "Checklist",
-    cta: "whatsapp",
+    pdfEs: `${BASE}checklist-landing-page-es.pdf`,
+    pdfEn: `${BASE}checklist-landing-page-en.pdf`,
   },
   {
     icon: "📊",
     color: "#A855F7",
     borderColor: "border-[var(--c-purple)]/25",
-    tagEs: "Guía PDF",
-    tagEn: "PDF Guide",
+    type: "Guía PDF",
     titleEs: "Cómo medir el ROI de tu Marketing Digital",
     titleEn: "How to Measure Your Digital Marketing ROI",
     descEs: "Aprende a calcular el retorno de inversión de tus campañas de marketing con fórmulas y ejemplos reales.",
     descEn: "Learn to calculate the return on investment of your marketing campaigns with formulas and real examples.",
-    type: "Guía",
-    cta: "whatsapp",
+    pdfEs: `${BASE}roi-marketing-digital-es.pdf`,
+    pdfEn: `${BASE}roi-digital-marketing-en.pdf`,
   },
   {
     icon: "🏪",
     color: "#f59e0b",
     borderColor: "border-yellow-400/25",
-    tagEs: "Template",
-    tagEn: "Template",
+    type: "Template",
     titleEs: "Plan de Contenidos para 90 días",
     titleEn: "90-Day Content Plan Template",
     descEs: "Planifica tus publicaciones en redes sociales, blog y WhatsApp con esta plantilla editorial lista para usar.",
     descEn: "Plan your social media, blog, and WhatsApp posts with this ready-to-use editorial template.",
-    type: "Template",
-    cta: "whatsapp",
+    pdfEs: `${BASE}plan-contenidos-90-dias-es.pdf`,
+    pdfEn: `${BASE}90-day-content-plan-en.pdf`,
   },
 ];
-
-const tagColorMap: Record<string, string> = {
-  "#00CFFF": "text-[var(--c-cyan)]",
-  "#A8FF3E": "text-[var(--c-lime)]",
-  "#A855F7": "text-[var(--c-purple)]",
-  "#f59e0b": "text-yellow-400",
-};
 
 export default function Resources() {
   const { lang } = useLang();
   const isEs = lang === "es";
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedResource, setSelectedResource] = useState<Resource | null>(null);
 
   useEffect(() => {
     const title = isEs
@@ -152,11 +141,14 @@ export default function Resources() {
     document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", desc);
   }, [isEs]);
 
-  const handleRequest = (resource: Resource) => {
-    const msg = isEs
-      ? `Hola, me interesa el recurso gratuito: "${resource.titleEs}". ¿Me lo pueden enviar?`
-      : `Hello, I'm interested in the free resource: "${resource.titleEn}". Can you send it to me?`;
-    window.open(`https://wa.me/${siteConfig.whatsapp.number}?text=${encodeURIComponent(msg)}`, "_blank");
+  const openModal = (resource: Resource) => {
+    setSelectedResource(resource);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setSelectedResource(null);
   };
 
   return (
@@ -169,12 +161,14 @@ export default function Resources() {
           </div>
           <h1 className="text-4xl sm:text-5xl font-black text-white mb-5">
             {isEs ? "Recursos gratuitos" : "Free resources"}
-            <span className="block text-[var(--c-cyan)]">{isEs ? "para hacer crecer tu negocio" : "to grow your business"}</span>
+            <span className="block text-[var(--c-cyan)]">
+              {isEs ? "para hacer crecer tu negocio" : "to grow your business"}
+            </span>
           </h1>
           <p className="text-[var(--c-muted)] text-base max-w-xl mx-auto leading-relaxed">
             {isEs
-              ? "Checklists, eBooks, guías y templates listos para usar. Solicítalos gratis por WhatsApp y los recibes de inmediato."
-              : "Checklists, eBooks, guides and templates ready to use. Request them free via WhatsApp and receive them right away."}
+              ? "Checklists, eBooks, guías y templates listos para usar. Déjanos tu correo y te los enviamos de inmediato."
+              : "Checklists, eBooks, guides and templates ready to use. Leave your email and we'll send them right away."}
           </p>
         </div>
 
@@ -193,8 +187,9 @@ export default function Resources() {
           </div>
           <button
             onClick={() => {
-              const btn = document.querySelector<HTMLElement>('[data-jotform-toggle]') ||
-                document.querySelector<HTMLElement>('.JotformAIAssistant button') ||
+              const btn =
+                document.querySelector<HTMLElement>("[data-jotform-toggle]") ||
+                document.querySelector<HTMLElement>(".JotformAIAssistant button") ||
                 document.querySelector<HTMLElement>('iframe[src*="jotform"]');
               if (btn) btn.click();
               else window.open(siteConfig.whatsapp.url, "_blank");
@@ -213,10 +208,7 @@ export default function Resources() {
               className={`glass border ${res.borderColor} rounded-2xl p-6 flex flex-col group hover:border-opacity-60 transition-all`}
             >
               <div className="text-4xl mb-4">{res.icon}</div>
-              <span
-                className="text-xs font-bold mb-2 inline-block"
-                style={{ color: res.color }}
-              >
+              <span className="text-xs font-bold mb-2 inline-block" style={{ color: res.color }}>
                 {res.type}
               </span>
               <h3 className="text-white font-black text-sm mb-2 leading-snug flex-1">
@@ -226,7 +218,7 @@ export default function Resources() {
                 {isEs ? res.descEs : res.descEn}
               </p>
               <button
-                onClick={() => handleRequest(res)}
+                onClick={() => openModal(res)}
                 className="mt-auto inline-flex items-center justify-center gap-2 border rounded-xl px-4 py-2.5 text-xs font-bold transition-all hover:brightness-110 active:scale-95"
                 style={{
                   color: res.color,
@@ -269,6 +261,19 @@ export default function Resources() {
           </div>
         </div>
       </div>
+
+      {/* Email capture modal */}
+      {selectedResource && (
+        <ResourceDownloadModal
+          isOpen={modalOpen}
+          onClose={closeModal}
+          titleEs={selectedResource.titleEs}
+          titleEn={selectedResource.titleEn}
+          pdfEs={selectedResource.pdfEs}
+          pdfEn={selectedResource.pdfEn}
+          accentColor={selectedResource.color}
+        />
+      )}
     </div>
   );
 }
