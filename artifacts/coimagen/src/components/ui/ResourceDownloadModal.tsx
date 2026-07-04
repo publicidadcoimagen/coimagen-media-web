@@ -55,7 +55,7 @@ export default function ResourceDownloadModal({
   const isValidEmail = (val: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim());
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!isValidEmail(email)) {
       setError(
@@ -68,16 +68,31 @@ export default function ResourceDownloadModal({
     setError("");
     setLoading(true);
 
-    setTimeout(() => {
-      const link = document.createElement("a");
-      link.href = pdfUrl;
-      link.download = fileName;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      setLoading(false);
-      setSubmitted(true);
-    }, 600);
+    const endpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT as string | undefined;
+    if (endpoint) {
+      try {
+        await fetch(endpoint, {
+          method: "POST",
+          headers: { "Accept": "application/json", "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: email.trim(),
+            recurso: isEs ? titleEs : titleEn,
+            idioma: lang,
+          }),
+        });
+      } catch {
+        // silently continue — download always works
+      }
+    }
+
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setLoading(false);
+    setSubmitted(true);
   };
 
   return (
