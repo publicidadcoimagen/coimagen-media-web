@@ -33,7 +33,7 @@ export interface ServiceContent {
   includes: {
     items: { es: string; en: string }[];
   };
-  caseStudy: {
+  caseStudy?: {
     slug: string;
     nameEs: string;
     nameEn: string;
@@ -332,46 +332,48 @@ export function ServiceLandingTemplate({ content }: { content: ServiceContent })
         </div>
       </section>
 
-      {/* CASO DE ÉXITO */}
-      <section className="py-20" style={{ background: "#080810" }}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="text-3xl sm:text-4xl font-black text-white text-center mb-10">
-            {isEs ? "Caso de Éxito Real" : "Real Success Story"}
-          </h2>
-          <div
-            className="glass border rounded-2xl p-8"
-            style={{ borderColor: `${content.caseStudy.accentColor}25` }}
-          >
+      {/* CASO DE ÉXITO — solo se renderiza si existe un caso real y verificado */}
+      {content.caseStudy && (
+        <section className="py-20" style={{ background: "#080810" }}>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 className="text-3xl sm:text-4xl font-black text-white text-center mb-10">
+              {isEs ? "Caso de Éxito Real" : "Real Success Story"}
+            </h2>
             <div
-              className="badge-neon mb-4 w-fit"
-              style={{
-                color: content.caseStudy.accentColor,
-                borderColor: `${content.caseStudy.accentColor}30`,
-                background: `${content.caseStudy.accentColor}12`,
-              }}
+              className="glass border rounded-2xl p-8"
+              style={{ borderColor: `${content.caseStudy.accentColor}25` }}
             >
-              {isEs ? content.caseStudy.nameEs : content.caseStudy.nameEn}
+              <div
+                className="badge-neon mb-4 w-fit"
+                style={{
+                  color: content.caseStudy.accentColor,
+                  borderColor: `${content.caseStudy.accentColor}30`,
+                  background: `${content.caseStudy.accentColor}12`,
+                }}
+              >
+                {isEs ? content.caseStudy.nameEs : content.caseStudy.nameEn}
+              </div>
+              <p className="text-[var(--c-muted)] mb-8 max-w-2xl leading-relaxed">
+                {isEs ? content.caseStudy.summaryEs : content.caseStudy.summaryEn}
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+                {content.caseStudy.metrics.map((m, i) => (
+                  <div key={i} className="text-center">
+                    <div className="text-2xl font-black text-white">{m.value}</div>
+                    <div className="text-[var(--c-muted)] text-xs mt-1">{isEs ? m.labelEs : m.labelEn}</div>
+                  </div>
+                ))}
+              </div>
+              <a
+                href={`/case-studies/${content.caseStudy.slug}`}
+                className="inline-flex items-center gap-2 text-[var(--c-cyan)] text-sm font-semibold hover:underline"
+              >
+                {isEs ? "Ver caso completo" : "See full case study"} →
+              </a>
             </div>
-            <p className="text-[var(--c-muted)] mb-8 max-w-2xl leading-relaxed">
-              {isEs ? content.caseStudy.summaryEs : content.caseStudy.summaryEn}
-            </p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-              {content.caseStudy.metrics.map((m, i) => (
-                <div key={i} className="text-center">
-                  <div className="text-2xl font-black text-white">{m.value}</div>
-                  <div className="text-[var(--c-muted)] text-xs mt-1">{isEs ? m.labelEs : m.labelEn}</div>
-                </div>
-              ))}
-            </div>
-            <a
-              href={`/case-studies/${content.caseStudy.slug}`}
-              className="inline-flex items-center gap-2 text-[var(--c-cyan)] text-sm font-semibold hover:underline"
-            >
-              {isEs ? "Ver caso completo" : "See full case study"} →
-            </a>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* FAQ */}
       <FaqSection faq={content.faq} accentHex={content.accentHex} isEs={isEs} />

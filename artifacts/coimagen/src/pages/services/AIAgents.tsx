@@ -66,20 +66,6 @@ const content: ServiceContent = {
       { es: "Mejoras y actualizaciones continuas", en: "Continuous improvements and updates" },
     ],
   },
-  caseStudy: {
-    slug: "coimagen-os",
-    nameEs: "COIMAGEN OS — Caso Interno",
-    nameEn: "COIMAGEN OS — Internal Case",
-    summaryEs: "Implementamos nuestros propios agentes de IA para atender prospectos en nuestro sitio y WhatsApp. El resultado: 3x más prospectos calificados sin contratar más personal.",
-    summaryEn: "We implemented our own AI agents to attend leads on our website and WhatsApp. The result: 3x more qualified leads without hiring more staff.",
-    metrics: [
-      { value: "3x", labelEs: "más prospectos calificados", labelEn: "more qualified leads" },
-      { value: "< 5s", labelEs: "tiempo de respuesta", labelEn: "response time" },
-      { value: "24/7", labelEs: "disponibilidad", labelEn: "availability" },
-      { value: "-70%", labelEs: "tiempo en atención manual", labelEn: "manual attention time" },
-    ],
-    accentColor: "#00CFFF",
-  },
   faq: [
     { q: { es: "¿El agente de IA suena como un robot?", en: "Does the AI agent sound like a robot?" }, a: { es: "No. Entrenamos al agente con la voz y personalidad de tu marca. Los clientes tienen conversaciones naturales y muchos no saben que están hablando con una IA.", en: "No. We train the agent with your brand's voice and personality. Clients have natural conversations and many don't know they're talking to an AI." } },
     { q: { es: "¿El agente puede cerrar ventas?", en: "Can the agent close sales?" }, a: { es: "Puede llevar al prospecto hasta el punto de agendar una reunión o enviar una propuesta. La negociación final normalmente requiere intervención humana.", en: "It can take the lead up to the point of scheduling a meeting or sending a proposal. Final negotiation usually requires human intervention." } },
