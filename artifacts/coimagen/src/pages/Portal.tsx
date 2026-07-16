@@ -35,18 +35,18 @@ export default function Portal() {
             : "Access COIMAGEN OS to manage your projects, review progress, approve deliverables, and communicate with your Coimagen team."}
         </p>
 
-        {/* Main CTA */}
-        <a
-          href={siteConfig.portalUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 bg-[var(--c-purple)] text-white font-black text-lg px-10 py-4 rounded-xl hover:brightness-110 hover:shadow-[0_0_30px_rgba(168,85,247,0.35)] transition-all mb-6 w-full sm:w-auto justify-center"
+        {/* Main CTA — portal login not built yet; do not link to the retired Replit instance */}
+        <button
+          type="button"
+          disabled
+          title={isEs ? "Portal en construcción — contáctanos por WhatsApp" : "Portal under construction — contact us via WhatsApp"}
+          className="inline-flex items-center gap-3 bg-[var(--c-purple)]/30 text-white/50 font-black text-lg px-10 py-4 rounded-xl cursor-not-allowed mb-6 w-full sm:w-auto justify-center"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13 12H3"/>
           </svg>
-          {isEs ? "Entrar a COIMAGEN OS" : "Enter COIMAGEN OS"}
-        </a>
+          {isEs ? "Portal en construcción" : "Portal under construction"}
+        </button>
 
         {/* Info box */}
         <div className="glass border border-white/[0.06] rounded-2xl p-6 mb-6 text-left">
@@ -72,8 +72,8 @@ export default function Portal() {
 
         <p className="text-[var(--c-muted)] text-xs mb-6">
           {isEs
-            ? "¿Problemas para acceder? Contáctanos por WhatsApp."
-            : "Having trouble accessing? Contact us via WhatsApp."}
+            ? "El portal estará disponible próximamente. Mientras tanto, contáctanos por WhatsApp."
+            : "The portal will be available soon. In the meantime, contact us via WhatsApp."}
         </p>
 
         <a
