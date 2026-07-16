@@ -151,11 +151,11 @@ export default function Contact() {
                   src={settings.calendarUrl}
                   style={{ border: 0, background: "#ffffff" }}
                   width="100%"
-                  height="420"
+                  height="700"
                   frameBorder="0"
                   scrolling="no"
                   title={isEs ? "Agendar cita" : "Book appointment"}
-                  className="rounded-xl"
+                  className="rounded-xl h-[420px] lg:h-[700px] w-full"
                 />
               </div>
             </div>
