@@ -149,7 +149,7 @@ export default function Contact() {
               <div className="p-3">
                 <iframe
                   src={settings.calendarUrl}
-                  style={{ border: 0 }}
+                  style={{ border: 0, background: "#ffffff" }}
                   width="100%"
                   height="420"
                   frameBorder="0"

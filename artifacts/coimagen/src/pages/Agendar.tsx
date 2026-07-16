@@ -54,7 +54,7 @@ export default function Agendar() {
           <div className="p-4">
             <iframe
               src={settings.calendarUrl}
-              style={{ border: 0 }}
+              style={{ border: 0, background: "#ffffff" }}
               width="100%"
               height="800"
               frameBorder={0}
