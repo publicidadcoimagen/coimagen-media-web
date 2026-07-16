@@ -1,11 +1,9 @@
 import { useEffect } from "react";
 import { useLang } from "@/context/LanguageContext";
-import { useAdmin } from "@/context/AdminContext";
 import { siteConfig } from "@/config/site";
 
 export default function Contact() {
   const { lang } = useLang();
-  const { settings } = useAdmin();
   const isEs = lang === "es";
 
   useEffect(() => {
@@ -138,27 +136,24 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Calendar */}
+          {/* Calendar CTA — full calendar embed lives on /agendar only, where it has room to render properly */}
           <div>
             <h2 className="text-white font-black text-lg mb-5">{isEs ? "Agenda una llamada" : "Book a call"}</h2>
-            <div className="glass border border-[var(--c-cyan)]/20 rounded-2xl overflow-hidden">
-              <div className="bg-gradient-to-r from-[var(--c-cyan)]/10 to-[var(--c-purple)]/10 border-b border-white/[0.06] px-5 py-3 flex items-center gap-2">
-                <div className="w-2.5 h-2.5 rounded-full bg-[var(--c-lime)] animate-pulse" />
-                <span className="text-white font-semibold text-xs">{isEs ? "Calendario de sesiones estratégicas" : "Strategy session calendar"}</span>
-              </div>
-              <div className="p-3">
-                <iframe
-                  src={settings.calendarUrl}
-                  style={{ border: 0, background: "#ffffff" }}
-                  width="100%"
-                  height="700"
-                  frameBorder="0"
-                  scrolling="no"
-                  title={isEs ? "Agendar cita" : "Book appointment"}
-                  className="rounded-xl h-[420px] lg:h-[700px] w-full"
-                />
-              </div>
-            </div>
+            <a
+              href="/agendar"
+              className="glass border border-[var(--c-cyan)]/20 rounded-2xl overflow-hidden flex flex-col items-center justify-center text-center p-10 h-full hover:border-[var(--c-cyan)]/50 hover:bg-[var(--c-cyan)]/5 transition-all group"
+            >
+              <div className="text-4xl mb-4">📅</div>
+              <p className="text-white font-bold text-base mb-2">
+                {isEs ? "Elige tu horario en el calendario" : "Pick your time on the calendar"}
+              </p>
+              <p className="text-[var(--c-muted)] text-sm mb-5">
+                {isEs ? "30 minutos, sin costo, plan de acción real." : "30 minutes, no cost, a real action plan."}
+              </p>
+              <span className="inline-flex items-center gap-2 bg-[var(--c-cyan)] text-[#06060f] font-black px-6 py-3 rounded-xl text-sm group-hover:brightness-110 transition-all">
+                {isEs ? "Ver calendario →" : "View calendar →"}
+              </span>
+            </a>
           </div>
         </div>
 
