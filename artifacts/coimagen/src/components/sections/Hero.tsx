@@ -1,5 +1,4 @@
 import { useLang } from "@/context/LanguageContext";
-import { siteConfig } from "@/config/site";
 
 export function Hero() {
   const { t } = useLang();
@@ -40,9 +39,7 @@ export function Hero() {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
           <a
-            href={siteConfig.whatsapp.url}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/diagnostico"
             className="inline-flex items-center gap-2.5 bg-[var(--c-cyan)] text-[#06060f] font-bold px-8 py-4 rounded-xl text-base hover:brightness-110 hover:shadow-[0_0_28px_rgba(0,207,255,0.45)] transition-all active:scale-95"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
