@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "wouter";
 import { useLang } from "@/context/LanguageContext";
 import { siteConfig } from "@/config/site";
 
-type Step = 1 | 2 | 3 | 4;
+const DIAGNOSIS_API_BASE =
+  (import.meta.env.VITE_DIAGNOSIS_API_URL as string | undefined) ?? "https://coimagen-os-api.onrender.com";
+
+type Step = 1 | 2 | 3 | 4 | 5;
+type WebsiteStepMode = "ask" | "form" | "loading" | "error";
 
 const industries = [
   { id: "medical", icon: "🏥", es: "Médicos / Clínicas", en: "Medical / Clinics" },
@@ -55,11 +60,18 @@ function getLevel(score: number, isEs: boolean) {
 export default function Diagnostico() {
   const { lang } = useLang();
   const isEs = lang === "es";
+  const [, navigate] = useLocation();
 
   const [step, setStep] = useState<Step>(1);
   const [industry, setIndustry] = useState<string | null>(null);
   const [answers, setAnswers] = useState<(boolean | null)[]>([null, null, null, null, null]);
   const [showJotform, setShowJotform] = useState(false);
+
+  const [websiteMode, setWebsiteMode] = useState<WebsiteStepMode>("ask");
+  const [websiteUrl, setWebsiteUrl] = useState("");
+  const [leadName, setLeadName] = useState("");
+  const [leadEmail, setLeadEmail] = useState("");
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   useEffect(() => {
     const title = isEs ? "Diagnóstico Digital Gratuito — Coimagen Media Agency" : "Free Digital Diagnostic — Coimagen Media Agency";
@@ -94,6 +106,59 @@ export default function Diagnostico() {
     setIndustry(null);
     setAnswers([null, null, null, null, null]);
     setShowJotform(false);
+    setWebsiteMode("ask");
+    setWebsiteUrl("");
+    setLeadName("");
+    setLeadEmail("");
+    setSubmitError(null);
+  };
+
+  const normalizeUrl = (raw: string) => {
+    const trimmed = raw.trim();
+    return /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
+  };
+
+  const isValidUrl = (raw: string) => {
+    try {
+      new URL(normalizeUrl(raw));
+      return true;
+    } catch {
+      return false;
+    }
+  };
+
+  const isValidEmail = (val: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim());
+
+  const submitDiagnosis = async () => {
+    setWebsiteMode("loading");
+    setSubmitError(null);
+    const fallbackMessage = isEs
+      ? "No pudimos generar tu diagnóstico en este momento. Intenta de nuevo o contáctanos por WhatsApp."
+      : "We couldn't generate your diagnostic right now. Try again or reach us on WhatsApp.";
+    try {
+      let res: Response;
+      try {
+        res = await fetch(`${DIAGNOSIS_API_BASE}/api/public/digital-diagnosis`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            url: normalizeUrl(websiteUrl),
+            name: leadName.trim(),
+            email: leadEmail.trim(),
+          }),
+        });
+      } catch {
+        throw new Error(fallbackMessage);
+      }
+      const data = await res.json().catch(() => null);
+      if (!res.ok || !data?.publicToken) {
+        throw new Error((typeof data?.error === "string" && data.error) || fallbackMessage);
+      }
+      navigate(`/diagnostico/resultado/${data.publicToken}`);
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : fallbackMessage);
+      setWebsiteMode("error");
+    }
   };
 
   return (
@@ -115,8 +180,8 @@ export default function Diagnostico() {
 
         {/* Step indicator */}
         <div className="flex items-center justify-center gap-2 mb-10">
-          {([1, 2, 3, 4] as Step[]).map((s) => (
-            <div key={s} className={`flex items-center gap-2 ${s < 4 ? "flex-1" : ""}`}>
+          {([1, 2, 3, 4, 5] as Step[]).map((s) => (
+            <div key={s} className={`flex items-center gap-2 ${s < 5 ? "flex-1" : ""}`}>
               <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-black transition-all ${
                 step === s ? "bg-[var(--c-cyan)] text-[#06060f]" :
                 step > s ? "bg-[var(--c-lime)] text-[#06060f]" :
@@ -124,7 +189,7 @@ export default function Diagnostico() {
               }`}>
                 {step > s ? "✓" : s}
               </div>
-              {s < 4 && <div className={`flex-1 h-0.5 ${step > s ? "bg-[var(--c-lime)]" : "bg-white/[0.08]"}`} />}
+              {s < 5 && <div className={`flex-1 h-0.5 ${step > s ? "bg-[var(--c-lime)]" : "bg-white/[0.08]"}`} />}
             </div>
           ))}
         </div>
@@ -268,8 +333,157 @@ export default function Diagnostico() {
           </div>
         )}
 
-        {/* STEP 4 — Options + optional Jotform */}
-        {step === 4 && !showJotform && (
+        {/* STEP 4 — Website URL */}
+        {step === 4 && (
+          <div>
+            {(websiteMode === "ask" || websiteMode === "form") && (
+              <>
+                <h2 className="text-white font-black text-xl text-center mb-2">
+                  {isEs ? "¿Cuál es la URL de tu sitio web?" : "What's your website URL?"}
+                </h2>
+                <p className="text-[var(--c-muted)] text-sm text-center mb-8">
+                  {isEs
+                    ? "Analizamos tu sitio y te damos un plan de acción personalizado, gratis."
+                    : "We'll analyze your site and give you a personalized action plan, free."}
+                </p>
+              </>
+            )}
+
+            {websiteMode === "ask" && (
+              <div className="glass border border-white/[0.06] rounded-2xl p-6 mb-8">
+                <label htmlFor="website-url" className="block text-white/70 text-xs font-semibold mb-2 uppercase tracking-wider">
+                  {isEs ? "URL de tu sitio web" : "Your website URL"}
+                </label>
+                <input
+                  id="website-url"
+                  type="text"
+                  value={websiteUrl}
+                  onChange={(e) => setWebsiteUrl(e.target.value)}
+                  placeholder="tunegocio.com"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/30 focus:outline-none focus:border-[var(--c-cyan)]/50 transition-colors mb-4"
+                />
+                <button
+                  disabled={!isValidUrl(websiteUrl)}
+                  onClick={() => setWebsiteMode("form")}
+                  className="w-full bg-[var(--c-cyan)] text-[#06060f] font-black py-3 rounded-xl text-sm hover:brightness-110 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+                >
+                  {isEs ? "Analizar mi sitio →" : "Analyze my site →"}
+                </button>
+
+                <div className="flex items-center gap-3 my-5">
+                  <div className="flex-1 h-px bg-white/[0.08]" />
+                  <span className="text-[var(--c-muted)] text-xs">{isEs ? "o" : "or"}</span>
+                  <div className="flex-1 h-px bg-white/[0.08]" />
+                </div>
+
+                <button
+                  onClick={() => setStep(5)}
+                  className="w-full glass border border-white/[0.08] text-white/70 hover:text-white py-3 rounded-xl text-sm transition-colors"
+                >
+                  {isEs ? "No tengo sitio web" : "I don't have a website"}
+                </button>
+              </div>
+            )}
+
+            {websiteMode === "form" && (
+              <div className="glass border border-white/[0.06] rounded-2xl p-6 mb-8">
+                <p className="text-[var(--c-muted)] text-xs mb-5">
+                  {isEs
+                    ? "Te enviaremos tu diagnóstico completo por correo."
+                    : "We'll send you your full diagnostic by email."}
+                </p>
+                <div className="mb-4">
+                  <label htmlFor="lead-name" className="block text-white/70 text-xs font-semibold mb-1.5 uppercase tracking-wider">
+                    {isEs ? "Tu nombre" : "Your name"}
+                  </label>
+                  <input
+                    id="lead-name"
+                    type="text"
+                    value={leadName}
+                    onChange={(e) => setLeadName(e.target.value)}
+                    placeholder={isEs ? "Juan Pérez" : "John Smith"}
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/30 focus:outline-none focus:border-[var(--c-cyan)]/50 transition-colors"
+                  />
+                </div>
+                <div className="mb-5">
+                  <label htmlFor="lead-email" className="block text-white/70 text-xs font-semibold mb-1.5 uppercase tracking-wider">
+                    {isEs ? "Tu correo electrónico" : "Your email"}
+                  </label>
+                  <input
+                    id="lead-email"
+                    type="email"
+                    value={leadEmail}
+                    onChange={(e) => setLeadEmail(e.target.value)}
+                    placeholder={isEs ? "nombre@empresa.com" : "name@company.com"}
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/30 focus:outline-none focus:border-[var(--c-cyan)]/50 transition-colors"
+                  />
+                </div>
+                <div className="flex gap-3">
+                  <button
+                    onClick={() => setWebsiteMode("ask")}
+                    className="glass border border-white/[0.08] text-[var(--c-muted)] hover:text-white px-6 py-3 rounded-xl text-sm transition-colors"
+                  >
+                    ← {isEs ? "Atrás" : "Back"}
+                  </button>
+                  <button
+                    disabled={leadName.trim().length === 0 || !isValidEmail(leadEmail)}
+                    onClick={submitDiagnosis}
+                    className="flex-1 bg-[var(--c-cyan)] text-[#06060f] font-black py-3 rounded-xl text-sm hover:brightness-110 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+                  >
+                    {isEs ? "Obtener mi diagnóstico →" : "Get my diagnostic →"}
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {websiteMode === "loading" && (
+              <div className="glass border border-[var(--c-cyan)]/25 rounded-2xl p-10 text-center mb-8">
+                <svg className="w-8 h-8 animate-spin text-[var(--c-cyan)] mx-auto mb-4" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                </svg>
+                <p className="text-white font-bold text-sm mb-1">
+                  {isEs ? "Analizando tu sitio web..." : "Analyzing your website..."}
+                </p>
+                <p className="text-[var(--c-muted)] text-xs">
+                  {isEs ? "Esto puede tardar unos segundos." : "This can take a few seconds."}
+                </p>
+              </div>
+            )}
+
+            {websiteMode === "error" && (
+              <div className="glass border border-red-400/30 rounded-2xl p-6 mb-8 text-center">
+                <p className="text-red-400 text-sm font-bold mb-2">⚠️ {isEs ? "Algo salió mal" : "Something went wrong"}</p>
+                <p className="text-[var(--c-muted)] text-sm mb-6">{submitError}</p>
+                <div className="flex gap-3">
+                  <button
+                    onClick={submitDiagnosis}
+                    className="flex-1 bg-[var(--c-cyan)] text-[#06060f] font-black py-3 rounded-xl text-sm hover:brightness-110 transition-all"
+                  >
+                    {isEs ? "Reintentar" : "Retry"}
+                  </button>
+                  <button
+                    onClick={() => setStep(5)}
+                    className="flex-1 glass border border-white/[0.08] text-white/70 hover:text-white py-3 rounded-xl text-sm transition-colors"
+                  >
+                    {isEs ? "Continuar sin análisis" : "Continue without analysis"}
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {websiteMode === "ask" && (
+              <div className="text-center">
+                <button onClick={() => setStep(3)} className="text-[var(--c-muted)] hover:text-white text-xs transition-colors">
+                  ← {isEs ? "Volver a mi puntaje" : "Back to my score"}
+                </button>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* STEP 5 — Options + optional Jotform */}
+        {step === 5 && !showJotform && (
           <div>
             <h2 className="text-white font-black text-2xl text-center mb-2">
               {isEs ? "¿Cómo quieres continuar?" : "How do you want to continue?"}
@@ -316,7 +530,7 @@ export default function Diagnostico() {
         )}
 
         {/* Jotform embed (shown when user picks Camila AI) */}
-        {step === 4 && showJotform && (
+        {step === 5 && showJotform && (
           <div>
             <button
               onClick={() => setShowJotform(false)}
