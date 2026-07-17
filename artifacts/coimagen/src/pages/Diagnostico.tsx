@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "wouter";
 import { useLang } from "@/context/LanguageContext";
 import { siteConfig } from "@/config/site";
-
-const DIAGNOSIS_API_BASE =
-  (import.meta.env.VITE_DIAGNOSIS_API_URL as string | undefined) ?? "https://coimagen-os-api.onrender.com";
+import { DIAGNOSIS_API_BASE } from "@/lib/diagnosisApi";
 
 type Step = 1 | 2 | 3 | 4 | 5;
 type WebsiteStepMode = "ask" | "form" | "loading" | "error";

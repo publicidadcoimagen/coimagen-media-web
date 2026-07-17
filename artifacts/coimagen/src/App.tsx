@@ -13,6 +13,7 @@ import { CanonicalUrl } from "@/components/ui/CanonicalUrl";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Diagnostico from "@/pages/Diagnostico";
+import DiagnosticoResultado from "@/pages/DiagnosticoResultado";
 import Portal from "@/pages/Portal";
 import Secure from "@/pages/Secure";
 import Admin from "@/pages/Admin";
@@ -84,6 +85,7 @@ function AppLayout() {
           {/* Core */}
           <Route path="/" component={Home} />
           <Route path="/diagnostico" component={Diagnostico} />
+          <Route path="/diagnostico/resultado/:token" component={DiagnosticoResultado} />
           <Route path="/portal" component={Portal} />
 
           {/* Auth & Admin */}
