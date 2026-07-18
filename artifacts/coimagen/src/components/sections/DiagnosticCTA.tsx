@@ -34,9 +34,7 @@ export function DiagnosticCTA() {
           </a>
 
           <a
-            href={siteConfig.whatsapp.url}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/diagnostico"
             className="inline-flex items-center justify-center gap-2 border border-white/10 text-white font-semibold px-8 py-4 rounded-xl text-base hover:border-[var(--c-cyan)]/30 hover:text-[var(--c-cyan)] transition-all active:scale-95"
           >
             {d.cta1}

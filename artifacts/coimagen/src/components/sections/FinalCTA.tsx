@@ -27,9 +27,7 @@ export function FinalCTA() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href={siteConfig.whatsapp.url}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/diagnostico"
             className="inline-flex items-center justify-center gap-2.5 bg-[var(--c-cyan)] text-[#06060f] font-black px-10 py-5 rounded-xl text-lg hover:brightness-110 hover:shadow-[0_0_40px_rgba(0,207,255,0.45)] transition-all active:scale-95"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">

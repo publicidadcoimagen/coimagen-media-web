@@ -108,9 +108,7 @@ export function IndustryTemplate({ content }: { content: IndustryContent }) {
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href={siteConfig.whatsapp.url}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/diagnostico"
               className="inline-flex items-center gap-2 bg-[var(--c-cyan)] text-[#06060f] font-bold px-8 py-4 rounded-xl text-base hover:brightness-110 hover:shadow-[0_0_28px_rgba(0,207,255,0.4)] transition-all active:scale-95"
             >
               {L(content.ctaLabel)}

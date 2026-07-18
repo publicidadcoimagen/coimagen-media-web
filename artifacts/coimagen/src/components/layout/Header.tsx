@@ -201,9 +201,7 @@ export function Header() {
           </div>
 
           <a
-            href={siteConfig.whatsapp.url}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/diagnostico"
             className="hidden sm:inline-flex items-center gap-2 bg-[var(--c-cyan)] text-[#06060f] font-bold text-sm px-4 py-2 rounded-xl hover:brightness-110 hover:shadow-[0_0_20px_rgba(0,207,255,0.35)] transition-all"
           >
             {t.nav.cta}
@@ -300,9 +298,7 @@ export function Header() {
           </div>
 
           <a
-            href={siteConfig.whatsapp.url}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/diagnostico"
             className="block w-full text-center bg-[var(--c-cyan)] text-[#06060f] font-bold py-3 rounded-xl text-sm"
           >
             {t.nav.cta}

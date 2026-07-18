@@ -48,9 +48,7 @@ export function BusinessOSSection() {
             {bos.cta1}
           </a>
           <a
-            href={siteConfig.whatsapp.url}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/diagnostico"
             className="inline-flex items-center gap-2 border border-white/10 text-white font-semibold px-7 py-3.5 rounded-xl text-sm hover:border-[var(--c-lime)]/30 hover:text-[var(--c-lime)] transition-all active:scale-95"
           >
             {bos.cta2}
