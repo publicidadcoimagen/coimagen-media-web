@@ -163,6 +163,19 @@ const translations = {
       cta1: "Ver demos",
       cta2: "Solicitar diagnóstico",
     },
+    demos: {
+      title: "Demos en vivo",
+      subtitle: "Medical OS ya está disponible en un entorno de demostración real. El resto de nuestros sistemas operativos por industria llegan próximamente.",
+      medical: {
+        desc: "Sistema real de gestión clínica en uso.",
+        warning: "Entorno de DEMO con datos de ejemplo, no es el sistema real de ningún cliente.",
+        doctorLabel: "Doctor",
+        secretaryLabel: "Secretaria",
+        cta: "Abrir demo de Medical OS",
+      },
+      comingSoon: "Próximamente",
+      finalCta: "¿Quieres algo así para tu negocio? Solicita tu diagnóstico",
+    },
     camila: {
       name: "Camila Segovia",
       role: "CEO de Coimagen Media",
@@ -373,6 +386,19 @@ const translations = {
       subtitle: "Complete digital platforms with landing pages, funnels, SEO blog, forms, CRM, automation and personalized demo.",
       cta1: "View demos",
       cta2: "Request diagnostic",
+    },
+    demos: {
+      title: "Live demos",
+      subtitle: "Medical OS is already available in a real demo environment. Our other industry operating systems are coming soon.",
+      medical: {
+        desc: "Real clinical management system in active use.",
+        warning: "DEMO environment with sample data — this is not any client's real system.",
+        doctorLabel: "Doctor",
+        secretaryLabel: "Front Desk",
+        cta: "Open Medical OS demo",
+      },
+      comingSoon: "Coming soon",
+      finalCta: "Want something like this for your business? Request your diagnostic",
     },
     camila: {
       name: "Camila Segovia",

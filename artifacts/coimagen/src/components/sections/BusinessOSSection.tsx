@@ -42,7 +42,7 @@ export function BusinessOSSection() {
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <a
-            href="#industrias"
+            href="/demos"
             className="inline-flex items-center gap-2 bg-[var(--c-lime)] text-[#06060f] font-bold px-7 py-3.5 rounded-xl text-sm hover:brightness-110 hover:shadow-[0_0_20px_rgba(163,230,53,0.3)] transition-all active:scale-95"
           >
             {bos.cta1}
