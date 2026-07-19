@@ -2,8 +2,6 @@ import { useEffect } from "react";
 import { useLang } from "@/context/LanguageContext";
 import { siteConfig } from "@/config/site";
 
-const liveUrl = "https://coimagenmediaos.replit.app/";
-
 export default function CoimagenOS() {
   const { lang } = useLang();
   const isEs = lang === "es";
@@ -60,19 +58,6 @@ export default function CoimagenOS() {
             ? "Plataforma operativa interna de Coimagen Media Agency. El mismo sistema que usamos para gestionar clientes, proyectos, flujos y operaciones — y que ofrecemos a empresas como sistema operativo digital personalizado."
             : "Coimagen Media Agency's internal operating platform. The same system we use to manage clients, projects, workflows and operations — and that we offer to businesses as a custom digital operating system."}
         </p>
-
-        {/* VER PROYECTO EN VIVO */}
-        <a
-          href={liveUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-[var(--c-cyan)] text-[#06060f] font-black px-8 py-3.5 rounded-xl text-sm hover:brightness-110 hover:shadow-[0_0_24px_rgba(0,207,255,0.35)] transition-all mb-12"
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-          </svg>
-          {isEs ? "VER PROYECTO EN VIVO" : "VIEW LIVE PROJECT"}
-        </a>
 
         {/* Metrics */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
@@ -135,17 +120,6 @@ export default function CoimagenOS() {
               className="inline-flex items-center gap-2 bg-[var(--c-cyan)] text-[#06060f] font-black px-8 py-3 rounded-xl text-sm hover:brightness-110 transition-all"
             >
               {isEs ? "Solicitar COIMAGEN OS" : "Request COIMAGEN OS"}
-            </a>
-            <a
-              href={liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 glass border border-white/10 text-white font-bold px-8 py-3 rounded-xl text-sm hover:border-white/30 transition-all"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-              </svg>
-              {isEs ? "Ver sistema en vivo" : "See live system"}
             </a>
           </div>
         </div>
