@@ -5,7 +5,7 @@ import { Breadcrumb } from "@/components/ui/SiteBreadcrumb";
 
 interface Module {
   icon: string;
-  name: string;
+  name: { es: string; en: string };
 }
 
 interface IndustryContent {
@@ -174,7 +174,7 @@ export function IndustryTemplate({ content }: { content: IndustryContent }) {
             {content.modules.map((mod, i) => (
               <div key={i} className="glass glass-hover p-5 text-center">
                 <div className="text-3xl mb-3">{mod.icon}</div>
-                <p className="text-white font-semibold text-sm">{mod.name}</p>
+                <p className="text-white font-semibold text-sm">{L(mod.name)}</p>
               </div>
             ))}
           </div>
