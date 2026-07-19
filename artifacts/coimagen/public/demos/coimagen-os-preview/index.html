@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coimagen Media Agency — Plataforma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="brand">
+    <svg viewBox="0 0 100 100"><polygon points="50,10 62,32 38,32" fill="#8b2fc9"/><polygon points="38,32 50,54 26,54" fill="#3a6fd8"/><polygon points="62,32 74,54 50,54" fill="#e8484d"/><polygon points="26,54 38,76 14,76" fill="#17a7a0"/><polygon points="50,54 62,76 38,76" fill="#f2942c"/><polygon points="62,54 74,76 50,76" fill="#f4c430"/></svg>
+    <div class="brand-word">COIMAGEN<span>MEDIA AGENCY</span></div>
+  </div>
+
+  <div class="navgroup-label">Cliente activo</div>
+  <select id="clientSwitcher" style="margin-bottom:6px;">
+    <option>Cliente A — Serum Glow</option>
+    <option>Cliente B — Suplementos Vital</option>
+    <option>Cliente C — Moda Urbana</option>
+    <option>+ Agregar nuevo cliente…</option>
+  </select>
+
+  <div class="navgroup-label">General</div>
+  <div class="navitem active" data-view="dashboard"><span class="dot" style="background:var(--purple)"></span>Panel general</div>
+
+  <div class="navgroup-label">Proyecto</div>
+  <div class="navitem" data-view="proyecto"><span class="dot" style="background:var(--coral)"></span>Nicho y oferta</div>
+  <div class="navitem" data-view="analisis"><span class="dot" style="background:var(--purple)"></span>Análisis de creativos</div>
+
+  <div class="navgroup-label">Creatividad</div>
+  <div class="navitem" data-view="angulos"><span class="dot" style="background:var(--blue)"></span>Ángulos de venta</div>
+  <div class="navitem" data-view="generador"><span class="dot" style="background:var(--blue)"></span>Generador IA</div>
+  <div class="navitem" data-view="biblioteca"><span class="dot" style="background:var(--teal)"></span>Biblioteca</div>
+
+  <div class="navgroup-label">Distribución</div>
+  <div class="navitem" data-view="programador"><span class="dot" style="background:var(--green)"></span>Programador</div>
+  <div class="navitem" data-view="cuentas"><span class="dot" style="background:var(--orange)"></span>Cuentas conectadas</div>
+
+  <div class="navgroup-label">Cuenta</div>
+  <div class="navitem" data-view="ajustes"><span class="dot" style="background:var(--yellow)"></span>Ajustes</div>
+
+  <div class="sidebar-foot mono">Plan Agencia · v0.1</div>
+</div>
+
+<div class="main">
+
+  <!-- DASHBOARD -->
+  <div class="view active" id="view-dashboard">
+    <div class="topbar">
+      <div><h1>Panel general</h1><p>Resumen de tu actividad creativa y de publicación</p></div>
+      <div class="pill-user"><div class="av"></div> Coimagen Media Agency</div>
+    </div>
+
+    <div class="grid-stats">
+      <div class="stat-card c1"><div class="stat-label">Creativos generados</div><div class="stat-value">128</div><div class="stat-delta up">↑ 18% este mes</div></div>
+      <div class="stat-card c2"><div class="stat-label">Publicaciones programadas</div><div class="stat-value">42</div><div class="stat-delta up">↑ 6 esta semana</div></div>
+      <div class="stat-card c3"><div class="stat-label">Redes conectadas</div><div class="stat-value">5 / 8</div><div class="stat-delta down">3 pendientes</div></div>
+      <div class="stat-card c4"><div class="stat-label">Alcance estimado</div><div class="stat-value mono">86.4K</div><div class="stat-delta up">↑ 12% vs. mes anterior</div></div>
+    </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <h3><span class="tri" style="background:var(--purple)"></span> Próximas publicaciones</h3>
+        <div class="item-row"><div class="item-thumb" style="background:linear-gradient(135deg,var(--purple),var(--blue))"></div><div class="grow"><div>Creativo — Lanzamiento Colección Julio</div><div class="net">Instagram · Hoy 18:00</div></div><span class="badge pending">Programado</span></div>
+        <div class="item-row"><div class="item-thumb" style="background:linear-gradient(135deg,var(--teal),var(--green))"></div><div class="grow"><div>Reel — Testimonio cliente</div><div class="net">TikTok · Mañana 10:00</div></div><span class="badge pending">Programado</span></div>
+        <div class="item-row"><div class="item-thumb" style="background:linear-gradient(135deg,var(--orange),var(--coral))"></div><div class="grow"><div>Carrusel — Beneficios producto</div><div class="net">Facebook · Mañana 14:00</div></div><span class="badge pending">Programado</span></div>
+        <div class="item-row"><div class="item-thumb" style="background:linear-gradient(135deg,var(--yellow),var(--orange))"></div><div class="grow"><div>Video corto — Detrás de cámaras</div><div class="net">LinkedIn · Jue 09:00</div></div><span class="badge ok">Publicado</span></div>
+      </div>
+      <div class="panel">
+        <h3><span class="tri" style="background:var(--teal)"></span> Estado por red social</h3>
+        <div class="item-row"><div class="grow">Instagram</div><span class="badge ok">Conectada</span></div>
+        <div class="item-row"><div class="grow">Facebook</div><span class="badge ok">Conectada</span></div>
+        <div class="item-row"><div class="grow">TikTok</div><span class="badge ok">Conectada</span></div>
+        <div class="item-row"><div class="grow">LinkedIn</div><span class="badge ok">Conectada</span></div>
+        <div class="item-row"><div class="grow">X (Twitter)</div><span class="badge ok">Conectada</span></div>
+        <div class="item-row"><div class="grow">YouTube Shorts</div><span class="badge pending">Sin conectar</span></div>
+        <div class="item-row"><div class="grow">Pinterest</div><span class="badge pending">Sin conectar</span></div>
+        <div class="item-row"><div class="grow">Threads</div><span class="badge pending">Sin conectar</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROYECTO -->
+  <div class="view" id="view-proyecto">
+    <div class="topbar">
+      <div><h1>Nicho y oferta</h1><p>La base de datos que usa la IA para generar todo lo demás</p></div>
+    </div>
+    <div class="two-col">
+      <div class="panel">
+        <h3><span class="tri" style="background:var(--coral)"></span> Tu negocio</h3>
+        <label>Nicho</label>
+        <select><option>Moda / e-commerce</option><option>Suplementos y salud</option><option>Infoproductos</option><option>Belleza y skincare</option><option>Otro</option></select>
+        <label>Descripción del negocio</label>
+        <textarea placeholder="¿Qué vendés, hace cuánto, qué te diferencia?"></textarea>
+        <label>Oferta principal</label>
+        <textarea placeholder="Precio, promoción, garantía, urgencia..."></textarea>
+        <label>Avatar de cliente</label>
+        <textarea placeholder="Edad, dolor principal, deseo, objeciones frecuentes..."></textarea>
+        <button class="btn btn-primary" style="margin-top:16px;">Guardar proyecto</button>
+      </div>
+      <div class="panel">
+        <h3><span class="tri" style="background:var(--yellow)"></span> Asistente para completar los datos</h3>
+        <p style="font-size:13px; color:var(--muted); line-height:1.6;">Si no tenés esta información a mano, usá este prompt guiado con tu IA de preferencia y pegá el resultado en los campos de la izquierda:</p>
+        <div class="panel" style="background:var(--bg-2); margin-top:12px;">
+          <p class="mono" style="font-size:12px; color:var(--text); line-height:1.7;">"Actuá como estratega de marketing. A partir de [describí tu producto], generame: 1) una oferta irresistible con urgencia, 2) un avatar de cliente ideal con su dolor principal y objeciones, 3) 3 ángulos de venta distintos para anunciar este producto."</p>
+        </div>
+        <button class="btn btn-ghost" style="margin-top:14px;">Copiar prompt</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ANALISIS -->
+  <div class="view" id="view-analisis">
+    <div class="topbar">
+      <div><h1>Análisis de creativos ganadores</h1><p>Subí tus mejores anuncios o los de tu competencia para inspirar nuevos ángulos</p></div>
+    </div>
+    <div class="panel">
+      <h3><span class="tri" style="background:var(--purple)"></span> Subir creativos de referencia</h3>
+      <div style="border:2px dashed var(--line); border-radius:12px; padding:40px; text-align:center; color:var(--muted); font-size:13.5px;">
+        Arrastrá imágenes o videos acá, o hacé clic para seleccionar
+        <div style="margin-top:14px;"><button class="btn btn-ghost">Seleccionar archivos</button></div>
+      </div>
+      <div class="note"><b>Qué hace la IA con esto:</b> identifica patrones visuales (colores, encuadre, tipo de gancho, formato) en los creativos que suben para sugerir nuevos ángulos de venta alineados a lo que ya funciona en tu nicho.</div>
+    </div>
+  </div>
+
+  <!-- ANGULOS -->
+  <div class="view" id="view-angulos">
+    <div class="topbar">
+      <div><h1>Ángulos de venta</h1><p>La IA propone distintos enfoques para vender tu oferta</p></div>
+      <button class="btn btn-primary" onclick="generarAngulos()">… Generar ángulos</button>
+    </div>
+    <div class="panel">
+      <div id="angulosWrap" class="empty-state" style="margin: 30px auto;">
+        Todavía no generaste ángulos de venta. Presioná "Generar ángulos" — la IA los arma a partir de los datos cargados en <b>Nicho y oferta</b>.
+      </div>
+    </div>
+  </div>
+
+  <!-- GENERADOR -->
+  <div class="view" id="view-generador">
+    <div class="topbar">
+      <div><h1>Generador de creativos IA</h1><p>Creá anuncios listos para publicar a partir de tu producto</p></div>
+    </div>
+
+    <div class="gen-layout">
+      <div class="panel">
+        <h3><span class="tri" style="background:var(--blue)"></span> Datos del creativo</h3>
+        <label>Nombre del producto o marca</label>
+        <input type="text" id="prodName" placeholder="Ej: Serum Facial Glow">
+        <label>Descripción / beneficio principal</label>
+        <textarea id="prodDesc" placeholder="Ej: Serum con vitamina C que ilumina la piel en 7 días"></textarea>
+        <label>Estilo del creativo</label>
+        <select id="prodStyle">
+          <option>UGC realista</option>
+          <option>Producto en estudio</option>
+          <option>Testimonial</option>
+          <option>Minimalista / editorial</option>
+          <option>Antes y después</option>
+        </select>
+        <label>Paleta de marca</label>
+        <div class="swatch-row">
+          <div class="swatch sel" style="background:var(--purple)"></div>
+          <div class="swatch" style="background:var(--blue)"></div>
+          <div class="swatch" style="background:var(--teal)"></div>
+          <div class="swatch" style="background:var(--green)"></div>
+          <div class="swatch" style="background:var(--orange)"></div>
+          <div class="swatch" style="background:var(--coral)"></div>
+          <div class="swatch" style="background:var(--yellow)"></div>
+        </div>
+        <label>Formato</label>
+        <div class="format-row">
+          <div class="format-chip sel" data-fmt="4:5">Feed 4:5</div>
+          <div class="format-chip" data-fmt="9:16">Story/Reel 9:16</div>
+          <div class="format-chip" data-fmt="1:1">Cuadrado 1:1</div>
+          <div class="format-chip" data-fmt="16:9">Video 16:9</div>
+        </div>
+        <label>Cantidad de variaciones</label>
+        <select id="prodVariations"><option>3 variaciones</option><option>5 variaciones</option><option>9 variaciones</option></select>
+        <label style="display:flex; align-items:center; gap:8px; margin-top:16px;">
+          <input type="checkbox" id="prodAnimate" style="width:auto;"> Animar la mejor variación a video corto
+        </label>
+        <label>Copy sugerido</label>
+        <textarea id="prodCopy" placeholder="El copy para Meta Ads se genera junto con las imágenes" readonly style="color:var(--muted);"></textarea>
+        <button class="btn btn-primary" style="width:100%; justify-content:center; margin-top:20px;" onclick="generarCreativos()">… Generar variaciones</button>
+        <div class="note"><b>Nota técnica:</b> este panel arma el prompt y la llamada lista para tu proveedor de generación de imagen/video (p. ej. Anthropic + un modelo de imagen, o Runway). Falta conectar tu API key para generación real — el conector queda preparado en <span class="mono">generarCreativos()</span>.</div>
+      </div>
+
+      <div class="panel canvas-wrap" id="canvasWrap">
+        <div class="empty-state">
+          <div style="font-size:34px; margin-bottom:10px;">⭐</div>
+          Completá los datos del producto y presioná <b>Generar</b> para ver las variaciones de creativo acá.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BIBLIOTECA -->
+  <div class="view" id="view-biblioteca">
+    <div class="topbar"><div><h1>Biblioteca de creativos</h1><p>Todo lo que generaste, listo para programar</p></div></div>
+    <div class="panel">
+      <div class="creative-grid" id="libGrid"></div>
+    </div>
+  </div>
+
+  <!-- PROGRAMADOR -->
+  <div class="view" id="view-programador">
+    <div class="topbar">
+      <div><h1>Programador de publicaciones</h1><p>Calendario unificado para todas tus redes</p></div>
+      <button class="btn btn-primary">+ Nueva publicación</button>
+    </div>
+
+    <div class="sched-toolbar">
+      <div class="network-filter">
+        <div class="net-chip sel"><span class="net-dot" style="background:#e1306c"></span>Instagram</div>
+        <div class="net-chip sel"><span class="net-dot" style="background:#1877f2"></span>Facebook</div>
+        <div class="net-chip sel"><span class="net-dot" style="background:#25f4ee"></span>TikTok</div>
+        <div class="net-chip sel"><span class="net-dot" style="background:#0a66c2"></span>LinkedIn</div>
+        <div class="net-chip"><span class="net-dot" style="background:#eee"></span>X</div>
+        <div class="net-chip"><span class="net-dot" style="background:#ff0000"></span>YouTube</div>
+        <div class="net-chip"><span class="net-dot" style="background:#e60023"></span>Pinterest</div>
+        <div class="net-chip"><span class="net-dot" style="background:#000"></span>Threads</div>
+      </div>
+      <button class="btn btn-ghost">Semana ‹ 30 jun — 6 jul ›</button>
+    </div>
+
+    <div class="week-grid">
+      <div class="day-col"><h4>Lun 29</h4></div>
+      <div class="day-col"><h4>Mar 30</h4>
+        <div class="post-chip" style="background:linear-gradient(90deg,var(--purple),var(--blue))">10:00 · IG Feed</div>
+      </div>
+      <div class="day-col"><h4>Mié 1</h4>
+        <div class="post-chip" style="background:linear-gradient(90deg,var(--teal),var(--green))">14:00 · TikTok</div>
+      </div>
+      <div class="day-col"><h4>Jue 2</h4></div>
+      <div class="day-col"><h4>Vie 3</h4>
+        <div class="post-chip" style="background:linear-gradient(90deg,var(--orange),var(--coral))">09:00 · Facebook</div>
+        <div class="post-chip" style="background:linear-gradient(90deg,var(--yellow),var(--orange))">18:00 · LinkedIn</div>
+      </div>
+      <div class="day-col"><h4>Sáb 4</h4>
+        <div class="post-chip" style="background:linear-gradient(90deg,var(--purple),var(--coral))">18:00 · IG Reel</div>
+      </div>
+      <div class="day-col"><h4>Dom 5</h4></div>
+    </div>
+
+    <div class="note"><b>Nota técnica:</b> para publicar de verdad en cada red, esta plataforma necesita las credenciales oficiales de: Meta Graph API (Instagram/Facebook), TikTok for Developers API, LinkedIn Marketing API, X API, YouTube Data API y Pinterest API. Cada una exige que Coimagen Media registre su propia app y, en varios casos, pase revisión de la plataforma antes de publicar en cuentas de terceros. El conector de cada red queda como módulo separado, listo para cargar el token cuando lo tengan.</div>
+  </div>
+
+  <!-- CUENTAS -->
+  <div class="view" id="view-cuentas">
+    <div class="topbar"><div><h1>Cuentas conectadas</h1><p>Vinculá tus redes sociales para publicar automáticamente</p></div></div>
+    <div class="accounts-grid" id="accGrid"></div>
+  </div>
+
+  <!-- AJUSTES -->
+  <div class="view" id="view-ajustes">
+    <div class="topbar"><div><h1>Ajustes</h1><p>Marca, equipo y preferencias</p></div></div>
+    <div class="panel">
+      <h3><span class="tri" style="background:var(--yellow)"></span> Identidad de marca</h3>
+      <label>Nombre de agencia</label>
+      <input type="text" value="Coimagen Media Agency">
+      <label>Colores institucionales</label>
+      <div class="swatch-row">
+        <div class="swatch sel" style="background:var(--purple)"></div>
+        <div class="swatch sel" style="background:var(--blue)"></div>
+        <div class="swatch sel" style="background:var(--teal)"></div>
+        <div class="swatch sel" style="background:var(--green)"></div>
+        <div class="swatch sel" style="background:var(--orange)"></div>
+        <div class="swatch sel" style="background:var(--coral)"></div>
+        <div class="swatch sel" style="background:var(--yellow)"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
