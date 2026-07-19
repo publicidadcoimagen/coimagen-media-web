@@ -150,11 +150,11 @@ const translations = {
       subtitle: "Prueba real, no promesas. Estos proyectos nos permiten probar, optimizar y documentar procesos reales antes de implementarlos con nuevos clientes.",
       cta: "Ver proyecto",
       items: [
-        { name: "Dr. José Manuel Segovia Neurocirugía", desc: "Intranet + flujos con IA para expedientes médicos. Caso real en producción.", tag: "Salud", color: "from-blue-600 to-indigo-800" },
-        { name: "Clínica EMT", desc: "Sistema de gestión de pacientes con automatización de seguimiento digital.", tag: "Salud", color: "from-teal-600 to-cyan-700" },
-        { name: "Chimichimi", desc: "Presencia digital con contenido, marca y estrategia de captación.", tag: "Restaurante", color: "from-orange-500 to-red-700" },
-        { name: "Conchas Tower", desc: "Landing de captación, filtrado de leads, inventario y operación escalable.", tag: "Inmobiliaria", color: "from-purple-600 to-violet-800" },
-        { name: "Coimagen OS", desc: "Plataforma interna de operación con IA, CRM, facturación, clientes y flujos automatizados.", tag: "Tecnología", color: "from-cyan-600 to-blue-800" },
+        { name: "Dr. José Manuel Segovia Neurocirugía", desc: "Intranet + flujos con IA para expedientes médicos. Caso real en producción.", tag: "Salud", color: "from-blue-600 to-indigo-800", href: "https://www.neurocirujanosentijuana.com" },
+        { name: "Clínica EMT", desc: "Sistema de gestión de pacientes con automatización de seguimiento digital.", tag: "Salud", color: "from-teal-600 to-cyan-700", href: "https://www.estimulacionmagneticatranscranealtijuana.com" },
+        { name: "Chimichimi", desc: "Presencia digital con contenido, marca y estrategia de captación.", tag: "Restaurante", color: "from-orange-500 to-red-700", href: "https://chimichimi.coimagenmedia.com" },
+        { name: "Vertiente Bienes Raíces", desc: "Landing de captación, filtrado de leads, inventario y operación escalable.", tag: "Inmobiliaria", color: "from-purple-600 to-violet-800", href: "https://vertiente.coimagenmedia.com" },
+        { name: "Coimagen OS", desc: "Plataforma interna de operación con IA, CRM, facturación, clientes y flujos automatizados.", tag: "Tecnología", color: "from-cyan-600 to-blue-800", href: "/demos/coimagen-os-preview/" },
       ],
     },
     businessOS: {
@@ -374,11 +374,11 @@ const translations = {
       subtitle: "Real proof, not promises. These projects help us test, optimize and document real processes before implementing them for new clients.",
       cta: "View project",
       items: [
-        { name: "Dr. José Manuel Segovia Neurosurgery", desc: "Intranet + AI workflows for medical records. Real case in production.", tag: "Health", color: "from-blue-600 to-indigo-800" },
-        { name: "Clínica EMT", desc: "Patient management system with automated digital follow-up.", tag: "Health", color: "from-teal-600 to-cyan-700" },
-        { name: "Chimichimi", desc: "Digital presence with content, branding and lead generation strategy.", tag: "Restaurant", color: "from-orange-500 to-red-700" },
-        { name: "Conchas Tower", desc: "Lead capture landing, filtering, inventory and scalable operations.", tag: "Real Estate", color: "from-purple-600 to-violet-800" },
-        { name: "Coimagen OS", desc: "Internal operating platform with AI, CRM, billing, clients and automated workflows.", tag: "Technology", color: "from-cyan-600 to-blue-800" },
+        { name: "Dr. José Manuel Segovia Neurosurgery", desc: "Intranet + AI workflows for medical records. Real case in production.", tag: "Health", color: "from-blue-600 to-indigo-800", href: "https://www.neurocirujanosentijuana.com" },
+        { name: "Clínica EMT", desc: "Patient management system with automated digital follow-up.", tag: "Health", color: "from-teal-600 to-cyan-700", href: "https://www.estimulacionmagneticatranscranealtijuana.com" },
+        { name: "Chimichimi", desc: "Digital presence with content, branding and lead generation strategy.", tag: "Restaurant", color: "from-orange-500 to-red-700", href: "https://chimichimi.coimagenmedia.com" },
+        { name: "Vertiente Bienes Raíces", desc: "Lead capture landing, filtering, inventory and scalable operations.", tag: "Real Estate", color: "from-purple-600 to-violet-800", href: "https://vertiente.coimagenmedia.com" },
+        { name: "Coimagen OS", desc: "Internal operating platform with AI, CRM, billing, clients and automated workflows.", tag: "Technology", color: "from-cyan-600 to-blue-800", href: "/demos/coimagen-os-preview/" },
       ],
     },
     businessOS: {
