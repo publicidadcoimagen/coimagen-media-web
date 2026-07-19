@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Coimagen Media Agency",
   tagline: "Marketing + Automation + AI Agents + Business Operating Systems",
   domain: "www.coimagenmedia.com",
-  portalUrl: "https://coimagenmediaos.replit.app/",
+  portalUrl: "https://portal.coimagenmedia.com",
   whatsapp: {
     number: "15559341706",
     display: "+1 555 934 1706",
