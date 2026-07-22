@@ -198,6 +198,15 @@ export const siteConfig = {
       icon: "🔥",
       color: "red",
     },
+    {
+      slug: "ads-strategist-ai",
+      labelEs: "Coimagen Ads Strategist AI",
+      labelEn: "Coimagen Ads Strategist AI",
+      descEs: "GPT gratuito para estrategia de publicidad pagada: Google Ads, Meta Ads, Display, Video y Shopping",
+      descEn: "Free GPT for paid advertising strategy: Google Ads, Meta Ads, Display, Video, and Shopping",
+      icon: "💰",
+      color: "emerald",
+    },
   ],
   industryPages: [
     { slug: "medical-os", labelEs: "Medical OS", labelEn: "Medical OS", tagEs: "Médicos", tagEn: "Doctors" },
