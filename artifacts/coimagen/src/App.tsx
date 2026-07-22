@@ -47,6 +47,7 @@ import CamilaAIPage from "@/pages/services/CamilaAIPage";
 import CoimagenOSPage from "@/pages/services/CoimagenOSPage";
 import CloudSystems from "@/pages/services/CloudSystems";
 import SalesFunnelAI from "@/pages/resources/SalesFunnelAI";
+import CoimagenProAI from "@/pages/resources/CoimagenProAI";
 import CrmParaMedicos from "@/pages/blog/CrmParaMedicos";
 import AutomatizacionAbogados from "@/pages/blog/AutomatizacionAbogados";
 import SeoLocalDentistas from "@/pages/blog/SeoLocalDentistas";
@@ -135,6 +136,7 @@ function AppLayout() {
 
           {/* AI resource landing pages */}
           <Route path="/recursos/sales-funnel-ai" component={SalesFunnelAI} />
+          <Route path="/recursos/coimagen-pro-ai" component={CoimagenProAI} />
 
           {/* Blog articles */}
           <Route path="/blog/crm-para-medicos" component={CrmParaMedicos} />

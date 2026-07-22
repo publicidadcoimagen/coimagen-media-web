@@ -144,6 +144,15 @@ export const siteConfig = {
       icon: "🧲",
       color: "lime",
     },
+    {
+      slug: "coimagen-pro-ai",
+      labelEs: "Coimagen Pro AI",
+      labelEn: "Coimagen Pro AI",
+      descEs: "GPT gratuito de diagnóstico y transformación digital",
+      descEn: "Free GPT for digital strategy diagnosis and transformation",
+      icon: "🧠",
+      color: "purple",
+    },
   ],
   industryPages: [
     { slug: "medical-os", labelEs: "Medical OS", labelEn: "Medical OS", tagEs: "Médicos", tagEn: "Doctors" },
