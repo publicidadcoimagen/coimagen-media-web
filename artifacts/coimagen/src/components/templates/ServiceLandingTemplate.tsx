@@ -8,18 +8,35 @@ export interface ServiceFAQ {
   a: { es: string; en: string };
 }
 
+export interface WorkProcessStep {
+  icon: string;
+  es: string;
+  en: string;
+}
+
 export interface ServiceContent {
   slug: string;
   heroImage?: string;
   accentColor: string;
   accentHex: string;
   icon: string;
+  /** First breadcrumb label after "Inicio". Defaults to Servicios/Services. */
+  category?: { es: string; en: string };
+  /** JSON-LD @type override for the injected schema. Defaults to "Service". */
+  schemaType?: string;
+  /** Extra fields merged into the JSON-LD schema (e.g. offers, applicationCategory). */
+  schemaExtra?: Record<string, unknown>;
   seoTitle: { es: string; en: string };
   metaDesc: { es: string; en: string };
   hero: {
     title: { es: string; en: string };
     subtitle: { es: string; en: string };
     benefit: { es: string; en: string };
+  };
+  /** Extra primary CTA linking out to a hosted tool (e.g. a GPT). Tracked via a GA4 "open_gpt" event. */
+  gptLink?: {
+    name: string;
+    url: { es: string; en: string };
   };
   pain: {
     items: { icon: string; text: { es: string; en: string } }[];
@@ -33,6 +50,8 @@ export interface ServiceContent {
   includes: {
     items: { es: string; en: string }[];
   };
+  /** Overrides the default paid-agency work timeline — for a free self-serve tool, for example. */
+  workProcessOverride?: WorkProcessStep[];
   caseStudy?: {
     slug: string;
     nameEs: string;
@@ -42,10 +61,17 @@ export interface ServiceContent {
     metrics: { value: string; labelEs: string; labelEn: string }[];
     accentColor: string;
   };
+  /** Adds a secondary "free diagnosis" link to the final CTA section. */
+  diagnosisCta?: boolean;
   faq: ServiceFAQ[];
 }
 
-const workProcess = [
+function trackGptOpen(gptName: string) {
+  const gtag = (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag;
+  gtag?.("event", "open_gpt", { event_category: "engagement", event_label: gptName, gpt_name: gptName });
+}
+
+const workProcess: WorkProcessStep[] = [
   { icon: "🔍", es: "Diagnóstico", en: "Diagnosis" },
   { icon: "📊", es: "Evaluación", en: "Evaluation" },
   { icon: "📋", es: "Propuesta", en: "Proposal" },
@@ -131,11 +157,12 @@ export function ServiceLandingTemplate({ content }: { content: ServiceContent })
     };
     const serviceSchema = {
       "@context": "https://schema.org",
-      "@type": "Service",
+      "@type": content.schemaType ?? "Service",
       name: L(content.seoTitle),
       description: L(content.metaDesc),
       provider: { "@type": "Organization", name: "Coimagen Media Agency", url: "https://www.coimagenmedia.com" },
       areaServed: ["México", "Estados Unidos"],
+      ...content.schemaExtra,
     };
     const injectSchema = (id: string, data: object) => {
       let el = document.getElementById(id);
@@ -171,7 +198,7 @@ export function ServiceLandingTemplate({ content }: { content: ServiceContent })
         <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center relative z-10">
           <Breadcrumb
             items={[
-              { labelEs: "Servicios", labelEn: "Services" },
+              { labelEs: content.category?.es ?? "Servicios", labelEn: content.category?.en ?? "Services" },
               { labelEs: L(content.seoTitle), labelEn: L(content.seoTitle) },
             ]}
           />
@@ -186,12 +213,28 @@ export function ServiceLandingTemplate({ content }: { content: ServiceContent })
             ✓ {L(content.hero.benefit)}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            {content.gptLink && (
+              <a
+                href={L(content.gptLink.url)}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackGptOpen(content.gptLink!.name)}
+                className="inline-flex items-center gap-2 font-bold text-base px-8 py-4 rounded-xl transition-all hover:brightness-110 hover:shadow-lg"
+                style={{ background: content.accentHex, color: "#06060f" }}
+              >
+                {isEs ? "Abrir el GPT" : "Open the GPT"}
+              </a>
+            )}
             <a
               href={siteConfig.whatsapp.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-bold text-base px-8 py-4 rounded-xl transition-all hover:brightness-110 hover:shadow-lg"
-              style={{ background: content.accentHex, color: "#06060f" }}
+              className={
+                content.gptLink
+                  ? "inline-flex items-center gap-2 glass border border-white/10 text-white font-bold text-base px-8 py-4 rounded-xl hover:border-white/30 transition-all"
+                  : "inline-flex items-center gap-2 font-bold text-base px-8 py-4 rounded-xl transition-all hover:brightness-110 hover:shadow-lg"
+              }
+              style={content.gptLink ? undefined : { background: content.accentHex, color: "#06060f" }}
             >
               {isEs ? "Habla con Camila AI" : "Talk to Camila AI"}
             </a>
@@ -311,7 +354,7 @@ export function ServiceLandingTemplate({ content }: { content: ServiceContent })
             {isEs ? "Un proceso transparente de inicio a fin." : "A transparent process from start to finish."}
           </p>
           <div className="flex flex-wrap justify-center">
-            {workProcess.map((step, i) => (
+            {(content.workProcessOverride ?? workProcess).map((step, i, arr) => (
               <div key={i} className="flex flex-col items-center w-[100px] sm:w-[120px] mb-4">
                 <div className="flex items-center w-full mb-2">
                   {i > 0 && <div className="flex-1 h-px bg-white/10" />}
@@ -321,7 +364,7 @@ export function ServiceLandingTemplate({ content }: { content: ServiceContent })
                   >
                     {step.icon}
                   </div>
-                  {i < workProcess.length - 1 && <div className="flex-1 h-px bg-white/10" />}
+                  {i < arr.length - 1 && <div className="flex-1 h-px bg-white/10" />}
                 </div>
                 <span className="text-[var(--c-muted)] text-xs text-center leading-tight px-1">
                   {isEs ? step.es : step.en}
@@ -390,17 +433,30 @@ export function ServiceLandingTemplate({ content }: { content: ServiceContent })
               : "Response within 24 hours · No commitment · 100% free"}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-            <button
-              onClick={() => {
-                const jf = document.querySelector<HTMLElement>('button[class*="Jotform"], button[class*="jotform"], [id*="JotformAI"] button, iframe[src*="jotform"]');
-                if (jf) { jf.click(); return; }
-                window.open(siteConfig.whatsapp.url, "_blank");
-              }}
-              className="inline-flex items-center gap-2 font-bold text-lg px-10 py-4 rounded-xl hover:brightness-110 transition-all active:scale-95"
-              style={{ background: content.accentHex, color: "#06060f" }}
-            >
-              💬 {isEs ? "Hablar con Camila AI" : "Talk to Camila AI"}
-            </button>
+            {content.gptLink ? (
+              <a
+                href={L(content.gptLink.url)}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackGptOpen(content.gptLink!.name)}
+                className="inline-flex items-center gap-2 font-bold text-lg px-10 py-4 rounded-xl hover:brightness-110 transition-all active:scale-95"
+                style={{ background: content.accentHex, color: "#06060f" }}
+              >
+                🚀 {isEs ? "Abrir el GPT" : "Open the GPT"}
+              </a>
+            ) : (
+              <button
+                onClick={() => {
+                  const jf = document.querySelector<HTMLElement>('button[class*="Jotform"], button[class*="jotform"], [id*="JotformAI"] button, iframe[src*="jotform"]');
+                  if (jf) { jf.click(); return; }
+                  window.open(siteConfig.whatsapp.url, "_blank");
+                }}
+                className="inline-flex items-center gap-2 font-bold text-lg px-10 py-4 rounded-xl hover:brightness-110 transition-all active:scale-95"
+                style={{ background: content.accentHex, color: "#06060f" }}
+              >
+                💬 {isEs ? "Hablar con Camila AI" : "Talk to Camila AI"}
+              </button>
+            )}
             <a
               href={siteConfig.whatsapp.url}
               target="_blank"
@@ -410,12 +466,22 @@ export function ServiceLandingTemplate({ content }: { content: ServiceContent })
               WhatsApp
             </a>
           </div>
-          <a
-            href="/agendar"
-            className="text-[var(--c-muted)] text-sm hover:text-white transition-colors underline underline-offset-2"
-          >
-            {isEs ? "o agenda una reunión →" : "or book a meeting →"}
-          </a>
+          <div className="flex flex-col items-center gap-2">
+            <a
+              href="/agendar"
+              className="text-[var(--c-muted)] text-sm hover:text-white transition-colors underline underline-offset-2"
+            >
+              {isEs ? "o agenda una reunión →" : "or book a meeting →"}
+            </a>
+            {content.diagnosisCta && (
+              <a
+                href="/diagnostico"
+                className="text-[var(--c-muted)] text-sm hover:text-white transition-colors underline underline-offset-2"
+              >
+                {isEs ? "o haz tu diagnóstico gratis →" : "or get your free diagnosis →"}
+              </a>
+            )}
+          </div>
         </div>
       </section>
     </div>
