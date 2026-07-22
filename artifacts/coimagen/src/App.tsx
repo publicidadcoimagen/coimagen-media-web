@@ -48,6 +48,7 @@ import CoimagenOSPage from "@/pages/services/CoimagenOSPage";
 import CloudSystems from "@/pages/services/CloudSystems";
 import SalesFunnelAI from "@/pages/resources/SalesFunnelAI";
 import CoimagenProAI from "@/pages/resources/CoimagenProAI";
+import AISalesAutomation from "@/pages/resources/AISalesAutomation";
 import CrmParaMedicos from "@/pages/blog/CrmParaMedicos";
 import AutomatizacionAbogados from "@/pages/blog/AutomatizacionAbogados";
 import SeoLocalDentistas from "@/pages/blog/SeoLocalDentistas";
@@ -137,6 +138,7 @@ function AppLayout() {
           {/* AI resource landing pages */}
           <Route path="/recursos/sales-funnel-ai" component={SalesFunnelAI} />
           <Route path="/recursos/coimagen-pro-ai" component={CoimagenProAI} />
+          <Route path="/recursos/ai-sales-automation" component={AISalesAutomation} />
 
           {/* Blog articles */}
           <Route path="/blog/crm-para-medicos" component={CrmParaMedicos} />

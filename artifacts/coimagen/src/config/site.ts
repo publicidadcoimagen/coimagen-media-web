@@ -153,6 +153,15 @@ export const siteConfig = {
       icon: "🧠",
       color: "purple",
     },
+    {
+      slug: "ai-sales-automation",
+      labelEs: "Coimagen AI Sales Automation",
+      labelEn: "Coimagen AI Sales Automation",
+      descEs: "GPT gratuito para sistemas de venta con leads, WhatsApp, CRM y seguimiento",
+      descEn: "Free GPT for sales systems with leads, WhatsApp, CRM, and follow-up",
+      icon: "🔗",
+      color: "cyan",
+    },
   ],
   industryPages: [
     { slug: "medical-os", labelEs: "Medical OS", labelEn: "Medical OS", tagEs: "Médicos", tagEn: "Doctors" },
