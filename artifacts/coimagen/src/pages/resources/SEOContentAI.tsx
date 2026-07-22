@@ -75,7 +75,7 @@ const content: ServiceContent = {
         title: { es: "Redacción del artículo", en: "Article Drafting" },
         desc: {
           es: "Con el tema, el ángulo y la estructura ya definidos, el GPT redacta el artículo completo: útil para el lector y optimizado para los motores de búsqueda, no relleno genérico.",
-          en: "With the topic, angle, and structure already defined, the GPT drafts the full article from start to finish: genuinely useful for the reader and optimized for search engines, not generic filler stitched together from clichés.",
+          en: "With the topic, angle, and structure already defined, the GPT drafts the full article: useful for the reader and optimized for search engines, not generic filler.",
         },
       },
       {
@@ -98,7 +98,7 @@ const content: ServiceContent = {
   },
   benefits: {
     items: [
-      { icon: "⏱️", title: { es: "Menos tiempo en blanco frente al artículo", en: "Less time stuck staring at the article" }, desc: { es: "Empiezas a escribir con tema, ángulo y estructura ya definidos, en vez de partir de cero cada vez.", en: "You start writing with the topic, angle, and structure already defined, instead of starting from a blank page from zero every single time you sit down to write." } },
+      { icon: "⏱️", title: { es: "Menos tiempo en blanco frente al artículo", en: "Less time stuck staring at the article" }, desc: { es: "Empiezas a escribir con tema, ángulo y estructura ya definidos, en vez de partir de cero cada vez.", en: "You start writing with the topic, angle, and structure already defined, instead of starting from a blank page every time." } },
       { icon: "🔑", title: { es: "Cobertura real de palabras clave", en: "Real keyword coverage" }, desc: { es: "Tus artículos apuntan a términos que tu audiencia busca de verdad, no a lo primero que se te ocurre.", en: "Your articles target terms your audience is actually searching for, not just whatever comes to mind first." } },
       { icon: "🏷️", title: { es: "Metadatos listos para publicar", en: "Metadata ready to publish" }, desc: { es: "Título SEO y metadescripción quedan resueltos junto con el artículo, en vez de ser un paso aparte que se te olvida.", en: "SEO title and metadescription get resolved along with the article, instead of being a separate step you forget." } },
       { icon: "🗂️", title: { es: "Estructura que Google puede leer", en: "Structure Google can read" }, desc: { es: "Subtítulos y secciones ordenadas hacen que el artículo sea más fácil de rastrear e indexar.", en: "Ordered subheadings and sections make the article easier to crawl and index." } },
