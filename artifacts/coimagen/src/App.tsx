@@ -50,6 +50,7 @@ import SalesFunnelAI from "@/pages/resources/SalesFunnelAI";
 import CoimagenProAI from "@/pages/resources/CoimagenProAI";
 import AISalesAutomation from "@/pages/resources/AISalesAutomation";
 import SEOContentAI from "@/pages/resources/SEOContentAI";
+import FunnelCopyAI from "@/pages/resources/FunnelCopyAI";
 import CrmParaMedicos from "@/pages/blog/CrmParaMedicos";
 import AutomatizacionAbogados from "@/pages/blog/AutomatizacionAbogados";
 import SeoLocalDentistas from "@/pages/blog/SeoLocalDentistas";
@@ -141,6 +142,7 @@ function AppLayout() {
           <Route path="/recursos/coimagen-pro-ai" component={CoimagenProAI} />
           <Route path="/recursos/ai-sales-automation" component={AISalesAutomation} />
           <Route path="/recursos/seo-content-ai" component={SEOContentAI} />
+          <Route path="/recursos/funnel-copy-ai" component={FunnelCopyAI} />
 
           {/* Blog articles */}
           <Route path="/blog/crm-para-medicos" component={CrmParaMedicos} />
