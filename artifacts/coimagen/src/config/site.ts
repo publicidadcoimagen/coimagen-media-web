@@ -180,6 +180,15 @@ export const siteConfig = {
       icon: "✍️",
       color: "pink",
     },
+    {
+      slug: "community-manager-pro",
+      labelEs: "Coimagen Community Manager Pro",
+      labelEn: "Coimagen Community Manager Pro",
+      descEs: "GPT gratuito para gestión integral de redes sociales: calendario, contenido y reportes",
+      descEn: "Free GPT for end-to-end social media management: calendar, content, and reports",
+      icon: "📱",
+      color: "blue",
+    },
   ],
   industryPages: [
     { slug: "medical-os", labelEs: "Medical OS", labelEn: "Medical OS", tagEs: "Médicos", tagEn: "Doctors" },
