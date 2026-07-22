@@ -162,6 +162,15 @@ export const siteConfig = {
       icon: "🔗",
       color: "cyan",
     },
+    {
+      slug: "seo-content-ai",
+      labelEs: "Coimagen SEO Content AI",
+      labelEn: "Coimagen SEO Content AI",
+      descEs: "GPT gratuito para artículos SEO con estructura, keywords y metadescripción",
+      descEn: "Free GPT for SEO articles with structure, keywords, and metadata",
+      icon: "📝",
+      color: "orange",
+    },
   ],
   industryPages: [
     { slug: "medical-os", labelEs: "Medical OS", labelEn: "Medical OS", tagEs: "Médicos", tagEn: "Doctors" },
