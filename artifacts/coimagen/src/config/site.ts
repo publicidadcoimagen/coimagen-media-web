@@ -134,6 +134,17 @@ export const siteConfig = {
       color: "cyan",
     },
   ],
+  resourcePages: [
+    {
+      slug: "sales-funnel-ai",
+      labelEs: "Sales Funnel AI",
+      labelEn: "Sales Funnel AI",
+      descEs: "GPT gratuito para diseñar embudos de venta",
+      descEn: "Free GPT to design sales funnels",
+      icon: "🧲",
+      color: "lime",
+    },
+  ],
   industryPages: [
     { slug: "medical-os", labelEs: "Medical OS", labelEn: "Medical OS", tagEs: "Médicos", tagEn: "Doctors" },
     { slug: "dental-os", labelEs: "Dental OS", labelEn: "Dental OS", tagEs: "Dentistas", tagEn: "Dentists" },
