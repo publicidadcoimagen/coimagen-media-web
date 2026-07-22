@@ -189,6 +189,15 @@ export const siteConfig = {
       icon: "📱",
       color: "blue",
     },
+    {
+      slug: "viral-copy-ai",
+      labelEs: "Coimagen Copys Virales IA",
+      labelEn: "Coimagen Viral Copy AI",
+      descEs: "GPT gratuito para estrategias virales, hooks y planes de contenido en TikTok, Reels y Shorts",
+      descEn: "Free GPT for viral strategies, hooks, and content plans on TikTok, Reels, and Shorts",
+      icon: "🔥",
+      color: "red",
+    },
   ],
   industryPages: [
     { slug: "medical-os", labelEs: "Medical OS", labelEn: "Medical OS", tagEs: "Médicos", tagEn: "Doctors" },

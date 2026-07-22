@@ -52,6 +52,7 @@ import AISalesAutomation from "@/pages/resources/AISalesAutomation";
 import SEOContentAI from "@/pages/resources/SEOContentAI";
 import FunnelCopyAI from "@/pages/resources/FunnelCopyAI";
 import CommunityManagerPro from "@/pages/resources/CommunityManagerPro";
+import ViralCopyAI from "@/pages/resources/ViralCopyAI";
 import CrmParaMedicos from "@/pages/blog/CrmParaMedicos";
 import AutomatizacionAbogados from "@/pages/blog/AutomatizacionAbogados";
 import SeoLocalDentistas from "@/pages/blog/SeoLocalDentistas";
@@ -145,6 +146,7 @@ function AppLayout() {
           <Route path="/recursos/seo-content-ai" component={SEOContentAI} />
           <Route path="/recursos/funnel-copy-ai" component={FunnelCopyAI} />
           <Route path="/recursos/community-manager-pro" component={CommunityManagerPro} />
+          <Route path="/recursos/viral-copy-ai" component={ViralCopyAI} />
 
           {/* Blog articles */}
           <Route path="/blog/crm-para-medicos" component={CrmParaMedicos} />
