@@ -171,6 +171,15 @@ export const siteConfig = {
       icon: "📝",
       color: "orange",
     },
+    {
+      slug: "funnel-copy-ai",
+      labelEs: "Coimagen Funnel Copy AI",
+      labelEn: "Coimagen Funnel Copy AI",
+      descEs: "GPT gratuito para copy persuasivo con AIDA, PAS, FAB y pruebas A/B",
+      descEn: "Free GPT for persuasive copy using AIDA, PAS, FAB, and A/B testing",
+      icon: "✍️",
+      color: "pink",
+    },
   ],
   industryPages: [
     { slug: "medical-os", labelEs: "Medical OS", labelEn: "Medical OS", tagEs: "Médicos", tagEn: "Doctors" },
