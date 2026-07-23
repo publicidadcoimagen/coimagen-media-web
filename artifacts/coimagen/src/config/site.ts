@@ -207,6 +207,15 @@ export const siteConfig = {
       icon: "💰",
       color: "emerald",
     },
+    {
+      slug: "market-intelligence-ai",
+      labelEs: "Coimagen Market Intelligence AI",
+      labelEn: "Coimagen Market Intelligence AI",
+      descEs: "GPT gratuito para análisis de competidores, tendencias y reportes ejecutivos",
+      descEn: "Free GPT for competitor analysis, trends, and executive reports",
+      icon: "📡",
+      color: "amber",
+    },
   ],
   industryPages: [
     { slug: "medical-os", labelEs: "Medical OS", labelEn: "Medical OS", tagEs: "Médicos", tagEn: "Doctors" },
