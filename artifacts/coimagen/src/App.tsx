@@ -54,6 +54,7 @@ import FunnelCopyAI from "@/pages/resources/FunnelCopyAI";
 import CommunityManagerPro from "@/pages/resources/CommunityManagerPro";
 import ViralCopyAI from "@/pages/resources/ViralCopyAI";
 import AdsStrategistAI from "@/pages/resources/AdsStrategistAI";
+import MarketIntelligenceAI from "@/pages/resources/MarketIntelligenceAI";
 import CrmParaMedicos from "@/pages/blog/CrmParaMedicos";
 import AutomatizacionAbogados from "@/pages/blog/AutomatizacionAbogados";
 import SeoLocalDentistas from "@/pages/blog/SeoLocalDentistas";
@@ -149,6 +150,7 @@ function AppLayout() {
           <Route path="/recursos/community-manager-pro" component={CommunityManagerPro} />
           <Route path="/recursos/viral-copy-ai" component={ViralCopyAI} />
           <Route path="/recursos/ads-strategist-ai" component={AdsStrategistAI} />
+          <Route path="/recursos/market-intelligence-ai" component={MarketIntelligenceAI} />
 
           {/* Blog articles */}
           <Route path="/blog/crm-para-medicos" component={CrmParaMedicos} />
