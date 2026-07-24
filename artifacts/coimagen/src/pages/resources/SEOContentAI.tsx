@@ -1,6 +1,6 @@
 import { ServiceLandingTemplate, ServiceContent } from "@/components/templates/ServiceLandingTemplate";
 
-const content: ServiceContent = {
+export const content: ServiceContent = {
   slug: "recursos/seo-content-ai",
   accentColor: "orange",
   accentHex: "#FB923C",

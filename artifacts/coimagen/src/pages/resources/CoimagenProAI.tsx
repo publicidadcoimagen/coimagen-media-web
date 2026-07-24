@@ -2,7 +2,7 @@ import { ServiceLandingTemplate, ServiceContent } from "@/components/templates/S
 
 const GPT_URL = "https://chatgpt.com/g/g-68c36c6814688191a354f94b53c0f667-coimagen-pro-ai";
 
-const content: ServiceContent = {
+export const content: ServiceContent = {
   slug: "recursos/coimagen-pro-ai",
   accentColor: "purple",
   accentHex: "#8B5CF6",

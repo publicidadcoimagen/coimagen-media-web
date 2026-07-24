@@ -2,6 +2,16 @@ import { useEffect, useState } from "react";
 import { useLang } from "@/context/LanguageContext";
 import { siteConfig } from "@/config/site";
 import ResourceDownloadModal from "@/components/ui/ResourceDownloadModal";
+import type { ServiceContent } from "@/components/templates/ServiceLandingTemplate";
+import { content as salesFunnelAIContent } from "@/pages/resources/SalesFunnelAI";
+import { content as coimagenProAIContent } from "@/pages/resources/CoimagenProAI";
+import { content as aiSalesAutomationContent } from "@/pages/resources/AISalesAutomation";
+import { content as seoContentAIContent } from "@/pages/resources/SEOContentAI";
+import { content as funnelCopyAIContent } from "@/pages/resources/FunnelCopyAI";
+import { content as communityManagerProContent } from "@/pages/resources/CommunityManagerPro";
+import { content as viralCopyAIContent } from "@/pages/resources/ViralCopyAI";
+import { content as adsStrategistAIContent } from "@/pages/resources/AdsStrategistAI";
+import { content as marketIntelligenceAIContent } from "@/pages/resources/MarketIntelligenceAI";
 
 interface Resource {
   icon: string;
@@ -117,6 +127,56 @@ const resources: Resource[] = [
   },
 ];
 
+interface GPTResource {
+  slug: string;
+  icon: string;
+  accentHex: string;
+  name: string;
+  descEs: string;
+  descEn: string;
+}
+
+// The 9 landing pages' `metaDesc` is written for search engines, so it always
+// trails off into a promo clause ("...gratis con X, el GPT de Coimagen
+// Media" / "...free with X, Coimagen Media's GPT"). That clause is redundant
+// on a card that already has its own "Abrir asistente" button, so this cuts
+// the sentence at the promo marker instead of showing the SEO boilerplate.
+function trimPromoTail(desc: string, marker: string): string {
+  const idx = desc.toLowerCase().indexOf(marker.toLowerCase());
+  if (idx === -1) return desc;
+  const head = desc
+    .slice(0, idx)
+    .replace(/\s*(for|—|,)\s*$/i, "")
+    .replace(/[\s,—]+$/, "");
+  return `${head}.`;
+}
+
+// These 9 landing pages are all built from the GPT-linking branch of
+// ServiceContent, so `gptLink` is always present here even though the
+// shared type marks it optional for non-GPT service pages.
+function toGPTResource(content: ServiceContent): GPTResource {
+  return {
+    slug: content.slug,
+    icon: content.icon,
+    accentHex: content.accentHex,
+    name: content.gptLink!.name,
+    descEs: trimPromoTail(content.metaDesc.es, "gratis con"),
+    descEn: trimPromoTail(content.metaDesc.en, "free with"),
+  };
+}
+
+const gptResources: GPTResource[] = [
+  salesFunnelAIContent,
+  coimagenProAIContent,
+  aiSalesAutomationContent,
+  seoContentAIContent,
+  funnelCopyAIContent,
+  communityManagerProContent,
+  viralCopyAIContent,
+  adsStrategistAIContent,
+  marketIntelligenceAIContent,
+].map(toGPTResource);
+
 export default function Resources() {
   const { lang } = useLang();
   const isEs = lang === "es";
@@ -228,6 +288,50 @@ export default function Resources() {
               >
                 📩 {isEs ? "Solicitar gratis" : "Get it free"}
               </button>
+            </div>
+          ))}
+        </div>
+
+        {/* AI assistants (GPTs) section — separate from the PDF grid above:
+            these open directly on their own landing page / ChatGPT, no email
+            capture modal. */}
+        <div className="text-center mb-10">
+          <h2 className="text-3xl sm:text-4xl font-black text-white mb-3">
+            {isEs ? "Asistentes de IA Gratuitos" : "Free AI Assistants"}
+          </h2>
+          <p className="text-[var(--c-muted)] text-base max-w-xl mx-auto leading-relaxed">
+            {isEs
+              ? "Herramientas de IA listas para usar, directo en ChatGPT — sin instalar nada."
+              : "Ready-to-use AI tools, right inside ChatGPT — nothing to install."}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mb-16">
+          {gptResources.map((gpt) => (
+            <div
+              key={gpt.slug}
+              className="glass rounded-2xl p-6 flex flex-col group hover:border-opacity-60 transition-all"
+              style={{ border: `1px solid ${gpt.accentHex}40` }}
+            >
+              <div className="text-4xl mb-4">{gpt.icon}</div>
+              <span className="text-xs font-bold mb-2 inline-block text-[var(--c-cyan)]">
+                {isEs ? "Asistente IA" : "AI Assistant"}
+              </span>
+              <h3 className="text-white font-black text-sm mb-2 leading-snug flex-1">{gpt.name}</h3>
+              <p className="text-[var(--c-muted)] text-xs leading-relaxed mb-5">
+                {isEs ? gpt.descEs : gpt.descEn}
+              </p>
+              <a
+                href={`/${gpt.slug}`}
+                className="mt-auto inline-flex items-center justify-center gap-2 border rounded-xl px-4 py-2.5 text-xs font-bold transition-all hover:brightness-110 active:scale-95"
+                style={{
+                  color: gpt.accentHex,
+                  borderColor: `${gpt.accentHex}50`,
+                  background: `${gpt.accentHex}10`,
+                }}
+              >
+                {isEs ? "Abrir asistente →" : "Open assistant →"}
+              </a>
             </div>
           ))}
         </div>

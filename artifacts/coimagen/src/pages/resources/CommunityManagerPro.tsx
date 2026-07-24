@@ -1,6 +1,6 @@
 import { ServiceLandingTemplate, ServiceContent } from "@/components/templates/ServiceLandingTemplate";
 
-const content: ServiceContent = {
+export const content: ServiceContent = {
   slug: "recursos/community-manager-pro",
   accentColor: "blue",
   accentHex: "#3B82F6",
