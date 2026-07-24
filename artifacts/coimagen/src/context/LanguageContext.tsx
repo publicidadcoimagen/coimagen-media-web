@@ -1,5 +1,13 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import type { Lang } from "@/config/site";
+
+const LANG_STORAGE_KEY = "coimagen-lang";
+
+function readStoredLang(): Lang {
+  if (typeof window === "undefined") return "es";
+  const stored = window.localStorage.getItem(LANG_STORAGE_KEY);
+  return stored === "es" || stored === "en" ? stored : "es";
+}
 
 const translations = {
   es: {
@@ -463,8 +471,13 @@ interface LanguageContextValue {
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLang] = useState<Lang>("es");
+  const [lang, setLang] = useState<Lang>(readStoredLang);
   const t = translations[lang] as Translations;
+
+  useEffect(() => {
+    window.localStorage.setItem(LANG_STORAGE_KEY, lang);
+  }, [lang]);
+
   return <LanguageContext.Provider value={{ lang, setLang, t }}>{children}</LanguageContext.Provider>;
 }
 
