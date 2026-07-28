@@ -387,8 +387,8 @@ export default function Diagnostico() {
               <div className="glass border border-white/[0.06] rounded-2xl p-6 mb-8">
                 <p className="text-[var(--c-muted)] text-xs mb-5">
                   {isEs
-                    ? "Te enviaremos tu diagnóstico completo por correo."
-                    : "We'll send you your full diagnostic by email."}
+                    ? "Verás tu diagnóstico completo aquí mismo, y también te enviaremos una copia por correo (si no la ves en unos minutos, revisa spam)."
+                    : "You'll see your full diagnostic right here, and we'll also send a copy to your email (check spam if it doesn't show up in a few minutes)."}
                 </p>
                 <div className="mb-4">
                   <label htmlFor="lead-name" className="block text-white/70 text-xs font-semibold mb-1.5 uppercase tracking-wider">
