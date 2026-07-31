@@ -4,7 +4,10 @@ import { SolutionLadder } from "@/components/sections/SolutionLadder";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { IndustriesSection } from "@/components/sections/IndustriesSection";
 import { PricingSection } from "@/components/sections/PricingSection";
-import { FounderOfferSection } from "@/components/sections/FounderOfferSection";
+// FounderOfferSection: temporarily unmounted from the homepage (P-50) — the
+// "20 spots" counter is hardcoded, not a real count (see P-49). Component
+// kept intact, not deleted: planned to come back later as a pop-up instead
+// of an inline section.
 import { ReferralSection } from "@/components/sections/ReferralSection";
 import { PremiumSection } from "@/components/sections/PremiumSection";
 import { CaseStudies } from "@/components/sections/CaseStudies";
@@ -23,7 +26,6 @@ export default function Home() {
       <ServicesSection />
       <IndustriesSection />
       <PricingSection />
-      <FounderOfferSection />
       <ReferralSection />
       <PremiumSection />
       <CaseStudies />
