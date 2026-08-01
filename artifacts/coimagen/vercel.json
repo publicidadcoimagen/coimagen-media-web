@@ -1,13 +1,28 @@
 {
   "redirects": [
     {
+      "source": "/casos/dr-segovia",
+      "destination": "/case-studies/dr-segovia",
+      "permanent": true
+    },
+    {
       "source": "/casos/dr-segovia/",
       "destination": "/case-studies/dr-segovia",
       "permanent": true
     },
     {
+      "source": "/verticales",
+      "destination": "/#industrias",
+      "permanent": true
+    },
+    {
       "source": "/verticales/",
       "destination": "/#industrias",
+      "permanent": true
+    },
+    {
+      "source": "/productos/ia",
+      "destination": "/#servicios",
       "permanent": true
     },
     {
