@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Hero } from "@/components/sections/Hero";
 import { PainSection } from "@/components/sections/PainSection";
 import { SolutionLadder } from "@/components/sections/SolutionLadder";
@@ -18,6 +19,19 @@ import { BlogPreview } from "@/components/sections/BlogPreview";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
 export default function Home() {
+  useEffect(() => {
+    if (!window.location.hash) return;
+    const id = window.location.hash.slice(1);
+    // Sections render synchronously, but the browser's own scroll-to-hash
+    // (on initial load, e.g. after the /verticales/ -> /#industrias redirect)
+    // fires before React commits/paints, so it lands at the top instead of
+    // the target section. Retry it ourselves once a frame has painted.
+    const raf = requestAnimationFrame(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    });
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
   return (
     <>
       <Hero />
