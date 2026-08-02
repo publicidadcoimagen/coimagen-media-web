@@ -147,10 +147,12 @@ export function BlogPostTemplate({ content }: { content: BlogContent }) {
 
         {/* Hero banner */}
         <div
-          className="h-52 sm:h-64 rounded-2xl mb-12 flex items-center justify-center overflow-hidden"
+          className="h-52 sm:h-64 rounded-2xl mb-12 flex items-center justify-center overflow-hidden px-6"
           style={{ background: `radial-gradient(ellipse at center, ${content.accentHex}20 0%, ${content.accentHex}08 60%, transparent 100%), #080810` }}
         >
-          <span className="text-7xl sm:text-8xl">{content.icon}</span>
+          <span className="text-3xl sm:text-4xl font-black uppercase tracking-wide text-center" style={{ color: content.accentHex }}>
+            {category}
+          </span>
         </div>
 
         {/* Content sections */}
