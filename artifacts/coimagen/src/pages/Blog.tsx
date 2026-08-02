@@ -7,6 +7,8 @@ const categories = {
   en: ["All", "Health", "Legal", "Dental", "SEO", "Automation", "AI", "Restaurants", "Real Estate"],
 };
 
+const tagAbbrev = (tag: string) => tag.slice(0, 3).toUpperCase();
+
 const tagMap: Record<string, string> = {
   "Salud": "Health",
   "Legal": "Legal",
@@ -134,10 +136,12 @@ export default function Blog() {
                   className="glass border border-white/[0.06] rounded-2xl overflow-hidden hover:border-[var(--c-cyan)]/30 transition-all group block"
                 >
                   <div
-                    className="h-40 flex items-center justify-center text-6xl"
+                    className="h-40 flex items-center justify-center px-4"
                     style={{ background: `radial-gradient(ellipse at center, ${post.tagColor}18, transparent 70%), #080810` }}
                   >
-                    {post.icon}
+                    <span className="text-2xl sm:text-3xl font-black uppercase tracking-wide text-center" style={{ color: post.tagColor }}>
+                      {isEs ? post.tagEs : post.tagEn}
+                    </span>
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-2 mb-3">
@@ -185,10 +189,10 @@ export default function Blog() {
                 >
                   <div className="flex items-start gap-4 mb-3">
                     <div
-                      className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-2xl"
-                      style={{ background: `${post.tagColor}12` }}
+                      className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-xs font-black"
+                      style={{ background: `${post.tagColor}12`, color: post.tagColor }}
                     >
-                      {post.icon}
+                      {tagAbbrev(isEs ? post.tagEs : post.tagEn)}
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-1">
