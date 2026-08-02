@@ -462,8 +462,30 @@ interface LanguageContextValue {
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
+const LANG_STORAGE_KEY = "coimagen-lang";
+
+function getStoredLang(): Lang {
+  try {
+    const stored = localStorage.getItem(LANG_STORAGE_KEY);
+    if (stored === "es" || stored === "en") return stored;
+  } catch {
+    // localStorage unavailable (e.g. private browsing) — fall back to default
+  }
+  return "es";
+}
+
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLang] = useState<Lang>("es");
+  const [lang, setLangState] = useState<Lang>(getStoredLang);
+
+  const setLang = (l: Lang) => {
+    setLangState(l);
+    try {
+      localStorage.setItem(LANG_STORAGE_KEY, l);
+    } catch {
+      // localStorage unavailable — selection just won't persist
+    }
+  };
+
   const t = translations[lang] as Translations;
   return <LanguageContext.Provider value={{ lang, setLang, t }}>{children}</LanguageContext.Provider>;
 }
