@@ -77,6 +77,10 @@
       "destination": "/index.html"
     },
     {
+      "source": "/recursos",
+      "destination": "/index.html"
+    },
+    {
       "source": "/contacto",
       "destination": "/index.html"
     },
