@@ -51,6 +51,7 @@ export function Header() {
     { label: isEs ? "Inicio" : "Home", href: "/" },
     { label: isEs ? "Servicios" : "Services", href: null, isDropdown: true },
     { label: isEs ? "Industrias" : "Industries", href: null, isIndustriesDropdown: true },
+    { label: isEs ? "Soluciones" : "Solutions", href: "/recursos" },
     { label: isEs ? "Casos" : "Cases", href: "/case-studies" },
     { label: isEs ? "Recursos" : "Resources", href: "/resources" },
     { label: "Blog", href: "/blog" },
