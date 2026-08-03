@@ -99,6 +99,11 @@ export function Footer() {
                   </a>
                 </li>
               ))}
+              <li>
+                <a href="/recursos" className="text-[var(--c-cyan)] hover:underline text-sm font-semibold transition-colors">
+                  {isEs ? "Ver todo →" : "View all →"}
+                </a>
+              </li>
             </ul>
           </div>
 

@@ -22,6 +22,7 @@ import Agendar from "@/pages/Agendar";
 import About from "@/pages/About";
 import Faqs from "@/pages/Faqs";
 import Resources from "@/pages/Resources";
+import Recursos from "@/pages/Recursos";
 import Contact from "@/pages/Contact";
 import Blog from "@/pages/Blog";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
@@ -108,6 +109,7 @@ function AppLayout() {
           <Route path="/agendar" component={Agendar} />
           <Route path="/faqs" component={Faqs} />
           <Route path="/resources" component={Resources} />
+          <Route path="/recursos" component={Recursos} />
           <Route path="/contacto" component={Contact} />
           <Route path="/contact" component={Contact} />
           <Route path="/blog" component={Blog} />
