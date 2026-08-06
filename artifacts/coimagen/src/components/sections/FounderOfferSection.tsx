@@ -1,23 +1,17 @@
 import { useLang } from "@/context/LanguageContext";
 import { useAdmin } from "@/context/AdminContext";
 import { siteConfig } from "@/config/site";
+import { PACKAGES } from "@/lib/packages";
 
-function parsePrice(s: string): number {
-  return parseInt(s.replace(/[^0-9]/g, "")) || 0;
-}
+const setupFees = PACKAGES.map((pkg) => pkg.setupUSD);
+const minSetupUSD = Math.min(...setupFees);
+const maxSetupUSD = Math.max(...setupFees);
 
 export function FounderOfferSection() {
   const { lang } = useLang();
   const { settings } = useAdmin();
   const isEs = lang === "es";
 
-  const regularPrice = isEs ? settings.founderRegularPriceMx : settings.founderRegularPriceUsd;
-  const founderPrice = isEs ? settings.founderPriceMx : settings.founderPriceUsd;
-  const currency = isEs ? "MXN / mes" : "USD / mo";
-  const savings = parsePrice(regularPrice) - parsePrice(founderPrice);
-  const savingsStr = isEs ? `$${savings.toLocaleString()} MXN / mes` : `$${savings} USD / mo`;
-  const discountPct = settings.founderDiscountPct;
-  const daysRemaining = settings.founderDaysRemaining;
   const spotsAvailable = settings.founderSpotsAvailable;
   const benefits = isEs ? settings.founderBenefitsEs : settings.founderBenefitsEn;
 
@@ -38,15 +32,10 @@ export function FounderOfferSection() {
         {/* Badges */}
         <div className="flex flex-wrap justify-center gap-3 mb-8">
           <div className="badge-neon text-[var(--c-yellow)] border border-[var(--c-yellow)]/30 bg-[var(--c-yellow)]/10">
-            🔥 {isEs ? `Solo ${spotsAvailable} espacios` : `Only ${spotsAvailable} spots`}
+            🔥 {isEs ? `Solo ${spotsAvailable} espacios (cualquier paquete)` : `Only ${spotsAvailable} spots (any package)`}
           </div>
-          {daysRemaining > 0 && (
-            <div className="badge-neon text-orange-400 border border-orange-400/30 bg-orange-400/10">
-              ⏰ {isEs ? `${daysRemaining} días restantes` : `${daysRemaining} days remaining`}
-            </div>
-          )}
           <div className="badge-neon text-[var(--c-lime)] border border-[var(--c-lime)]/30 bg-[var(--c-lime)]/10">
-            ✅ {isEs ? "Precio fundador de por vida" : "Lifetime founder pricing"}
+            ✅ {isEs ? "Setup $0 + mensualidad congelada" : "$0 setup + locked-in monthly"}
           </div>
         </div>
 
@@ -70,31 +59,39 @@ export function FounderOfferSection() {
 
           <div className="p-8 lg:p-10">
 
-            {/* Pricing comparison */}
+            {/* The deal */}
             <div className={`flex flex-col sm:flex-row gap-4 mb-8 ${settings.founderImageUrl ? "lg:flex-row lg:items-start" : ""}`}>
 
               <div className="flex-1">
                 <p className="text-white/50 text-xs font-semibold uppercase tracking-wider mb-4">
-                  {isEs ? "Comparativa de precios" : "Price comparison"}
+                  {isEs ? "La oferta" : "The offer"}
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  {/* Regular price */}
-                  <div className="glass border border-white/[0.06] rounded-xl p-4 text-center opacity-60">
-                    <p className="text-[var(--c-muted)] text-xs mb-1">{isEs ? "Precio regular" : "Regular price"}</p>
-                    <p className="text-white/60 font-black text-2xl line-through">{regularPrice}</p>
-                    <p className="text-white/40 text-xs mt-1">{currency}</p>
-                  </div>
-                  {/* Founder price */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* $0 setup */}
                   <div className="glass border border-[var(--c-yellow)]/40 rounded-xl p-4 text-center bg-[var(--c-yellow)]/5">
-                    <p className="text-[var(--c-yellow)] text-xs mb-1 font-bold">{isEs ? "Precio fundador" : "Founder price"}</p>
-                    <p className="text-[var(--c-yellow)] font-black text-3xl">{founderPrice}</p>
-                    <p className="text-[var(--c-yellow)]/60 text-xs mt-1">{currency}</p>
+                    <p className="text-[var(--c-yellow)] text-xs mb-1 font-bold">
+                      {isEs ? "Configuración inicial" : "Setup fee"}
+                    </p>
+                    <p className="text-[var(--c-yellow)] font-black text-3xl">$0</p>
+                    <p className="text-[var(--c-yellow)]/60 text-xs mt-1">
+                      {isEs
+                        ? `Ahorras de $${minSetupUSD} a $${maxSetupUSD} USD, según tu paquete`
+                        : `Save $${minSetupUSD}–$${maxSetupUSD} USD, depending on your package`}
+                    </p>
                   </div>
-                  {/* Savings */}
+                  {/* Locked monthly */}
                   <div className="glass border border-[var(--c-lime)]/30 rounded-xl p-4 text-center bg-[var(--c-lime)]/5">
-                    <p className="text-[var(--c-lime)] text-xs mb-1 font-bold">{isEs ? "Ahorras" : "You save"}</p>
-                    <p className="text-[var(--c-lime)] font-black text-2xl">{discountPct}%</p>
-                    <p className="text-[var(--c-lime)]/70 text-xs mt-1">{savingsStr}</p>
+                    <p className="text-[var(--c-lime)] text-xs mb-1 font-bold">
+                      {isEs ? "Mensualidad" : "Monthly"}
+                    </p>
+                    <p className="text-[var(--c-lime)] font-black text-2xl">
+                      {isEs ? "Precio de lista, congelado" : "List price, locked in"}
+                    </p>
+                    <p className="text-[var(--c-lime)]/70 text-xs mt-1">
+                      {isEs
+                        ? "Sin incrementos automáticos mientras tu plan siga activo"
+                        : "No automatic increases while your plan stays active"}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -110,26 +107,6 @@ export function FounderOfferSection() {
                 </div>
               )}
             </div>
-
-            {/* Launch window */}
-            {daysRemaining > 0 && (
-              <div className="glass border border-orange-400/20 rounded-xl p-5 mb-8 flex items-center gap-4">
-                <div className="flex-shrink-0 text-center">
-                  <div className="text-orange-400 font-black text-4xl leading-none">{daysRemaining}</div>
-                  <div className="text-orange-400/60 text-xs font-bold uppercase tracking-wider mt-1">
-                    {isEs ? "días" : "days"}
-                  </div>
-                </div>
-                <div>
-                  <p className="text-white font-bold text-sm">{isEs ? "Ventana de lanzamiento" : "Launch window"}</p>
-                  <p className="text-orange-300/80 text-xs mt-1">
-                    {isEs
-                      ? "Esta oferta fundadora estará disponible solo durante la ventana de lanzamiento."
-                      : "This founder offer is only available during the launch window."}
-                  </p>
-                </div>
-              </div>
-            )}
 
             {/* Benefits */}
             <p className="text-white/50 text-xs font-semibold uppercase tracking-wider mb-4">
@@ -153,8 +130,8 @@ export function FounderOfferSection() {
               <span className="text-orange-400 text-lg flex-shrink-0">⚠️</span>
               <p className="text-orange-300/90 text-sm leading-relaxed">
                 {isEs
-                  ? `Los primeros ${spotsAvailable} lugares tendrán precio fundador. Después de completar los espacios, los precios subirán a tarifa regular (${regularPrice} ${currency}).`
-                  : `The first ${spotsAvailable} spots receive founder pricing. Once spots are filled, pricing moves to regular rates (${regularPrice} ${currency}).`}
+                  ? `Los primeros ${spotsAvailable} lugares (de cualquier paquete) reciben setup $0. Al completarse el cupo, aplica el setup regular de cada paquete. Aplican términos y condiciones.`
+                  : `The first ${spotsAvailable} spots (any package) receive $0 setup. Once spots are filled, each package's regular setup fee applies. Terms and conditions apply.`}
               </p>
             </div>
 

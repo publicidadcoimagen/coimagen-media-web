@@ -12,13 +12,8 @@ export interface ProjectCard {
 }
 
 export interface AdminSettings {
-  founderDaysRemaining: number;
+  /** Total founder spots across all packages (not per package). Set to 0 to end the offer. */
   founderSpotsAvailable: number;
-  founderRegularPriceMx: string;
-  founderPriceMx: string;
-  founderRegularPriceUsd: string;
-  founderPriceUsd: string;
-  founderDiscountPct: number;
   founderImageUrl: string;
   founderImagePosition: string;
   founderBenefitsEs: string[];
@@ -58,13 +53,7 @@ export const DEFAULT_PROJECT_CARDS: ProjectCard[] = [
 ];
 
 const DEFAULTS: AdminSettings = {
-  founderDaysRemaining: 14,
-  founderSpotsAvailable: 20,
-  founderRegularPriceMx: "$1,490",
-  founderPriceMx: "$990",
-  founderRegularPriceUsd: "$297",
-  founderPriceUsd: "$197",
-  founderDiscountPct: 33,
+  founderSpotsAvailable: 10,
   founderImageUrl: "",
   founderImagePosition: "right",
   founderBenefitsEs: DEFAULT_BENEFITS_ES,
