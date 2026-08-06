@@ -49,7 +49,7 @@ export const siteConfig = {
       labelEn: "COIMAGEN OS",
       industryEs: "SaaS / Tecnología",
       industryEn: "SaaS / Technology",
-      liveUrl: "https://coimagenmediaos.replit.app/",
+      liveUrl: "",
     },
     {
       slug: "conchas-tower",
