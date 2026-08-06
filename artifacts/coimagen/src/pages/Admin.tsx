@@ -79,39 +79,9 @@ export default function Admin() {
             <h2 className="text-white font-black text-lg">Oferta Fundadores</h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Field label="Días restantes" hint="Ventana de lanzamiento">
-                <input type="number" min={0} value={settings.founderDaysRemaining}
-                  onChange={(e) => updateSettings({ founderDaysRemaining: parseInt(e.target.value) || 0 })}
-                  className="admin-input" />
-              </Field>
-              <Field label="Lugares disponibles" hint="Total de espacios fundadores">
-                <input type="number" min={1} value={settings.founderSpotsAvailable}
-                  onChange={(e) => updateSettings({ founderSpotsAvailable: parseInt(e.target.value) || 20 })}
-                  className="admin-input" />
-              </Field>
-              <Field label="Precio regular MX" hint='Ej: "$1,490"'>
-                <input type="text" value={settings.founderRegularPriceMx}
-                  onChange={(e) => updateSettings({ founderRegularPriceMx: e.target.value })}
-                  className="admin-input" />
-              </Field>
-              <Field label="Precio fundador MX" hint='Ej: "$990"'>
-                <input type="text" value={settings.founderPriceMx}
-                  onChange={(e) => updateSettings({ founderPriceMx: e.target.value })}
-                  className="admin-input" />
-              </Field>
-              <Field label="Precio regular USD" hint='Ej: "$297"'>
-                <input type="text" value={settings.founderRegularPriceUsd}
-                  onChange={(e) => updateSettings({ founderRegularPriceUsd: e.target.value })}
-                  className="admin-input" />
-              </Field>
-              <Field label="Precio fundador USD" hint='Ej: "$197"'>
-                <input type="text" value={settings.founderPriceUsd}
-                  onChange={(e) => updateSettings({ founderPriceUsd: e.target.value })}
-                  className="admin-input" />
-              </Field>
-              <Field label="Descuento %" hint="Mismo porcentaje para MX y USA">
-                <input type="number" min={0} max={100} value={settings.founderDiscountPct}
-                  onChange={(e) => updateSettings({ founderDiscountPct: parseInt(e.target.value) || 0 })}
+              <Field label="Lugares disponibles" hint="Total de espacios fundadores (todos los paquetes). Poner en 0 termina la oferta.">
+                <input type="number" min={0} value={settings.founderSpotsAvailable}
+                  onChange={(e) => updateSettings({ founderSpotsAvailable: parseInt(e.target.value) || 0 })}
                   className="admin-input" />
               </Field>
               <Field label="Imagen fundadora (URL)" hint="URL de la imagen de Camila o fundadora">
