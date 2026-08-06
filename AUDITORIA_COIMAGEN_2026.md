@@ -13,7 +13,7 @@
 | Language Context (ES/EN) | ✅ Activo | Fuente única de traducciones |
 | Country Context (MX/USA) | ✅ Activo | Pricing currency-aware |
 | Admin Panel `/admin` | ✅ Activo | Auth sessionStorage, localStorage data |
-| Portal de Clientes `/portal` | ✅ Activo | Redirige a coimagenmediaos.replit.app |
+| Portal de Clientes `/portal` | ✅ Activo | Landing con CTA a portal.coimagenmedia.com |
 | Jotform AI Agent (widget flotante) | ✅ Activo | Bottom-right, script externo |
 | SEO meta system por página | ✅ Activo | title, description, OG, Twitter, canonical |
 | FAQ Schema (JSON-LD) | ✅ Activo | Inyectado en service pages |
