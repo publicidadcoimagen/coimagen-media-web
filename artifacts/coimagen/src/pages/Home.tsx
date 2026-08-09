@@ -17,6 +17,7 @@ import { CamilaSection } from "@/components/sections/CamilaSection";
 import { DiagnosticCTA } from "@/components/sections/DiagnosticCTA";
 import { BlogPreview } from "@/components/sections/BlogPreview";
 import { FinalCTA } from "@/components/sections/FinalCTA";
+import { SpotifyEmbedSection } from "@/components/sections/SpotifyEmbedSection";
 
 export default function Home() {
   useEffect(() => {
@@ -48,6 +49,7 @@ export default function Home() {
       <DiagnosticCTA />
       <BlogPreview />
       <FinalCTA />
+      <SpotifyEmbedSection />
     </>
   );
 }
