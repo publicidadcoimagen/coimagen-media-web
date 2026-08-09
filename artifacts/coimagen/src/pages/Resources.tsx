@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLang } from "@/context/LanguageContext";
 import { siteConfig } from "@/config/site";
 import ResourceDownloadModal from "@/components/ui/ResourceDownloadModal";
+import { SpotifyEmbedSection } from "@/components/sections/SpotifyEmbedSection";
 import type { ServiceContent } from "@/components/templates/ServiceLandingTemplate";
 import { content as salesFunnelAIContent } from "@/pages/resources/SalesFunnelAI";
 import { content as coimagenProAIContent } from "@/pages/resources/CoimagenProAI";
@@ -365,6 +366,8 @@ export default function Resources() {
           </div>
         </div>
       </div>
+
+      <SpotifyEmbedSection />
 
       {/* Email capture modal */}
       {selectedResource && (
