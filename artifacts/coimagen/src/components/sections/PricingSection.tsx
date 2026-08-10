@@ -76,14 +76,14 @@ export function PricingSection() {
                   {currencyCode} {p.perMonth}
                 </p>
 
-                <p className="text-xs mb-3">
-                  <span className={founderSpotsLeft ? "text-white/40 line-through" : "text-[var(--c-yellow)] font-semibold"}>
+                <div className="text-xs mb-3">
+                  <p className={founderSpotsLeft ? "text-white/40 line-through" : "text-[var(--c-yellow)] font-semibold"}>
                     {p.setupLabel}: {formatPrice(pkg.setupUSD)}
-                  </span>
+                  </p>
                   {founderSpotsLeft && (
-                    <span className="text-[var(--c-yellow)] font-semibold ml-2">$0 — {p.founderSetupLabel}</span>
+                    <p className="text-[var(--c-yellow)] font-semibold">$0 — {p.founderSetupLabel}</p>
                   )}
-                </p>
+                </div>
 
                 <div className="my-5 border-t border-white/[0.06]" />
 
