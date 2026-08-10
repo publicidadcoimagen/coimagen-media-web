@@ -14,7 +14,7 @@ const industryColors = [
   "from-yellow-500/20 to-yellow-500/5 border-yellow-500/20 hover:border-yellow-500/40",
 ];
 
-const MEDICAL_DEMO_URL = "https://coimagenmediasaasexpedientemedico.abacusai.app/";
+const MEDICAL_DEMO_URL = "https://demo.coimagenmedia.com";
 
 export default function Demos() {
   const { lang, t } = useLang();
