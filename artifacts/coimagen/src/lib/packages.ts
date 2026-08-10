@@ -100,8 +100,8 @@ export const PACKAGES: ServicePackage[] = [
       en: "Managed online store + hosting + WhatsApp checkout (does not include a native FB/IG/WhatsApp Shop storefront)",
     },
     features: {
-      es: ["Tienda en línea", "Hosting incluido", "Checkout por WhatsApp", "Catálogo de productos", "Gestión de pedidos", "No incluye tienda nativa en Facebook/Instagram/WhatsApp Shop"],
-      en: ["Online store", "Hosting included", "WhatsApp checkout", "Product catalog", "Order management", "Does not include native FB/IG/WhatsApp Shop storefront"],
+      es: ["Tienda en línea", "Hosting incluido", "Checkout por WhatsApp", "Catálogo de productos", "Gestión de pedidos", "SEO", "Autopublicador en redes sociales", "No incluye tienda nativa en Facebook/Instagram/WhatsApp Shop"],
+      en: ["Online store", "Hosting included", "WhatsApp checkout", "Product catalog", "Order management", "SEO", "Social media autopublisher", "Does not include native FB/IG/WhatsApp Shop storefront"],
     },
     setupUSD: 199,
     monthlyUSD: 99,
