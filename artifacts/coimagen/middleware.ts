@@ -14,7 +14,7 @@ export default function middleware(request: Request) {
 
   return next({
     headers: {
-      "Set-Cookie": `${COUNTRY_COOKIE_NAME}=${value}; Path=/; Max-Age=${COOKIE_MAX_AGE_SECONDS}; SameSite=Lax`,
+      "Set-Cookie": `${COUNTRY_COOKIE_NAME}=${value}; Path=/; Max-Age=${COOKIE_MAX_AGE_SECONDS}; SameSite=Lax; Secure`,
     },
   });
 }
