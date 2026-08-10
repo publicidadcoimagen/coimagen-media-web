@@ -143,6 +143,7 @@ export default function Diagnostico() {
             url: normalizeUrl(websiteUrl),
             name: leadName.trim(),
             email: leadEmail.trim(),
+            lang: isEs ? "es" : "en",
           }),
         });
       } catch {
