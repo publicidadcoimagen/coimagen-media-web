@@ -3,6 +3,7 @@ import { useLang } from "@/context/LanguageContext";
 import { siteConfig } from "@/config/site";
 import ResourceDownloadModal from "@/components/ui/ResourceDownloadModal";
 import { SpotifyEmbedSection } from "@/components/sections/SpotifyEmbedSection";
+import { GptCatalogSection } from "@/components/sections/GptCatalogSection";
 import type { ServiceContent } from "@/components/templates/ServiceLandingTemplate";
 import { content as salesFunnelAIContent } from "@/pages/resources/SalesFunnelAI";
 import { content as coimagenProAIContent } from "@/pages/resources/CoimagenProAI";
@@ -336,6 +337,8 @@ export default function Resources() {
             </div>
           ))}
         </div>
+
+        <GptCatalogSection />
 
         {/* Bottom CTA */}
         <div className="text-center glass border border-[var(--c-cyan)]/15 rounded-2xl p-10">
