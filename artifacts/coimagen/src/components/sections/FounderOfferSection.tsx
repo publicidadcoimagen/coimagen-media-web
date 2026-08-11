@@ -2,6 +2,7 @@ import { useLang } from "@/context/LanguageContext";
 import { useAdmin } from "@/context/AdminContext";
 import { siteConfig } from "@/config/site";
 import { PACKAGES } from "@/lib/packages";
+import { useFounderCount } from "@/lib/foundersApi";
 
 const setupFees = PACKAGES.map((pkg) => pkg.setupUSD);
 const minSetupUSD = Math.min(...setupFees);
@@ -12,8 +13,14 @@ export function FounderOfferSection() {
   const { settings } = useAdmin();
   const isEs = lang === "es";
 
-  const spotsAvailable = settings.founderSpotsAvailable;
+  const founders = useFounderCount();
   const benefits = isEs ? settings.founderBenefitsEs : settings.founderBenefitsEn;
+
+  // Nothing to show yet (still loading, fetch failed) or the offer is full —
+  // both cases hide the section rather than risk showing a wrong count.
+  if (!founders || founders.count >= founders.max) return null;
+
+  const spotsAvailable = founders.max - founders.count;
 
   const title = isEs
     ? `Oferta Fundadores — Solo ${spotsAvailable} espacios disponibles`
@@ -135,21 +142,21 @@ export function FounderOfferSection() {
               </p>
             </div>
 
-            {/* CTAs */}
+            {/* CTAs — /diagnostico is the primary funnel entry, WhatsApp stays as a secondary option */}
             <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href="/diagnostico"
+                className="flex-1 inline-flex items-center justify-center gap-2 bg-[var(--c-yellow)] text-[#06060f] font-black px-8 py-4 rounded-xl text-base hover:brightness-110 hover:shadow-[0_0_32px_rgba(255,214,10,0.4)] transition-all active:scale-95"
+              >
+                🚀 {isEs ? "Solicitar mi diagnóstico gratuito" : "Get My Free Diagnostic"}
+              </a>
               <a
                 href={siteConfig.whatsapp.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-2 bg-[var(--c-yellow)] text-[#06060f] font-black px-8 py-4 rounded-xl text-base hover:brightness-110 hover:shadow-[0_0_32px_rgba(255,214,10,0.4)] transition-all active:scale-95"
-              >
-                🚀 {isEs ? "Quiero ser cliente fundador" : "Become a Founder Client"}
-              </a>
-              <a
-                href="/diagnostico"
                 className="flex-1 inline-flex items-center justify-center gap-2 border border-[var(--c-yellow)]/30 text-[var(--c-yellow)] font-bold px-8 py-4 rounded-xl text-base hover:bg-[var(--c-yellow)]/10 transition-all active:scale-95"
               >
-                {isEs ? "Solicitar diagnóstico gratuito" : "Get Free Diagnostic"}
+                {isEs ? "Escríbenos por WhatsApp" : "Message us on WhatsApp"}
               </a>
             </div>
           </div>

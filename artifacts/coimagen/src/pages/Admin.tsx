@@ -78,12 +78,12 @@ export default function Admin() {
           <div className="space-y-5">
             <h2 className="text-white font-black text-lg">Oferta Fundadores</h2>
 
+            <p className="text-white/40 text-xs">
+              El conteo de espacios ahora es en vivo (clientes marcados como Fundador en Coimagen OS) — ya no se
+              configura aquí. Máximo actual: 20.
+            </p>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Field label="Lugares disponibles" hint="Total de espacios fundadores (todos los paquetes). Poner en 0 termina la oferta.">
-                <input type="number" min={0} value={settings.founderSpotsAvailable}
-                  onChange={(e) => updateSettings({ founderSpotsAvailable: parseInt(e.target.value) || 0 })}
-                  className="admin-input" />
-              </Field>
               <Field label="Imagen fundadora (URL)" hint="URL de la imagen de Camila o fundadora">
                 <input type="text" value={settings.founderImageUrl}
                   onChange={(e) => updateSettings({ founderImageUrl: e.target.value })}

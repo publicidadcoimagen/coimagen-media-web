@@ -12,8 +12,6 @@ export interface ProjectCard {
 }
 
 export interface AdminSettings {
-  /** Total founder spots across all packages (not per package). Set to 0 to end the offer. */
-  founderSpotsAvailable: number;
   founderImageUrl: string;
   founderImagePosition: string;
   founderBenefitsEs: string[];
@@ -53,7 +51,6 @@ export const DEFAULT_PROJECT_CARDS: ProjectCard[] = [
 ];
 
 const DEFAULTS: AdminSettings = {
-  founderSpotsAvailable: 10,
   founderImageUrl: "",
   founderImagePosition: "right",
   founderBenefitsEs: DEFAULT_BENEFITS_ES,
