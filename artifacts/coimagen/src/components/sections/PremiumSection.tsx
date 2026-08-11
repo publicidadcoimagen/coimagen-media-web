@@ -1,5 +1,4 @@
 import { useLang } from "@/context/LanguageContext";
-import { siteConfig } from "@/config/site";
 
 export function PremiumSection() {
   const { t } = useLang();
@@ -25,17 +24,13 @@ export function PremiumSection() {
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href={siteConfig.whatsapp.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/diagnostico"
                   className="inline-flex items-center gap-2 bg-[var(--c-purple)] text-white font-bold px-7 py-3.5 rounded-xl text-sm hover:brightness-110 hover:shadow-[0_0_24px_rgba(139,92,246,0.4)] transition-all active:scale-95"
                 >
                   {pr.cta1}
                 </a>
                 <a
-                  href={siteConfig.whatsapp.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/diagnostico"
                   className="inline-flex items-center gap-2 border border-white/10 text-white font-semibold px-7 py-3.5 rounded-xl text-sm hover:border-[var(--c-purple)]/40 hover:text-[var(--c-purple)] transition-all active:scale-95"
                 >
                   {pr.cta2}

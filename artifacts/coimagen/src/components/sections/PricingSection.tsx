@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { useLang } from "@/context/LanguageContext";
 import { useCountry } from "@/context/CountryContext";
-import { useAdmin } from "@/context/AdminContext";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { siteConfig } from "@/config/site";
 import { PACKAGES } from "@/lib/packages";
 import { convertUsdToMxn, getUsdToMxnRate, FALLBACK_USD_TO_MXN_RATE } from "@/lib/pricing";
+import { useFounderCount } from "@/lib/foundersApi";
 
 export function PricingSection() {
   const { lang, t } = useLang();
   const { country } = useCountry();
-  const { settings } = useAdmin();
+  const founders = useFounderCount();
   const p = t.pricing;
 
   const [rate, setRate] = useState(FALLBACK_USD_TO_MXN_RATE);
@@ -28,7 +28,7 @@ export function PricingSection() {
   const isMx = country === "mx";
   const currencyCode = isMx ? "MXN" : "USD";
   const marketLabel = isMx ? "🇲🇽 Precios en México (MXN)" : "🇺🇸 USA Pricing (USD)";
-  const founderSpotsLeft = settings.founderSpotsAvailable > 0;
+  const founderSpotsLeft = !!founders && founders.count < founders.max;
   const visiblePackages = PACKAGES.filter((pkg) => pkg.visible);
 
   const formatPrice = (usd: number) => {
