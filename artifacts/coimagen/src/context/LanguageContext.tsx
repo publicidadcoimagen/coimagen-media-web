@@ -98,6 +98,7 @@ const translations = {
         { name: "Chimichimi", desc: "Presencia digital con contenido, marca y estrategia de captación.", tag: "Restaurante", color: "from-orange-500 to-red-700", href: "https://chimichimi.coimagenmedia.com" },
         { name: "Vertiente Bienes Raíces", desc: "Landing de captación, filtrado de leads, inventario y operación escalable.", tag: "Inmobiliaria", color: "from-purple-600 to-violet-800", href: "https://vertiente.coimagenmedia.com" },
         { name: "Coimagen OS", desc: "Plataforma interna de operación con IA, CRM, facturación, clientes y flujos automatizados.", tag: "Tecnología", color: "from-cyan-600 to-blue-800", href: "/demos/coimagen-os-preview/" },
+        { name: "Café Meridiano", desc: "Tienda en línea con catálogo, carrito y checkout — café de especialidad y repostería artesanal.", tag: "Alimentos", color: "from-amber-600 to-orange-800", href: "https://cafemeridiano.coimagenmedia.com" },
       ],
     },
     businessOS: {
@@ -265,6 +266,7 @@ const translations = {
         { name: "Chimichimi", desc: "Digital presence with content, branding and lead generation strategy.", tag: "Restaurant", color: "from-orange-500 to-red-700", href: "https://chimichimi.coimagenmedia.com" },
         { name: "Vertiente Bienes Raíces", desc: "Lead capture landing, filtering, inventory and scalable operations.", tag: "Real Estate", color: "from-purple-600 to-violet-800", href: "https://vertiente.coimagenmedia.com" },
         { name: "Coimagen OS", desc: "Internal operating platform with AI, CRM, billing, clients and automated workflows.", tag: "Technology", color: "from-cyan-600 to-blue-800", href: "/demos/coimagen-os-preview/" },
+        { name: "Café Meridiano", desc: "Online store with catalog, cart and checkout — specialty coffee and artisan pastries.", tag: "Food & Drink", color: "from-amber-600 to-orange-800", href: "https://cafemeridiano.coimagenmedia.com" },
       ],
     },
     businessOS: {
