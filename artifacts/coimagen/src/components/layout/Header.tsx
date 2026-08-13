@@ -24,6 +24,11 @@ export function Header() {
   };
   const isHome = location === "/" || location === "";
   const isEs = lang === "es";
+  // The Digital Diagnosis results page locks its own chrome to whichever
+  // language the diagnosis was generated in (see DiagnosticoResultado's
+  // pageIsEs) — its AI content can't be regenerated when the toggle
+  // changes, so the toggle itself is hidden there to avoid a mixed page.
+  const hideLanguageToggle = location.startsWith("/diagnostico/resultado/");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -196,10 +201,12 @@ export function Header() {
 
         {/* Right controls */}
         <div className="flex items-center gap-2">
-          <div className="hidden sm:flex items-center gap-0.5 glass rounded-lg px-1 py-1">
-            <button onClick={() => setLang("es")} className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-all ${lang === "es" ? "bg-[var(--c-cyan)] text-[#06060f]" : "text-[var(--c-muted)] hover:text-white"}`}>ES</button>
-            <button onClick={() => setLang("en")} className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-all ${lang === "en" ? "bg-[var(--c-cyan)] text-[#06060f]" : "text-[var(--c-muted)] hover:text-white"}`}>EN</button>
-          </div>
+          {!hideLanguageToggle && (
+            <div className="hidden sm:flex items-center gap-0.5 glass rounded-lg px-1 py-1">
+              <button onClick={() => setLang("es")} className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-all ${lang === "es" ? "bg-[var(--c-cyan)] text-[#06060f]" : "text-[var(--c-muted)] hover:text-white"}`}>ES</button>
+              <button onClick={() => setLang("en")} className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-all ${lang === "en" ? "bg-[var(--c-cyan)] text-[#06060f]" : "text-[var(--c-muted)] hover:text-white"}`}>EN</button>
+            </div>
+          )}
 
           <a
             href="/diagnostico"
@@ -291,12 +298,14 @@ export function Header() {
             })}
           </nav>
 
-          <div className="flex gap-2 mb-4">
-            <div className="flex items-center gap-0.5 glass rounded-lg px-1 py-1">
-              <button onClick={() => setLang("es")} className={`px-3 py-1.5 rounded-md text-xs font-bold transition-all ${lang === "es" ? "bg-[var(--c-cyan)] text-[#06060f]" : "text-white"}`}>ES</button>
-              <button onClick={() => setLang("en")} className={`px-3 py-1.5 rounded-md text-xs font-bold transition-all ${lang === "en" ? "bg-[var(--c-cyan)] text-[#06060f]" : "text-white"}`}>EN</button>
+          {!hideLanguageToggle && (
+            <div className="flex gap-2 mb-4">
+              <div className="flex items-center gap-0.5 glass rounded-lg px-1 py-1">
+                <button onClick={() => setLang("es")} className={`px-3 py-1.5 rounded-md text-xs font-bold transition-all ${lang === "es" ? "bg-[var(--c-cyan)] text-[#06060f]" : "text-white"}`}>ES</button>
+                <button onClick={() => setLang("en")} className={`px-3 py-1.5 rounded-md text-xs font-bold transition-all ${lang === "en" ? "bg-[var(--c-cyan)] text-[#06060f]" : "text-white"}`}>EN</button>
+              </div>
             </div>
-          </div>
+          )}
 
           <a
             href="/diagnostico"

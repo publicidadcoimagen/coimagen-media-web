@@ -49,4 +49,8 @@ export interface DigitalDiagnosisResult {
   sourceUrl: string | null;
   result: DigitalDiagnosisAnalysis | null;
   createdAt: string;
+  // Language this specific diagnosis was generated in (see P-diagnosis-lang)
+  // — independent of the site-wide ES/EN toggle, since the AI content can't
+  // be regenerated on the fly when the toggle changes.
+  language: "es" | "en";
 }
