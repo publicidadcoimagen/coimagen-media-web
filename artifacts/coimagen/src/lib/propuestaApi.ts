@@ -12,4 +12,8 @@ export interface PublicProposalView {
   amount: number | null;
   notes: string | null;
   validUntil: string | null;
+  // Populated once accepted — the deposit cuota to pay right away, see
+  // facturaApi.ts's InvoicePublicView. Null while still draft/sent, or if
+  // staff never finished setting up the proposal's clientId/amount.
+  nextInvoice: import("./facturaApi").InvoicePublicView | null;
 }
