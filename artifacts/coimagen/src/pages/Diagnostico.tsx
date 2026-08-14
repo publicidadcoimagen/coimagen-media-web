@@ -19,6 +19,7 @@ const industries = [
 const questions = {
   es: [
     { q: "¿Tienes un sitio web funcional que genera contactos?", icon: "🌐" },
+    { q: "¿Puedes vender tus productos o servicios en línea (tienda en línea, reservas o pagos digitales)?", icon: "🛒" },
     { q: "¿Tienes tu perfil de Google Business Profile optimizado?", icon: "📍" },
     { q: "¿Usas un CRM para dar seguimiento a tus prospectos?", icon: "📋" },
     { q: "¿Tienes automatizaciones activas en tu negocio?", icon: "⚡" },
@@ -26,6 +27,7 @@ const questions = {
   ],
   en: [
     { q: "Do you have a functional website that generates leads?", icon: "🌐" },
+    { q: "Can you sell your products or services online (online store, bookings, or digital payments)?", icon: "🛒" },
     { q: "Do you have an optimized Google Business Profile?", icon: "📍" },
     { q: "Do you use a CRM to follow up with prospects?", icon: "📋" },
     { q: "Do you have active automations in your business?", icon: "⚡" },
@@ -37,16 +39,16 @@ const levels = {
   es: [
     { min: 0, max: 0, name: "Punto de Partida", color: "text-red-400", border: "border-red-400/30", desc: "Tu negocio aún no tiene presencia digital. Es el mejor momento para empezar desde cero y hacerlo bien.", rec: "Comenzar con presencia digital básica" },
     { min: 1, max: 1, name: "Digital Básico", color: "text-orange-400", border: "border-orange-400/30", desc: "Tienes los primeros pasos pero hay grandes oportunidades de mejora en captación y automatización.", rec: "Optimizar presencia y comenzar automatización" },
-    { min: 2, max: 3, name: "En Crecimiento", color: "text-yellow-400", border: "border-yellow-400/30", desc: "Buen avance. Tienes algunos sistemas pero no están conectados. Un CRM o automatización cambiaría todo.", rec: "Conectar sistemas e implementar CRM" },
-    { min: 4, max: 4, name: "Escalando", color: "text-[var(--c-lime)]", border: "border-[var(--c-lime)]/30", desc: "Tienes una base sólida. Agregar agentes IA y automatización avanzada llevaría tu negocio al siguiente nivel.", rec: "Implementar agentes IA y automatización avanzada" },
-    { min: 5, max: 5, name: "Sistema Completo", color: "text-[var(--c-cyan)]", border: "border-[var(--c-cyan)]/30", desc: "¡Excelente! Tu negocio ya opera con sistemas digitales. Podemos ayudarte a optimizar y añadir IA.", rec: "Optimizar y agregar IA avanzada" },
+    { min: 2, max: 4, name: "En Crecimiento", color: "text-yellow-400", border: "border-yellow-400/30", desc: "Buen avance. Tienes algunos sistemas pero no están conectados. Un CRM o automatización cambiaría todo.", rec: "Conectar sistemas e implementar CRM" },
+    { min: 5, max: 5, name: "Escalando", color: "text-[var(--c-lime)]", border: "border-[var(--c-lime)]/30", desc: "Tienes una base sólida. Agregar agentes IA y automatización avanzada llevaría tu negocio al siguiente nivel.", rec: "Implementar agentes IA y automatización avanzada" },
+    { min: 6, max: 6, name: "Sistema Completo", color: "text-[var(--c-cyan)]", border: "border-[var(--c-cyan)]/30", desc: "¡Excelente! Tu negocio ya opera con sistemas digitales. Podemos ayudarte a optimizar y añadir IA.", rec: "Optimizar y agregar IA avanzada" },
   ],
   en: [
     { min: 0, max: 0, name: "Starting Point", color: "text-red-400", border: "border-red-400/30", desc: "Your business has no digital presence yet. It's the best time to start from scratch and do it right.", rec: "Start with basic digital presence" },
     { min: 1, max: 1, name: "Digital Basics", color: "text-orange-400", border: "border-orange-400/30", desc: "You have the first steps but there are big opportunities to improve in lead capture and automation.", rec: "Optimize presence and start automation" },
-    { min: 2, max: 3, name: "Growing", color: "text-yellow-400", border: "border-yellow-400/30", desc: "Good progress. You have some systems but they're not connected. A CRM or automation would change everything.", rec: "Connect systems and implement CRM" },
-    { min: 4, max: 4, name: "Scaling", color: "text-[var(--c-lime)]", border: "border-[var(--c-lime)]/30", desc: "You have a solid foundation. Adding AI agents and advanced automation would take your business to the next level.", rec: "Implement AI agents and advanced automation" },
-    { min: 5, max: 5, name: "Complete System", color: "text-[var(--c-cyan)]", border: "border-[var(--c-cyan)]/30", desc: "Excellent! Your business already operates with digital systems. We can help you optimize and add AI.", rec: "Optimize and add advanced AI" },
+    { min: 2, max: 4, name: "Growing", color: "text-yellow-400", border: "border-yellow-400/30", desc: "Good progress. You have some systems but they're not connected. A CRM or automation would change everything.", rec: "Connect systems and implement CRM" },
+    { min: 5, max: 5, name: "Scaling", color: "text-[var(--c-lime)]", border: "border-[var(--c-lime)]/30", desc: "You have a solid foundation. Adding AI agents and advanced automation would take your business to the next level.", rec: "Implement AI agents and advanced automation" },
+    { min: 6, max: 6, name: "Complete System", color: "text-[var(--c-cyan)]", border: "border-[var(--c-cyan)]/30", desc: "Excellent! Your business already operates with digital systems. We can help you optimize and add AI.", rec: "Optimize and add advanced AI" },
   ],
 };
 
@@ -62,7 +64,7 @@ export default function Diagnostico() {
 
   const [step, setStep] = useState<Step>(1);
   const [industry, setIndustry] = useState<string | null>(null);
-  const [answers, setAnswers] = useState<(boolean | null)[]>([null, null, null, null, null]);
+  const [answers, setAnswers] = useState<(boolean | null)[]>([null, null, null, null, null, null]);
   const [showJotform, setShowJotform] = useState(false);
 
   const [websiteMode, setWebsiteMode] = useState<WebsiteStepMode>("ask");
@@ -74,8 +76,8 @@ export default function Diagnostico() {
   useEffect(() => {
     const title = isEs ? "Diagnóstico Digital Gratuito — Coimagen Media Agency" : "Free Digital Diagnostic — Coimagen Media Agency";
     const desc = isEs
-      ? "Descubre el nivel digital de tu negocio en 5 preguntas. Diagnóstico gratuito con recomendaciones personalizadas por industria y plan de acción real."
-      : "Discover your business digital score in 5 questions. Free diagnostic with personalized recommendations by industry and a real action plan.";
+      ? "Descubre el nivel digital de tu negocio en 6 preguntas. Diagnóstico gratuito con recomendaciones personalizadas por industria y plan de acción real."
+      : "Discover your business digital score in 6 questions. Free diagnostic with personalized recommendations by industry and a real action plan.";
     const url = "https://www.coimagenmedia.com/diagnostico";
     document.title = title;
     document.querySelector('meta[name="description"]')?.setAttribute("content", desc);
@@ -102,7 +104,7 @@ export default function Diagnostico() {
   const restart = () => {
     setStep(1);
     setIndustry(null);
-    setAnswers([null, null, null, null, null]);
+    setAnswers([null, null, null, null, null, null]);
     setShowJotform(false);
     setWebsiteMode("ask");
     setWebsiteUrl("");
@@ -173,7 +175,7 @@ export default function Diagnostico() {
             {isEs ? "¿Cuánto vale tu presencia digital?" : "How strong is your digital presence?"}
           </h1>
           <p className="text-[var(--c-muted)] text-sm max-w-lg mx-auto">
-            {isEs ? "Responde 5 preguntas y descubre tu nivel digital + qué hacer primero." : "Answer 5 questions and discover your digital level + what to do first."}
+            {isEs ? "Responde 6 preguntas y descubre tu nivel digital + qué hacer primero." : "Answer 6 questions and discover your digital level + what to do first."}
           </p>
         </div>
 
@@ -233,7 +235,7 @@ export default function Diagnostico() {
         {step === 2 && (
           <div>
             <h2 className="text-white font-black text-xl text-center mb-2">
-              {isEs ? "5 preguntas rápidas" : "5 quick questions"}
+              {isEs ? "6 preguntas rápidas" : "6 quick questions"}
             </h2>
             <p className="text-[var(--c-muted)] text-sm text-center mb-8">
               {isEs ? "Sé honesto — el diagnóstico es para ti." : "Be honest — the diagnostic is for you."}
@@ -292,7 +294,7 @@ export default function Diagnostico() {
               <p className="text-white/50 text-xs font-semibold uppercase tracking-wider mb-4">{isEs ? "Tu nivel digital" : "Your digital level"}</p>
               {/* Score meter */}
               <div className="flex justify-center gap-2 mb-6">
-                {[1, 2, 3, 4, 5].map((n) => (
+                {[1, 2, 3, 4, 5, 6].map((n) => (
                   <div
                     key={n}
                     className={`w-10 h-10 rounded-xl flex items-center justify-center font-black text-sm ${
@@ -315,7 +317,7 @@ export default function Diagnostico() {
               <span className="text-[var(--c-muted)] text-xs">
                 {isEs ? "Industria:" : "Industry:"} <span className="text-white font-semibold">{industries.find((i) => i.id === industry)?.[isEs ? "es" : "en"]}</span>
                 {" · "}
-                {isEs ? "Respuestas positivas:" : "Positive answers:"} <span className="text-[var(--c-cyan)] font-black">{score}/5</span>
+                {isEs ? "Respuestas positivas:" : "Positive answers:"} <span className="text-[var(--c-cyan)] font-black">{score}/6</span>
               </span>
             </div>
             <div className="flex gap-3">
