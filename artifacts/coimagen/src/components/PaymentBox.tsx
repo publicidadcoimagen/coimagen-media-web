@@ -237,6 +237,14 @@ export default function PaymentBox({ invoice, onUpdated, isEs }: PaymentBoxProps
   return (
     <div className="glass border border-[var(--c-cyan)]/25 rounded-2xl p-8 mb-6">
       <p className="text-white/50 text-xs font-semibold uppercase tracking-wider mb-2 text-center">{invoice.label}</p>
+      {invoice.discountApplied && (
+        <p className="text-center mb-2">
+          <span className="inline-flex items-center gap-1 bg-[var(--c-lime)]/15 text-[var(--c-lime)] border border-[var(--c-lime)]/30 rounded-full px-3 py-1 text-xs font-bold">
+            🎉 {isEs ? "10% de descuento aplicado" : "10% discount applied"}
+          </span>
+        </p>
+      )}
+      {/* amount is already the discounted price when discountApplied is true — computed server-side, nothing to calculate here. */}
       <p className="text-4xl font-black mb-6 text-[var(--c-cyan)] text-center">{formatAmount(invoice.amount, invoice.currency, isEs)}</p>
 
       <label className="flex items-start gap-3 mb-4 cursor-pointer">

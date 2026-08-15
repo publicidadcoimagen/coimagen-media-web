@@ -23,6 +23,11 @@ export interface InvoicePublicView {
   // mini-form for the monthly plan (submitSubscriptionFiscalData below)
   // shows exactly when this is true and subscriptionApproveUrl is still null.
   subscriptionPending: boolean;
+  // True once a payment-recovery reactivation email (30d/60d) has ever
+  // gone out for this invoice — `amount` above is ALREADY the discounted
+  // price when this is true, computed server-side (same number the client
+  // would actually be charged). Nothing to compute on this side, just show it.
+  discountApplied: boolean;
 }
 
 export interface FiscalDataInput {
@@ -98,6 +103,22 @@ export async function submitSubscriptionFiscalData(
   });
   const json = await res.json().catch(() => null);
   if (!res.ok) throw new Error((json && typeof json.error === "string" && json.error) || "No se pudo autorizar tu mensualidad");
+  return json as InvoicePublicView;
+}
+
+// Payment-recovery "ya no quiero continuar" — reached only from the
+// /factura/:token/declinar confirmation page, never triggered directly by
+// the reminder email's link itself (see FacturaDeclinar.tsx). Purely
+// informational on the backend: doesn't touch PayPal, doesn't cancel
+// anything. Idempotent — calling this on an already-declined invoice just
+// returns its current state, not an error.
+export async function declineInvoice(token: string): Promise<InvoicePublicView> {
+  const res = await fetch(`${INVOICE_API_BASE}/api/public/invoices/${token}/decline`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+  });
+  const json = await res.json().catch(() => null);
+  if (!res.ok) throw new Error((json && typeof json.error === "string" && json.error) || "No se pudo registrar tu decisión");
   return json as InvoicePublicView;
 }
 
