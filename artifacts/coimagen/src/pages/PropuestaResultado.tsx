@@ -3,6 +3,7 @@ import { useParams } from "wouter";
 import { useLang } from "@/context/LanguageContext";
 import { siteConfig } from "@/config/site";
 import { PROPOSAL_API_BASE, type PublicProposalView } from "@/lib/propuestaApi";
+import PaymentBox from "@/components/PaymentBox";
 
 type LoadState = "loading" | "ready" | "not-found" | "error";
 type ApproveState = "idle" | "approving" | "error";
@@ -182,6 +183,15 @@ export default function PropuestaResultado() {
                 </p>
               )}
             </div>
+
+            {/* Payment — the deposit cuota, right here once approved */}
+            {data.status === "accepted" && data.nextInvoice && (
+              <PaymentBox
+                invoice={data.nextInvoice}
+                onUpdated={(updated) => setData((prev) => (prev ? { ...prev, nextInvoice: updated } : prev))}
+                isEs={isEs}
+              />
+            )}
 
             {/* Approve action */}
             {(data.status === "draft" || data.status === "sent") && (

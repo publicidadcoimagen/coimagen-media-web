@@ -15,6 +15,8 @@ import Home from "@/pages/Home";
 import Diagnostico from "@/pages/Diagnostico";
 import DiagnosticoResultado from "@/pages/DiagnosticoResultado";
 import PropuestaResultado from "@/pages/PropuestaResultado";
+import FacturaResultado from "@/pages/FacturaResultado";
+import FacturaDeclinar from "@/pages/FacturaDeclinar";
 import Demos from "@/pages/Demos";
 import Portal from "@/pages/Portal";
 import Secure from "@/pages/Secure";
@@ -99,6 +101,8 @@ function AppLayout() {
           <Route path="/diagnostico" component={Diagnostico} />
           <Route path="/diagnostico/resultado/:token" component={DiagnosticoResultado} />
           <Route path="/propuesta/:token" component={PropuestaResultado} />
+          <Route path="/factura/:token/declinar" component={FacturaDeclinar} />
+          <Route path="/factura/:token" component={FacturaResultado} />
           <Route path="/demos" component={Demos} />
           <Route path="/portal" component={Portal} />
 
