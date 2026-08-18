@@ -40,7 +40,7 @@ export default function PrivacyPolicy() {
     },
     {
       title: "5. Derechos ARCO",
-      content: "Usted tiene derecho a Acceder, Rectificar, Cancelar u Oponerse al tratamiento de sus datos personales (derechos ARCO). Para ejercerlos, envíenos un correo a contacto@coimagenmedia.com indicando su nombre, los datos a tratar y el derecho que desea ejercer."
+      content: "Usted tiene derecho a Acceder, Rectificar, Cancelar u Oponerse al tratamiento de sus datos personales (derechos ARCO). Para ejercerlos, envíenos un correo a info@coimagenmedia.com indicando su nombre, los datos a tratar y el derecho que desea ejercer."
     },
     {
       title: "6. Cookies y tecnologías de seguimiento",
@@ -56,7 +56,7 @@ export default function PrivacyPolicy() {
     },
     {
       title: "9. Contacto",
-      content: "Para cualquier duda o aclaración sobre el tratamiento de sus datos, contáctenos en: contacto@coimagenmedia.com | WhatsApp: +52 664 476 9223"
+      content: "Para cualquier duda o aclaración sobre el tratamiento de sus datos, contáctenos en: info@coimagenmedia.com | WhatsApp: +52 664 476 9223"
     },
   ] : [
     {
@@ -77,7 +77,7 @@ export default function PrivacyPolicy() {
     },
     {
       title: "5. Your rights",
-      content: "You have the right to access, correct, delete or object to the processing of your personal data. To exercise these rights, send us an email at contacto@coimagenmedia.com indicating your name, the data in question and the right you wish to exercise."
+      content: "You have the right to access, correct, delete or object to the processing of your personal data. To exercise these rights, send us an email at info@coimagenmedia.com indicating your name, the data in question and the right you wish to exercise."
     },
     {
       title: "6. Cookies and tracking technologies",
@@ -93,7 +93,7 @@ export default function PrivacyPolicy() {
     },
     {
       title: "9. Contact",
-      content: "For any questions about the processing of your data, contact us at: contacto@coimagenmedia.com | WhatsApp: +52 664 476 9223"
+      content: "For any questions about the processing of your data, contact us at: info@coimagenmedia.com | WhatsApp: +52 664 476 9223"
     },
   ];
 
