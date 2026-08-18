@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useLang } from "@/context/LanguageContext";
 import { useCountry } from "@/context/CountryContext";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { siteConfig } from "@/config/site";
 import { PACKAGES } from "@/lib/packages";
 import { convertUsdToMxn, getUsdToMxnRate, FALLBACK_USD_TO_MXN_RATE } from "@/lib/pricing";
 import { useFounderCount } from "@/lib/foundersApi";
@@ -99,9 +98,7 @@ export function PricingSection() {
                 </ul>
 
                 <a
-                  href={siteConfig.whatsapp.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/diagnostico"
                   className={`mt-6 block text-center py-3 rounded-xl text-sm font-bold transition-all active:scale-95 ${
                     pkg.recommended
                       ? "bg-[var(--c-cyan)] text-[#06060f] hover:brightness-110 hover:shadow-[0_0_20px_rgba(0,207,255,0.35)]"
