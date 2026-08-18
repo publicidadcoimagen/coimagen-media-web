@@ -8,7 +8,7 @@ export const siteConfig = {
     display: "+52 664 476 9223",
     url: "https://wa.me/526644769223",
   },
-  email: "contacto@coimagenmedia.com",
+  email: "info@coimagenmedia.com",
   location: "Tijuana / San Diego",
   social: {
     facebook: "https://www.facebook.com/coimagenmediaagency/",
