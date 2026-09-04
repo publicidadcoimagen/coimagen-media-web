@@ -14,16 +14,27 @@
 // /diagnostico/resultado/:token, /propuesta/:token, /factura/:token, plus
 // /portal, /secure, /admin) are never touched — they keep serving the
 // original dist/public/index.html exactly as before.
+//
+// Never fails the build, and never leaves a route half-generated: vercel.json
+// always maps every sitemap route to its own file (computed upfront, not
+// dependent on runtime success), and every one of those files always gets
+// written — either the real prerendered version, or (per-route, or entirely,
+// on any failure) an untouched copy of the generic shell. So the worst case
+// for any single route is exactly today's current behavior, never a 404 or a
+// half-written page, and this script always exits 0.
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { preview } from "vite";
-import puppeteer from "puppeteer";
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const OUT_DIR = join(ROOT, "dist/public");
 const SHELL_PATH = join(OUT_DIR, "index.html");
 const VERCEL_JSON_PATH = join(ROOT, "vercel.json");
+function isEnvTrue(value) {
+  return Boolean(value) && value !== "false" && value !== "0";
+}
+const IS_SERVERLESS_BUILD = isEnvTrue(process.env.VERCEL) || isEnvTrue(process.env.CI);
 
 function readRoutesFromSitemap() {
   const xml = readFileSync(join(ROOT, "public/sitemap.xml"), "utf8");
@@ -31,10 +42,11 @@ function readRoutesFromSitemap() {
   return matches.map((m) => m[1] || "/");
 }
 
-// Route -> static file path (relative to dist/public). "/" is deliberately
-// its own file (home.html), NOT index.html — index.html stays the untouched
-// generic fallback that every non-sitemap/dynamic route still resolves to,
-// so this change can never affect those routes even by accident.
+// Route -> static file path (relative to dist/public), computed purely from
+// the sitemap — never depends on whether prerendering that route actually
+// succeeds. "/" is deliberately its own file (home.html), NOT index.html —
+// index.html stays the untouched generic fallback that every non-sitemap/
+// dynamic route still resolves to.
 function outputFileFor(route) {
   if (route === "/") return "home.html";
   return `${route.replace(/^\//, "")}.html`;
@@ -84,6 +96,9 @@ function applyMeta(shellHtml, meta) {
   return html;
 }
 
+// vercel.json always maps every sitemap route to its own file — this mapping
+// is static (derived purely from the sitemap), so it's written unconditionally
+// regardless of how many routes actually got real prerendered content below.
 function updateVercelRewrites(routeToFile) {
   const config = JSON.parse(readFileSync(VERCEL_JSON_PATH, "utf8"));
   let updated = 0;
@@ -97,57 +112,102 @@ function updateVercelRewrites(routeToFile) {
   return updated;
 }
 
+// Full puppeteer (its own downloaded Chromium) locally — proven to work on a
+// dev machine. On Vercel/CI, puppeteer-core + @sparticuz/chromium instead:
+// full puppeteer's Chromium needs shared libraries (libnss3.so etc.) that
+// Vercel's build container doesn't have and we can't install (no root
+// access there) — confirmed by a real prior deploy failure. @sparticuz/
+// chromium ships a statically-linked Chromium built for exactly this kind
+// of restricted serverless/CI container, and doesn't rely on a postinstall
+// download at all (the binary ships inside the npm package itself), so
+// pnpm's build-script blocking is a non-issue for this path either.
+async function launchBrowser() {
+  if (IS_SERVERLESS_BUILD) {
+    const chromium = (await import("@sparticuz/chromium")).default;
+    const puppeteer = (await import("puppeteer-core")).default;
+    return puppeteer.launch({
+      args: chromium.args,
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath(),
+      headless: chromium.headless,
+    });
+  }
+  const puppeteer = (await import("puppeteer")).default;
+  return puppeteer.launch({
+    headless: true,
+    timeout: 120000, // first Chrome launch on a fresh machine can take >30s (AV scanning the binary)
+    args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-gpu"],
+  });
+}
+
 async function main() {
   if (!existsSync(SHELL_PATH)) throw new Error(`Build shell not found at ${SHELL_PATH} — run vite build first.`);
   const shellHtml = readFileSync(SHELL_PATH, "utf8");
   const routes = readRoutesFromSitemap();
-  console.log(`Prerendering ${routes.length} routes from sitemap.xml...`);
+  const routeToFile = Object.fromEntries(routes.map((route) => [route, outputFileFor(route)]));
 
-  const server = await preview({ configFile: join(ROOT, "vite.config.ts"), preview: { port: 0 } });
-  const address = server.resolvedUrls?.local?.[0] ?? `http://localhost:${server.config.preview.port}/`;
-  console.log(`Preview server: ${address}`);
+  // Every route gets the generic shell up front. Anything that prerenders
+  // successfully below overwrites its own file with the real version;
+  // anything that doesn't (a per-route failure, or the browser/server never
+  // starting at all) just keeps this — identical to today's behavior for
+  // that route, never a missing file or a 404.
+  for (const route of routes) {
+    const outPath = join(OUT_DIR, routeToFile[route]);
+    mkdirSync(dirname(outPath), { recursive: true });
+    writeFileSync(outPath, shellHtml);
+  }
+  updateVercelRewrites(routeToFile);
 
-  const browser = await puppeteer.launch({
-    headless: true,
-    timeout: 120000, // first Chrome launch on this machine can take >30s (AV scanning the binary)
-    args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-gpu"],
-  });
-  const routeToFile = {};
+  console.log(`Prerendering ${routes.length} routes from sitemap.xml (${IS_SERVERLESS_BUILD ? "serverless" : "local"} Chromium)...`);
 
+  let server;
+  let browser;
+  let succeeded = 0;
   try {
-    const page = await browser.newPage();
-    for (const route of routes) {
-      const url = new URL(route, address).toString();
-      // Not networkidle0 — Google Analytics/Metricool/Jotform keep open
-      // connections that never go fully idle. domcontentloaded + the
-      // explicit title-change wait below is the real completion signal.
-      await page.goto(url, { waitUntil: "domcontentloaded", timeout: 30000 });
-      // The title/meta useEffect runs on mount; networkidle0 already implies
-      // JS executed, but give React one more tick to be safe.
-      await page.waitForFunction(
-        (fallback) => document.title !== fallback,
-        { timeout: 5000 },
-        "Coimagen Media Agency — Marketing Digital + IA | Tijuana",
-      ).catch(() => {}); // home page legitimately keeps this title — timeout there is expected, not an error
+    server = await preview({ configFile: join(ROOT, "vite.config.ts"), preview: { port: 0 } });
+    const address = server.resolvedUrls?.local?.[0] ?? `http://localhost:${server.config.preview.port}/`;
+    console.log(`Preview server: ${address}`);
 
-      const meta = await extractMeta(page);
-      const outFile = outputFileFor(route);
-      const outPath = join(OUT_DIR, outFile);
-      mkdirSync(dirname(outPath), { recursive: true });
-      writeFileSync(outPath, applyMeta(shellHtml, meta));
-      routeToFile[route] = outFile;
-      console.log(`  ${route.padEnd(45)} -> ${outFile}  "${meta.title}"`);
+    browser = await launchBrowser();
+    const page = await browser.newPage();
+
+    for (const route of routes) {
+      try {
+        const url = new URL(route, address).toString();
+        // Not networkidle0 — Google Analytics/Metricool/Jotform keep open
+        // connections that never go fully idle. domcontentloaded + the
+        // explicit title-change wait below is the real completion signal.
+        await page.goto(url, { waitUntil: "domcontentloaded", timeout: 30000 });
+        await page.waitForFunction(
+          (fallback) => document.title !== fallback,
+          { timeout: 5000 },
+          "Coimagen Media Agency — Marketing Digital + IA | Tijuana",
+        ).catch(() => {}); // home page legitimately keeps this title — timeout there is expected, not an error
+
+        const meta = await extractMeta(page);
+        const outPath = join(OUT_DIR, routeToFile[route]);
+        writeFileSync(outPath, applyMeta(shellHtml, meta));
+        succeeded++;
+        console.log(`  ${route.padEnd(45)} -> ${routeToFile[route]}  "${meta.title}"`);
+      } catch (err) {
+        // This one route keeps the generic-shell copy already written above
+        // — exactly today's behavior for it. Every other route is unaffected.
+        console.warn(`  ${route.padEnd(45)} -> FAILED, kept generic shell (${err.message})`);
+      }
     }
+  } catch (err) {
+    // Browser/server never started at all: every route already has the
+    // generic-shell copy from the loop above, so the site is fully safe —
+    // just zero SEO benefit for this build, not a broken one.
+    console.warn(`Prerendering unavailable this build, all routes kept the generic shell: ${err.message}`);
   } finally {
-    await browser.close();
-    await server.close();
+    if (browser) await browser.close().catch(() => {});
+    if (server) await server.close().catch(() => {});
   }
 
-  const updated = updateVercelRewrites(routeToFile);
-  console.log(`\nGenerated ${Object.keys(routeToFile).length} static files, updated ${updated} vercel.json rewrites.`);
+  console.log(`\n${succeeded}/${routes.length} routes prerendered with real meta; the rest (if any) kept the generic shell. vercel.json maps all ${routes.length} routes to their own file.`);
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+main()
+  .catch((err) => console.error("Unexpected prerender error (build still succeeds):", err))
+  .finally(() => process.exit(0));
