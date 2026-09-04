@@ -34,11 +34,11 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/index.html"
+      "destination": "/home.html"
     },
     {
       "source": "/diagnostico",
-      "destination": "/index.html"
+      "destination": "/diagnostico.html"
     },
     {
       "source": "/diagnostico/resultado/:token",
@@ -58,7 +58,7 @@
     },
     {
       "source": "/demos",
-      "destination": "/index.html"
+      "destination": "/demos.html"
     },
     {
       "source": "/portal",
@@ -74,27 +74,27 @@
     },
     {
       "source": "/about",
-      "destination": "/index.html"
+      "destination": "/about.html"
     },
     {
       "source": "/agendar",
-      "destination": "/index.html"
+      "destination": "/agendar.html"
     },
     {
       "source": "/faqs",
-      "destination": "/index.html"
+      "destination": "/faqs.html"
     },
     {
       "source": "/resources",
-      "destination": "/index.html"
+      "destination": "/resources.html"
     },
     {
       "source": "/recursos",
-      "destination": "/index.html"
+      "destination": "/recursos.html"
     },
     {
       "source": "/contacto",
-      "destination": "/index.html"
+      "destination": "/contacto.html"
     },
     {
       "source": "/contact",
@@ -102,35 +102,35 @@
     },
     {
       "source": "/blog",
-      "destination": "/index.html"
+      "destination": "/blog.html"
     },
     {
       "source": "/privacy-policy",
-      "destination": "/index.html"
+      "destination": "/privacy-policy.html"
     },
     {
       "source": "/terms-of-service",
-      "destination": "/index.html"
+      "destination": "/terms-of-service.html"
     },
     {
       "source": "/case-studies",
-      "destination": "/index.html"
+      "destination": "/case-studies.html"
     },
     {
       "source": "/case-studies/dr-segovia",
-      "destination": "/index.html"
+      "destination": "/case-studies/dr-segovia.html"
     },
     {
       "source": "/case-studies/chimichimi",
-      "destination": "/index.html"
+      "destination": "/case-studies/chimichimi.html"
     },
     {
       "source": "/case-studies/coimagen-os",
-      "destination": "/index.html"
+      "destination": "/case-studies/coimagen-os.html"
     },
     {
       "source": "/case-studies/conchas-tower",
-      "destination": "/index.html"
+      "destination": "/case-studies/conchas-tower.html"
     },
     {
       "source": "/conchas-tower",
@@ -138,171 +138,171 @@
     },
     {
       "source": "/medical-os",
-      "destination": "/index.html"
+      "destination": "/medical-os.html"
     },
     {
       "source": "/dental-os",
-      "destination": "/index.html"
+      "destination": "/dental-os.html"
     },
     {
       "source": "/law-os",
-      "destination": "/index.html"
+      "destination": "/law-os.html"
     },
     {
       "source": "/wellness-os",
-      "destination": "/index.html"
+      "destination": "/wellness-os.html"
     },
     {
       "source": "/restaurant-os",
-      "destination": "/index.html"
+      "destination": "/restaurant-os.html"
     },
     {
       "source": "/real-estate-os",
-      "destination": "/index.html"
+      "destination": "/real-estate-os.html"
     },
     {
       "source": "/local-business-os",
-      "destination": "/index.html"
+      "destination": "/local-business-os.html"
     },
     {
       "source": "/ai-powered-websites",
-      "destination": "/index.html"
+      "destination": "/ai-powered-websites.html"
     },
     {
       "source": "/seo-growth",
-      "destination": "/index.html"
+      "destination": "/seo-growth.html"
     },
     {
       "source": "/google-business-optimization",
-      "destination": "/index.html"
+      "destination": "/google-business-optimization.html"
     },
     {
       "source": "/ai-automation",
-      "destination": "/index.html"
+      "destination": "/ai-automation.html"
     },
     {
       "source": "/ai-agents",
-      "destination": "/index.html"
+      "destination": "/ai-agents.html"
     },
     {
       "source": "/camila-ai",
-      "destination": "/index.html"
+      "destination": "/camila-ai.html"
     },
     {
       "source": "/coimagen-os",
-      "destination": "/index.html"
+      "destination": "/coimagen-os.html"
     },
     {
       "source": "/cloud-systems",
-      "destination": "/index.html"
+      "destination": "/cloud-systems.html"
     },
     {
       "source": "/recursos/sales-funnel-ai",
-      "destination": "/index.html"
+      "destination": "/recursos/sales-funnel-ai.html"
     },
     {
       "source": "/recursos/coimagen-pro-ai",
-      "destination": "/index.html"
+      "destination": "/recursos/coimagen-pro-ai.html"
     },
     {
       "source": "/recursos/ai-sales-automation",
-      "destination": "/index.html"
+      "destination": "/recursos/ai-sales-automation.html"
     },
     {
       "source": "/recursos/seo-content-ai",
-      "destination": "/index.html"
+      "destination": "/recursos/seo-content-ai.html"
     },
     {
       "source": "/recursos/funnel-copy-ai",
-      "destination": "/index.html"
+      "destination": "/recursos/funnel-copy-ai.html"
     },
     {
       "source": "/recursos/community-manager-pro",
-      "destination": "/index.html"
+      "destination": "/recursos/community-manager-pro.html"
     },
     {
       "source": "/recursos/viral-copy-ai",
-      "destination": "/index.html"
+      "destination": "/recursos/viral-copy-ai.html"
     },
     {
       "source": "/recursos/ads-strategist-ai",
-      "destination": "/index.html"
+      "destination": "/recursos/ads-strategist-ai.html"
     },
     {
       "source": "/recursos/market-intelligence-ai",
-      "destination": "/index.html"
+      "destination": "/recursos/market-intelligence-ai.html"
     },
     {
       "source": "/blog/crm-para-medicos",
-      "destination": "/index.html"
+      "destination": "/blog/crm-para-medicos.html"
     },
     {
       "source": "/blog/automatizacion-abogados",
-      "destination": "/index.html"
+      "destination": "/blog/automatizacion-abogados.html"
     },
     {
       "source": "/blog/seo-local-dentistas",
-      "destination": "/index.html"
+      "destination": "/blog/seo-local-dentistas.html"
     },
     {
       "source": "/blog/google-business-profile",
-      "destination": "/index.html"
+      "destination": "/blog/google-business-profile.html"
     },
     {
       "source": "/blog/whatsapp-ventas",
-      "destination": "/index.html"
+      "destination": "/blog/whatsapp-ventas.html"
     },
     {
       "source": "/blog/ia-pequenas-empresas",
-      "destination": "/index.html"
+      "destination": "/blog/ia-pequenas-empresas.html"
     },
     {
       "source": "/blog/sitio-web-restaurantes",
-      "destination": "/index.html"
+      "destination": "/blog/sitio-web-restaurantes.html"
     },
     {
       "source": "/blog/camila-ai-asistente",
-      "destination": "/index.html"
+      "destination": "/blog/camila-ai-asistente.html"
     },
     {
       "source": "/blog/google-ads-vs-seo",
-      "destination": "/index.html"
+      "destination": "/blog/google-ads-vs-seo.html"
     },
     {
       "source": "/blog/automatizacion-inmobiliaria",
-      "destination": "/index.html"
+      "destination": "/blog/automatizacion-inmobiliaria.html"
     },
     {
       "source": "/blog/sistema-operativo-empresarial",
-      "destination": "/index.html"
+      "destination": "/blog/sistema-operativo-empresarial.html"
     },
     {
       "source": "/blog/marketing-clinicas-estetica",
-      "destination": "/index.html"
+      "destination": "/blog/marketing-clinicas-estetica.html"
     },
     {
       "source": "/blog/whatsapp-business-ia",
-      "destination": "/index.html"
+      "destination": "/blog/whatsapp-business-ia.html"
     },
     {
       "source": "/blog/google-ads-negocios-locales",
-      "destination": "/index.html"
+      "destination": "/blog/google-ads-negocios-locales.html"
     },
     {
       "source": "/blog/agentes-ia-empresas",
-      "destination": "/index.html"
+      "destination": "/blog/agentes-ia-empresas.html"
     },
     {
       "source": "/blog/marketing-wellness-spas",
-      "destination": "/index.html"
+      "destination": "/blog/marketing-wellness-spas.html"
     },
     {
       "source": "/blog/ai-agents-local-business",
-      "destination": "/index.html"
+      "destination": "/blog/ai-agents-local-business.html"
     },
     {
       "source": "/blog/redes-sociales-restaurantes",
-      "destination": "/index.html"
+      "destination": "/blog/redes-sociales-restaurantes.html"
     }
   ]
 }
