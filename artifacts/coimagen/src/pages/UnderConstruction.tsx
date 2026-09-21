@@ -28,11 +28,19 @@ export default function UnderConstruction() {
   return (
     <div className="min-h-screen bg-[#06060f] pt-24 pb-20 flex items-center">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
+        <img
+          src="/logo-coimagen.png"
+          alt="Coimagen Media Agency"
+          className="h-16 w-auto object-contain mx-auto mb-6"
+          onError={(e) => {
+            e.currentTarget.style.display = "none";
+          }}
+        />
         <div className="badge-neon text-[#f97316] border border-[#f97316]/25 bg-[#f97316]/10 mb-6 w-fit mx-auto">
           🚧 {isEs ? "En Construcción" : "Under Construction"}
         </div>
         <h1 className="text-3xl sm:text-4xl font-black text-white mb-4">
-          {isEs ? "Tienda — Próximamente" : "Store — Coming Soon"}
+          {isEs ? "En Construcción — Por favor, ten paciencia" : "Under Construction — Please be patient"}
         </h1>
         <p className="text-[var(--c-muted)] text-base leading-relaxed mb-10">
           {isEs

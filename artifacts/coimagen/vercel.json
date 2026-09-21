@@ -73,6 +73,10 @@
       "destination": "/index.html"
     },
     {
+      "source": "/under-construction",
+      "destination": "/index.html"
+    },
+    {
       "source": "/about",
       "destination": "/about.html"
     },
