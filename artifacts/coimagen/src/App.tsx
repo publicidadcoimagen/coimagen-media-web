@@ -30,6 +30,7 @@ import Contact from "@/pages/Contact";
 import Blog from "@/pages/Blog";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
+import UnderConstruction from "@/pages/UnderConstruction";
 import CaseStudiesIndex from "@/pages/CaseStudiesIndex";
 import DrSegovia from "@/pages/case-studies/DrSegovia";
 import Chimichimi from "@/pages/case-studies/Chimichimi";
@@ -121,6 +122,7 @@ function AppLayout() {
           <Route path="/blog" component={Blog} />
           <Route path="/privacy-policy" component={PrivacyPolicy} />
           <Route path="/terms-of-service" component={TermsOfService} />
+          <Route path="/under-construction" component={UnderConstruction} />
 
           {/* Case studies */}
           <Route path="/case-studies" component={CaseStudiesIndex} />

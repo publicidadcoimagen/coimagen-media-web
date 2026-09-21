@@ -1,7 +1,13 @@
 import { useLang } from "@/context/LanguageContext";
 
+// English visitors land here instead of the (Spanish-only, for now) real
+// store — see pages/UnderConstruction.tsx.
+const STORE_URL_ES = "https://tienda.coimagenmedia.com";
+const STORE_URL_EN = "/under-construction";
+
 export function Hero() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
+  const isEs = lang === "es";
   const h = t.hero;
 
   return (
@@ -65,6 +71,22 @@ export function Hero() {
             className="inline-flex items-center gap-2 text-[var(--c-muted)] hover:text-white px-4 py-4 text-base font-medium transition-colors"
           >
             {h.cta3}
+          </a>
+        </div>
+
+        {/* Tienda / Store — separate row, directly below the CTA row above */}
+        <div className="mt-4 flex justify-center">
+          <a
+            href={isEs ? STORE_URL_ES : STORE_URL_EN}
+            {...(isEs ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+            className="inline-flex items-center gap-2.5 bg-[#f97316] text-[#06060f] font-bold px-8 py-4 rounded-xl text-base hover:brightness-110 hover:shadow-[0_0_28px_rgba(249,115,22,0.45)] transition-all active:scale-95"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4H6z" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 6h18" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M16 10a4 4 0 01-8 0" />
+            </svg>
+            {isEs ? "Tienda" : "Store"}
           </a>
         </div>
 
