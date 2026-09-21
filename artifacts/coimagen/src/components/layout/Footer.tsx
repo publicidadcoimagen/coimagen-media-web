@@ -10,6 +10,7 @@ const companyLinksEs = [
   { label: "Recursos", href: "/resources" },
   { label: "FAQs", href: "/faqs" },
   { label: "Portal de Clientes", href: "/portal" },
+  { label: "Tienda", href: "https://tienda.coimagenmedia.com", external: true },
 ];
 
 const companyLinksEn = [
@@ -21,6 +22,7 @@ const companyLinksEn = [
   { label: "Resources", href: "/resources" },
   { label: "FAQs", href: "/faqs" },
   { label: "Client Portal", href: "/portal" },
+  { label: "Store", href: "https://tienda.coimagenmedia.com", external: true },
 ];
 
 const legalLinksEs = [
@@ -113,7 +115,11 @@ export function Footer() {
             <ul className="space-y-2.5">
               {companyLinks.map((l) => (
                 <li key={l.href}>
-                  <a href={l.href} className="text-[var(--c-muted)] hover:text-[var(--c-cyan)] text-sm transition-colors">
+                  <a
+                    href={l.href}
+                    {...("external" in l && l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    className="text-[var(--c-muted)] hover:text-[var(--c-cyan)] text-sm transition-colors"
+                  >
                     {l.label}
                   </a>
                 </li>
