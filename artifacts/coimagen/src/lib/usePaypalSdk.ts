@@ -17,6 +17,9 @@ interface PaypalNamespace {
     createOrder: () => Promise<string>;
     onApprove: (data: { orderID: string }, actions: PaypalButtonsActions) => Promise<void>;
     onError?: (err: unknown) => void;
+    // Fired when the buyer closes the popup without approving. orderID can
+    // be absent if the popup was closed before createOrder even resolved.
+    onCancel?: (data: { orderID?: string }) => void;
     style?: Record<string, string>;
   }) => PaypalButtonsInstance;
 }

@@ -4,6 +4,7 @@ import {
   fetchPublicInvoice,
   createPaypalOrder,
   capturePaypalOrder,
+  cancelPaypalOrder,
   submitInvoiceFiscalData,
   submitSubscriptionFiscalData,
   fileToDataUri,
@@ -130,6 +131,16 @@ export default function PaymentBox({ invoice, onUpdated, isEs }: PaymentBoxProps
       onError: (err) => {
         setError((err instanceof Error && err.message) || (isEs ? "Ocurrió un error con PayPal. Intenta de nuevo." : "Something went wrong with PayPal. Try again."));
         setPhase("error");
+      },
+      // createOrder already inserted the invoice_payments row as "created"
+      // server-side before this popup even opened — without this, closing
+      // the popup here leaves that row blocking a retry (PayPal or card)
+      // for up to 3 hours (see coimagen-os's eligibility.ts). Client only
+      // gets an orderID here if createOrder succeeded, so there's always a
+      // real row to release.
+      onCancel: (data) => {
+        if (data.orderID) void cancelPaypalOrder(invoice.publicToken, data.orderID);
+        setPhase("idle");
       },
     });
     buttons.render(containerRef.current);
