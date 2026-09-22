@@ -74,6 +74,22 @@ export async function capturePaypalOrder(token: string, paypalOrderId: string): 
   }
 }
 
+// Called when the client cancels the PayPal popup (SDK onCancel) instead of
+// approving it — createPaypalOrder already inserted the invoice_payments
+// row as "created" before the popup even opened, so without this call the
+// double-payment guard (findActivePaymentAttempt) keeps blocking a retry
+// for up to 3 hours even though the client explicitly backed out. Fire-and
+// -forget from the caller's point of view: failing to mark it cancelled
+// just means the guard falls back to its normal 3-hour expiry, so this
+// never needs to block or surface an error to the client.
+export async function cancelPaypalOrder(token: string, paypalOrderId: string): Promise<void> {
+  await fetch(`${INVOICE_API_BASE}/api/public/invoices/${token}/cancel-paypal-order`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ paypalOrderId }),
+  });
+}
+
 // CASO 1 — this cuota's RFC/razón social/constancia, saved before the
 // PayPal order is created (create-paypal-order 400s if requiresFiscalInvoice
 // is true and this hasn't been submitted yet).
