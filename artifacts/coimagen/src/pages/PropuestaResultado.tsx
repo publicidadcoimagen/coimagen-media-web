@@ -193,6 +193,31 @@ export default function PropuestaResultado() {
               />
             )}
 
+            {/* Expired — proposal was approved but validUntil has since
+                passed, so the backend no longer returns a payable
+                nextInvoice. Distinct from "no nextInvoice yet" (draft/sent)
+                so the client understands why the payment button is gone. */}
+            {data.status === "accepted" && data.expired && (
+              <div className="glass border border-orange-400/25 rounded-2xl p-6 mb-6 text-center">
+                <p className="text-orange-400 font-bold text-sm mb-2">
+                  ⏱ {isEs ? "Esta propuesta ya venció" : "This proposal has expired"}
+                </p>
+                <p className="text-[var(--c-muted)] text-sm mb-5">
+                  {isEs
+                    ? "El plazo para pagar esta propuesta ya pasó. Contáctanos para renovar los términos y continuar."
+                    : "The payment window for this proposal has passed. Contact us to renew the terms and continue."}
+                </p>
+                <a
+                  href={siteConfig.whatsapp.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[var(--c-cyan)] text-[#06060f] font-black px-6 py-3 rounded-xl text-sm hover:brightness-110 transition-all"
+                >
+                  💬 {isEs ? "Hablar por WhatsApp" : "Message on WhatsApp"}
+                </a>
+              </div>
+            )}
+
             {/* Approve action */}
             {(data.status === "draft" || data.status === "sent") && (
               <div className="glass border border-[var(--c-cyan)]/25 rounded-2xl p-8 text-center mb-6">

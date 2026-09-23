@@ -12,8 +12,14 @@ export interface PublicProposalView {
   amount: number | null;
   notes: string | null;
   validUntil: string | null;
+  // True once validUntil has passed — status itself stays whatever it
+  // already was (an accepted proposal doesn't flip back to something
+  // else), this only means nextInvoice below is now always null even if
+  // the proposal was accepted and had a payable cuota before expiring.
+  expired: boolean;
   // Populated once accepted — the deposit cuota to pay right away, see
-  // facturaApi.ts's InvoicePublicView. Null while still draft/sent, or if
-  // staff never finished setting up the proposal's clientId/amount.
+  // facturaApi.ts's InvoicePublicView. Null while still draft/sent, if
+  // staff never finished setting up the proposal's clientId/amount, or once
+  // expired regardless of how it was set before.
   nextInvoice: import("./facturaApi").InvoicePublicView | null;
 }
