@@ -15,6 +15,7 @@ import { DiagnosticCTA } from "@/components/sections/DiagnosticCTA";
 import { BlogPreview } from "@/components/sections/BlogPreview";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { SpotifyEmbedSection } from "@/components/sections/SpotifyEmbedSection";
+import { SHOW_FOUNDER_AND_REFERRAL } from "@/config/featureFlags";
 
 export default function Home() {
   useEffect(() => {
@@ -38,8 +39,12 @@ export default function Home() {
       <ServicesSection />
       <IndustriesSection />
       <PricingSection />
-      <FounderOfferSection />
-      <ReferralSection />
+      {SHOW_FOUNDER_AND_REFERRAL && (
+        <>
+          <FounderOfferSection />
+          <ReferralSection />
+        </>
+      )}
       <PremiumSection />
       <CaseStudies />
       <BusinessOSSection />
