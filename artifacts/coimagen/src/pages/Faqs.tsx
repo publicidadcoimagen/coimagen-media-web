@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useLang } from "@/context/LanguageContext";
 import { siteConfig } from "@/config/site";
+import { SHOW_FOUNDER_AND_REFERRAL } from "@/config/featureFlags";
 
-const faqs = [
+const allFaqs = [
   {
     es: { q: "¿Qué es Coimagen Media Agency?", a: "Somos una agencia de marketing digital especializada en diseñar sistemas de captación, automatización e inteligencia artificial para negocios locales en Tijuana y San Diego." },
     en: { q: "What is Coimagen Media Agency?", a: "We are a digital marketing agency specializing in designing lead generation, automation and artificial intelligence systems for local businesses in Tijuana and San Diego." },
@@ -56,6 +57,7 @@ const faqs = [
     en: { q: "How can I contact you?", a: "Via WhatsApp at +52 664 476 9223, by email at info@coimagenmedia.com, or by booking a free strategy session from our website." },
   },
   {
+    referral: true,
     es: { q: "¿Tienen programa de referidos?", a: "Sí. Clientes fundadores y activos reciben 1 mes al 50% de descuento por cada cliente referido que contrate. Sin límite de referidos." },
     en: { q: "Do you have a referral program?", a: "Yes. Founder and active clients receive 1 month at 50% off for every referred client who signs up. No limit on referrals." },
   },
@@ -64,6 +66,8 @@ const faqs = [
     en: { q: "Can I cancel at any time?", a: "Yes, our plans are monthly with no long-term contracts. We recommend a minimum of 3 months to see solid results, but there is no penalty for cancelling." },
   },
 ];
+
+const faqs = allFaqs.filter((f) => SHOW_FOUNDER_AND_REFERRAL || !("referral" in f));
 
 export default function Faqs() {
   const { lang } = useLang();

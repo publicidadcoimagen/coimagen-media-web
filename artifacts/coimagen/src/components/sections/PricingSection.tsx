@@ -5,6 +5,7 @@ import { SectionTitle } from "@/components/ui/SectionTitle";
 import { PACKAGES } from "@/lib/packages";
 import { convertUsdToMxn, getUsdToMxnRate, FALLBACK_USD_TO_MXN_RATE } from "@/lib/pricing";
 import { useFounderCount } from "@/lib/foundersApi";
+import { SHOW_FOUNDER_AND_REFERRAL } from "@/config/featureFlags";
 
 export function PricingSection() {
   const { lang, t } = useLang();
@@ -27,7 +28,7 @@ export function PricingSection() {
   const isMx = country === "mx";
   const currencyCode = isMx ? "MXN" : "USD";
   const marketLabel = isMx ? "🇲🇽 Precios en México (MXN)" : "🇺🇸 USA Pricing (USD)";
-  const founderSpotsLeft = !!founders && founders.count < founders.max;
+  const founderSpotsLeft = SHOW_FOUNDER_AND_REFERRAL && !!founders && founders.count < founders.max;
   const visiblePackages = PACKAGES.filter((pkg) => pkg.visible);
 
   const formatPrice = (usd: number) => {

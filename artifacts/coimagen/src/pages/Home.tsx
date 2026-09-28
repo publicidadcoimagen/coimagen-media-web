@@ -15,10 +15,7 @@ import { DiagnosticCTA } from "@/components/sections/DiagnosticCTA";
 import { BlogPreview } from "@/components/sections/BlogPreview";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { SpotifyEmbedSection } from "@/components/sections/SpotifyEmbedSection";
-
-// Temporarily hidden — flip to true to show the Founders offer and the
-// Referral program on the homepage again.
-const SHOW_FOUNDER_AND_REFERRAL_SECTIONS = false;
+import { SHOW_FOUNDER_AND_REFERRAL } from "@/config/featureFlags";
 
 export default function Home() {
   useEffect(() => {
@@ -42,7 +39,7 @@ export default function Home() {
       <ServicesSection />
       <IndustriesSection />
       <PricingSection />
-      {SHOW_FOUNDER_AND_REFERRAL_SECTIONS && (
+      {SHOW_FOUNDER_AND_REFERRAL && (
         <>
           <FounderOfferSection />
           <ReferralSection />
