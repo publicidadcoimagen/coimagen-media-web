@@ -47,6 +47,7 @@
     "@types/react-dom": "catalog:",
     "@vercel/analytics": "^2.0.1",
     "@vercel/functions": "^3.7.7",
+    "@vercel/speed-insights": "^2.0.0",
     "@vitejs/plugin-react": "catalog:",
     "@workspace/api-client-react": "workspace:*",
     "class-variance-authority": "catalog:",
