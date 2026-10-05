@@ -1,6 +1,7 @@
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import { useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Analytics, type BeforeSendEvent } from "@vercel/analytics/react";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider, useLang } from "@/context/LanguageContext";
@@ -87,6 +88,20 @@ function LangEffect() {
     document.documentElement.setAttribute("lang", lang === "es" ? "es" : "en");
   }, [lang]);
   return null;
+}
+
+// Proposal, invoice and diagnosis-result links carry a private access token
+// in the path. Mask it before the pageview reaches Vercel Analytics so tokens
+// never end up stored in a third-party dashboard.
+const TOKEN_ROUTE = /^\/(propuesta|factura|diagnostico\/resultado)\/[^/?#]+/;
+
+function redactTokens(event: BeforeSendEvent): BeforeSendEvent {
+  const url = new URL(event.url);
+  if (TOKEN_ROUTE.test(url.pathname)) {
+    url.pathname = url.pathname.replace(TOKEN_ROUTE, "/$1/:token");
+    url.search = "";
+  }
+  return { ...event, url: url.toString() };
 }
 
 function AppLayout() {
@@ -205,6 +220,7 @@ function App() {
           </LanguageProvider>
         </AdminProvider>
         <Toaster />
+        <Analytics beforeSend={redactTokens} />
       </TooltipProvider>
     </QueryClientProvider>
   );
