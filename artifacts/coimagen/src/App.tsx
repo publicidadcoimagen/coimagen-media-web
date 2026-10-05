@@ -1,7 +1,8 @@
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import { useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Analytics, type BeforeSendEvent } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider, useLang } from "@/context/LanguageContext";
@@ -92,10 +93,11 @@ function LangEffect() {
 
 // Proposal, invoice and diagnosis-result links carry a private access token
 // in the path. Mask it before the pageview reaches Vercel Analytics so tokens
-// never end up stored in a third-party dashboard.
+// never end up stored in a third-party dashboard. Shared by Analytics
+// (pageviews) and Speed Insights (web vitals), which both report the URL.
 const TOKEN_ROUTE = /^\/(propuesta|factura|diagnostico\/resultado)\/[^/?#]+/;
 
-function redactTokens(event: BeforeSendEvent): BeforeSendEvent {
+function redactTokens<T extends { url: string }>(event: T): T {
   const url = new URL(event.url);
   if (TOKEN_ROUTE.test(url.pathname)) {
     url.pathname = url.pathname.replace(TOKEN_ROUTE, "/$1/:token");
@@ -221,6 +223,7 @@ function App() {
         </AdminProvider>
         <Toaster />
         <Analytics beforeSend={redactTokens} />
+        <SpeedInsights beforeSend={redactTokens} />
       </TooltipProvider>
     </QueryClientProvider>
   );
