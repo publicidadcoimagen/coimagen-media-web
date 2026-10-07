@@ -98,7 +98,11 @@ export default function PaymentBox({ invoice, onUpdated, isEs }: PaymentBoxProps
   const [subSubmitting, setSubSubmitting] = useState(false);
   const [subError, setSubError] = useState<string | null>(null);
 
-  const payable = invoice.status === "sent" || invoice.status === "overdue";
+  // A $0 cuota (pro-bono account) is never charged: the API refuses to
+  // create a PayPal order for it, so PayPal and the fiscal question are
+  // never shown — Coimagen confirms it from the dashboard instead.
+  const isZero = invoice.amount === 0;
+  const payable = (invoice.status === "sent" || invoice.status === "overdue") && !isZero;
   const fiscalFieldsComplete = !requiresFiscalInvoice || (rfc.trim() !== "" && razonSocial.trim() !== "" && constanciaFile !== null);
 
   useEffect(() => {
@@ -177,7 +181,7 @@ export default function PaymentBox({ invoice, onUpdated, isEs }: PaymentBoxProps
   if (invoice.status === "paid") {
     return (
       <div className="glass border border-[var(--c-lime)]/30 rounded-2xl p-8 text-center mb-6">
-        <p className="text-[var(--c-lime)] font-black text-lg mb-2">✅ {isEs ? "Pago recibido" : "Payment received"}</p>
+        <p className="text-[var(--c-lime)] font-black text-lg mb-2">✅ {isZero ? (isEs ? "Cuota confirmada — sin costo" : "Installment confirmed — no charge") : (isEs ? "Pago recibido" : "Payment received")}</p>
 
         {invoice.subscriptionApproveUrl && (
           <>
@@ -231,6 +235,21 @@ export default function PaymentBox({ invoice, onUpdated, isEs }: PaymentBoxProps
             </button>
           </div>
         )}
+      </div>
+    );
+  }
+
+  if (isZero) {
+    return (
+      <div className="glass border border-[var(--c-cyan)]/25 rounded-2xl p-8 mb-6 text-center">
+        <p className="text-white/50 text-xs font-semibold uppercase tracking-wider mb-2">{invoice.label}</p>
+        <p className="text-4xl font-black mb-4 text-[var(--c-cyan)]">{formatAmount(0, invoice.currency, isEs)}</p>
+        <p className="text-white font-semibold mb-2">{isEs ? "Esta cuota no requiere pago." : "This installment doesn't require payment."}</p>
+        <p className="text-[var(--c-muted)] text-sm max-w-md mx-auto">
+          {isEs
+            ? "No tienes que hacer nada: el equipo de Coimagen la confirmará y te avisaremos por correo cuando tu acceso esté listo."
+            : "There's nothing you need to do: the Coimagen team will confirm it and we'll email you when your access is ready."}
+        </p>
       </div>
     );
   }
