@@ -146,13 +146,22 @@
     </script>
 
     <!-- Metricool tracking — TEST account hash (publicidadcoimagen@gmail.com). Replace when Camila migrates to the agency account (coimagenmedia@gmail.com). -->
-    <script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"6b48ce04257d3b1a51c574115c0922e5"})});</script>
+    <!-- Production domain only, same rule as GA4 above: Vercel previews and localhost don't load the tracker. -->
+    <script>if (location.hostname === 'coimagenmedia.com' || location.hostname === 'www.coimagenmedia.com') {function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"6b48ce04257d3b1a51c574115c0922e5"})});}</script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
 
     <!-- Jotform AI Agent — natural position: bottom-right. WhatsApp is bottom-left. -->
-    <script src='https://cdn.jotfor.ms/agent/embedjs/0199f974e9097a9badd918a3a92c617fc5b7/embed.js'></script>
+    <!-- Production domain only, same rule as GA4: previews and localhost don't load the agent
+         (the app's "open chat" buttons already fall back when its button isn't on the page). -->
+    <script>
+      if (location.hostname === 'coimagenmedia.com' || location.hostname === 'www.coimagenmedia.com') {
+        var jfScript = document.createElement('script');
+        jfScript.src = 'https://cdn.jotfor.ms/agent/embedjs/0199f974e9097a9badd918a3a92c617fc5b7/embed.js';
+        document.body.appendChild(jfScript);
+      }
+    </script>
   </body>
 </html>
