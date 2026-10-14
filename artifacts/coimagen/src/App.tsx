@@ -21,8 +21,6 @@ import FacturaResultado from "@/pages/FacturaResultado";
 import FacturaDeclinar from "@/pages/FacturaDeclinar";
 import Demos from "@/pages/Demos";
 import Portal from "@/pages/Portal";
-import Secure from "@/pages/Secure";
-import Admin from "@/pages/Admin";
 import Agendar from "@/pages/Agendar";
 import About from "@/pages/About";
 import Faqs from "@/pages/Faqs";
@@ -123,10 +121,6 @@ function AppLayout() {
           <Route path="/factura/:token" component={FacturaResultado} />
           <Route path="/demos" component={Demos} />
           <Route path="/portal" component={Portal} />
-
-          {/* Auth & Admin */}
-          <Route path="/secure" component={Secure} />
-          <Route path="/admin" component={Admin} />
 
           {/* Company pages */}
           <Route path="/about" component={About} />
