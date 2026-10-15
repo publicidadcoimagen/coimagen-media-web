@@ -6,10 +6,19 @@ export default function ConchasTower() {
   const { lang } = useLang();
   const isEs = lang === "es";
 
+  // The intro paragraph doubles as the meta description, so every case
+  // study describes itself instead of inheriting the home page's.
+  const intro = isEs
+    ? "Sistema completo de captación y operación para desarrollo inmobiliario: landing page de alta conversión, filtrado de leads calificados, inventario digital y flujos de seguimiento automatizado."
+    : "Complete lead capture and operations system for a real estate development: high-conversion landing page, qualified lead filtering, digital inventory and automated follow-up workflows.";
+
   useEffect(() => {
     document.title = isEs ? "Case Study: Conchas Tower — Coimagen" : "Case Study: Conchas Tower — Coimagen";
+    document.querySelector('meta[name="description"]')?.setAttribute("content", intro);
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", intro);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", intro);
     window.scrollTo(0, 0);
-  }, [isEs]);
+  }, [isEs, intro]);
 
   const results = [
     { icon: "📥", valueEs: "+180%", valueEn: "+180%", labelEs: "Leads calificados", labelEn: "Qualified leads" },
@@ -32,9 +41,7 @@ export default function ConchasTower() {
         </div>
         <h1 className="text-3xl sm:text-4xl font-black text-white mb-4">Conchas Tower</h1>
         <p className="text-[var(--c-muted)] text-base leading-relaxed mb-10 max-w-2xl">
-          {isEs
-            ? "Sistema completo de captación y operación para desarrollo inmobiliario: landing page de alta conversión, filtrado de leads calificados, inventario digital y flujos de seguimiento automatizado."
-            : "Complete lead capture and operations system for a real estate development: high-conversion landing page, qualified lead filtering, digital inventory and automated follow-up workflows."}
+          {intro}
         </p>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">

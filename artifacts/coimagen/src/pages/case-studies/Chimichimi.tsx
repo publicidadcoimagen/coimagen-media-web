@@ -6,10 +6,19 @@ export default function Chimichimi() {
   const { lang } = useLang();
   const isEs = lang === "es";
 
+  // The intro paragraph doubles as the meta description, so every case
+  // study describes itself instead of inheriting the home page's.
+  const intro = isEs
+    ? "Construcción de presencia digital completa para restaurante en Tijuana: branding, contenido para redes sociales, posicionamiento local en Google y estrategia de captación de clientes."
+    : "Complete digital presence for a Tijuana restaurant: branding, social media content, local Google positioning and customer acquisition strategy.";
+
   useEffect(() => {
     document.title = isEs ? "Case Study: Chimichimi — Coimagen" : "Case Study: Chimichimi — Coimagen";
+    document.querySelector('meta[name="description"]')?.setAttribute("content", intro);
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", intro);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", intro);
     window.scrollTo(0, 0);
-  }, [isEs]);
+  }, [isEs, intro]);
 
   const results = [
     { icon: "📱", valueEs: "+300%", valueEn: "+300%", labelEs: "Alcance en redes", labelEn: "Social reach" },
@@ -32,9 +41,7 @@ export default function Chimichimi() {
         </div>
         <h1 className="text-3xl sm:text-4xl font-black text-white mb-4">Chimichimi</h1>
         <p className="text-[var(--c-muted)] text-base leading-relaxed mb-10 max-w-2xl">
-          {isEs
-            ? "Construcción de presencia digital completa para restaurante en Tijuana: branding, contenido para redes sociales, posicionamiento local en Google y estrategia de captación de clientes."
-            : "Complete digital presence for a Tijuana restaurant: branding, social media content, local Google positioning and customer acquisition strategy."}
+          {intro}
         </p>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
