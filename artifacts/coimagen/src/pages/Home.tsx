@@ -5,7 +5,6 @@ import { SolutionLadder } from "@/components/sections/SolutionLadder";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { IndustriesSection } from "@/components/sections/IndustriesSection";
 import { PricingSection } from "@/components/sections/PricingSection";
-import { FounderOfferSection } from "@/components/sections/FounderOfferSection";
 import { ReferralSection } from "@/components/sections/ReferralSection";
 import { PremiumSection } from "@/components/sections/PremiumSection";
 import { CaseStudies } from "@/components/sections/CaseStudies";
@@ -15,7 +14,7 @@ import { DiagnosticCTA } from "@/components/sections/DiagnosticCTA";
 import { BlogPreview } from "@/components/sections/BlogPreview";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { SpotifyEmbedSection } from "@/components/sections/SpotifyEmbedSection";
-import { SHOW_FOUNDER_AND_REFERRAL } from "@/config/featureFlags";
+import { SHOW_REFERRAL_PROGRAM } from "@/config/featureFlags";
 
 export default function Home() {
   useEffect(() => {
@@ -39,12 +38,7 @@ export default function Home() {
       <ServicesSection />
       <IndustriesSection />
       <PricingSection />
-      {SHOW_FOUNDER_AND_REFERRAL && (
-        <>
-          <FounderOfferSection />
-          <ReferralSection />
-        </>
-      )}
+      {SHOW_REFERRAL_PROGRAM && <ReferralSection />}
       <PremiumSection />
       <CaseStudies />
       <BusinessOSSection />
