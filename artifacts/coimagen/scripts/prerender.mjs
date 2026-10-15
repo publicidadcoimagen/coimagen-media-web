@@ -83,6 +83,8 @@ async function extractMeta(page) {
       // Organization/LocalBusiness block has none and is already in the shell.
       jsonLd: [...document.querySelectorAll('script[type="application/ld+json"][id]')].map((el) => ({ id: el.id, text: el.textContent ?? "" })),
       rootHtml: document.getElementById("root")?.innerHTML ?? "",
+      // hreflang alternates written by LocaleSeo for this page.
+      alternates: [...document.querySelectorAll('link[rel="alternate"][hreflang]')].map((el) => ({ hreflang: el.getAttribute("hreflang"), href: el.getAttribute("href") })),
     };
   });
 }
@@ -100,12 +102,13 @@ function applyMeta(shellHtml, meta) {
   if (meta.twitterImage) html = replaceTag(html, /(<meta name="twitter:image" content=")[^"]*(")/, `$1${esc(meta.twitterImage)}$2`);
   if (meta.canonical) html = replaceTag(html, /(<link rel="canonical" href=")[^"]*(")/, `$1${esc(meta.canonical)}$2`);
   if (meta.lang) html = html.replace(/<html lang="[^"]*"/, `<html lang="${esc(meta.lang)}"`);
-  if (meta.jsonLd.length > 0) {
+  const headExtras = [
+    ...meta.alternates.map((a) => `<link rel="alternate" hreflang="${esc(a.hreflang)}" href="${esc(a.href)}" />`),
     // "<" escaped so a schema string can never close the <script> early.
-    const blocks = meta.jsonLd
-      .map((ld) => `<script type="application/ld+json" id="${esc(ld.id)}">${ld.text.replace(/</g, "\\u003c")}</script>`)
-      .join("\n    ");
-    html = replaceTag(html, /<\/head>/, () => `    ${blocks}\n  </head>`);
+    ...meta.jsonLd.map((ld) => `<script type="application/ld+json" id="${esc(ld.id)}">${ld.text.replace(/</g, "\\u003c")}</script>`),
+  ];
+  if (headExtras.length > 0) {
+    html = replaceTag(html, /<\/head>/, () => `    ${headExtras.join("\n    ")}\n  </head>`);
   }
   // Function replacement: page HTML may contain "$&"-style sequences.
   if (meta.rootHtml) html = replaceTag(html, /<div id="root"><\/div>/, () => `<div id="root">${meta.rootHtml}</div>`);
@@ -118,9 +121,19 @@ function applyMeta(shellHtml, meta) {
 function updateVercelRewrites(routeToFile) {
   const config = JSON.parse(readFileSync(VERCEL_JSON_PATH, "utf8"));
   let updated = 0;
-  for (const rewrite of config.rewrites ?? []) {
+  config.rewrites ??= [];
+  for (const rewrite of config.rewrites) {
     if (rewrite.source in routeToFile && rewrite.destination === "/index.html") {
       rewrite.destination = `/${routeToFile[rewrite.source]}`;
+      updated++;
+    }
+  }
+  // English pages (/en, /en/…) are generated from the Spanish sitemap, so
+  // their rewrites are added here rather than hand-maintained.
+  const existing = new Set(config.rewrites.map((r) => r.source));
+  for (const [source, file] of Object.entries(routeToFile)) {
+    if (!existing.has(source)) {
+      config.rewrites.push({ source, destination: `/${file}` });
       updated++;
     }
   }
@@ -128,22 +141,71 @@ function updateVercelRewrites(routeToFile) {
   return updated;
 }
 
+const SITE = "https://www.coimagenmedia.com";
+const EN_PREFIX = "/en";
+
+// public/sitemap.xml lists the Spanish URLs and is the single source of
+// routes; every one also has an English twin under /en.
+function enRouteFor(route) {
+  return route === "/" ? EN_PREFIX : `${EN_PREFIX}${route}`;
+}
+function isEnRoute(route) {
+  return route === EN_PREFIX || route.startsWith(`${EN_PREFIX}/`);
+}
+
+// Home is the only page whose content depends on the visitor's country
+// (PricingSection: MXN for Mexico, USD otherwise). The default files are
+// the USD render; these MXN renders are served to Mexico by middleware.ts,
+// so no visitor sees the other market's prices flash before React boots.
+// Keep in sync with MX_VARIANTS in middleware.ts.
+const MX_VARIANTS = [
+  { route: "/", file: "home-mx.html" },
+  { route: EN_PREFIX, file: "en-mx.html" },
+];
+
+// The served sitemap: both languages, each URL listing its pair through
+// xhtml:link alternates (what Google reads for hreflang).
+function writeSitemap(esRoutes) {
+  const today = new Date().toISOString().slice(0, 10);
+  const url = (loc, esRoute) => [
+    "  <url>",
+    `    <loc>${SITE}${loc === "/" ? "/" : loc}</loc>`,
+    `    <lastmod>${today}</lastmod>`,
+    `    <xhtml:link rel="alternate" hreflang="es" href="${SITE}${esRoute}" />`,
+    `    <xhtml:link rel="alternate" hreflang="en" href="${SITE}${enRouteFor(esRoute)}" />`,
+    `    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE}${esRoute}" />`,
+    "  </url>",
+  ].join("\n");
+  const xml = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">',
+    ...esRoutes.flatMap((r) => [url(r, r), url(enRouteFor(r), r)]),
+    "</urlset>",
+    "",
+  ].join("\n");
+  writeFileSync(join(OUT_DIR, "sitemap.xml"), xml);
+}
+
 // llms.txt (llmstxt.org): a plain-text map of the site for AI answer engines,
 // built from the same titles/descriptions the pages render — never hand-
 // maintained, so it can't drift from the site. Skipped if nothing prerendered.
 function writeLlmsTxt(entries) {
   if (entries.length === 0) return;
-  const home = entries.find((e) => e.route === "/");
+  const es = entries.filter((e) => !isEnRoute(e.route));
+  const en = entries.filter((e) => isEnRoute(e.route));
+  const home = es.find((e) => e.route === "/");
+  const item = (e) => `- [${e.title}](${SITE}${e.route}): ${e.description ?? ""}`.trimEnd();
   const lines = [
     "# Coimagen Media Agency",
     "",
     `> ${home?.description ?? "Marketing digital + IA en Tijuana."}`,
     "",
-    "## Páginas",
+    "## Páginas (español)",
     "",
-    ...entries.map((e) => `- [${e.title}](https://www.coimagenmedia.com${e.route}): ${e.description ?? ""}`.trimEnd()),
+    ...es.map(item),
     "",
   ];
+  if (en.length > 0) lines.push("## Pages (English)", "", ...en.map(item), "");
   writeFileSync(join(OUT_DIR, "llms.txt"), lines.join("\n"));
 }
 
@@ -178,22 +240,30 @@ async function launchBrowser() {
 async function main() {
   if (!existsSync(SHELL_PATH)) throw new Error(`Build shell not found at ${SHELL_PATH} — run vite build first.`);
   const shellHtml = readFileSync(SHELL_PATH, "utf8");
-  const routes = readRoutesFromSitemap();
+  const esRoutes = readRoutesFromSitemap();
+  const routes = [...esRoutes, ...esRoutes.map(enRouteFor)];
   const routeToFile = Object.fromEntries(routes.map((route) => [route, outputFileFor(route)]));
+  // Each job renders one file; the MXN variants reuse a route with the
+  // Mexico country cookie set.
+  const jobs = [
+    ...routes.map((route) => ({ route, file: routeToFile[route], country: null })),
+    ...MX_VARIANTS.map((v) => ({ route: v.route, file: v.file, country: "mx" })),
+  ];
 
   // Every route gets the generic shell up front. Anything that prerenders
   // successfully below overwrites its own file with the real version;
   // anything that doesn't (a per-route failure, or the browser/server never
   // starting at all) just keeps this — identical to today's behavior for
   // that route, never a missing file or a 404.
-  for (const route of routes) {
-    const outPath = join(OUT_DIR, routeToFile[route]);
+  for (const job of jobs) {
+    const outPath = join(OUT_DIR, job.file);
     mkdirSync(dirname(outPath), { recursive: true });
     writeFileSync(outPath, shellHtml);
   }
   updateVercelRewrites(routeToFile);
+  writeSitemap(esRoutes);
 
-  console.log(`Prerendering ${routes.length} routes from sitemap.xml (${IS_SERVERLESS_BUILD ? "serverless" : "local"} Chromium)...`);
+  console.log(`Prerendering ${jobs.length} files (${esRoutes.length} sitemap routes × es/en + ${MX_VARIANTS.length} MXN home variants) (${IS_SERVERLESS_BUILD ? "serverless" : "local"} Chromium)...`);
 
   let server;
   let browser;
@@ -207,9 +277,13 @@ async function main() {
     browser = await launchBrowser();
     const page = await browser.newPage();
 
-    for (const route of routes) {
+    for (const { route, file, country } of jobs) {
       try {
         const url = new URL(route, address).toString();
+        // The edge middleware sets this cookie in production; locally it's
+        // absent, which the app reads as "usa".
+        if (country) await page.setCookie({ name: "coimagen-country", value: country, url });
+        else await page.deleteCookie({ name: "coimagen-country", url });
         // Not networkidle0 — Google Analytics/Metricool/Jotform keep open
         // connections that never go fully idle. domcontentloaded + the
         // explicit title-change wait below is the real completion signal.
@@ -224,15 +298,15 @@ async function main() {
         await page.waitForFunction(() => (document.getElementById("root")?.innerText.trim().length ?? 0) > 200, { timeout: 10000 }).catch(() => {});
 
         const meta = await extractMeta(page);
-        const outPath = join(OUT_DIR, routeToFile[route]);
+        const outPath = join(OUT_DIR, file);
         writeFileSync(outPath, applyMeta(shellHtml, meta));
-        llmsEntries.push({ route, title: meta.title, description: meta.description });
+        if (!country) llmsEntries.push({ route, title: meta.title, description: meta.description });
         succeeded++;
-        console.log(`  ${route.padEnd(45)} -> ${routeToFile[route]}  "${meta.title}" (${meta.jsonLd.length} schema, ${Math.round(meta.rootHtml.length / 1024)} KB body)`);
+        console.log(`  ${route.padEnd(45)} -> ${file}  "${meta.title}" (${meta.jsonLd.length} schema, ${meta.alternates.length} hreflang, ${Math.round(meta.rootHtml.length / 1024)} KB body)`);
       } catch (err) {
         // This one route keeps the generic-shell copy already written above
         // — exactly today's behavior for it. Every other route is unaffected.
-        console.warn(`  ${route.padEnd(45)} -> FAILED, kept generic shell (${err.message})`);
+        console.warn(`  ${route.padEnd(45)} -> ${file} FAILED, kept generic shell (${err.message})`);
       }
     }
   } catch (err) {
@@ -247,7 +321,7 @@ async function main() {
 
   writeLlmsTxt(llmsEntries);
 
-  console.log(`\n${succeeded}/${routes.length} routes prerendered with real meta; the rest (if any) kept the generic shell. vercel.json maps all ${routes.length} routes to their own file.`);
+  console.log(`\n${succeeded}/${jobs.length} files prerendered with real content; the rest (if any) kept the generic shell. vercel.json maps all ${routes.length} routes to their own file.`);
 }
 
 main()

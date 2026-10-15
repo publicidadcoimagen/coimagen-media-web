@@ -11,6 +11,8 @@ import { AdminProvider } from "@/context/AdminContext";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { LocaleSeo } from "@/components/ui/LocaleSeo";
+import { EN_PREFIX, isEnPath } from "@/lib/localePath";
 import { CanonicalUrl } from "@/components/ui/CanonicalUrl";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
@@ -110,6 +112,7 @@ function AppLayout() {
   return (
     <div className="min-h-screen" style={{ background: "#06060f" }}>
       <CanonicalUrl />
+      <LocaleSeo />
       <LangEffect />
       <Header />
       <main>
@@ -208,6 +211,9 @@ function AppLayout() {
   );
 }
 
+// /en/… pages reuse every Spanish route: the router just runs under /en.
+const routerBase = `${import.meta.env.BASE_URL.replace(/\/$/, "")}${isEnPath() ? EN_PREFIX : ""}`;
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -215,7 +221,7 @@ function App() {
         <AdminProvider>
           <LanguageProvider>
             <CountryProvider>
-              <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+              <WouterRouter base={routerBase}>
                 <AppLayout />
               </WouterRouter>
             </CountryProvider>

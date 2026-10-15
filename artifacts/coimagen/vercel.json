@@ -319,6 +319,242 @@
     {
       "source": "/blog/redes-sociales-restaurantes",
       "destination": "/blog/redes-sociales-restaurantes.html"
+    },
+    {
+      "source": "/en",
+      "destination": "/en.html"
+    },
+    {
+      "source": "/en/diagnostico",
+      "destination": "/en/diagnostico.html"
+    },
+    {
+      "source": "/en/demos",
+      "destination": "/en/demos.html"
+    },
+    {
+      "source": "/en/about",
+      "destination": "/en/about.html"
+    },
+    {
+      "source": "/en/contacto",
+      "destination": "/en/contacto.html"
+    },
+    {
+      "source": "/en/blog",
+      "destination": "/en/blog.html"
+    },
+    {
+      "source": "/en/faqs",
+      "destination": "/en/faqs.html"
+    },
+    {
+      "source": "/en/resources",
+      "destination": "/en/resources.html"
+    },
+    {
+      "source": "/en/recursos",
+      "destination": "/en/recursos.html"
+    },
+    {
+      "source": "/en/agendar",
+      "destination": "/en/agendar.html"
+    },
+    {
+      "source": "/en/ai-powered-websites",
+      "destination": "/en/ai-powered-websites.html"
+    },
+    {
+      "source": "/en/seo-growth",
+      "destination": "/en/seo-growth.html"
+    },
+    {
+      "source": "/en/google-business-optimization",
+      "destination": "/en/google-business-optimization.html"
+    },
+    {
+      "source": "/en/ai-automation",
+      "destination": "/en/ai-automation.html"
+    },
+    {
+      "source": "/en/ai-agents",
+      "destination": "/en/ai-agents.html"
+    },
+    {
+      "source": "/en/camila-ai",
+      "destination": "/en/camila-ai.html"
+    },
+    {
+      "source": "/en/coimagen-os",
+      "destination": "/en/coimagen-os.html"
+    },
+    {
+      "source": "/en/cloud-systems",
+      "destination": "/en/cloud-systems.html"
+    },
+    {
+      "source": "/en/recursos/sales-funnel-ai",
+      "destination": "/en/recursos/sales-funnel-ai.html"
+    },
+    {
+      "source": "/en/recursos/coimagen-pro-ai",
+      "destination": "/en/recursos/coimagen-pro-ai.html"
+    },
+    {
+      "source": "/en/recursos/ai-sales-automation",
+      "destination": "/en/recursos/ai-sales-automation.html"
+    },
+    {
+      "source": "/en/recursos/seo-content-ai",
+      "destination": "/en/recursos/seo-content-ai.html"
+    },
+    {
+      "source": "/en/recursos/funnel-copy-ai",
+      "destination": "/en/recursos/funnel-copy-ai.html"
+    },
+    {
+      "source": "/en/recursos/community-manager-pro",
+      "destination": "/en/recursos/community-manager-pro.html"
+    },
+    {
+      "source": "/en/recursos/viral-copy-ai",
+      "destination": "/en/recursos/viral-copy-ai.html"
+    },
+    {
+      "source": "/en/recursos/ads-strategist-ai",
+      "destination": "/en/recursos/ads-strategist-ai.html"
+    },
+    {
+      "source": "/en/recursos/market-intelligence-ai",
+      "destination": "/en/recursos/market-intelligence-ai.html"
+    },
+    {
+      "source": "/en/medical-os",
+      "destination": "/en/medical-os.html"
+    },
+    {
+      "source": "/en/dental-os",
+      "destination": "/en/dental-os.html"
+    },
+    {
+      "source": "/en/law-os",
+      "destination": "/en/law-os.html"
+    },
+    {
+      "source": "/en/wellness-os",
+      "destination": "/en/wellness-os.html"
+    },
+    {
+      "source": "/en/restaurant-os",
+      "destination": "/en/restaurant-os.html"
+    },
+    {
+      "source": "/en/real-estate-os",
+      "destination": "/en/real-estate-os.html"
+    },
+    {
+      "source": "/en/local-business-os",
+      "destination": "/en/local-business-os.html"
+    },
+    {
+      "source": "/en/case-studies",
+      "destination": "/en/case-studies.html"
+    },
+    {
+      "source": "/en/case-studies/dr-segovia",
+      "destination": "/en/case-studies/dr-segovia.html"
+    },
+    {
+      "source": "/en/case-studies/chimichimi",
+      "destination": "/en/case-studies/chimichimi.html"
+    },
+    {
+      "source": "/en/case-studies/coimagen-os",
+      "destination": "/en/case-studies/coimagen-os.html"
+    },
+    {
+      "source": "/en/case-studies/conchas-tower",
+      "destination": "/en/case-studies/conchas-tower.html"
+    },
+    {
+      "source": "/en/blog/crm-para-medicos",
+      "destination": "/en/blog/crm-para-medicos.html"
+    },
+    {
+      "source": "/en/blog/automatizacion-abogados",
+      "destination": "/en/blog/automatizacion-abogados.html"
+    },
+    {
+      "source": "/en/blog/seo-local-dentistas",
+      "destination": "/en/blog/seo-local-dentistas.html"
+    },
+    {
+      "source": "/en/blog/google-business-profile",
+      "destination": "/en/blog/google-business-profile.html"
+    },
+    {
+      "source": "/en/blog/whatsapp-ventas",
+      "destination": "/en/blog/whatsapp-ventas.html"
+    },
+    {
+      "source": "/en/blog/ia-pequenas-empresas",
+      "destination": "/en/blog/ia-pequenas-empresas.html"
+    },
+    {
+      "source": "/en/blog/sitio-web-restaurantes",
+      "destination": "/en/blog/sitio-web-restaurantes.html"
+    },
+    {
+      "source": "/en/blog/camila-ai-asistente",
+      "destination": "/en/blog/camila-ai-asistente.html"
+    },
+    {
+      "source": "/en/blog/google-ads-vs-seo",
+      "destination": "/en/blog/google-ads-vs-seo.html"
+    },
+    {
+      "source": "/en/blog/automatizacion-inmobiliaria",
+      "destination": "/en/blog/automatizacion-inmobiliaria.html"
+    },
+    {
+      "source": "/en/blog/sistema-operativo-empresarial",
+      "destination": "/en/blog/sistema-operativo-empresarial.html"
+    },
+    {
+      "source": "/en/blog/marketing-clinicas-estetica",
+      "destination": "/en/blog/marketing-clinicas-estetica.html"
+    },
+    {
+      "source": "/en/blog/whatsapp-business-ia",
+      "destination": "/en/blog/whatsapp-business-ia.html"
+    },
+    {
+      "source": "/en/blog/google-ads-negocios-locales",
+      "destination": "/en/blog/google-ads-negocios-locales.html"
+    },
+    {
+      "source": "/en/blog/agentes-ia-empresas",
+      "destination": "/en/blog/agentes-ia-empresas.html"
+    },
+    {
+      "source": "/en/blog/marketing-wellness-spas",
+      "destination": "/en/blog/marketing-wellness-spas.html"
+    },
+    {
+      "source": "/en/blog/ai-agents-local-business",
+      "destination": "/en/blog/ai-agents-local-business.html"
+    },
+    {
+      "source": "/en/blog/redes-sociales-restaurantes",
+      "destination": "/en/blog/redes-sociales-restaurantes.html"
+    },
+    {
+      "source": "/en/privacy-policy",
+      "destination": "/en/privacy-policy.html"
+    },
+    {
+      "source": "/en/terms-of-service",
+      "destination": "/en/terms-of-service.html"
     }
   ]
 }

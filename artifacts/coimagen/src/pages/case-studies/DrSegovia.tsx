@@ -6,12 +6,21 @@ export default function DrSegovia() {
   const { lang } = useLang();
   const isEs = lang === "es";
 
+  // The intro paragraph doubles as the meta description, so every case
+  // study describes itself instead of inheriting the home page's.
+  const intro = isEs
+    ? "Implementación de intranet con inteligencia artificial para gestión de expedientes médicos, seguimiento de pacientes y automatización de procesos administrativos en consulta de neurocirugía."
+    : "Implementation of an AI-powered intranet for medical record management, patient follow-up and administrative process automation in a neurosurgery practice.";
+
   useEffect(() => {
-    document.title = isEs
-      ? "Case Study: Dr. Segovia Neurocirugía — Coimagen"
-      : "Case Study: Dr. Segovia Neurosurgery — Coimagen";
+    document.title = isEs ? "Caso de éxito: Dr. Segovia Neurocirugía — Coimagen" : "Case Study: Dr. Segovia Neurosurgery — Coimagen";
+    document.querySelector('meta[name="description"]')?.setAttribute("content", intro);
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", document.title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", intro);
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", document.title);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", intro);
     window.scrollTo(0, 0);
-  }, [isEs]);
+  }, [isEs, intro]);
 
   const results = [
     { icon: "📁", valueEs: "100% digital", valueEn: "100% digital", labelEs: "Expedientes médicos", labelEn: "Medical records" },
@@ -36,9 +45,7 @@ export default function DrSegovia() {
           {isEs ? "Dr. José Manuel Segovia Neurocirugía" : "Dr. José Manuel Segovia Neurosurgery"}
         </h1>
         <p className="text-[var(--c-muted)] text-base leading-relaxed mb-10 max-w-2xl">
-          {isEs
-            ? "Implementación de intranet con inteligencia artificial para gestión de expedientes médicos, seguimiento de pacientes y automatización de procesos administrativos en consulta de neurocirugía."
-            : "Implementation of an AI-powered intranet for medical record management, patient follow-up and administrative process automation in a neurosurgery practice."}
+          {intro}
         </p>
 
         {/* Results */}

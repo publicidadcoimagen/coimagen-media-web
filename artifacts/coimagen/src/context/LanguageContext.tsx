@@ -1,5 +1,6 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import type { Lang } from "@/config/site";
+import { isEnPath, isLocalizedPath, pathForLang } from "@/lib/localePath";
 
 const translations = {
   es: {
@@ -362,17 +363,39 @@ function getStoredLang(): Lang {
   return "es";
 }
 
+// Public pages: the URL decides (/en/… English, the rest Spanish), so each
+// URL always serves one language. Private/token pages have no /en URL and
+// keep the stored preference.
+function initialLang(): Lang {
+  if (typeof window !== "undefined" && isLocalizedPath(window.location.pathname)) {
+    return isEnPath() ? "en" : "es";
+  }
+  return getStoredLang();
+}
+
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLangState] = useState<Lang>(getStoredLang);
+  const [lang, setLangState] = useState<Lang>(initialLang);
 
   const setLang = (l: Lang) => {
-    setLangState(l);
     try {
       localStorage.setItem(LANG_STORAGE_KEY, l);
     } catch {
       // localStorage unavailable — selection just won't persist
     }
+    const { pathname, search, hash } = window.location;
+    if (isLocalizedPath(pathname)) {
+      const target = pathForLang(pathname, l);
+      if (target !== pathname) {
+        window.location.assign(`${target}${search}${hash}`);
+        return;
+      }
+    }
+    setLangState(l);
   };
+
+  useEffect(() => {
+    document.documentElement.setAttribute("lang", lang);
+  }, [lang]);
 
   const t = translations[lang] as Translations;
   return <LanguageContext.Provider value={{ lang, setLang, t }}>{children}</LanguageContext.Provider>;
