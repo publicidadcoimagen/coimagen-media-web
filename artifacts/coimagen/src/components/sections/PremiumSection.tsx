@@ -29,12 +29,6 @@ export function PremiumSection() {
                 >
                   {pr.cta1}
                 </a>
-                <a
-                  href="/diagnostico"
-                  className="inline-flex items-center gap-2 border border-white/10 text-white font-semibold px-7 py-3.5 rounded-xl text-sm hover:border-[var(--c-purple)]/40 hover:text-[var(--c-purple)] transition-all active:scale-95"
-                >
-                  {pr.cta2}
-                </a>
               </div>
             </div>
 
