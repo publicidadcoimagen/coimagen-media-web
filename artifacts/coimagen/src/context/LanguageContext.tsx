@@ -73,11 +73,7 @@ const translations = {
       note: "Los precios pueden variar según necesidades, alcance y diagnóstico del negocio.",
       popularLabel: "Más popular",
       setupLabel: "Configuración inicial",
-      founderSetupLabel: "Cliente Fundador",
-      founderTermsNote: "Aplican términos y condiciones.",
       perMonth: "/ mes",
-      founderTitle: "Oferta Fundadores",
-      founderDesc: "Primeros 10 clientes (cualquier paquete) reciben precio preferencial de lanzamiento.",
       cta: "Solicitar información",
     },
     premium: {
@@ -86,7 +82,6 @@ const translations = {
       subtitle: "Implementamos sistemas personalizados de IA, automatización, CRM, agentes digitales y procesos inteligentes para negocios que quieren escalar.",
       bullets: ["IA personalizada", "Automatización total", "CRM avanzado", "Agentes digitales", "Dashboards", "Procesos internos"],
       cta1: "Agendar consulta",
-      cta2: "Quiero ser fundador",
     },
     cases: {
       title: "Proyectos y laboratorios de crecimiento",
@@ -241,11 +236,7 @@ const translations = {
       note: "Pricing may vary depending on business needs, scope, and diagnostic results.",
       popularLabel: "Most Popular",
       setupLabel: "Setup",
-      founderSetupLabel: "Founder Client",
-      founderTermsNote: "Terms and conditions apply.",
       perMonth: "/ month",
-      founderTitle: "Founder Offer",
-      founderDesc: "First 10 clients (any package) receive preferred launch pricing.",
       cta: "Request info",
     },
     premium: {
@@ -254,7 +245,6 @@ const translations = {
       subtitle: "We implement custom AI, automation, CRM, digital agents and intelligent workflows for businesses ready to scale.",
       bullets: ["Custom AI", "Full automation", "Advanced CRM", "Digital agents", "Dashboards", "Internal workflows"],
       cta1: "Book Consultation",
-      cta2: "Become a Founder Client",
     },
     cases: {
       title: "Growth projects and real-world labs",

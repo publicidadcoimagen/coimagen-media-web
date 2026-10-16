@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLang } from "@/context/LanguageContext";
 import { siteConfig } from "@/config/site";
-import { SHOW_FOUNDER_AND_REFERRAL } from "@/config/featureFlags";
+import { SHOW_REFERRAL_PROGRAM } from "@/config/featureFlags";
 
 const allFaqs = [
   {
@@ -67,7 +67,7 @@ const allFaqs = [
   },
 ];
 
-const faqs = allFaqs.filter((f) => SHOW_FOUNDER_AND_REFERRAL || !("referral" in f));
+const faqs = allFaqs.filter((f) => SHOW_REFERRAL_PROGRAM || !("referral" in f));
 
 export default function Faqs() {
   const { lang } = useLang();

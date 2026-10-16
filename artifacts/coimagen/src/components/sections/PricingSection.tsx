@@ -4,13 +4,10 @@ import { useCountry } from "@/context/CountryContext";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { PACKAGES } from "@/lib/packages";
 import { convertUsdToMxn, getUsdToMxnRate, FALLBACK_USD_TO_MXN_RATE } from "@/lib/pricing";
-import { useFounderCount } from "@/lib/foundersApi";
-import { SHOW_FOUNDER_AND_REFERRAL } from "@/config/featureFlags";
 
 export function PricingSection() {
   const { lang, t } = useLang();
   const { country } = useCountry();
-  const founders = useFounderCount();
   const p = t.pricing;
 
   const [rate, setRate] = useState(FALLBACK_USD_TO_MXN_RATE);
@@ -28,7 +25,6 @@ export function PricingSection() {
   const isMx = country === "mx";
   const currencyCode = isMx ? "MXN" : "USD";
   const marketLabel = isMx ? "🇲🇽 Precios en México (MXN)" : "🇺🇸 USA Pricing (USD)";
-  const founderSpotsLeft = SHOW_FOUNDER_AND_REFERRAL && !!founders && founders.count < founders.max;
   const visiblePackages = PACKAGES.filter((pkg) => pkg.visible);
 
   const formatPrice = (usd: number) => {
@@ -77,12 +73,9 @@ export function PricingSection() {
                 </p>
 
                 <div className="text-xs mb-3">
-                  <p className={founderSpotsLeft ? "text-white/40 line-through" : "text-[var(--c-yellow)] font-semibold"}>
+                  <p className="text-[var(--c-yellow)] font-semibold">
                     {p.setupLabel}: {formatPrice(pkg.setupUSD)}
                   </p>
-                  {founderSpotsLeft && (
-                    <p className="text-[var(--c-yellow)] font-semibold">$0 — {p.founderSetupLabel}</p>
-                  )}
                 </div>
 
                 <div className="my-5 border-t border-white/[0.06]" />
@@ -114,9 +107,6 @@ export function PricingSection() {
         </div>
 
         <p className="text-center text-[var(--c-muted2)] text-xs mt-8">{p.note}</p>
-        {founderSpotsLeft && (
-          <p className="text-center text-[var(--c-muted2)] text-xs mt-2">{p.founderTermsNote}</p>
-        )}
       </div>
     </section>
   );

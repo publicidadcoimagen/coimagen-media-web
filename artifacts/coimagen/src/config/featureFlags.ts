@@ -1,8 +1,8 @@
 /**
- * Temporarily hidden: the Founders offer and the Referral program.
- * Flip to true to show everything again. This controls:
- *   - Home: FounderOfferSection + ReferralSection
- *   - PricingSection: "$0 — founder setup" line, struck-through setup price, founder terms note
+ * Temporarily hidden: the Referral program. Flip to true to show it again.
+ * This controls:
+ *   - Home: ReferralSection
  *   - Faqs: "¿Tienen programa de referidos?" entry
+ * (The Founders offer was removed from the site entirely, not hidden.)
  */
-export const SHOW_FOUNDER_AND_REFERRAL = false;
+export const SHOW_REFERRAL_PROGRAM = false;
