@@ -39,6 +39,9 @@ function isEnvTrue(value) {
 }
 const IS_SERVERLESS_BUILD = isEnvTrue(process.env.VERCEL) || isEnvTrue(process.env.CI);
 
+// Keep in sync with middleware.ts.
+const HOME_MX_FILE = "home-mx.html";
+
 function readRoutesFromSitemap() {
   const xml = readFileSync(join(ROOT, "public/sitemap.xml"), "utf8");
   const matches = [...xml.matchAll(/<loc>https:\/\/www\.coimagenmedia\.com([^<]*)<\/loc>/g)];
@@ -191,6 +194,9 @@ async function main() {
     mkdirSync(dirname(outPath), { recursive: true });
     writeFileSync(outPath, shellHtml);
   }
+  // Same fallback for the MXN home: if its render fails, Mexico gets the
+  // generic shell and React shows MXN on boot (today's behavior).
+  writeFileSync(join(OUT_DIR, HOME_MX_FILE), shellHtml);
   updateVercelRewrites(routeToFile);
 
   console.log(`Prerendering ${routes.length} routes from sitemap.xml (${IS_SERVERLESS_BUILD ? "serverless" : "local"} Chromium)...`);
@@ -234,6 +240,22 @@ async function main() {
         // — exactly today's behavior for it. Every other route is unaffected.
         console.warn(`  ${route.padEnd(45)} -> FAILED, kept generic shell (${err.message})`);
       }
+    }
+
+    // Home's pricing depends on the country cookie the edge middleware sets
+    // (MXN for Mexico, USD otherwise). home.html above is the USD render;
+    // this is the MXN one, which middleware.ts serves to Mexico for "/".
+    try {
+      const url = new URL("/", address).toString();
+      await page.setCookie({ name: "coimagen-country", value: "mx", url });
+      await page.goto(url, { waitUntil: "domcontentloaded", timeout: 30000 });
+      await page.waitForFunction(() => document.querySelector("#precios")?.textContent?.includes("MXN"), { timeout: 10000 });
+      const meta = await extractMeta(page);
+      writeFileSync(join(OUT_DIR, HOME_MX_FILE), applyMeta(shellHtml, meta));
+      await page.deleteCookie({ name: "coimagen-country", url });
+      console.log(`  ${"/ (México, MXN)".padEnd(45)} -> ${HOME_MX_FILE}`);
+    } catch (err) {
+      console.warn(`  ${"/ (México, MXN)".padEnd(45)} -> FAILED, kept generic shell (${err.message})`);
     }
   } catch (err) {
     // Browser/server never started at all: every route already has the
