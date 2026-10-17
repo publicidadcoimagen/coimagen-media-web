@@ -87,6 +87,29 @@ export default function Faqs() {
     document.querySelector('meta[property="og:url"]')?.setAttribute("content", url);
     document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", title);
     document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", desc);
+
+    // Same FAQPage schema the service/blog templates inject, built from the
+    // exact questions rendered below (so the referral flag applies here too).
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => {
+        const item = isEs ? f.es : f.en;
+        return { "@type": "Question", name: item.q, acceptedAnswer: { "@type": "Answer", text: item.a } };
+      }),
+    };
+    let el = document.getElementById("faq-schema-faqs");
+    if (!el) {
+      el = document.createElement("script");
+      el.id = "faq-schema-faqs";
+      (el as HTMLScriptElement).type = "application/ld+json";
+      document.head.appendChild(el);
+    }
+    el.textContent = JSON.stringify(faqSchema);
+
+    return () => {
+      document.getElementById("faq-schema-faqs")?.remove();
+    };
   }, [isEs]);
 
   return (

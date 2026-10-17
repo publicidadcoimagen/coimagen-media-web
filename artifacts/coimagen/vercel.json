@@ -29,6 +29,26 @@
       "source": "/productos/ia/",
       "destination": "/#servicios",
       "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/contacto",
+      "permanent": true
+    },
+    {
+      "source": "/contact/",
+      "destination": "/contacto",
+      "permanent": true
+    },
+    {
+      "source": "/conchas-tower",
+      "destination": "/case-studies/conchas-tower",
+      "permanent": true
+    },
+    {
+      "source": "/conchas-tower/",
+      "destination": "/case-studies/conchas-tower",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -101,10 +121,6 @@
       "destination": "/contacto.html"
     },
     {
-      "source": "/contact",
-      "destination": "/index.html"
-    },
-    {
       "source": "/blog",
       "destination": "/blog.html"
     },
@@ -135,10 +151,6 @@
     {
       "source": "/case-studies/conchas-tower",
       "destination": "/case-studies/conchas-tower.html"
-    },
-    {
-      "source": "/conchas-tower",
-      "destination": "/index.html"
     },
     {
       "source": "/medical-os",

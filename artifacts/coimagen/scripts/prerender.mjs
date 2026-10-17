@@ -5,11 +5,14 @@
 // problem: SeoHead/document.title only ever ran client-side, after JS, so a
 // crawler that doesn't execute JS saw identical boilerplate everywhere).
 //
-// Deliberately narrow scope: this ONLY rewrites <head> meta tags. The
-// <body>/<script> content of every generated file is byte-identical to the
-// real build's index.html — same bundle, same empty `<div id="root">`, same
-// `<script type="module" src="...">`. Nothing about how the app boots,
-// fetches data, or handles interactive/dynamic flows changes. Routes that
+// Each file gets the route's <head> meta tags, the JSON-LD the page injects
+// at runtime (BlogPosting/FAQPage/Service, keeping its id so the page's own
+// effect reuses that <script> instead of adding a second one), and the
+// rendered contents of `<div id="root">`. Crawlers that never run JS (AI
+// answer engines like GPTBot/ClaudeBot/PerplexityBot) then see the real text,
+// headings and FAQs. The bundle and `<script type="module">` are unchanged:
+// main.tsx uses createRoot (not hydrateRoot), so React simply replaces the
+// static markup on boot — nothing about how the app runs changes. Routes that
 // aren't in the sitemap (dynamic token routes like
 // /diagnostico/resultado/:token, /propuesta/:token, /factura/:token, plus
 // /portal, /secure, /admin) are never touched — they keep serving the
@@ -76,6 +79,10 @@ async function extractMeta(page) {
       twitterImage: get('meta[name="twitter:image"]'),
       canonical: document.querySelector('link[rel="canonical"]')?.getAttribute("href") ?? null,
       lang: document.documentElement.getAttribute("lang"),
+      // Only runtime-injected schema carries an id; index.html's static
+      // Organization/LocalBusiness block has none and is already in the shell.
+      jsonLd: [...document.querySelectorAll('script[type="application/ld+json"][id]')].map((el) => ({ id: el.id, text: el.textContent ?? "" })),
+      rootHtml: document.getElementById("root")?.innerHTML ?? "",
     };
   });
 }
@@ -93,6 +100,15 @@ function applyMeta(shellHtml, meta) {
   if (meta.twitterImage) html = replaceTag(html, /(<meta name="twitter:image" content=")[^"]*(")/, `$1${esc(meta.twitterImage)}$2`);
   if (meta.canonical) html = replaceTag(html, /(<link rel="canonical" href=")[^"]*(")/, `$1${esc(meta.canonical)}$2`);
   if (meta.lang) html = html.replace(/<html lang="[^"]*"/, `<html lang="${esc(meta.lang)}"`);
+  if (meta.jsonLd.length > 0) {
+    // "<" escaped so a schema string can never close the <script> early.
+    const blocks = meta.jsonLd
+      .map((ld) => `<script type="application/ld+json" id="${esc(ld.id)}">${ld.text.replace(/</g, "\\u003c")}</script>`)
+      .join("\n    ");
+    html = replaceTag(html, /<\/head>/, () => `    ${blocks}\n  </head>`);
+  }
+  // Function replacement: page HTML may contain "$&"-style sequences.
+  if (meta.rootHtml) html = replaceTag(html, /<div id="root"><\/div>/, () => `<div id="root">${meta.rootHtml}</div>`);
   return html;
 }
 
@@ -110,6 +126,25 @@ function updateVercelRewrites(routeToFile) {
   }
   writeFileSync(VERCEL_JSON_PATH, JSON.stringify(config, null, 2) + "\n");
   return updated;
+}
+
+// llms.txt (llmstxt.org): a plain-text map of the site for AI answer engines,
+// built from the same titles/descriptions the pages render — never hand-
+// maintained, so it can't drift from the site. Skipped if nothing prerendered.
+function writeLlmsTxt(entries) {
+  if (entries.length === 0) return;
+  const home = entries.find((e) => e.route === "/");
+  const lines = [
+    "# Coimagen Media Agency",
+    "",
+    `> ${home?.description ?? "Marketing digital + IA en Tijuana."}`,
+    "",
+    "## Páginas",
+    "",
+    ...entries.map((e) => `- [${e.title}](https://www.coimagenmedia.com${e.route}): ${e.description ?? ""}`.trimEnd()),
+    "",
+  ];
+  writeFileSync(join(OUT_DIR, "llms.txt"), lines.join("\n"));
 }
 
 // Full puppeteer (its own downloaded Chromium) locally — proven to work on a
@@ -163,6 +198,7 @@ async function main() {
   let server;
   let browser;
   let succeeded = 0;
+  const llmsEntries = [];
   try {
     server = await preview({ configFile: join(ROOT, "vite.config.ts"), preview: { port: 0 } });
     const address = server.resolvedUrls?.local?.[0] ?? `http://localhost:${server.config.preview.port}/`;
@@ -183,12 +219,16 @@ async function main() {
           { timeout: 5000 },
           "Coimagen Media Agency — Marketing Digital + IA | Tijuana",
         ).catch(() => {}); // home page legitimately keeps this title — timeout there is expected, not an error
+        // Content gate: a slow page still gets its meta (as before), just with
+        // whatever body had rendered by then.
+        await page.waitForFunction(() => (document.getElementById("root")?.innerText.trim().length ?? 0) > 200, { timeout: 10000 }).catch(() => {});
 
         const meta = await extractMeta(page);
         const outPath = join(OUT_DIR, routeToFile[route]);
         writeFileSync(outPath, applyMeta(shellHtml, meta));
+        llmsEntries.push({ route, title: meta.title, description: meta.description });
         succeeded++;
-        console.log(`  ${route.padEnd(45)} -> ${routeToFile[route]}  "${meta.title}"`);
+        console.log(`  ${route.padEnd(45)} -> ${routeToFile[route]}  "${meta.title}" (${meta.jsonLd.length} schema, ${Math.round(meta.rootHtml.length / 1024)} KB body)`);
       } catch (err) {
         // This one route keeps the generic-shell copy already written above
         // — exactly today's behavior for it. Every other route is unaffected.
@@ -204,6 +244,8 @@ async function main() {
     if (browser) await browser.close().catch(() => {});
     if (server) await server.close().catch(() => {});
   }
+
+  writeLlmsTxt(llmsEntries);
 
   console.log(`\n${succeeded}/${routes.length} routes prerendered with real meta; the rest (if any) kept the generic shell. vercel.json maps all ${routes.length} routes to their own file.`);
 }
