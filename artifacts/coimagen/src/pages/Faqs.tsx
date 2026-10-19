@@ -13,8 +13,8 @@ const allFaqs = [
     en: { q: "Which cities do you work in?", a: "We mainly work in Tijuana and San Diego, with clients throughout the Baja California – California border area. We also serve clients online throughout Latin America and the USA." },
   },
   {
-    es: { q: "¿Cuánto cuesta contratar Coimagen?", a: "Los planes comienzan desde $790 MXN / mes o $197 USD / mes, dependiendo de las necesidades de tu negocio. Solicita un diagnóstico gratuito para recibir una propuesta personalizada." },
-    en: { q: "How much does hiring Coimagen cost?", a: "Plans start from $790 MXN / month or $197 USD / month, depending on your business needs. Request a free diagnostic to receive a personalized proposal." },
+    es: { q: "¿Cuánto cuesta contratar Coimagen?", a: "El precio de cada plan aparece en la sección de precios de la página de inicio (en MXN si estás en México y en USD en el resto del mundo). Depende de las necesidades de tu negocio: solicita un diagnóstico gratuito para recibir una propuesta personalizada." },
+    en: { q: "How much does hiring Coimagen cost?", a: "Each plan's price is listed in the pricing section of our home page (in MXN if you are in Mexico, in USD everywhere else). It depends on your business needs: request a free diagnostic to receive a personalized proposal." },
   },
   {
     es: { q: "¿Qué incluye el diagnóstico gratuito?", a: "Una evaluación de tu presencia digital, puntos de mejora, oportunidades de captación y un plan de acción inicial. Sin costo y sin compromiso." },
@@ -58,8 +58,8 @@ const allFaqs = [
   },
   {
     referral: true,
-    es: { q: "¿Tienen programa de referidos?", a: "Sí. Clientes fundadores y activos reciben 1 mes al 50% de descuento por cada cliente referido que contrate. Sin límite de referidos." },
-    en: { q: "Do you have a referral program?", a: "Yes. Founder and active clients receive 1 month at 50% off for every referred client who signs up. No limit on referrals." },
+    es: { q: "¿Tienen programa de referidos?", a: "Sí. Los clientes activos reciben 1 mes al 50% de descuento por cada cliente referido que contrate. Sin límite de referidos." },
+    en: { q: "Do you have a referral program?", a: "Yes. Active clients receive 1 month at 50% off for every referred client who signs up. No limit on referrals." },
   },
   {
     es: { q: "¿Puedo cancelar en cualquier momento?", a: "Sí, nuestros planes son mensuales sin contratos a largo plazo. Recomendamos un mínimo de 3 meses para ver resultados sólidos, pero no hay penalización por cancelar." },
@@ -77,7 +77,7 @@ export default function Faqs() {
   useEffect(() => {
     const title = isEs ? "Preguntas Frecuentes — Coimagen Media Agency" : "FAQ — Coimagen Media Agency";
     const desc = isEs
-      ? "Resolvemos tus dudas sobre marketing digital, automatización con IA, precios y procesos. 15 preguntas frecuentes sobre los servicios de Coimagen."
+      ? "Resolvemos tus dudas sobre marketing digital, automatización con IA, precios y procesos. Preguntas frecuentes sobre los servicios de Coimagen."
       : "Answers to the most common questions about digital marketing, AI automation, pricing and processes at Coimagen Media Agency.";
     const url = "https://www.coimagenmedia.com/faqs";
     document.title = title;
