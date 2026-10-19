@@ -12,35 +12,9 @@ export interface ProjectCard {
 }
 
 export interface AdminSettings {
-  founderImageUrl: string;
-  founderImagePosition: string;
-  founderBenefitsEs: string[];
-  founderBenefitsEn: string[];
   projectCards: ProjectCard[];
   calendarUrl: string;
 }
-
-const DEFAULT_BENEFITS_ES = [
-  "Precio fundador congelado mientras mantengas tu plan activo.",
-  "Prioridad en implementación y soporte.",
-  "Diagnóstico estratégico incluido.",
-  "Acceso anticipado a nuevas funciones de automatización e IA.",
-  "Revisión mensual de oportunidades de crecimiento.",
-  "Programa de referidos: 1 mes al 50% por cada cliente referido.",
-  "Acceso beta a futuros agentes IA.",
-  "Oportunidad de aparecer como caso de éxito de Coimagen.",
-];
-
-const DEFAULT_BENEFITS_EN = [
-  "Founder price locked while your plan remains active.",
-  "Priority implementation and support.",
-  "Strategic diagnostic included.",
-  "Early access to new automation and AI features.",
-  "Monthly growth opportunity review.",
-  "Referral program: 50% off one month for every referred client.",
-  "Beta access to future AI agents.",
-  "Opportunity to be featured as a Coimagen case study.",
-];
 
 export const DEFAULT_PROJECT_CARDS: ProjectCard[] = [
   { id: "dr-segovia", image: "", title: "Dr. José Manuel Segovia Neurocirugía", desc: "Intranet + flujos con IA para expedientes médicos. Caso real en producción.", externalUrl: "#", caseStudyUrl: "/case-studies/dr-segovia", tag: "Salud", color: "from-blue-600 to-indigo-800" },
@@ -51,10 +25,6 @@ export const DEFAULT_PROJECT_CARDS: ProjectCard[] = [
 ];
 
 const DEFAULTS: AdminSettings = {
-  founderImageUrl: "",
-  founderImagePosition: "right",
-  founderBenefitsEs: DEFAULT_BENEFITS_ES,
-  founderBenefitsEn: DEFAULT_BENEFITS_EN,
   projectCards: DEFAULT_PROJECT_CARDS,
   calendarUrl: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1tFYTxaqG70W8BLfvdIaKTQBN54Q1C4lTxVkvKGgCbddfTtX4B4JsNCFToDl_J1To-aZL1Nn1_?gv=true",
 };
