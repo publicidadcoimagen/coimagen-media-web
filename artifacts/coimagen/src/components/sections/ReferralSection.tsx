@@ -20,8 +20,8 @@ export function ReferralSection() {
             </h3>
             <p className="text-[var(--c-muted)] text-sm leading-relaxed">
               {isEs
-                ? "Si eres cliente fundador y nos recomiendas con otro negocio que contrate, recibes 50% de descuento en una mensualidad. Más referidos pueden desbloquear beneficios adicionales."
-                : "If you are a founder client and refer another business that signs up, you receive 50% off one monthly payment. Additional referrals may unlock extra benefits."}
+                ? "Si eres cliente de Coimagen y nos recomiendas con otro negocio que contrate, recibes 50% de descuento en una mensualidad. Más referidos pueden desbloquear beneficios adicionales."
+                : "If you are a Coimagen client and refer another business that signs up, you receive 50% off one monthly payment. Additional referrals may unlock extra benefits."}
             </p>
           </div>
 
