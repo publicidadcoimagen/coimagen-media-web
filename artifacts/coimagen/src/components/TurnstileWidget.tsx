@@ -2,6 +2,9 @@ import { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
 
 const SCRIPT_ID = "cf-turnstile-script";
 const SCRIPT_SRC = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+// If the widget hasn't rendered by then (script blocked or stalled), the
+// visitor gets told what to do instead of a silently disabled button.
+const RENDER_TIMEOUT_MS = 15000;
 
 export const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY as string | undefined;
 
@@ -23,6 +26,9 @@ interface TurnstileWidgetProps {
   siteKey: string;
   language: "es" | "en";
   onToken(token: string | null): void;
+  // Script failed to load, didn't render in time, or Cloudflare reported an
+  // error / unsupported browser. A later token means it recovered.
+  onLoadError(): void;
 }
 
 // Cloudflare's script is only ever added from an effect, i.e. in the
@@ -55,13 +61,15 @@ function loadTurnstileScript(): Promise<void> {
 // site: the token is single-use, so the caller resets it after every failed
 // submission; reset() also clears the token the parent holds.
 export const TurnstileWidget = forwardRef<TurnstileWidgetHandle, TurnstileWidgetProps>(function TurnstileWidget(
-  { siteKey, language, onToken },
+  { siteKey, language, onToken, onLoadError },
   ref,
 ) {
   const containerRef = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<string | null>(null);
   const onTokenRef = useRef(onToken);
   onTokenRef.current = onToken;
+  const onLoadErrorRef = useRef(onLoadError);
+  onLoadErrorRef.current = onLoadError;
 
   useImperativeHandle(ref, () => ({
     reset() {
@@ -75,23 +83,37 @@ export const TurnstileWidget = forwardRef<TurnstileWidgetHandle, TurnstileWidget
   useEffect(() => {
     if (!containerRef.current) return;
     let cancelled = false;
+    const fail = () => {
+      if (cancelled) return;
+      onTokenRef.current(null);
+      onLoadErrorRef.current();
+    };
+    const timeout = setTimeout(() => {
+      if (!widgetIdRef.current) fail();
+    }, RENDER_TIMEOUT_MS);
 
     loadTurnstileScript()
       .then(() => {
-        if (cancelled || !containerRef.current || !window.turnstile) return;
+        if (cancelled || !containerRef.current) return;
+        if (!window.turnstile) {
+          fail();
+          return;
+        }
         widgetIdRef.current = window.turnstile.render(containerRef.current, {
           sitekey: siteKey,
           language,
           theme: "dark",
           callback: (token: string) => onTokenRef.current(token),
           "expired-callback": () => onTokenRef.current(null),
-          "error-callback": () => onTokenRef.current(null),
+          "error-callback": fail,
+          "unsupported-callback": fail,
         });
       })
-      .catch(() => onTokenRef.current(null));
+      .catch(fail);
 
     return () => {
       cancelled = true;
+      clearTimeout(timeout);
       if (widgetIdRef.current && window.turnstile) {
         window.turnstile.remove(widgetIdRef.current);
       }

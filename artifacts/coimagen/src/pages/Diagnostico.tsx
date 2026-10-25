@@ -74,6 +74,7 @@ export default function Diagnostico() {
   const [leadEmail, setLeadEmail] = useState("");
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [turnstileFailed, setTurnstileFailed] = useState(false);
   const turnstileRef = useRef<TurnstileWidgetHandle>(null);
 
   useEffect(() => {
@@ -115,6 +116,12 @@ export default function Diagnostico() {
     setLeadEmail("");
     setSubmitError(null);
     setTurnstileToken(null);
+    setTurnstileFailed(false);
+  };
+
+  const handleTurnstileToken = (token: string | null) => {
+    setTurnstileToken(token);
+    if (token) setTurnstileFailed(false);
   };
 
   const normalizeUrl = (raw: string) => {
@@ -435,12 +442,26 @@ export default function Diagnostico() {
                 </div>
                 <div className="mb-5">
                   {TURNSTILE_SITE_KEY ? (
-                    <TurnstileWidget
-                      ref={turnstileRef}
-                      siteKey={TURNSTILE_SITE_KEY}
-                      language={isEs ? "es" : "en"}
-                      onToken={setTurnstileToken}
-                    />
+                    <>
+                      <TurnstileWidget
+                        ref={turnstileRef}
+                        siteKey={TURNSTILE_SITE_KEY}
+                        language={isEs ? "es" : "en"}
+                        onToken={handleTurnstileToken}
+                        onLoadError={() => setTurnstileFailed(true)}
+                      />
+                      {turnstileFailed && (
+                        <p role="alert" className="text-red-400 text-sm mt-2">
+                          {isEs
+                            ? "Si no ves la verificación de seguridad, recarga la página o escríbenos por "
+                            : "If you don't see the security check, reload the page or reach us on "}
+                          <a href={siteConfig.whatsapp.url} target="_blank" rel="noopener noreferrer" className="underline">
+                            WhatsApp
+                          </a>
+                          .
+                        </p>
+                      )}
+                    </>
                   ) : (
                     <p role="alert" className="text-red-400 text-sm">
                       {isEs
