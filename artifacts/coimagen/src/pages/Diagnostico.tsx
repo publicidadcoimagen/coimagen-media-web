@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocation } from "wouter";
 import { useLang } from "@/context/LanguageContext";
 import { siteConfig } from "@/config/site";
 import { DIAGNOSIS_API_BASE } from "@/lib/diagnosisApi";
+import { TurnstileWidget, TURNSTILE_SITE_KEY, type TurnstileWidgetHandle } from "@/components/TurnstileWidget";
 
 type Step = 1 | 2 | 3 | 4 | 5;
 type WebsiteStepMode = "ask" | "form" | "loading" | "error";
@@ -72,6 +73,8 @@ export default function Diagnostico() {
   const [leadName, setLeadName] = useState("");
   const [leadEmail, setLeadEmail] = useState("");
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const turnstileRef = useRef<TurnstileWidgetHandle>(null);
 
   useEffect(() => {
     const title = isEs ? "Diagnóstico Digital Gratuito — Coimagen Media Agency" : "Free Digital Diagnostic — Coimagen Media Agency";
@@ -111,6 +114,7 @@ export default function Diagnostico() {
     setLeadName("");
     setLeadEmail("");
     setSubmitError(null);
+    setTurnstileToken(null);
   };
 
   const normalizeUrl = (raw: string) => {
@@ -130,17 +134,22 @@ export default function Diagnostico() {
   const isValidEmail = (val: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim());
 
   const submitDiagnosis = async () => {
+    const token = turnstileToken;
+    if (!TURNSTILE_SITE_KEY || !token) return;
     setWebsiteMode("loading");
     setSubmitError(null);
     const fallbackMessage = isEs
       ? "No pudimos generar tu diagnóstico en este momento. Intenta de nuevo o contáctanos por WhatsApp."
       : "We couldn't generate your diagnostic right now. Try again or reach us on WhatsApp.";
+    const verificationMessage = isEs
+      ? "No pudimos confirmar la verificación de seguridad. Complétala de nuevo y reintenta."
+      : "We couldn't confirm the security check. Complete it again and retry.";
     try {
       let res: Response;
       try {
         res = await fetch(`${DIAGNOSIS_API_BASE}/api/public/digital-diagnosis`, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: { "Content-Type": "application/json", "x-turnstile-token": token },
           body: JSON.stringify({
             url: normalizeUrl(websiteUrl),
             name: leadName.trim(),
@@ -152,11 +161,16 @@ export default function Diagnostico() {
         throw new Error(fallbackMessage);
       }
       const data = await res.json().catch(() => null);
+      if (res.status === 403) throw new Error(verificationMessage);
       if (!res.ok || !data?.publicToken) {
         throw new Error((typeof data?.error === "string" && data.error) || fallbackMessage);
       }
       navigate(`/diagnostico/resultado/${data.publicToken}`);
     } catch (err) {
+      // The token is single-use: whatever failed (network, 4xx, 429, 5xx),
+      // the next attempt needs a fresh one.
+      turnstileRef.current?.reset();
+      setTurnstileToken(null);
       setSubmitError(err instanceof Error ? err.message : fallbackMessage);
       setWebsiteMode("error");
     }
@@ -419,6 +433,22 @@ export default function Diagnostico() {
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/30 focus:outline-none focus:border-[var(--c-cyan)]/50 transition-colors"
                   />
                 </div>
+                <div className="mb-5">
+                  {TURNSTILE_SITE_KEY ? (
+                    <TurnstileWidget
+                      ref={turnstileRef}
+                      siteKey={TURNSTILE_SITE_KEY}
+                      language={isEs ? "es" : "en"}
+                      onToken={setTurnstileToken}
+                    />
+                  ) : (
+                    <p role="alert" className="text-red-400 text-sm">
+                      {isEs
+                        ? "El análisis automático no está disponible en este momento (falta la verificación de seguridad). Puedes continuar sin análisis o escribirnos por WhatsApp."
+                        : "The automatic analysis isn't available right now (the security check is missing). You can continue without the analysis or reach us on WhatsApp."}
+                    </p>
+                  )}
+                </div>
                 <div className="flex gap-3">
                   <button
                     onClick={() => setWebsiteMode("ask")}
@@ -427,7 +457,7 @@ export default function Diagnostico() {
                     ← {isEs ? "Atrás" : "Back"}
                   </button>
                   <button
-                    disabled={leadName.trim().length === 0 || !isValidEmail(leadEmail)}
+                    disabled={leadName.trim().length === 0 || !isValidEmail(leadEmail) || !TURNSTILE_SITE_KEY || !turnstileToken}
                     onClick={submitDiagnosis}
                     className="flex-1 bg-[var(--c-cyan)] text-[#06060f] font-black py-3 rounded-xl text-sm hover:brightness-110 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
                   >
@@ -458,7 +488,7 @@ export default function Diagnostico() {
                 <p className="text-[var(--c-muted)] text-sm mb-6">{submitError}</p>
                 <div className="flex gap-3">
                   <button
-                    onClick={submitDiagnosis}
+                    onClick={() => setWebsiteMode("form")}
                     className="flex-1 bg-[var(--c-cyan)] text-[#06060f] font-black py-3 rounded-xl text-sm hover:brightness-110 transition-all"
                   >
                     {isEs ? "Reintentar" : "Retry"}
