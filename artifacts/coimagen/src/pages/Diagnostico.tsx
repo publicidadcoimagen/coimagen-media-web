@@ -465,8 +465,8 @@ export default function Diagnostico() {
                   ) : (
                     <p role="alert" className="text-red-400 text-sm">
                       {isEs
-                        ? "El análisis automático no está disponible en este momento (falta la verificación de seguridad). Puedes continuar sin análisis o escribirnos por WhatsApp."
-                        : "The automatic analysis isn't available right now (the security check is missing). You can continue without the analysis or reach us on WhatsApp."}
+                        ? "El análisis automático no está disponible en este momento (falta la verificación de seguridad). Escríbenos por WhatsApp y lo resolvemos."
+                        : "The automatic analysis isn't available right now (the security check is missing). Reach us on WhatsApp and we'll sort it out."}
                     </p>
                   )}
                 </div>
