@@ -15,6 +15,8 @@ export const siteConfig = {
     facebookHandle: "Coimagen Media Agency",
     instagram: "https://www.instagram.com/coimagenmediaagency/",
     instagramHandle: "@coimagenmedia",
+    pinterest: "https://www.pinterest.com/coimagenmedia/",
+    pinterestHandle: "Pinterest · Coimagen Media",
     linkedin: "#",
     youtube: "#",
     tiktok: "#",
