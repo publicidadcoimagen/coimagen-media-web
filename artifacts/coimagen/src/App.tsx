@@ -75,6 +75,7 @@ import MarketingClinicasEstetica from "@/pages/blog/MarketingClinicasEstetica";
 import WhatsappBusinessIa from "@/pages/blog/WhatsappBusinessIa";
 import GoogleAdsNegociosLocales from "@/pages/blog/GoogleAdsNegociosLocales";
 import AgentesIaEmpresas from "@/pages/blog/AgentesIaEmpresas";
+import ComercioAgenticoNegocios from "@/pages/blog/ComercioAgenticoNegocios";
 import MarketingWellnessSpas from "@/pages/blog/MarketingWellnessSpas";
 import AiAgentsLocalBusiness from "@/pages/blog/AiAgentsLocalBusiness";
 import RedesSocialesRestaurantes from "@/pages/blog/RedesSocialesRestaurantes";
@@ -192,6 +193,7 @@ function AppLayout() {
           <Route path="/blog/marketing-wellness-spas" component={MarketingWellnessSpas} />
           <Route path="/blog/ai-agents-local-business" component={AiAgentsLocalBusiness} />
           <Route path="/blog/redes-sociales-restaurantes" component={RedesSocialesRestaurantes} />
+          <Route path="/blog/comercio-agentico-negocios" component={ComercioAgenticoNegocios} />
 
           <Route component={NotFound} />
         </Switch>

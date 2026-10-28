@@ -319,6 +319,10 @@
     {
       "source": "/blog/redes-sociales-restaurantes",
       "destination": "/blog/redes-sociales-restaurantes.html"
+    },
+    {
+      "source": "/blog/comercio-agentico-negocios",
+      "destination": "/blog/comercio-agentico-negocios.html"
     }
   ]
 }

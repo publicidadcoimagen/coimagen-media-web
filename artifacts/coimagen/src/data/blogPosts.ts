@@ -15,6 +15,20 @@ export interface BlogMeta {
 
 export const blogPosts: BlogMeta[] = [
   {
+    slug: "comercio-agentico-negocios",
+    titleEs: "Tu próximo cliente no es humano: qué es el comercio agéntico y cómo preparar tu negocio",
+    titleEn: "Your next customer may not be human: what agentic commerce is and how to prepare your business",
+    excerptEs: "Un asistente de inteligencia artificial ya puede buscar, comparar y comprar por ti. Si tu negocio no se entiende en una frase, no lo va a elegir. Esta es la guía completa para estar listo, con checklist incluida.",
+    excerptEn: "An AI assistant can already search, compare, and buy for you. If your business cannot be understood in one sentence, it will not be chosen. This is the complete guide to getting ready, checklist included.",
+    tagEs: "Automatización",
+    tagEn: "Automation",
+    tagColor: "#A855F7",
+    icon: "⚙️",
+    date: "2026-10-28",
+    readTimeMin: 9,
+    featured: false,
+  },
+  {
     slug: "crm-para-medicos",
     titleEs: "CRM para médicos: cómo organizar pacientes y dar seguimiento automático",
     titleEn: "CRM for doctors: how to organize patients and automate follow-up",
