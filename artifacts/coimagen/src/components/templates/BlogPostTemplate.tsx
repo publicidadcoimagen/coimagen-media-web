@@ -4,12 +4,16 @@ import { siteConfig } from "@/config/site";
 import { blogPosts } from "@/data/blogPosts";
 
 export interface BlogSection {
-  type: "intro" | "heading" | "paragraph" | "list" | "highlight" | "steps" | "cta_inline";
+  type: "intro" | "heading" | "paragraph" | "list" | "highlight" | "steps" | "cta_inline" | "image";
   titleEs?: string;
   titleEn?: string;
   bodyEs?: string;
   bodyEn?: string;
   items?: { es: string; en: string }[];
+  // type "image" only: path under /public (e.g. /images/blog/x.jpg) + alt text per language.
+  image?: string;
+  altEs?: string;
+  altEn?: string;
 }
 
 export interface BlogFAQ {
@@ -229,6 +233,17 @@ export function BlogPostTemplate({ content }: { content: BlogContent }) {
                   {isEs ? "Habla con Camila AI" : "Talk to Camila AI"}
                 </a>
               </div>
+            );
+
+            if (section.type === "image" && section.image) return (
+              <figure key={i} className="mb-8 flex justify-center">
+                <img
+                  src={section.image}
+                  alt={section.altEs && section.altEn ? L({ es: section.altEs, en: section.altEn }) : ""}
+                  loading="lazy"
+                  className="w-full h-auto rounded-2xl border border-white/[0.08]"
+                />
+              </figure>
             );
 
             return null;
