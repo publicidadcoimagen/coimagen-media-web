@@ -1,5 +1,5 @@
 import { Switch, Route, Router as WouterRouter } from "wouter";
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
@@ -12,73 +12,75 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { CanonicalUrl } from "@/components/ui/CanonicalUrl";
-import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
-import Diagnostico from "@/pages/Diagnostico";
-import DiagnosticoResultado from "@/pages/DiagnosticoResultado";
-import PropuestaResultado from "@/pages/PropuestaResultado";
-import FacturaResultado from "@/pages/FacturaResultado";
-import FacturaDeclinar from "@/pages/FacturaDeclinar";
-import Demos from "@/pages/Demos";
-import Portal from "@/pages/Portal";
-import Agendar from "@/pages/Agendar";
-import About from "@/pages/About";
-import Faqs from "@/pages/Faqs";
-import Resources from "@/pages/Resources";
-import Recursos from "@/pages/Recursos";
-import Contact from "@/pages/Contact";
-import Blog from "@/pages/Blog";
-import PrivacyPolicy from "@/pages/PrivacyPolicy";
-import TermsOfService from "@/pages/TermsOfService";
-import UnderConstruction from "@/pages/UnderConstruction";
-import CaseStudiesIndex from "@/pages/CaseStudiesIndex";
-import DrSegovia from "@/pages/case-studies/DrSegovia";
-import Chimichimi from "@/pages/case-studies/Chimichimi";
-import CoimagenOS from "@/pages/case-studies/CoimagenOS";
-import ConchasTower from "@/pages/case-studies/ConchasTower";
-import MedicalOS from "@/pages/industries/MedicalOS";
-import DentalOS from "@/pages/industries/DentalOS";
-import LawOS from "@/pages/industries/LawOS";
-import WellnessOS from "@/pages/industries/WellnessOS";
-import RestaurantOS from "@/pages/industries/RestaurantOS";
-import RealEstateOS from "@/pages/industries/RealEstateOS";
-import LocalBusinessOS from "@/pages/industries/LocalBusinessOS";
-import AIPoweredWebsites from "@/pages/services/AIPoweredWebsites";
-import SEOGrowth from "@/pages/services/SEOGrowth";
-import GoogleBusinessOptimization from "@/pages/services/GoogleBusinessOptimization";
-import AIAutomation from "@/pages/services/AIAutomation";
-import AIAgents from "@/pages/services/AIAgents";
-import CamilaAIPage from "@/pages/services/CamilaAIPage";
-import CoimagenOSPage from "@/pages/services/CoimagenOSPage";
-import CloudSystems from "@/pages/services/CloudSystems";
-import SalesFunnelAI from "@/pages/resources/SalesFunnelAI";
-import CoimagenProAI from "@/pages/resources/CoimagenProAI";
-import AISalesAutomation from "@/pages/resources/AISalesAutomation";
-import SEOContentAI from "@/pages/resources/SEOContentAI";
-import FunnelCopyAI from "@/pages/resources/FunnelCopyAI";
-import CommunityManagerPro from "@/pages/resources/CommunityManagerPro";
-import ViralCopyAI from "@/pages/resources/ViralCopyAI";
-import AdsStrategistAI from "@/pages/resources/AdsStrategistAI";
-import MarketIntelligenceAI from "@/pages/resources/MarketIntelligenceAI";
-import CrmParaMedicos from "@/pages/blog/CrmParaMedicos";
-import AutomatizacionAbogados from "@/pages/blog/AutomatizacionAbogados";
-import SeoLocalDentistas from "@/pages/blog/SeoLocalDentistas";
-import GoogleBusinessProfile from "@/pages/blog/GoogleBusinessProfile";
-import WhatsappVentas from "@/pages/blog/WhatsappVentas";
-import IaPequenasEmpresas from "@/pages/blog/IaPequenasEmpresas";
-import SitioWebRestaurantes from "@/pages/blog/SitioWebRestaurantes";
-import CamilaAiAsistente from "@/pages/blog/CamilaAiAsistente";
-import GoogleAdsVsSeo from "@/pages/blog/GoogleAdsVsSeo";
-import AutomatizacionInmobiliaria from "@/pages/blog/AutomatizacionInmobiliaria";
-import SistemaOperativoEmpresarial from "@/pages/blog/SistemaOperativoEmpresarial";
-import MarketingClinicasEstetica from "@/pages/blog/MarketingClinicasEstetica";
-import WhatsappBusinessIa from "@/pages/blog/WhatsappBusinessIa";
-import GoogleAdsNegociosLocales from "@/pages/blog/GoogleAdsNegociosLocales";
-import AgentesIaEmpresas from "@/pages/blog/AgentesIaEmpresas";
-import ComercioAgenticoNegocios from "@/pages/blog/ComercioAgenticoNegocios";
-import MarketingWellnessSpas from "@/pages/blog/MarketingWellnessSpas";
-import AiAgentsLocalBusiness from "@/pages/blog/AiAgentsLocalBusiness";
-import RedesSocialesRestaurantes from "@/pages/blog/RedesSocialesRestaurantes";
+
+// Keep the homepage in the entry bundle; other routes load only when visited.
+const NotFound = lazy(() => import("@/pages/not-found"));
+const Diagnostico = lazy(() => import("@/pages/Diagnostico"));
+const DiagnosticoResultado = lazy(() => import("@/pages/DiagnosticoResultado"));
+const PropuestaResultado = lazy(() => import("@/pages/PropuestaResultado"));
+const FacturaResultado = lazy(() => import("@/pages/FacturaResultado"));
+const FacturaDeclinar = lazy(() => import("@/pages/FacturaDeclinar"));
+const Demos = lazy(() => import("@/pages/Demos"));
+const Portal = lazy(() => import("@/pages/Portal"));
+const Agendar = lazy(() => import("@/pages/Agendar"));
+const About = lazy(() => import("@/pages/About"));
+const Faqs = lazy(() => import("@/pages/Faqs"));
+const Resources = lazy(() => import("@/pages/Resources"));
+const Recursos = lazy(() => import("@/pages/Recursos"));
+const Contact = lazy(() => import("@/pages/Contact"));
+const Blog = lazy(() => import("@/pages/Blog"));
+const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
+const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
+const UnderConstruction = lazy(() => import("@/pages/UnderConstruction"));
+const CaseStudiesIndex = lazy(() => import("@/pages/CaseStudiesIndex"));
+const DrSegovia = lazy(() => import("@/pages/case-studies/DrSegovia"));
+const Chimichimi = lazy(() => import("@/pages/case-studies/Chimichimi"));
+const CoimagenOS = lazy(() => import("@/pages/case-studies/CoimagenOS"));
+const ConchasTower = lazy(() => import("@/pages/case-studies/ConchasTower"));
+const MedicalOS = lazy(() => import("@/pages/industries/MedicalOS"));
+const DentalOS = lazy(() => import("@/pages/industries/DentalOS"));
+const LawOS = lazy(() => import("@/pages/industries/LawOS"));
+const WellnessOS = lazy(() => import("@/pages/industries/WellnessOS"));
+const RestaurantOS = lazy(() => import("@/pages/industries/RestaurantOS"));
+const RealEstateOS = lazy(() => import("@/pages/industries/RealEstateOS"));
+const LocalBusinessOS = lazy(() => import("@/pages/industries/LocalBusinessOS"));
+const AIPoweredWebsites = lazy(() => import("@/pages/services/AIPoweredWebsites"));
+const SEOGrowth = lazy(() => import("@/pages/services/SEOGrowth"));
+const GoogleBusinessOptimization = lazy(() => import("@/pages/services/GoogleBusinessOptimization"));
+const AIAutomation = lazy(() => import("@/pages/services/AIAutomation"));
+const AIAgents = lazy(() => import("@/pages/services/AIAgents"));
+const CamilaAIPage = lazy(() => import("@/pages/services/CamilaAIPage"));
+const CoimagenOSPage = lazy(() => import("@/pages/services/CoimagenOSPage"));
+const CloudSystems = lazy(() => import("@/pages/services/CloudSystems"));
+const SalesFunnelAI = lazy(() => import("@/pages/resources/SalesFunnelAI"));
+const CoimagenProAI = lazy(() => import("@/pages/resources/CoimagenProAI"));
+const AISalesAutomation = lazy(() => import("@/pages/resources/AISalesAutomation"));
+const SEOContentAI = lazy(() => import("@/pages/resources/SEOContentAI"));
+const FunnelCopyAI = lazy(() => import("@/pages/resources/FunnelCopyAI"));
+const CommunityManagerPro = lazy(() => import("@/pages/resources/CommunityManagerPro"));
+const ViralCopyAI = lazy(() => import("@/pages/resources/ViralCopyAI"));
+const AdsStrategistAI = lazy(() => import("@/pages/resources/AdsStrategistAI"));
+const MarketIntelligenceAI = lazy(() => import("@/pages/resources/MarketIntelligenceAI"));
+const CrmParaMedicos = lazy(() => import("@/pages/blog/CrmParaMedicos"));
+const AutomatizacionAbogados = lazy(() => import("@/pages/blog/AutomatizacionAbogados"));
+const SeoLocalDentistas = lazy(() => import("@/pages/blog/SeoLocalDentistas"));
+const GoogleBusinessProfile = lazy(() => import("@/pages/blog/GoogleBusinessProfile"));
+const WhatsappVentas = lazy(() => import("@/pages/blog/WhatsappVentas"));
+const IaPequenasEmpresas = lazy(() => import("@/pages/blog/IaPequenasEmpresas"));
+const SitioWebRestaurantes = lazy(() => import("@/pages/blog/SitioWebRestaurantes"));
+const CamilaAiAsistente = lazy(() => import("@/pages/blog/CamilaAiAsistente"));
+const GoogleAdsVsSeo = lazy(() => import("@/pages/blog/GoogleAdsVsSeo"));
+const AutomatizacionInmobiliaria = lazy(() => import("@/pages/blog/AutomatizacionInmobiliaria"));
+const SistemaOperativoEmpresarial = lazy(() => import("@/pages/blog/SistemaOperativoEmpresarial"));
+const MarketingClinicasEstetica = lazy(() => import("@/pages/blog/MarketingClinicasEstetica"));
+const WhatsappBusinessIa = lazy(() => import("@/pages/blog/WhatsappBusinessIa"));
+const GoogleAdsNegociosLocales = lazy(() => import("@/pages/blog/GoogleAdsNegociosLocales"));
+const AgentesIaEmpresas = lazy(() => import("@/pages/blog/AgentesIaEmpresas"));
+const ComercioAgenticoNegocios = lazy(() => import("@/pages/blog/ComercioAgenticoNegocios"));
+const MarketingWellnessSpas = lazy(() => import("@/pages/blog/MarketingWellnessSpas"));
+const AiAgentsLocalBusiness = lazy(() => import("@/pages/blog/AiAgentsLocalBusiness"));
+const RedesSocialesRestaurantes = lazy(() => import("@/pages/blog/RedesSocialesRestaurantes"));
 
 const queryClient = new QueryClient();
 
@@ -112,6 +114,7 @@ function AppLayout() {
       <LangEffect />
       <Header />
       <main>
+        <Suspense fallback={<div className="min-h-[70vh]" aria-busy="true" />}>
         <Switch>
           {/* Core */}
           <Route path="/" component={Home} />
@@ -197,6 +200,7 @@ function AppLayout() {
 
           <Route component={NotFound} />
         </Switch>
+        </Suspense>
       </main>
       <Footer />
       <WhatsAppButton />

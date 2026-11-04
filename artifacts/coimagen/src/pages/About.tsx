@@ -95,7 +95,10 @@ export default function About() {
                 }}
               >
                 <img
-                  src="/images/camila-real.png"
+                  src="/images/camila-real.webp"
+                  width={512}
+                  height={512}
+                  decoding="async"
                   alt="Camila Segovia — Founder & CEO"
                   className="w-full h-full object-cover object-top"
                 />

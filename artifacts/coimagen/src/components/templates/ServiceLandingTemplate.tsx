@@ -252,6 +252,9 @@ export function ServiceLandingTemplate({ content }: { content: ServiceContent })
             >
               <img
                 src={content.heroImage}
+                width={1408}
+                height={768}
+                decoding="async"
                 alt=""
                 className="w-full h-auto object-cover"
                 loading="lazy"
