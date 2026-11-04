@@ -2,7 +2,7 @@ import { IndustryTemplate } from "./IndustryTemplate";
 
 const content = {
   slug: "dental-os",
-  heroImage: "/images/landing/dental-os.png",
+  heroImage: "/images/landing/dental-os.webp",
   icon: "🦷",
   color: "#14b8a6",
   seoTitle: {

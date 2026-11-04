@@ -2,7 +2,7 @@ import { IndustryTemplate } from "./IndustryTemplate";
 
 const content = {
   slug: "restaurant-os",
-  heroImage: "/images/landing/restaurant-os.png",
+  heroImage: "/images/landing/restaurant-os.webp",
   icon: "🍽️",
   color: "#f97316",
   seoTitle: {

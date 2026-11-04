@@ -2,7 +2,7 @@ import { ServiceLandingTemplate, ServiceContent } from "@/components/templates/S
 
 const content: ServiceContent = {
   slug: "coimagen-os",
-  heroImage: "/images/landing/coimagen-os.png",
+  heroImage: "/images/landing/coimagen-os.webp",
   accentColor: "purple",
   accentHex: "#A855F7",
   icon: "⭐",

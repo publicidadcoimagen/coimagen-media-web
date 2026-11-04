@@ -220,6 +220,9 @@ async function main() {
         // connections that never go fully idle. domcontentloaded + the
         // explicit title-change wait below is the real completion signal.
         await page.goto(url, { waitUntil: "domcontentloaded", timeout: 30000 });
+        // Route modules load on demand. Header/footer text alone must never
+        // qualify as a fully rendered page for search engines.
+        await page.waitForSelector("main h1", { timeout: 10000 });
         await page.waitForFunction(
           (fallback) => document.title !== fallback,
           { timeout: 5000 },

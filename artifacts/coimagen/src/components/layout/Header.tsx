@@ -83,7 +83,9 @@ export function Header() {
         {/* Logo */}
         <a href="/" className="flex items-center gap-3 flex-shrink-0">
           <img
-            src="/logo-coimagen.png"
+            src="/logo-coimagen.webp"
+            width={112}
+            height={112}
             alt="Coimagen Media Agency"
             className="h-12 w-auto object-contain"
             onError={(e) => {

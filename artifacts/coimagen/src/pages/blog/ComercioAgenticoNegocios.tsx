@@ -31,7 +31,7 @@ const content: BlogContent = {
     },
     {
       type: "image",
-      image: "/images/blog/comercio-agentico-1.jpg",
+      image: "/images/blog/comercio-agentico-1.webp",
       altEs: "Un asistente de IA comprando en línea: un robot amigable eligiendo productos en una tienda digital",
       altEn: "An AI assistant shopping online: a friendly robot choosing products in a digital store",
     },

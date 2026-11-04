@@ -19,7 +19,10 @@ export function CamilaSection() {
               }}
             >
               <img
-                src="/images/camila-real.png"
+                src="/images/camila-real.webp"
+                width={512}
+                height={512}
+                decoding="async"
                 alt="Camila Segovia — Founder & CEO, Coimagen Media Agency"
                 className="w-full h-auto block"
                 loading="lazy"

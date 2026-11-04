@@ -2,7 +2,7 @@ import { IndustryTemplate } from "./IndustryTemplate";
 
 const content = {
   slug: "local-business-os",
-  heroImage: "/images/landing/local-business-os.png",
+  heroImage: "/images/landing/local-business-os.webp",
   icon: "🏪",
   color: "#ffd60a",
   seoTitle: {

@@ -51,7 +51,11 @@ export function Footer() {
           <div className="col-span-2 md:col-span-1">
             <a href="/" className="flex items-center gap-3 mb-4">
               <img
-                src="/logo-coimagen.png"
+                src="/logo-coimagen.webp"
+                width={112}
+                height={112}
+                loading="lazy"
+                decoding="async"
                 alt="Coimagen Media Agency"
                 className="h-14 w-auto object-contain"
                 onError={(e) => {

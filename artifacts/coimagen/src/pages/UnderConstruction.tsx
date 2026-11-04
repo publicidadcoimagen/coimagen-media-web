@@ -29,7 +29,9 @@ export default function UnderConstruction() {
     <div className="min-h-screen bg-[#06060f] pt-24 pb-20 flex items-center">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
         <img
-          src="/logo-coimagen.png"
+          src="/logo-coimagen.webp"
+          width={112}
+          height={112}
           alt="Coimagen Media Agency"
           className="h-16 w-auto object-contain mx-auto mb-6"
           onError={(e) => {
