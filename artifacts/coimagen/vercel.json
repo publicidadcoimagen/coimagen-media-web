@@ -323,6 +323,10 @@
     {
       "source": "/blog/comercio-agentico-negocios",
       "destination": "/blog/comercio-agentico-negocios.html"
+    },
+    {
+      "source": "/blog/escribe-textos-que-venden",
+      "destination": "/blog/escribe-textos-que-venden.html"
     }
   ]
 }
