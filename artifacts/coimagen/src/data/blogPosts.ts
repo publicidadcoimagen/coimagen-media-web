@@ -15,7 +15,21 @@ export interface BlogMeta {
 
 export const blogPosts: BlogMeta[] = [
   {
-    slug: "comercio-agentico-negocios",
+      {
+    slug: "guiones-de-reels-que-detienen-el-scroll",
+    titleEs: "Guiones de reels que detienen el scroll",
+    titleEn: "Guiones de reels que detienen el scroll",
+    excerptEs: "El cerebro decide si te ignora en menos de un segundo y medio. Un reel que retiene no es suerte: es un guion de tres bloques, una sola idea y una sola acción al final.",
+    excerptEn: "El cerebro decide si te ignora en menos de un segundo y medio. Un reel que retiene no es suerte: es un guion de tres bloques, una sola idea y una sola acción al final.",
+    tagEs: "IA",
+    tagEn: "AI",
+    tagColor: "#00CFFF",
+    icon: "🤖",
+    date: "2026-11-28",
+    readTimeMin: 8,
+    featured: false,
+  },
+slug: "comercio-agentico-negocios",
     titleEs: "Tu próximo cliente no es humano: qué es el comercio agéntico y cómo preparar tu negocio",
     titleEn: "Your next customer may not be human: what agentic commerce is and how to prepare your business",
     excerptEs: "Un asistente de inteligencia artificial ya puede buscar, comparar y comprar por ti. Si tu negocio no se entiende en una frase, no lo va a elegir. Esta es la guía completa para estar listo, con checklist incluida.",
