@@ -15,8 +15,7 @@ export interface BlogMeta {
 
 export const blogPosts: BlogMeta[] = [
   {
-      {
-    slug: "guiones-de-reels-que-detienen-el-scroll",
+      slug: "guiones-de-reels-que-detienen-el-scroll",
     titleEs: "Guiones de reels que detienen el scroll",
     titleEn: "Guiones de reels que detienen el scroll",
     excerptEs: "El cerebro decide si te ignora en menos de un segundo y medio. Un reel que retiene no es suerte: es un guion de tres bloques, una sola idea y una sola acción al final.",
@@ -29,6 +28,7 @@ export const blogPosts: BlogMeta[] = [
     readTimeMin: 8,
     featured: false,
   },
+  {
     slug: "comercio-agentico-negocios",
     titleEs: "Tu próximo cliente no es humano: qué es el comercio agéntico y cómo preparar tu negocio",
     titleEn: "Your next customer may not be human: what agentic commerce is and how to prepare your business",
