@@ -29,7 +29,7 @@ export const blogPosts: BlogMeta[] = [
     readTimeMin: 8,
     featured: false,
   },
-slug: "comercio-agentico-negocios",
+  slug: "comercio-agentico-negocios",
     titleEs: "Tu próximo cliente no es humano: qué es el comercio agéntico y cómo preparar tu negocio",
     titleEn: "Your next customer may not be human: what agentic commerce is and how to prepare your business",
     excerptEs: "Un asistente de inteligencia artificial ya puede buscar, comparar y comprar por ti. Si tu negocio no se entiende en una frase, no lo va a elegir. Esta es la guía completa para estar listo, con checklist incluida.",
