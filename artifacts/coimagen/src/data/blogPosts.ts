@@ -15,6 +15,20 @@ export interface BlogMeta {
 
 export const blogPosts: BlogMeta[] = [
   {
+    slug: "sr-buffer-warren-buffett",
+    titleEs: "El Sr. Buffer: 5 Coca-Colas al día y una inversión que nunca vendió",
+    titleEn: "Mr. Buffer: 5 Cokes a day and an investment he never sold",
+    excerptEs: "Warren Buffett desayuna en McDonald's, toma cinco Coca-Colas al día y en 1988 compró acciones de Coca-Cola por $1,300 millones… y no ha vendido ni una sola.",
+    excerptEn: "Warren Buffett eats breakfast at McDonald's, drinks five Cokes a day, and in 1988 bought Coca-Cola shares for $1.3 billion… and has not sold a single one.",
+    tagEs: "Historias de negocios",
+    tagEn: "Business stories",
+    tagColor: "#F2B42D",
+    icon: "📈",
+    date: "2026-11-17",
+    readTimeMin: 8,
+    featured: false,
+  },
+  {
     slug: "comercio-agentico-negocios",
     titleEs: "Tu próximo cliente no es humano: qué es el comercio agéntico y cómo preparar tu negocio",
     titleEn: "Your next customer may not be human: what agentic commerce is and how to prepare your business",
