@@ -323,6 +323,9 @@
     {
       "source": "/blog/comercio-agentico-negocios",
       "destination": "/blog/comercio-agentico-negocios.html"
-    }
+    },
+    {
+      "source": "/blog/guiones-de-reels-que-detienen-el-scroll",
+      "destination": "/blog/guiones-de-reels-que-detienen-el-scroll.html"    }
   ]
 }
