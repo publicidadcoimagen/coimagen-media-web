@@ -323,6 +323,10 @@
     {
       "source": "/blog/comercio-agentico-negocios",
       "destination": "/blog/comercio-agentico-negocios.html"
+    },
+    {
+      "source": "/blog/sr-buffer-warren-buffett",
+      "destination": "/blog/sr-buffer-warren-buffett.html"
     }
   ]
 }
