@@ -15,7 +15,21 @@ export interface BlogMeta {
 
 export const blogPosts: BlogMeta[] = [
   {
-    slug: "comercio-agentico-negocios",
+      {
+    slug: "escribe-textos-que-venden",
+    titleEs: "Escribe textos que venden: copy y llamados a la acción",
+    titleEn: "Escribe textos que venden: copy y llamados a la acción",
+    excerptEs: "Tu texto puede ser bueno y aun así no vender nada: si no tiene estructura y no cierra con una sola acción clara, el lector se va. Las fórmulas y las reglas del llamado a la acción que convierten la atención en acción.",
+    excerptEn: "Tu texto puede ser bueno y aun así no vender nada: si no tiene estructura y no cierra con una sola acción clara, el lector se va. Las fórmulas y las reglas del llamado a la acción que convierten la atención en acción.",
+    tagEs: "IA",
+    tagEn: "AI",
+    tagColor: "#00CFFF",
+    icon: "🤖",
+    date: "2026-11-24",
+    readTimeMin: 8,
+    featured: false,
+  },
+  slug: "comercio-agentico-negocios",
     titleEs: "Tu próximo cliente no es humano: qué es el comercio agéntico y cómo preparar tu negocio",
     titleEn: "Your next customer may not be human: what agentic commerce is and how to prepare your business",
     excerptEs: "Un asistente de inteligencia artificial ya puede buscar, comparar y comprar por ti. Si tu negocio no se entiende en una frase, no lo va a elegir. Esta es la guía completa para estar listo, con checklist incluida.",
