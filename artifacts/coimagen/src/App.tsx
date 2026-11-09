@@ -78,6 +78,7 @@ const WhatsappBusinessIa = lazy(() => import("@/pages/blog/WhatsappBusinessIa"))
 const GoogleAdsNegociosLocales = lazy(() => import("@/pages/blog/GoogleAdsNegociosLocales"));
 const AgentesIaEmpresas = lazy(() => import("@/pages/blog/AgentesIaEmpresas"));
 const ComercioAgenticoNegocios = lazy(() => import("@/pages/blog/ComercioAgenticoNegocios"));
+const SrBufferWarrenBuffett = lazy(() => import("@/pages/blog/SrBufferWarrenBuffett"));
 const MarketingWellnessSpas = lazy(() => import("@/pages/blog/MarketingWellnessSpas"));
 const AiAgentsLocalBusiness = lazy(() => import("@/pages/blog/AiAgentsLocalBusiness"));
 const RedesSocialesRestaurantes = lazy(() => import("@/pages/blog/RedesSocialesRestaurantes"));
@@ -197,6 +198,7 @@ function AppLayout() {
           <Route path="/blog/ai-agents-local-business" component={AiAgentsLocalBusiness} />
           <Route path="/blog/redes-sociales-restaurantes" component={RedesSocialesRestaurantes} />
           <Route path="/blog/comercio-agentico-negocios" component={ComercioAgenticoNegocios} />
+<Route path="/blog/sr-buffer-warren-buffett" component={SrBufferWarrenBuffett} />
 
           <Route component={NotFound} />
         </Switch>
