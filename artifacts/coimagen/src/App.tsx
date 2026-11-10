@@ -78,6 +78,7 @@ const WhatsappBusinessIa = lazy(() => import("@/pages/blog/WhatsappBusinessIa"))
 const GoogleAdsNegociosLocales = lazy(() => import("@/pages/blog/GoogleAdsNegociosLocales"));
 const AgentesIaEmpresas = lazy(() => import("@/pages/blog/AgentesIaEmpresas"));
 const ComercioAgenticoNegocios = lazy(() => import("@/pages/blog/ComercioAgenticoNegocios"));
+const EscribeTextosQueVenden = lazy(() => import("@/pages/blog/EscribeTextosQueVenden"));
 const GuionesDeReelsQueDetienenElScroll = lazy(() => import("@/pages/blog/GuionesDeReelsQueDetienenElScroll"));
 const MarketingWellnessSpas = lazy(() => import("@/pages/blog/MarketingWellnessSpas"));
 const AiAgentsLocalBusiness = lazy(() => import("@/pages/blog/AiAgentsLocalBusiness"));
@@ -198,6 +199,7 @@ function AppLayout() {
           <Route path="/blog/ai-agents-local-business" component={AiAgentsLocalBusiness} />
           <Route path="/blog/redes-sociales-restaurantes" component={RedesSocialesRestaurantes} />
           <Route path="/blog/comercio-agentico-negocios" component={ComercioAgenticoNegocios} />
+<Route path="/blog/escribe-textos-que-venden" component={EscribeTextosQueVenden} />
 <Route path="/blog/guiones-de-reels-que-detienen-el-scroll" component={GuionesDeReelsQueDetienenElScroll} />
 
           <Route component={NotFound} />

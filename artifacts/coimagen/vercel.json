@@ -326,7 +326,11 @@
     },
     {
       "source": "/blog/guiones-de-reels-que-detienen-el-scroll",
-      "destination": "/blog/guiones-de-reels-que-detienen-el-scroll.html"
+            "destination": "/blog/guiones-de-reels-que-detienen-el-scroll.html"
+    },
+    {
+      "source": "/blog/escribe-textos-que-venden",
+      "destination": "/blog/escribe-textos-que-venden.html"
     }
   ]
 }
