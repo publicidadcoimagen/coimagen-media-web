@@ -1,3 +1,5 @@
+import { reelScriptsBlogContent, salesCopyBlogContent } from "@/context/LanguageContext";
+
 export interface BlogMeta {
   slug: string;
   titleEs: string;
@@ -17,9 +19,9 @@ export const blogPosts: BlogMeta[] = [
   {
       slug: "guiones-de-reels-que-detienen-el-scroll",
     titleEs: "Guiones de reels que detienen el scroll",
-    titleEn: "Guiones de reels que detienen el scroll",
+    titleEn: reelScriptsBlogContent.titleEn,
     excerptEs: "El cerebro decide si te ignora en menos de un segundo y medio. Un reel que retiene no es suerte: es un guion de tres bloques, una sola idea y una sola acción al final.",
-    excerptEn: "El cerebro decide si te ignora en menos de un segundo y medio. Un reel que retiene no es suerte: es un guion de tres bloques, una sola idea y una sola acción al final.",
+    excerptEn: reelScriptsBlogContent.subtitleEn,
     tagEs: "IA",
     tagEn: "AI",
     tagColor: "#00CFFF",
@@ -31,9 +33,9 @@ export const blogPosts: BlogMeta[] = [
   {
     slug: "escribe-textos-que-venden",
     titleEs: "Escribe textos que venden: copy y llamados a la acción",
-    titleEn: "Escribe textos que venden: copy y llamados a la acción",
+    titleEn: salesCopyBlogContent.titleEn,
     excerptEs: "Tu texto puede ser bueno y aun así no vender nada: si no tiene estructura y no cierra con una sola acción clara, el lector se va. Las fórmulas y las reglas del llamado a la acción que convierten la atención en acción.",
-    excerptEn: "Tu texto puede ser bueno y aun así no vender nada: si no tiene estructura y no cierra con una sola acción clara, el lector se va. Las fórmulas y las reglas del llamado a la acción que convierten la atención en acción.",
+    excerptEn: salesCopyBlogContent.subtitleEn,
     tagEs: "IA",
     tagEn: "AI",
     tagColor: "#00CFFF",
