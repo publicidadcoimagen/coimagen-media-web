@@ -10,7 +10,7 @@ const companyLinksEs = [
   { label: "Recursos", href: "/resources" },
   { label: "FAQs", href: "/faqs" },
   { label: "Portal de Clientes", href: "/portal" },
-  { label: "Tienda", href: "https://tienda.coimagenmedia.com", external: true },
+  { label: "Tienda", href: siteConfig.storeUrls.es, external: true },
 ];
 
 const companyLinksEn = [
@@ -22,7 +22,7 @@ const companyLinksEn = [
   { label: "Resources", href: "/resources" },
   { label: "FAQs", href: "/faqs" },
   { label: "Client Portal", href: "/portal" },
-  { label: "Store", href: "https://tienda.coimagenmedia.com", external: true },
+  { label: "Store", href: siteConfig.storeUrls.en, external: true },
 ];
 
 const legalLinksEs = [

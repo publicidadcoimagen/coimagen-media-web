@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/under-construction",
+      "destination": "https://store.coimagenmedia.com",
+      "permanent": false
+    },
+    {
       "source": "/casos/dr-segovia",
       "destination": "/case-studies/dr-segovia",
       "permanent": true
@@ -90,10 +95,6 @@
     },
     {
       "source": "/admin",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/under-construction",
       "destination": "/index.html"
     },
     {
