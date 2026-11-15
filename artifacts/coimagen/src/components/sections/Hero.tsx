@@ -1,9 +1,6 @@
 import { useLang } from "@/context/LanguageContext";
 
-// English visitors land here instead of the (Spanish-only, for now) real
-// store — see pages/UnderConstruction.tsx.
-const STORE_URL_ES = "https://tienda.coimagenmedia.com";
-const STORE_URL_EN = "/under-construction";
+import { siteConfig } from "@/config/site";
 
 export function Hero() {
   const { t, lang } = useLang();
@@ -77,7 +74,7 @@ export function Hero() {
         {/* Tienda / Store — separate row, directly below the CTA row above */}
         <div className="mt-4 flex justify-center">
           <a
-            href={isEs ? STORE_URL_ES : STORE_URL_EN}
+            href={siteConfig.storeUrls[lang]}
             {...(isEs ? { target: "_blank", rel: "noopener noreferrer" } : {})}
             className="inline-flex items-center gap-2.5 bg-[#f97316] text-[#06060f] font-bold px-8 py-4 rounded-xl text-base hover:brightness-110 hover:shadow-[0_0_28px_rgba(249,115,22,0.45)] transition-all active:scale-95"
           >

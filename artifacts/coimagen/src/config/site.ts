@@ -2,6 +2,10 @@ export const siteConfig = {
   name: "Coimagen Media Agency",
   tagline: "Marketing + Automation + AI Agents + Business Operating Systems",
   domain: "www.coimagenmedia.com",
+  storeUrls: {
+    es: "https://tienda.coimagenmedia.com",
+    en: "https://store.coimagenmedia.com",
+  },
   portalUrl: "https://portal.coimagenmedia.com",
   whatsapp: {
     number: "526644769223",
